@@ -1,0 +1,291 @@
+--------------------------------------
+2020-12-31 13:05:28,620|INFO  [tasRIOPTxnMgr:7 prepare com.banelco.tas.riop.WsTarjetaRecaudadoraService] Outbound Message
+---------------------------
+ID: 209
+Address: https://webfronthomo01.ar.bsch:8501/prisma_clientesvc.svc
+Encoding: UTF-8
+Content-Type: application/soap+xml
+Headers: {Accept=[*/*]}
+Payload: 
+<soap:Envelope
+	xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+	<soap:Header>
+		<Action
+			xmlns="http://www.w3.org/2005/08/addressing">http://tempuri.org/I
+ClienteSvc/ObtenerAcuerdosDeRecaudaciones
+		</Action>
+		<MessageID
+			xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:49e4d07b-36a1-45aa-af7a-c923d5793d01
+		</MessageID>
+		<To
+			xmlns="http://www.w3.org/2005/08/addressing">https://webfronthomo01.ar.bsch:8501/prisma_clientesvc.svc
+		</To>
+		<ReplyTo
+			xmlns="http://www.w3.org/2005/08/addressing
+">
+			<Address>http://www.w3.org/2005/08/addressing/anonymous</Address>
+		</ReplyTo>
+	</soap:Header>
+	<soap:Body>
+		<ns2:ObtenerAcuerdosDeRecaudaciones
+			xmlns="http://schemas.dat
+acontract.org/2004/07/TAS.Common.DataContracts"
+			xmlns:ns2="http://tempuri.org/"
+			xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/"
+			xmlns:ns4="http://s
+chemas.microsoft.com/2003/10/Serialization/Arrays"
+			xmlns:ns5="http://schemas.datacontract.org/2004/07/BSR.ServiceModel.Common.Exceptions"
+			xmlns:ns6="http://schemas
+.datacontract.org/2004/07/System">
+			<ns2:request>
+				<IdTerminal>8</IdTerminal>
+				<NroSucursal>99087</NroSucursal>
+				<PasswordRACF>FREEUSER</PasswordRACF>
+				<UsuarioRACF>FREEUSER
+</UsuarioRACF>
+				<CantidadItems>1</CantidadItems>
+				<CuitEmpresa>30700005573</CuitEmpresa>
+				<DigVerificadorEmpresa>0</DigVerificadorEmpresa>
+				<LongDescripAcuerdo>0
+				</LongDesc
+ripAcuerdo>
+				<NroInstancia>1</NroInstancia>
+				<NroProducto>1</NroProducto>
+				<Opcion>1</Opcion>
+			</ns2:request>
+		</ns2:ObtenerAcuerdosDeRecaudaciones>
+	</soap:Body>
+</soap:Envelo
+pe>
+--------------------------------------
+2020-12-31 13:05:32,283|INFO  [tasRIOPTxnMgr:7 prepare com.banelco.tas.riop.WsTarjetaRecaudadoraService] Inbound Message
+----------------------------
+ID: 209
+Response-Code: 200
+Encoding: UTF-8
+Content-Type: application/soap+xml; charset=utf-8
+Headers: {Content-Length=[3837], content-type=[application/soap+xml; charset=utf-8], Date=[Thu, 31 Dec 2020 16:05:32 GMT], Server=[Microsoft-IIS/8.5], X-Powered-By=[ASP.NET]}
+Payload: 
+<s:Envelope
+	xmlns:s="http://www.w3.org/2003/05/soap-envelope"
+	xmlns:a="http://www.w3.org/2005/08/addressing">
+	<s:Header>
+		<a:Action s:mustUnderstand="1">http://tempuri.org/IClienteSvc/ObtenerAcuerdosDeRecaudacionesResponse</a:Action>
+		<a:RelatesTo>urn:uuid:49e4d07b-36a1-45aa-af7a-c923d5793d01</a:RelatesTo>
+	</s:Header>
+	<s:Body>
+		<ObtenerAcuerdosDeRecaudacionesResponse
+			xmlns="http://tempuri.org/">
+			<ObtenerAcuerdosDeRecaudacionesResult
+				xmlns:b="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"
+				xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+				<b:Acuerdos>
+					<b:ClienteSvcObtenerAcuerdosDeRecaudacionesResponseAcuerdo>
+						<b:CodBajaAcuerdo>0</b:CodBajaAcuerdo>
+						<b:CodMoneda>0</b:CodMoneda>
+						<b:CodTablaFormaPago>0</b:CodTablaFormaPago>
+						<b:CodTablaPrecios>2357</b:CodTablaPrecios>
+						<b:CuitEmpresa>30700005573</b:CuitEmpresa>
+						<b:DescripAcuerdo>BANCA TRANSACCIONAL PRUEBA    </b:DescripAcuerdo>
+						<b:DetalleFormaPago>010203040510111316171819212225262769700000000000000000000000</b:DetalleFormaPago>
+						<b:DetalleFormaPagoList
+							xmlns:c="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+							<c:string>01</c:string>
+							<c:string>02</c:string>
+							<c:string>03</c:string>
+							<c:string>04</c:string>
+							<c:string>05</c:string>
+							<c:string>10</c:string>
+							<c:string>11</c:string>
+							<c:string>13</c:string>
+							<c:string>16</c:string>
+							<c:string>17</c:string>
+							<c:string>18</c:string>
+							<c:string>19</c:string>
+							<c:string>21</c:string>
+							<c:string>22</c:string>
+							<c:string>25</c:string>
+							<c:string>26</c:string>
+							<c:string>27</c:string>
+							<c:string>69</c:string>
+							<c:string>70</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+						</b:DetalleFormaPagoList>
+						<b:DigVerificadorEmpresa>0</b:DigVerificadorEmpresa>
+						<b:ImpBoletaRecBasica>0.00</b:ImpBoletaRecBasica>
+						<b:ImpComCanDoc3ra>0.00</b:ImpComCanDoc3ra>
+						<b:ImpComCanTrn3ra>0.00</b:ImpComCanTrn3ra>
+						<b:ImpComDoc3ra>0.00</b:ImpComDoc3ra>
+						<b:ImpComMaxDoc3ra>0.00</b:ImpComMaxDoc3ra>
+						<b:ImpComMaxTrn3ra>0.00</b:ImpComMaxTrn3ra>
+						<b:ImpComMinDoc3ra>0.00</b:ImpComMinDoc3ra>
+						<b:ImpComMinTrn3ra>0.00</b:ImpComMinTrn3ra>
+						<b:ImpComNoFina3ra>0.00</b:ImpComNoFina3ra>
+						<b:ImpComNoFinan>0.00</b:ImpComNoFinan>
+						<b:ImpComRecNoCliente>0.00</b:ImpComRecNoCliente>
+						<b:ImpComTrn3ra>0.00</b:ImpComTrn3ra>
+						<b:ImpComUsoAdic3ra>0.00</b:ImpComUsoAdic3ra>
+						<b:ImpComUsoCanDoc>0.00</b:ImpComUsoCanDoc>
+						<b:ImpComUsoCanTrn>0.00</b:ImpComUsoCanTrn>
+						<b:ImpComisionDoc>0.00</b:ImpComisionDoc>
+						<b:ImpComisionMaxDoc>0.00</b:ImpComisionMaxDoc>
+						<b:ImpComisionMaxTrn>0.00</b:ImpComisionMaxTrn>
+						<b:ImpComisionMinDoc>0.00</b:ImpComisionMinDoc>
+						<b:ImpComisionTrn>0.01</b:ImpComisionTrn>
+						<b:ImpComision_MinTrn>0.00</b:ImpComision_MinTrn>
+						<b:IndicaBcoCorres>N</b:IndicaBcoCorres>
+						<b:IndicaCargaManual>N</b:IndicaCargaManual>
+						<b:IndicaCheque>D</b:IndicaCheque>
+						<b:IndicaDto>N</b:IndicaDto>
+						<b:IndicaPgoParcial>S</b:IndicaPgoParcial>
+						<b:IndicaPuni>N</b:IndicaPuni>
+						<b:MarAcuerdoUnif>S</b:MarAcuerdoUnif>
+						<b:NroInstancia>1</b:NroInstancia>
+						<b:NroLimVtoCPD>2</b:NroLimVtoCPD>
+						<b:NroProducto>1</b:NroProducto>
+						<b:PorcentajeDNF>1000</b:PorcentajeDNF>
+						<b:Porm3ra>0.0000</b:Porm3ra>
+						<b:PormRecarNoCliente>0.0000</b:PormRecarNoCliente>
+						<b:PormUsoAdic3ra>0.0000</b:PormUsoAdic3ra>
+						<b:PormUsoCaDoc3ra>0.0000</b:PormUsoCaDoc3ra>
+						<b:PormUsoCaTrn3ra>0.0000</b:PormUsoCaTrn3ra>
+						<b:RazonSocial i:nil="true"/>
+						<b:TasaUsoCanalDoc>0.0000</b:TasaUsoCanalDoc>
+						<b:TasaUsoCanalTrn>0.0000</b:TasaUsoCanalTrn>
+						<b:TipoComision>E</b:TipoComision>
+						<b:TipoVencimiento>1</b:TipoVencimiento>
+						<b:UsaCuota>0</b:UsaCuota>
+					</b:ClienteSvcObtenerAcuerdosDeRecaudacionesResponseAcuerdo>
+				</b:Acuerdos>
+				<b:CantRepeticiones>0</b:CantRepeticiones>
+				<b:MarcaContinua i:nil="true"/>
+			</ObtenerAcuerdosDeRecaudacionesResult>
+		</ObtenerAcuerdosDeRecaudacionesResponse>
+	</s:Body>
+</s:Envelope>
+--------------------------------------
+2020-12-31 13:05:32,336|INFO  [tasRIOPTxnMgr:7 prepare com.banelco.tas.riop.WsTarjetaRecaudadoraService] Outbound Message
+---------------------------
+ID: 210
+Address: https://webfronthomo01.ar.bsch:8501/prisma_clientesvc.svc
+Encoding: UTF-8
+Content-Type: application/soap+xml
+Headers: {Accept=[*/*]}
+Payload: 
+<soap:Envelope
+	xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+	<soap:Header>
+		<Action
+			xmlns="http://www.w3.org/2005/08/addressing">http://tempuri.org/IClienteSvc/ObtenerDeudasDeRecaudacionesV2
+		</Action>
+		<MessageID
+			xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:16cdc595-ecc2-47af-bd69-e562752eafb2
+		</MessageID>
+		<To
+			xmlns="http://www.w3.org/2005/08/addressing">https://webfronthomo01.ar.bsch:8501/prisma_clientesvc.svc
+		</To>
+		<ReplyTo
+			xmlns="http://www.w3.org/2005/08/addressing">
+			<Address>http://www.w3.org/2005/08/addressing/anonymous</Address>
+		</ReplyTo>
+	</soap:Header>
+	<soap:Body>
+		<ns2:ObtenerDeudasDeRecaudacionesV2
+			xmlns="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"
+			xmlns:ns2="http://tempuri.org/"
+			xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/"
+			xmlns:ns4="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+			xmlns:ns5="http://schemas.datacontract.org/2004/07/BSR.ServiceModel.Common.Exceptions"
+			xmlns:ns6="http://schemas.datacontract.org/2004/07/System">
+			<ns2:request>
+				<IdTerminal>8</IdTerminal>
+				<NroSucursal>99087</NroSucursal>
+				<PasswordRACF>FREEUSER</PasswordRACF>
+				<UsuarioRACF>FREEUSER</UsuarioRACF>
+				<CantidadItems>8</CantidadItems>
+				<CuitEmpresa>30700005573</CuitEmpresa>
+				<DigVerificadorEmpresa>0</DigVerificadorEmpresa>
+				<NroCliente>000000000000008</NroCliente>
+				<NroComprobante></NroComprobante>
+				<NroCuota>0</NroCuota>
+				<NroInstancia>1</NroInstancia>
+				<NroProducto>1</NroProducto>
+				<Opcion>1</Opcion>
+				<TipoComprobante></TipoComprobante>
+			</ns2:request>
+		</ns2:ObtenerDeudasDeRecaudacionesV2>
+	</soap:Body>
+</soap:Envelope>
+--------------------------------------
+2020-12-31 13:05:32,522|INFO  [tasRIOPTxnMgr:7 prepare com.banelco.tas.riop.WsTarjetaRecaudadoraService] Inbound Message
+----------------------------
+ID: 210
+Response-Code: 500
+Encoding: UTF-8
+Content-Type: application/soap+xml; charset=utf-8
+Headers: {Content-Length=[1440], content-type=[application/soap+xml; charset=utf-8], Date=[Thu, 31 Dec 2020 16:05:32 GMT], Server=[Microsoft-IIS/8.5], X-Powered-By=[ASP.NET]}
+Payload: 
+<s:Envelope
+	xmlns:s="http://www.w3.org/2003/05/soap-envelope"
+	xmlns:a="http://www.w3.org/2005/08/addressing">
+	<s:Header>
+		<a:Action s:mustUnderstand="1">http://www.w3.org/2005/08/addressing/soap/fault</a:Action>
+		<a:RelatesTo>urn:uuid:16cdc595-ecc2-47af-bd69-e562752eafb2</a:RelatesTo>
+	</s:Header>
+	<s:Body>
+		<s:Fault>
+			<s:Code>
+				<s:Value>s:Sender</s:Value>
+			</s:Code>
+			<s:Reason>
+				<s:Text xml:lang="es-AR">10110001|RCE|No es posible realizar la operacion para el acuerdo indicado. Por favor contactese con la empresa recaudadora.</s:Text>
+			</s:Reason>
+			<s:Detail>
+				<BusinessException
+					xmlns="http://schemas.datacontract.org/2004/07/Isban.Common"
+					xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
+					xmlns:x="http://www.w3.org/2001/XMLSchema">
+					<ClassName i:type="x:string"
+						xmlns="">Isban.Common.BusinessException
+					</ClassName>
+					<Message i:type="x:string"
+						xmlns="">10110001|RCE|No es posible realizar la operacion para el acuerdo indicado. Por favor contactese con la empresa recaudadora.
+					</Message>
+					<Data i:nil="true"
+						xmlns=""/>
+						<InnerException i:nil="true"
+							xmlns=""/>
+							<HelpURL i:nil="true"
+								xmlns=""/>
+								<StackTraceString i:nil="true"
+									xmlns=""/>
+									<RemoteStackTraceString i:nil="true"
+										xmlns=""/>
+										<RemoteStackIndex i:type="x:int"
+											xmlns="">0
+										</RemoteStackIndex>
+										<ExceptionMethod i:nil="true"
+											xmlns=""/>
+											<HResult i:type="x:int"
+												xmlns="">-2146233088
+											</HResult>
+											<Source i:nil="true"
+												xmlns=""/>
+												<WatsonBuckets i:nil="true"
+													xmlns=""/>
+												</BusinessException>
+											</s:Detail>
+										</s:Fault>
+									</s:Body>
+								</s:Envelope>
+--------------------------------------

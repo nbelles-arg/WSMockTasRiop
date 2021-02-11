@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="PagoTarjetaSvc" targetNamespace="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<wsp:Policy wsu:Id="PRISMA_PagoTarjetaSvcEndPoint_policy">
+		<wsp:ExactlyOne>
+			<wsp:All>
+				<sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+					<wsp:Policy>
+						<sp:TransportToken>
+							<wsp:Policy>
+								<sp:HttpsToken RequireClientCertificate="true"/>
+							</wsp:Policy>
+						</sp:TransportToken>
+						<sp:AlgorithmSuite>
+							<wsp:Policy>
+								<sp:Basic256/>
+							</wsp:Policy>
+						</sp:AlgorithmSuite>
+						<sp:Layout>
+							<wsp:Policy>
+								<sp:Strict/>
+							</wsp:Policy>
+						</sp:Layout>
+					</wsp:Policy>
+				</sp:TransportBinding>
+				<wsaw:UsingAddressing/>
+			</wsp:All>
+		</wsp:ExactlyOne>
+	</wsp:Policy>
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://tempuri.org/Imports">
+			<xsd:import namespace="http://tempuri.org/" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_PagoTarjetaSvc/prisma_pagotarjetasvc0.xml"/>
+			<xsd:import namespace="http://schemas.datacontract.org/2004/07/Isban.Common" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_PagoTarjetaSvc/prisma_pagotarjetasvc3.xml"/>
+			<xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_PagoTarjetaSvc/prisma_pagotarjetasvc1.xml"/>
+			<xsd:import namespace="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_PagoTarjetaSvc/prisma_pagotarjetasvc2.xml"/>
+			<xsd:import namespace="http://schemas.datacontract.org/2004/07/System" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_PagoTarjetaSvc/prisma_pagotarjetasvc4.xml"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="IPagoTarjeta_PagarTarjeta_InputMessage">
+		<wsdl:part element="tns:PagarTarjeta" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_PagarTarjeta_OutputMessage">
+		<wsdl:part element="tns:PagarTarjetaResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_PagarTarjeta_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q1:BusinessException" name="detail" xmlns:q1="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_PagarTarjeta_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q2:TechnicalException" name="detail" xmlns:q2="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_ConsultarPagoTarjeta_InputMessage">
+		<wsdl:part element="tns:ConsultarPagoTarjeta" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_ConsultarPagoTarjeta_OutputMessage">
+		<wsdl:part element="tns:ConsultarPagoTarjetaResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_ConsultarPagoTarjeta_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q3:BusinessException" name="detail" xmlns:q3="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_ConsultarPagoTarjeta_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q4:TechnicalException" name="detail" xmlns:q4="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_ObtenerDatosTarjeta_InputMessage">
+		<wsdl:part element="tns:ObtenerDatosTarjeta" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_ObtenerDatosTarjeta_OutputMessage">
+		<wsdl:part element="tns:ObtenerDatosTarjetaResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_ObtenerDatosTarjeta_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q5:BusinessException" name="detail" xmlns:q5="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_ObtenerDatosTarjeta_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q6:TechnicalException" name="detail" xmlns:q6="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_ObtenerTitularTarjeta_InputMessage">
+		<wsdl:part element="tns:ObtenerTitularTarjeta" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_ObtenerTitularTarjeta_OutputMessage">
+		<wsdl:part element="tns:ObtenerTitularTarjetaResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_ObtenerTitularTarjeta_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q7:BusinessException" name="detail" xmlns:q7="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_ObtenerTitularTarjeta_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q8:TechnicalException" name="detail" xmlns:q8="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_ObtenerDatosTarjetas_InputMessage">
+		<wsdl:part element="tns:ObtenerDatosTarjetas" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_ObtenerDatosTarjetas_OutputMessage">
+		<wsdl:part element="tns:ObtenerDatosTarjetasResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_ObtenerDatosTarjetas_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q9:BusinessException" name="detail" xmlns:q9="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_ObtenerDatosTarjetas_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q10:TechnicalException" name="detail" xmlns:q10="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_ConsultarConsolidadoDeTarjeta_InputMessage">
+		<wsdl:part element="tns:ConsultarConsolidadoDeTarjeta" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_ConsultarConsolidadoDeTarjeta_OutputMessage">
+		<wsdl:part element="tns:ConsultarConsolidadoDeTarjetaResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_ConsultarConsolidadoDeTarjeta_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q11:BusinessException" name="detail" xmlns:q11="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_ConsultarConsolidadoDeTarjeta_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q12:TechnicalException" name="detail" xmlns:q12="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_ObtenerDatosDeCuentaTarjeta_InputMessage">
+		<wsdl:part element="tns:ObtenerDatosDeCuentaTarjeta" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_ObtenerDatosDeCuentaTarjeta_OutputMessage">
+		<wsdl:part element="tns:ObtenerDatosDeCuentaTarjetaResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_ObtenerDatosDeCuentaTarjeta_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q13:BusinessException" name="detail" xmlns:q13="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_ObtenerDatosDeCuentaTarjeta_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q14:TechnicalException" name="detail" xmlns:q14="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_PagarTarjetaDepEfec_InputMessage">
+		<wsdl:part element="tns:PagarTarjetaDepEfec" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_PagarTarjetaDepEfec_OutputMessage">
+		<wsdl:part element="tns:PagarTarjetaDepEfecResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_PagarTarjetaDepEfec_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q15:BusinessException" name="detail" xmlns:q15="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_PagarTarjetaDepEfec_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q16:TechnicalException" name="detail" xmlns:q16="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_ConsultarPagoTarjetaPrisma_InputMessage">
+		<wsdl:part element="tns:ConsultarPagoTarjetaPrisma" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_ConsultarPagoTarjetaPrisma_OutputMessage">
+		<wsdl:part element="tns:ConsultarPagoTarjetaPrismaResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_ConsultarPagoTarjetaPrisma_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q17:BusinessException" name="detail" xmlns:q17="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_ConsultarPagoTarjetaPrisma_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q18:TechnicalException" name="detail" xmlns:q18="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_PagoTarjetaPrisma_InputMessage">
+		<wsdl:part element="tns:PagoTarjetaPrisma" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_PagoTarjetaPrisma_OutputMessage">
+		<wsdl:part element="tns:PagoTarjetaPrismaResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_PagoTarjetaPrisma_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q19:BusinessException" name="detail" xmlns:q19="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IPagoTarjeta_PagoTarjetaPrisma_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q20:TechnicalException" name="detail" xmlns:q20="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:portType name="IPagoTarjeta">
+		<wsdl:operation name="PagarTarjeta">
+			<wsdl:input message="tns:IPagoTarjeta_PagarTarjeta_InputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/PagarTarjeta"/>
+			<wsdl:output message="tns:IPagoTarjeta_PagarTarjeta_OutputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/PagarTarjetaResponse"/>
+			<wsdl:fault message="tns:IPagoTarjeta_PagarTarjeta_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/PagarTarjetaBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IPagoTarjeta_PagarTarjeta_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/PagarTarjetaTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultarPagoTarjeta">
+			<wsdl:input message="tns:IPagoTarjeta_ConsultarPagoTarjeta_InputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjeta"/>
+			<wsdl:output message="tns:IPagoTarjeta_ConsultarPagoTarjeta_OutputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaResponse"/>
+			<wsdl:fault message="tns:IPagoTarjeta_ConsultarPagoTarjeta_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IPagoTarjeta_ConsultarPagoTarjeta_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerDatosTarjeta">
+			<wsdl:input message="tns:IPagoTarjeta_ObtenerDatosTarjeta_InputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerDatosTarjeta"/>
+			<wsdl:output message="tns:IPagoTarjeta_ObtenerDatosTarjeta_OutputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerDatosTarjetaResponse"/>
+			<wsdl:fault message="tns:IPagoTarjeta_ObtenerDatosTarjeta_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerDatosTarjetaBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IPagoTarjeta_ObtenerDatosTarjeta_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerDatosTarjetaTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerTitularTarjeta">
+			<wsdl:input message="tns:IPagoTarjeta_ObtenerTitularTarjeta_InputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerTitularTarjeta"/>
+			<wsdl:output message="tns:IPagoTarjeta_ObtenerTitularTarjeta_OutputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerTitularTarjetaResponse"/>
+			<wsdl:fault message="tns:IPagoTarjeta_ObtenerTitularTarjeta_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerTitularTarjetaBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IPagoTarjeta_ObtenerTitularTarjeta_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerTitularTarjetaTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerDatosTarjetas">
+			<wsdl:input message="tns:IPagoTarjeta_ObtenerDatosTarjetas_InputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerDatosTarjetas"/>
+			<wsdl:output message="tns:IPagoTarjeta_ObtenerDatosTarjetas_OutputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerDatosTarjetasResponse"/>
+			<wsdl:fault message="tns:IPagoTarjeta_ObtenerDatosTarjetas_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerDatosTarjetasBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IPagoTarjeta_ObtenerDatosTarjetas_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerDatosTarjetasTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultarConsolidadoDeTarjeta">
+			<wsdl:input message="tns:IPagoTarjeta_ConsultarConsolidadoDeTarjeta_InputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/ConsultarConsolidadoDeTarjeta"/>
+			<wsdl:output message="tns:IPagoTarjeta_ConsultarConsolidadoDeTarjeta_OutputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/ConsultarConsolidadoDeTarjetaResponse"/>
+			<wsdl:fault message="tns:IPagoTarjeta_ConsultarConsolidadoDeTarjeta_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/ConsultarConsolidadoDeTarjetaBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IPagoTarjeta_ConsultarConsolidadoDeTarjeta_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/ConsultarConsolidadoDeTarjetaTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerDatosDeCuentaTarjeta">
+			<wsdl:input message="tns:IPagoTarjeta_ObtenerDatosDeCuentaTarjeta_InputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerDatosDeCuentaTarjeta"/>
+			<wsdl:output message="tns:IPagoTarjeta_ObtenerDatosDeCuentaTarjeta_OutputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerDatosDeCuentaTarjetaResponse"/>
+			<wsdl:fault message="tns:IPagoTarjeta_ObtenerDatosDeCuentaTarjeta_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerDatosDeCuentaTarjetaBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IPagoTarjeta_ObtenerDatosDeCuentaTarjeta_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerDatosDeCuentaTarjetaTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="PagarTarjetaDepEfec">
+			<wsdl:input message="tns:IPagoTarjeta_PagarTarjetaDepEfec_InputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/PagarTarjetaDepEfec"/>
+			<wsdl:output message="tns:IPagoTarjeta_PagarTarjetaDepEfec_OutputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/PagarTarjetaDepEfecResponse"/>
+			<wsdl:fault message="tns:IPagoTarjeta_PagarTarjetaDepEfec_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/PagarTarjetaDepEfecBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IPagoTarjeta_PagarTarjetaDepEfec_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/PagarTarjetaDepEfecTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultarPagoTarjetaPrisma">
+			<wsdl:input message="tns:IPagoTarjeta_ConsultarPagoTarjetaPrisma_InputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaPrisma"/>
+			<wsdl:output message="tns:IPagoTarjeta_ConsultarPagoTarjetaPrisma_OutputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaPrismaResponse"/>
+			<wsdl:fault message="tns:IPagoTarjeta_ConsultarPagoTarjetaPrisma_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaPrismaBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IPagoTarjeta_ConsultarPagoTarjetaPrisma_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaPrismaTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="PagoTarjetaPrisma">
+			<wsdl:input message="tns:IPagoTarjeta_PagoTarjetaPrisma_InputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/PagoTarjetaPrisma"/>
+			<wsdl:output message="tns:IPagoTarjeta_PagoTarjetaPrisma_OutputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/PagoTarjetaPrismaResponse"/>
+			<wsdl:fault message="tns:IPagoTarjeta_PagoTarjetaPrisma_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/PagoTarjetaPrismaBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IPagoTarjeta_PagoTarjetaPrisma_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/PagoTarjetaPrismaTechnicalExceptionFault"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="PRISMA_PagoTarjetaSvcEndPoint" type="tns:IPagoTarjeta">
+		<wsp:PolicyReference URI="#PRISMA_PagoTarjetaSvcEndPoint_policy"/>
+		<soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="PagarTarjeta">
+			<soap12:operation soapAction="http://tempuri.org/IPagoTarjeta/PagarTarjeta" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultarPagoTarjeta">
+			<soap12:operation soapAction="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjeta" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerDatosTarjeta">
+			<soap12:operation soapAction="http://tempuri.org/IPagoTarjeta/ObtenerDatosTarjeta" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerTitularTarjeta">
+			<soap12:operation soapAction="http://tempuri.org/IPagoTarjeta/ObtenerTitularTarjeta" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerDatosTarjetas">
+			<soap12:operation soapAction="http://tempuri.org/IPagoTarjeta/ObtenerDatosTarjetas" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultarConsolidadoDeTarjeta">
+			<soap12:operation soapAction="http://tempuri.org/IPagoTarjeta/ConsultarConsolidadoDeTarjeta" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerDatosDeCuentaTarjeta">
+			<soap12:operation soapAction="http://tempuri.org/IPagoTarjeta/ObtenerDatosDeCuentaTarjeta" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="PagarTarjetaDepEfec">
+			<soap12:operation soapAction="http://tempuri.org/IPagoTarjeta/PagarTarjetaDepEfec" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultarPagoTarjetaPrisma">
+			<soap12:operation soapAction="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaPrisma" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="PagoTarjetaPrisma">
+			<soap12:operation soapAction="http://tempuri.org/IPagoTarjeta/PagoTarjetaPrisma" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="PagoTarjetaSvc">
+		<wsdl:port binding="tns:PRISMA_PagoTarjetaSvcEndPoint" name="PRISMA_PagoTarjetaSvcEndPoint">
+			<soap12:address location="https://webfronthomo01.rio.ar.bsch:8501/prisma_pagotarjetasvc.svc"/>
+			<wsa10:EndpointReference>
+				<wsa10:Address>https://webfronthomo01.rio.ar.bsch:8501/prisma_pagotarjetasvc.svc</wsa10:Address>
+			</wsa10:EndpointReference>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

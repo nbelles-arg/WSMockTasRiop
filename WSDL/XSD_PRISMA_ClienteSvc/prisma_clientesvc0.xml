@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:tns="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_ClienteSvc/prisma_clientesvc2.xml"/>
+	<xs:element name="ObtenerCliente">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q1:ClienteSvcObtenerClienteRequest" xmlns:q1="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+				<xs:element minOccurs="0" name="requestAgenda" nillable="true" type="q2:ClienteSvcObtenerAgendaDeTercerosRequest" xmlns:q2="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerClienteResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ObtenerClienteResult" nillable="true" type="q3:ClienteSvcObtenerClienteResponse" xmlns:q3="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerDatosDeCuenta">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q4:ClienteSvcObtenerDatosDeCuentaRequest" xmlns:q4="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerDatosDeCuentaResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ObtenerDatosDeCuentaResult" nillable="true" type="q5:ClienteSvcObtenerDatosDeCuentaResponse" xmlns:q5="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerEstadoYClave">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q6:ClienteSvcObtenerEstadoYClaveRequest" xmlns:q6="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerEstadoYClaveResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ObtenerEstadoYClaveResult" nillable="true" type="q7:ClienteSvcObtenerEstadoYClaveResponse" xmlns:q7="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerMovimientosCuenta">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q8:ClienteSvcObtenerMovimientosCuentaRequest" xmlns:q8="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerMovimientosCuentaResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ObtenerMovimientosCuentaResult" nillable="true" type="q9:ClienteSvcObtenerMovimientosCuentaResponse" xmlns:q9="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerMovimientosCuentaV160">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q10:ClienteSvcObtenerMovimientosCuentaRequest" xmlns:q10="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerMovimientosCuentaV160Response">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ObtenerMovimientosCuentaV160Result" nillable="true" type="q11:ClienteSvcObtenerMovimientosCuentaV160Response" xmlns:q11="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerAcuerdosDeRecaudaciones">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q12:ClienteSvcObtenerAcuerdosDeRecaudacionesRequest" xmlns:q12="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerAcuerdosDeRecaudacionesResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ObtenerAcuerdosDeRecaudacionesResult" nillable="true" type="q13:ClienteSvcObtenerAcuerdosDeRecaudacionesResponse" xmlns:q13="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerDeudasDeRecaudaciones">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q14:ClienteSvcObtenerDeudasDeRecaudacionesRequest" xmlns:q14="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerDeudasDeRecaudacionesResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ObtenerDeudasDeRecaudacionesResult" nillable="true" type="q15:ClienteSvcObtenerDeudasDeRecaudacionesResponse" xmlns:q15="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerPagoRecaudacionesPorID">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q16:ClienteSvcObtenerPagoPorIdRequest" xmlns:q16="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerPagoRecaudacionesPorIDResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ObtenerPagoRecaudacionesPorIDResult" nillable="true" type="q17:ClienteSvcObtenerPagoPorIdResponse" xmlns:q17="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerDeudasDeRecaudacionesV2">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q18:ClienteSvcObtenerDeudasDeRecaudacionesRequest" xmlns:q18="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerDeudasDeRecaudacionesV2Response">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ObtenerDeudasDeRecaudacionesV2Result" nillable="true" type="q19:ClienteSvcObtenerDeudasDeRecaudacionesResponse" xmlns:q19="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerFormaDePagoRecaudaciones">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q20:ClienteSvcObtenerFormaDePagoRequest" xmlns:q20="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerFormaDePagoRecaudacionesResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ObtenerFormaDePagoRecaudacionesResult" nillable="true" type="q21:ClienteSvcObtenerFormaDePagoResponse" xmlns:q21="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:tns="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_PagoTarjetaSvc/prisma_pagotarjetasvc2.xml"/>
+	<xs:element name="PagarTarjeta">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q1:PagoTarjetaSvcPagarTarjetaRequest" xmlns:q1="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PagarTarjetaResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="PagarTarjetaResult" nillable="true" type="q2:PagoTarjetaSvcPagarTarjetaResponse" xmlns:q2="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarPagoTarjeta">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q3:PagoTarjetaSvcConsultarPagoDeTarjetaRequest" xmlns:q3="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarPagoTarjetaResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ConsultarPagoTarjetaResult" nillable="true" type="q4:PagoTarjetaSvcConsultarPagoDeTarjetaResponse" xmlns:q4="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerDatosTarjeta">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q5:PagoTarjetaSvcObtenerDatosTarjetaRequest" xmlns:q5="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerDatosTarjetaResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ObtenerDatosTarjetaResult" nillable="true" type="q6:PagoTarjetaSvcObtenerDatosTarjetaResponse" xmlns:q6="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerTitularTarjeta">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q7:PagoTarjetaSvcObtenerTitularTarjetaRequest" xmlns:q7="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerTitularTarjetaResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ObtenerTitularTarjetaResult" nillable="true" type="q8:PagoTarjetaSvcObtenerTitularTarjetaResponse" xmlns:q8="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerDatosTarjetas">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q9:PagoTarjetaSvcObtenerDatosTarjetasRequest" xmlns:q9="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerDatosTarjetasResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ObtenerDatosTarjetasResult" nillable="true" type="q10:PagoTarjetaSvcObtenerDatosTarjetasResponse" xmlns:q10="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarConsolidadoDeTarjeta">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q11:PagoTarjetaSvcConsultarConsolidadoDeTarjetaRequest" xmlns:q11="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarConsolidadoDeTarjetaResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ConsultarConsolidadoDeTarjetaResult" nillable="true" type="q12:PagoTarjetaSvcConsultarConsolidadoDeTarjetaResponse" xmlns:q12="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerDatosDeCuentaTarjeta">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q13:PagoTarjetaSvcObtenerDatosCuentaTarjetaRequest" xmlns:q13="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerDatosDeCuentaTarjetaResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ObtenerDatosDeCuentaTarjetaResult" nillable="true" type="q14:PagoTarjetaSvcObtenerDatosCuentaTarjetaResponse" xmlns:q14="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PagarTarjetaDepEfec">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q15:PagoTarjetaSvcPagarTarjetaDepEfecRequest" xmlns:q15="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PagarTarjetaDepEfecResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="PagarTarjetaDepEfecResult" nillable="true" type="q16:PagoTarjetaSvcPagarTarjetaDepEfecResponse" xmlns:q16="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarPagoTarjetaPrisma">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q17:PagoTarjetaSvcConsultarPagoDeTarjetaPrismaRequest" xmlns:q17="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsultarPagoTarjetaPrismaResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ConsultarPagoTarjetaPrismaResult" nillable="true" type="q18:PagoTarjetaSvcConsultarPagoDeTarjetaPrismaResponse" xmlns:q18="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PagoTarjetaPrisma">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q19:PagoTarjetaSvcPagoTarjetaPrismaRequest" xmlns:q19="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PagoTarjetaPrismaResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="PagoTarjetaPrismaResult" nillable="true" type="q20:PagoTarjetaSvcPagoTarjetaPrismaResponse" xmlns:q20="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

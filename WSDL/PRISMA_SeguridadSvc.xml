@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="SeguridadSvc" targetNamespace="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<wsp:Policy wsu:Id="PRISMA_SeguridadSvcEndpoint_policy">
+		<wsp:ExactlyOne>
+			<wsp:All>
+				<sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+					<wsp:Policy>
+						<sp:TransportToken>
+							<wsp:Policy>
+								<sp:HttpsToken RequireClientCertificate="true"/>
+							</wsp:Policy>
+						</sp:TransportToken>
+						<sp:AlgorithmSuite>
+							<wsp:Policy>
+								<sp:Basic256/>
+							</wsp:Policy>
+						</sp:AlgorithmSuite>
+						<sp:Layout>
+							<wsp:Policy>
+								<sp:Strict/>
+							</wsp:Policy>
+						</sp:Layout>
+					</wsp:Policy>
+				</sp:TransportBinding>
+				<wsaw:UsingAddressing/>
+			</wsp:All>
+		</wsp:ExactlyOne>
+	</wsp:Policy>
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://tempuri.org/Imports">
+			<xsd:import namespace="http://tempuri.org/" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_SeguridadSvc/prisma_seguridadsvc0.xml"/>
+			<xsd:import namespace="http://schemas.datacontract.org/2004/07/Isban.Common" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_SeguridadSvc/prisma_seguridadsvc3.xml"/>
+			<xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_SeguridadSvc/prisma_seguridadsvc1.xml"/>
+			<xsd:import namespace="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_SeguridadSvc/prisma_seguridadsvc2.xml"/>
+			<xsd:import namespace="http://schemas.datacontract.org/2004/07/System" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_SeguridadSvc/prisma_seguridadsvc4.xml"/>
+			<xsd:import namespace="http://schemas.datacontract.org/2004/07/TAS.Common.ServiceContracts" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_SeguridadSvc/prisma_seguridadsvc5.xml"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="ISeguridadSvc_IdentificarCliente_InputMessage">
+		<wsdl:part element="tns:IdentificarCliente" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_IdentificarCliente_OutputMessage">
+		<wsdl:part element="tns:IdentificarClienteResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_IdentificarCliente_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q1:BusinessException" name="detail" xmlns:q1="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_IdentificarCliente_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q2:TechnicalException" name="detail" xmlns:q2="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_IdentificarClienteConVencimiento_InputMessage">
+		<wsdl:part element="tns:IdentificarClienteConVencimiento" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_IdentificarClienteConVencimiento_OutputMessage">
+		<wsdl:part element="tns:IdentificarClienteConVencimientoResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_IdentificarClienteConVencimiento_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q3:BusinessException" name="detail" xmlns:q3="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_IdentificarClienteConVencimiento_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q4:TechnicalException" name="detail" xmlns:q4="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_ObtenerDocumentoPorNumeroTarjeta_InputMessage">
+		<wsdl:part element="tns:ObtenerDocumentoPorNumeroTarjeta" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_ObtenerDocumentoPorNumeroTarjeta_OutputMessage">
+		<wsdl:part element="tns:ObtenerDocumentoPorNumeroTarjetaResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_ObtenerDocumentoPorNumeroTarjeta_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q5:BusinessException" name="detail" xmlns:q5="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_ObtenerDocumentoPorNumeroTarjeta_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q6:TechnicalException" name="detail" xmlns:q6="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_CambiarClaveCanalIndividuo_InputMessage">
+		<wsdl:part element="tns:CambiarClaveCanalIndividuo" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_CambiarClaveCanalIndividuo_OutputMessage">
+		<wsdl:part element="tns:CambiarClaveCanalIndividuoResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_CambiarClaveCanalIndividuo_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q7:BusinessException" name="detail" xmlns:q7="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_CambiarClaveCanalIndividuo_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q8:TechnicalException" name="detail" xmlns:q8="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_CambiarClaveCanalEmpresa_InputMessage">
+		<wsdl:part element="tns:CambiarClaveCanalEmpresa" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_CambiarClaveCanalEmpresa_OutputMessage">
+		<wsdl:part element="tns:CambiarClaveCanalEmpresaResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_CambiarClaveCanalEmpresa_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q9:BusinessException" name="detail" xmlns:q9="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_CambiarClaveCanalEmpresa_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q10:TechnicalException" name="detail" xmlns:q10="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_CambiarClaveCanalFirmante_InputMessage">
+		<wsdl:part element="tns:CambiarClaveCanalFirmante" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_CambiarClaveCanalFirmante_OutputMessage">
+		<wsdl:part element="tns:CambiarClaveCanalFirmanteResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_CambiarClaveCanalFirmante_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q11:BusinessException" name="detail" xmlns:q11="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_CambiarClaveCanalFirmante_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q12:TechnicalException" name="detail" xmlns:q12="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_ValidarClaveFirmante_InputMessage">
+		<wsdl:part element="tns:ValidarClaveFirmante" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_ValidarClaveFirmante_OutputMessage">
+		<wsdl:part element="tns:ValidarClaveFirmanteResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_ValidarClaveFirmante_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q13:BusinessException" name="detail" xmlns:q13="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_ValidarClaveFirmante_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q14:TechnicalException" name="detail" xmlns:q14="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_ObtenerServiciosDebitoAutomatico_InputMessage">
+		<wsdl:part element="tns:ObtenerServiciosDebitoAutomatico" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_ObtenerServiciosDebitoAutomatico_OutputMessage">
+		<wsdl:part element="tns:ObtenerServiciosDebitoAutomaticoResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_ObtenerServiciosDebitoAutomatico_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q15:BusinessException" name="detail" xmlns:q15="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_ObtenerServiciosDebitoAutomatico_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q16:TechnicalException" name="detail" xmlns:q16="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_ObtenerTitularCuenta_InputMessage">
+		<wsdl:part element="tns:ObtenerTitularCuenta" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_ObtenerTitularCuenta_OutputMessage">
+		<wsdl:part element="tns:ObtenerTitularCuentaResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_ObtenerTitularCuenta_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q17:BusinessException" name="detail" xmlns:q17="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_ObtenerTitularCuenta_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q18:TechnicalException" name="detail" xmlns:q18="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_BlanquearPINBanelco_InputMessage">
+		<wsdl:part element="tns:BlanquearPINBanelco" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_BlanquearPINBanelco_OutputMessage">
+		<wsdl:part element="tns:BlanquearPINBanelcoResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_BlanquearPINBanelco_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q19:BusinessException" name="detail" xmlns:q19="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_BlanquearPINBanelco_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q20:TechnicalException" name="detail" xmlns:q20="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_LogoutSession_InputMessage">
+		<wsdl:part element="tns:LogoutSession" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_LogoutSession_OutputMessage">
+		<wsdl:part element="tns:LogoutSessionResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_LogoutSession_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q21:BusinessException" name="detail" xmlns:q21="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_LogoutSession_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q22:TechnicalException" name="detail" xmlns:q22="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_LoginSession_InputMessage">
+		<wsdl:part element="tns:LoginSession" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_LoginSession_OutputMessage">
+		<wsdl:part element="tns:LoginSessionResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_LoginSession_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q23:BusinessException" name="detail" xmlns:q23="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_LoginSession_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q24:TechnicalException" name="detail" xmlns:q24="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_UpdateSession_InputMessage">
+		<wsdl:part element="tns:UpdateSession" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_UpdateSession_OutputMessage">
+		<wsdl:part element="tns:UpdateSessionResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_UpdateSession_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q25:BusinessException" name="detail" xmlns:q25="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="ISeguridadSvc_UpdateSession_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q26:TechnicalException" name="detail" xmlns:q26="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:portType name="ISeguridadSvc">
+		<wsdl:operation name="IdentificarCliente">
+			<wsdl:input message="tns:ISeguridadSvc_IdentificarCliente_InputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/IdentificarCliente"/>
+			<wsdl:output message="tns:ISeguridadSvc_IdentificarCliente_OutputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/IdentificarClienteResponse"/>
+			<wsdl:fault message="tns:ISeguridadSvc_IdentificarCliente_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/IdentificarClienteBusinessExceptionFault"/>
+			<wsdl:fault message="tns:ISeguridadSvc_IdentificarCliente_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/IdentificarClienteTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="IdentificarClienteConVencimiento">
+			<wsdl:input message="tns:ISeguridadSvc_IdentificarClienteConVencimiento_InputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/IdentificarClienteConVencimiento"/>
+			<wsdl:output message="tns:ISeguridadSvc_IdentificarClienteConVencimiento_OutputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/IdentificarClienteConVencimientoResponse"/>
+			<wsdl:fault message="tns:ISeguridadSvc_IdentificarClienteConVencimiento_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/IdentificarClienteConVencimientoBusinessExceptionFault"/>
+			<wsdl:fault message="tns:ISeguridadSvc_IdentificarClienteConVencimiento_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/IdentificarClienteConVencimientoTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerDocumentoPorNumeroTarjeta">
+			<wsdl:input message="tns:ISeguridadSvc_ObtenerDocumentoPorNumeroTarjeta_InputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/ObtenerDocumentoPorNumeroTarjeta"/>
+			<wsdl:output message="tns:ISeguridadSvc_ObtenerDocumentoPorNumeroTarjeta_OutputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/ObtenerDocumentoPorNumeroTarjetaResponse"/>
+			<wsdl:fault message="tns:ISeguridadSvc_ObtenerDocumentoPorNumeroTarjeta_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/ObtenerDocumentoPorNumeroTarjetaBusinessExceptionFault"/>
+			<wsdl:fault message="tns:ISeguridadSvc_ObtenerDocumentoPorNumeroTarjeta_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/ObtenerDocumentoPorNumeroTarjetaTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="CambiarClaveCanalIndividuo">
+			<wsdl:input message="tns:ISeguridadSvc_CambiarClaveCanalIndividuo_InputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalIndividuo"/>
+			<wsdl:output message="tns:ISeguridadSvc_CambiarClaveCanalIndividuo_OutputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalIndividuoResponse"/>
+			<wsdl:fault message="tns:ISeguridadSvc_CambiarClaveCanalIndividuo_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalIndividuoBusinessExceptionFault"/>
+			<wsdl:fault message="tns:ISeguridadSvc_CambiarClaveCanalIndividuo_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalIndividuoTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="CambiarClaveCanalEmpresa">
+			<wsdl:input message="tns:ISeguridadSvc_CambiarClaveCanalEmpresa_InputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalEmpresa"/>
+			<wsdl:output message="tns:ISeguridadSvc_CambiarClaveCanalEmpresa_OutputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalEmpresaResponse"/>
+			<wsdl:fault message="tns:ISeguridadSvc_CambiarClaveCanalEmpresa_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalEmpresaBusinessExceptionFault"/>
+			<wsdl:fault message="tns:ISeguridadSvc_CambiarClaveCanalEmpresa_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalEmpresaTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="CambiarClaveCanalFirmante">
+			<wsdl:input message="tns:ISeguridadSvc_CambiarClaveCanalFirmante_InputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalFirmante"/>
+			<wsdl:output message="tns:ISeguridadSvc_CambiarClaveCanalFirmante_OutputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalFirmanteResponse"/>
+			<wsdl:fault message="tns:ISeguridadSvc_CambiarClaveCanalFirmante_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalFirmanteBusinessExceptionFault"/>
+			<wsdl:fault message="tns:ISeguridadSvc_CambiarClaveCanalFirmante_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalFirmanteTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="ValidarClaveFirmante">
+			<wsdl:input message="tns:ISeguridadSvc_ValidarClaveFirmante_InputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/ValidarClaveFirmante"/>
+			<wsdl:output message="tns:ISeguridadSvc_ValidarClaveFirmante_OutputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/ValidarClaveFirmanteResponse"/>
+			<wsdl:fault message="tns:ISeguridadSvc_ValidarClaveFirmante_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/ValidarClaveFirmanteBusinessExceptionFault"/>
+			<wsdl:fault message="tns:ISeguridadSvc_ValidarClaveFirmante_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/ValidarClaveFirmanteTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerServiciosDebitoAutomatico">
+			<wsdl:input message="tns:ISeguridadSvc_ObtenerServiciosDebitoAutomatico_InputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/ObtenerServiciosDebitoAutomatico"/>
+			<wsdl:output message="tns:ISeguridadSvc_ObtenerServiciosDebitoAutomatico_OutputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/ObtenerServiciosDebitoAutomaticoResponse"/>
+			<wsdl:fault message="tns:ISeguridadSvc_ObtenerServiciosDebitoAutomatico_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/ObtenerServiciosDebitoAutomaticoBusinessExceptionFault"/>
+			<wsdl:fault message="tns:ISeguridadSvc_ObtenerServiciosDebitoAutomatico_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/ObtenerServiciosDebitoAutomaticoTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerTitularCuenta">
+			<wsdl:input message="tns:ISeguridadSvc_ObtenerTitularCuenta_InputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/ObtenerTitularCuenta"/>
+			<wsdl:output message="tns:ISeguridadSvc_ObtenerTitularCuenta_OutputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/ObtenerTitularCuentaResponse"/>
+			<wsdl:fault message="tns:ISeguridadSvc_ObtenerTitularCuenta_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/ObtenerTitularCuentaBusinessExceptionFault"/>
+			<wsdl:fault message="tns:ISeguridadSvc_ObtenerTitularCuenta_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/ObtenerTitularCuentaTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="BlanquearPINBanelco">
+			<wsdl:input message="tns:ISeguridadSvc_BlanquearPINBanelco_InputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/BlanquearPINBanelco"/>
+			<wsdl:output message="tns:ISeguridadSvc_BlanquearPINBanelco_OutputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/BlanquearPINBanelcoResponse"/>
+			<wsdl:fault message="tns:ISeguridadSvc_BlanquearPINBanelco_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/BlanquearPINBanelcoBusinessExceptionFault"/>
+			<wsdl:fault message="tns:ISeguridadSvc_BlanquearPINBanelco_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/BlanquearPINBanelcoTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="LogoutSession">
+			<wsdl:input message="tns:ISeguridadSvc_LogoutSession_InputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/LogoutSession"/>
+			<wsdl:output message="tns:ISeguridadSvc_LogoutSession_OutputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/LogoutSessionResponse"/>
+			<wsdl:fault message="tns:ISeguridadSvc_LogoutSession_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/LogoutSessionBusinessExceptionFault"/>
+			<wsdl:fault message="tns:ISeguridadSvc_LogoutSession_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/LogoutSessionTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="LoginSession">
+			<wsdl:input message="tns:ISeguridadSvc_LoginSession_InputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/LoginSession"/>
+			<wsdl:output message="tns:ISeguridadSvc_LoginSession_OutputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/LoginSessionResponse"/>
+			<wsdl:fault message="tns:ISeguridadSvc_LoginSession_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/LoginSessionBusinessExceptionFault"/>
+			<wsdl:fault message="tns:ISeguridadSvc_LoginSession_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/LoginSessionTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateSession">
+			<wsdl:input message="tns:ISeguridadSvc_UpdateSession_InputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/UpdateSession"/>
+			<wsdl:output message="tns:ISeguridadSvc_UpdateSession_OutputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/UpdateSessionResponse"/>
+			<wsdl:fault message="tns:ISeguridadSvc_UpdateSession_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/UpdateSessionBusinessExceptionFault"/>
+			<wsdl:fault message="tns:ISeguridadSvc_UpdateSession_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/UpdateSessionTechnicalExceptionFault"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="PRISMA_SeguridadSvcEndpoint" type="tns:ISeguridadSvc">
+		<wsp:PolicyReference URI="#PRISMA_SeguridadSvcEndpoint_policy"/>
+		<soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="IdentificarCliente">
+			<soap12:operation soapAction="http://tempuri.org/ISeguridadSvc/IdentificarCliente" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="IdentificarClienteConVencimiento">
+			<soap12:operation soapAction="http://tempuri.org/ISeguridadSvc/IdentificarClienteConVencimiento" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerDocumentoPorNumeroTarjeta">
+			<soap12:operation soapAction="http://tempuri.org/ISeguridadSvc/ObtenerDocumentoPorNumeroTarjeta" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CambiarClaveCanalIndividuo">
+			<soap12:operation soapAction="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalIndividuo" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CambiarClaveCanalEmpresa">
+			<soap12:operation soapAction="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalEmpresa" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CambiarClaveCanalFirmante">
+			<soap12:operation soapAction="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalFirmante" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ValidarClaveFirmante">
+			<soap12:operation soapAction="http://tempuri.org/ISeguridadSvc/ValidarClaveFirmante" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerServiciosDebitoAutomatico">
+			<soap12:operation soapAction="http://tempuri.org/ISeguridadSvc/ObtenerServiciosDebitoAutomatico" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerTitularCuenta">
+			<soap12:operation soapAction="http://tempuri.org/ISeguridadSvc/ObtenerTitularCuenta" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="BlanquearPINBanelco">
+			<soap12:operation soapAction="http://tempuri.org/ISeguridadSvc/BlanquearPINBanelco" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="LogoutSession">
+			<soap12:operation soapAction="http://tempuri.org/ISeguridadSvc/LogoutSession" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="LoginSession">
+			<soap12:operation soapAction="http://tempuri.org/ISeguridadSvc/LoginSession" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateSession">
+			<soap12:operation soapAction="http://tempuri.org/ISeguridadSvc/UpdateSession" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="SeguridadSvc">
+		<wsdl:port binding="tns:PRISMA_SeguridadSvcEndpoint" name="PRISMA_SeguridadSvcEndpoint">
+			<soap12:address location="https://webfronthomo01.rio.ar.bsch:8501/prisma_seguridadsvc.svc"/>
+			<wsa10:EndpointReference>
+				<wsa10:Address>https://webfronthomo01.rio.ar.bsch:8501/prisma_seguridadsvc.svc</wsa10:Address>
+			</wsa10:EndpointReference>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

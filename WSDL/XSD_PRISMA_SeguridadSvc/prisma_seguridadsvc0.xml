@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:tns="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_SeguridadSvc/prisma_seguridadsvc2.xml"/>
+	<xs:import namespace="http://schemas.datacontract.org/2004/07/TAS.Common.ServiceContracts" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_SeguridadSvc/prisma_seguridadsvc5.xml"/>
+	<xs:element name="IdentificarCliente">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q1:SeguridadSvcIdentificarClienteRequest" xmlns:q1="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="IdentificarClienteResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="IdentificarClienteResult" nillable="true" type="q2:SeguridadSvcIdentificarClienteResponse" xmlns:q2="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="IdentificarClienteConVencimiento">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q3:SeguridadSvcIdentificarClienteRequest" xmlns:q3="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="IdentificarClienteConVencimientoResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="IdentificarClienteConVencimientoResult" nillable="true" type="q4:SeguridadSvcIdentificarClienteResponse" xmlns:q4="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerDocumentoPorNumeroTarjeta">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q5:SeguridadSvcObtenerDocumentoPorNumeroTarjetaRequest" xmlns:q5="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerDocumentoPorNumeroTarjetaResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ObtenerDocumentoPorNumeroTarjetaResult" nillable="true" type="q6:SeguridadSvcObtenerDocumentoPorNumeroTarjetaResponse" xmlns:q6="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CambiarClaveCanalIndividuo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q7:SeguridadSvcCambiarClaveCanalRequest" xmlns:q7="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CambiarClaveCanalIndividuoResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="CambiarClaveCanalIndividuoResult" nillable="true" type="q8:SeguridadSvcCambiarClaveCanalResponse" xmlns:q8="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CambiarClaveCanalEmpresa">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q9:SeguridadSvcCambiarClaveCanalRequest" xmlns:q9="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CambiarClaveCanalEmpresaResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="CambiarClaveCanalEmpresaResult" nillable="true" type="q10:SeguridadSvcCambiarClaveCanalResponse" xmlns:q10="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CambiarClaveCanalFirmante">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q11:SeguridadSvcCambiarClaveCanalRequest" xmlns:q11="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CambiarClaveCanalFirmanteResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="CambiarClaveCanalFirmanteResult" nillable="true" type="q12:SeguridadSvcCambiarClaveCanalResponse" xmlns:q12="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ValidarClaveFirmante">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q13:SeguridadSvcCambiarClaveCanalRequest" xmlns:q13="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ValidarClaveFirmanteResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ValidarClaveFirmanteResult" nillable="true" type="q14:SeguridadSvcCambiarClaveCanalResponse" xmlns:q14="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerServiciosDebitoAutomatico">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q15:SeguridadSvcObtenerServiciosDebitoAutomaticoRequest" xmlns:q15="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerServiciosDebitoAutomaticoResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ObtenerServiciosDebitoAutomaticoResult" nillable="true" type="q16:SeguridadSvcObtenerServiciosDebitoAutomaticoResponse" xmlns:q16="http://schemas.datacontract.org/2004/07/TAS.Common.ServiceContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerTitularCuenta">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q17:SeguridadSvcObtenerTitularCuentaRequest" xmlns:q17="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ObtenerTitularCuentaResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ObtenerTitularCuentaResult" nillable="true" type="q18:SeguridadSvcObtenerTitularCuentaResponse" xmlns:q18="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BlanquearPINBanelco">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q19:SeguridadSvcBlanquearPINRequest" xmlns:q19="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BlanquearPINBanelcoResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="BlanquearPINBanelcoResult" nillable="true" type="q20:SeguridadSvcBlanquearPINResponse" xmlns:q20="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LogoutSession">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q21:SeguridadSvcLogoutSessionRequest" xmlns:q21="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LogoutSessionResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="LogoutSessionResult" nillable="true" type="q22:SeguridadSvcLogoutSessionResponse" xmlns:q22="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LoginSession">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q23:SeguridadSvcLoginSessionRequest" xmlns:q23="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LoginSessionResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="LoginSessionResult" nillable="true" type="q24:SeguridadSvcLoginSessionResponse" xmlns:q24="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UpdateSession">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q25:SeguridadSvcupdateSessionRequest" xmlns:q25="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UpdateSessionResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="UpdateSessionResult" nillable="true" type="q26:SeguridadSvcupdateSessionResponse" xmlns:q26="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

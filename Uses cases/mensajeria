@@ -1,0 +1,1086 @@
+Tx 01 Ingreso con N° DNI + Clave Santander Aprobada
+
+2020-11-18 16:49:04,391|INFO  [tasRIOPTxnMgr:5 prepare com.banelco.tas.riop.WsIdentificacionService] Outbound Message
+---------------------------
+ID: 1553
+Address: https://webfronthomo01.ar.bsch:8501/prisma_seguridadsvc.svc
+Encoding: UTF-8
+Content-Type: application/soap+xml
+Headers: {Accept=[*/*]}
+Payload: 
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+	<soap:Header>
+		<Action xmlns="http://www.w3.org/2005/08/addressing">http://tempuri.org/ISeguridadSvc/IdentificarCliente</Action>
+		<MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:afd8a0d4-054c-433c-abbc-d3ffc362a8aa</MessageID>
+		<To xmlns="http://www.w3.org/2005/08/addressing">https://webfronthomo01.ar.bsch:8501/prisma_seguridadsvc.svc</To>
+		<ReplyTo xmlns="http://www.w3.org/2005/08/addressing">
+			<Address>http://www.w3.org/2005/08/addressing/anonymous</Address>
+		</ReplyTo>
+	</soap:Header>
+	<soap:Body>
+		<ns2:IdentificarCliente xmlns="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:ns2="http://tempuri.org/" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:ns4="http://schemas.datacontract.org/2004/07/TAS.Common.ServiceContracts" xmlns:ns5="http://schemas.datacontract.org/2004/07/System" xmlns:ns6="http://schemas.datacontract.org/2004/07/BSR.ServiceModel.Common.Exceptions">
+			<ns2:request>
+				<IdTerminal>8</IdTerminal>
+				<NroSucursal>99087</NroSucursal>
+				<PasswordRACF>FREEUSER</PasswordRACF>
+				<UsuarioRACF>FREEUSER</UsuarioRACF>
+				<Clave>6521</Clave>
+				<ClaveNueva>0</ClaveNueva>
+				<FechaNacimiento xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+				<NroDocumento>5618792</NroDocumento>
+			</ns2:request>
+		</ns2:IdentificarCliente>
+	</soap:Body>
+</soap:Envelope>
+--------------------------------------
+2020-11-18 16:49:04,627|INFO  [tasRIOPTxnMgr:5 prepare com.banelco.tas.riop.WsIdentificacionService] Inbound Message
+----------------------------
+ID: 1553
+Response-Code: 200
+Encoding: UTF-8
+Content-Type: application/soap+xml; charset=utf-8
+Headers: {Content-Length=[1260], content-type=[application/soap+xml; charset=utf-8], Date=[Wed, 18 Nov 2020 19:49:03 GMT], Server=[Microsoft-IIS/8.5], X-Powered-By=[ASP.NET]}
+Payload: 
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+	<s:Header>
+		<a:Action s:mustUnderstand="1">http://tempuri.org/ISeguridadSvc/IdentificarClienteResponse</a:Action>
+		<a:RelatesTo>urn:uuid:afd8a0d4-054c-433c-abbc-d3ffc362a8aa</a:RelatesTo>
+	</s:Header>
+	<s:Body>
+		<IdentificarClienteResponse xmlns="http://tempuri.org/">
+			<IdentificarClienteResult xmlns:b="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+				<b:ClaveInvalida>false</b:ClaveInvalida>
+				<b:ClaveTrivialHistorica>false</b:ClaveTrivialHistorica>
+				<b:ClaveVencida>false</b:ClaveVencida>
+				<b:ClaveVencidaEmpresa>false</b:ClaveVencidaEmpresa>
+				<b:ClienteEmpresaSinonimo>false</b:ClienteEmpresaSinonimo>
+				<b:ClienteSinonimo>false</b:ClienteSinonimo>
+				<b:ExtensionCantidadDesc>0</b:ExtensionCantidadDesc>
+				<b:ExtensionDescripcion i:nil="true"/>
+				<b:ExtensionSistemaId i:nil="true"/>
+				<b:FechaNacimiento>1947-05-02T00:00:00</b:FechaNacimiento>
+				<b:IdRegistroOperacion>16422456</b:IdRegistroOperacion>
+				<b:NUP>70002915</b:NUP>
+				<b:PasswordRACF>@HXU4AX0</b:PasswordRACF>
+				<b:TipoPersona>I</b:TipoPersona>
+				<b:UsuarioRACF>70AKMJ15</b:UsuarioRACF>
+			</IdentificarClienteResult>
+		</IdentificarClienteResponse>
+	</s:Body>
+</s:Envelope>
+--------------------------------------
+2020-11-18 16:49:04,639|INFO  [tasRIOPTxnMgr:5 prepare com.banelco.tas.riop.WsIdentificacionService] Outbound Message
+---------------------------
+ID: 1554
+Address: https://webfronthomo01.ar.bsch:8501/prisma_clientesvc.svc
+Encoding: UTF-8
+Content-Type: application/soap+xml
+Headers: {Accept=[*/*]}
+Payload: 
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+	<soap:Header>
+		<Action xmlns="http://www.w3.org/2005/08/addressing">http://tempuri.org/IClienteSvc/ObtenerCliente</Action>
+		<MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:d544bf37-3ab3-49d5-893e-5e3fdc4b2af4</MessageID>
+		<To xmlns="http://www.w3.org/2005/08/addressing">https://webfronthomo01.ar.bsch:8501/prisma_clientesvc.svc</To>
+		<ReplyTo xmlns="http://www.w3.org/2005/08/addressing">
+			<Address>http://www.w3.org/2005/08/addressing/anonymous</Address>
+		</ReplyTo>
+	</soap:Header>
+	<soap:Body>
+		<ns2:ObtenerCliente xmlns="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:ns2="http://tempuri.org/" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:ns4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ns5="http://schemas.datacontract.org/2004/07/System" xmlns:ns6="http://schemas.datacontract.org/2004/07/BSR.ServiceModel.Common.Exceptions">
+			<ns2:request>
+				<IdTerminal>8</IdTerminal>
+				<NroSucursal>99087</NroSucursal>
+				<PasswordRACF>@HXU4AX0</PasswordRACF>
+				<UsuarioRACF>70AKMJ15</UsuarioRACF>
+				<FechaNacimiento>1947-05-02T00:00:00</FechaNacimiento>
+				<NroDocumento>5618792</NroDocumento>
+			</ns2:request>
+		</ns2:ObtenerCliente>
+	</soap:Body>
+</soap:Envelope>
+--------------------------------------
+2020-11-18 16:49:04,976|INFO  [tasRIOPTxnMgr:5 prepare com.banelco.tas.riop.WsIdentificacionService] Inbound Message
+----------------------------
+ID: 1554
+Response-Code: 200
+Encoding: UTF-8
+Content-Type: application/soap+xml; charset=utf-8
+Headers: {Content-Length=[8242], content-type=[application/soap+xml; charset=utf-8], Date=[Wed, 18 Nov 2020 19:49:04 GMT], Server=[Microsoft-IIS/8.5], X-Powered-By=[ASP.NET]}
+Payload: 
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+	<s:Header>
+		<a:Action s:mustUnderstand="1">http://tempuri.org/IClienteSvc/ObtenerClienteResponse</a:Action>
+		<a:RelatesTo>urn:uuid:d544bf37-3ab3-49d5-893e-5e3fdc4b2af4</a:RelatesTo>
+	</s:Header>
+	<s:Body>
+		<ObtenerClienteResponse xmlns="http://tempuri.org/">
+			<ObtenerClienteResult xmlns:b="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+				<b:CantidadCuentas>0</b:CantidadCuentas>
+				<b:ClaveClienteRacf>00000000</b:ClaveClienteRacf>
+				<b:CuentasPropias>
+					<b:ClienteSvcObtenerClienteResponseCuenta>
+						<b:ClaseCuenta>N</b:ClaseCuenta>
+						<b:ClasePaquete>14</b:ClasePaquete>
+						<b:ClaveBancariaUnificada>0720000788000006004468</b:ClaveBancariaUnificada>
+						<b:CodigoAplicacion>INFI</b:CodigoAplicacion>
+						<b:CodigoPaquete>1</b:CodigoPaquete>
+						<b:CodigoTitularidad>CT</b:CodigoTitularidad>
+						<b:ContratoAltair>7000600446</b:ContratoAltair>
+						<b:DepositoEfectivo>117573400</b:DepositoEfectivo>
+						<b:EstadoTarjetaCredito>A</b:EstadoTarjetaCredito>
+						<b:GrupoAfinidad>0</b:GrupoAfinidad>
+						<b:IndicadorJerarquiaCuenta>P</b:IndicadorJerarquiaCuenta>
+						<b:MonedaAltair>ARS</b:MonedaAltair>
+						<b:NroOrdenFirmante>3</b:NroOrdenFirmante>
+						<b:NroSucursal>0</b:NroSucursal>
+						<b:NroTarjetaCredito>0</b:NroTarjetaCredito>
+						<b:Numero>600446</b:Numero>
+						<b:NumeroPaquete>90000000013</b:NumeroPaquete>
+						<b:OficinaAltair>0000</b:OficinaAltair>
+						<b:ProductoAltair>07</b:ProductoAltair>
+						<b:SaldoCuenta>13429525.63</b:SaldoCuenta>
+						<b:SaldoParaConformar>0.00</b:SaldoParaConformar>
+						<b:SubproductoAltair>0001</b:SubproductoAltair>
+						<b:SucursalPaquete>0000</b:SucursalPaquete>
+						<b:TipoDescripcion>Cuenta Unica $</b:TipoDescripcion>
+						<b:TipoID>9</b:TipoID>
+						<b:TipoModoOperacion>02</b:TipoModoOperacion>
+					</b:ClienteSvcObtenerClienteResponseCuenta>
+					<b:ClienteSvcObtenerClienteResponseCuenta>
+						<b:ClaseCuenta>N</b:ClaseCuenta>
+						<b:ClasePaquete>14</b:ClasePaquete>
+						<b:ClaveBancariaUnificada>0720000788000006004468</b:ClaveBancariaUnificada>
+						<b:CodigoAplicacion>INFI</b:CodigoAplicacion>
+						<b:CodigoPaquete>1</b:CodigoPaquete>
+						<b:CodigoTitularidad>CT</b:CodigoTitularidad>
+						<b:ContratoAltair>7000600446</b:ContratoAltair>
+						<b:DepositoEfectivo>293000</b:DepositoEfectivo>
+						<b:EstadoTarjetaCredito>A</b:EstadoTarjetaCredito>
+						<b:GrupoAfinidad>0</b:GrupoAfinidad>
+						<b:IndicadorJerarquiaCuenta>P</b:IndicadorJerarquiaCuenta>
+						<b:MonedaAltair>USD</b:MonedaAltair>
+						<b:NroOrdenFirmante>3</b:NroOrdenFirmante>
+						<b:NroSucursal>0</b:NroSucursal>
+						<b:NroTarjetaCredito>0</b:NroTarjetaCredito>
+						<b:Numero>600446</b:Numero>
+						<b:NumeroPaquete>90000000013</b:NumeroPaquete>
+						<b:OficinaAltair>0000</b:OficinaAltair>
+						<b:ProductoAltair>07</b:ProductoAltair>
+						<b:SaldoCuenta>992530.68</b:SaldoCuenta>
+						<b:SaldoParaConformar>0.00</b:SaldoParaConformar>
+						<b:SubproductoAltair>0001</b:SubproductoAltair>
+						<b:SucursalPaquete>0000</b:SucursalPaquete>
+						<b:TipoDescripcion>Cuenta Unica U$S</b:TipoDescripcion>
+						<b:TipoID>10</b:TipoID>
+						<b:TipoModoOperacion>02</b:TipoModoOperacion>
+					</b:ClienteSvcObtenerClienteResponseCuenta>
+					<b:ClienteSvcObtenerClienteResponseCuenta>
+						<b:ClaseCuenta>N</b:ClaseCuenta>
+						<b:ClasePaquete>0</b:ClasePaquete>
+						<b:ClaveBancariaUnificada>0720000730000035317015</b:ClaveBancariaUnificada>
+						<b:CodigoAplicacion>ACAH</b:CodigoAplicacion>
+						<b:CodigoPaquete>0</b:CodigoPaquete>
+						<b:CodigoTitularidad>CT</b:CodigoTitularidad>
+						<b:ContratoAltair>2003531701</b:ContratoAltair>
+						<b:DepositoEfectivo>49400</b:DepositoEfectivo>
+						<b:EstadoTarjetaCredito>N</b:EstadoTarjetaCredito>
+						<b:GrupoAfinidad>0</b:GrupoAfinidad>
+						<b:IndicadorJerarquiaCuenta>S</b:IndicadorJerarquiaCuenta>
+						<b:MonedaAltair>ARS</b:MonedaAltair>
+						<b:NroOrdenFirmante>2</b:NroOrdenFirmante>
+						<b:NroSucursal>0</b:NroSucursal>
+						<b:NroTarjetaCredito>0</b:NroTarjetaCredito>
+						<b:Numero>3531701</b:Numero>
+						<b:NumeroPaquete>0</b:NumeroPaquete>
+						<b:OficinaAltair>0000</b:OficinaAltair>
+						<b:ProductoAltair>02</b:ProductoAltair>
+						<b:SaldoCuenta>1012626.32</b:SaldoCuenta>
+						<b:SaldoParaConformar>0.00</b:SaldoParaConformar>
+						<b:SubproductoAltair>0001</b:SubproductoAltair>
+						<b:SucursalPaquete>0000</b:SucursalPaquete>
+						<b:TipoDescripcion>Caja de Ahorro en $</b:TipoDescripcion>
+						<b:TipoID>1</b:TipoID>
+						<b:TipoModoOperacion>01</b:TipoModoOperacion>
+					</b:ClienteSvcObtenerClienteResponseCuenta>
+				</b:CuentasPropias>
+				<b:CuentasTerceros/>
+				<b:FechaNacimiento>1947-05-02T00:00:00</b:FechaNacimiento>
+				<b:IdCliente>5618792</b:IdCliente>
+				<b:IdClienteRacf i:nil="true"/>
+				<b:Nombre>OLGA MATILDE</b:Nombre>
+				<b:NumeroUnicoPersona>70002915</b:NumeroUnicoPersona>
+				<b:PrimerApellido>MARIN VILLALBA</b:PrimerApellido>
+				<b:SegundoApellido i:nil="true"/>
+				<b:TarjetasPropias>
+					<b:ClienteSvcObtenerClienteResponseTarjeta>
+						<b:ClaseCuenta>O</b:ClaseCuenta>
+						<b:ClasePaquete>0</b:ClasePaquete>
+						<b:ClaveBancariaUnificada>1712201100000000004100</b:ClaveBancariaUnificada>
+						<b:CodigoAplicacion>AMAO</b:CodigoAplicacion>
+						<b:CodigoPaquete>0</b:CodigoPaquete>
+						<b:CodigoTitularidad>TI</b:CodigoTitularidad>
+						<b:ContratoAltair>200001488809</b:ContratoAltair>
+						<b:DepositoEfectivo>0</b:DepositoEfectivo>
+						<b:EstadoTarjetaCredito>20</b:EstadoTarjetaCredito>
+						<b:GrupoAfinidad>111</b:GrupoAfinidad>
+						<b:IndicadorJerarquiaCuenta>P</b:IndicadorJerarquiaCuenta>
+						<b:MonedaAltair i:nil="true"/>
+						<b:NroOrdenFirmante>1</b:NroOrdenFirmante>
+						<b:NroSucursal>0</b:NroSucursal>
+						<b:NroTarjetaCredito>5239168101152509</b:NroTarjetaCredito>
+						<b:Numero>1488809</b:Numero>
+						<b:NumeroPaquete>0</b:NumeroPaquete>
+						<b:OficinaAltair>0000</b:OficinaAltair>
+						<b:ProductoAltair>41</b:ProductoAltair>
+						<b:SaldoCuenta>0.00</b:SaldoCuenta>
+						<b:SaldoParaConformar>0.00</b:SaldoParaConformar>
+						<b:SubproductoAltair>ORO</b:SubproductoAltair>
+						<b:SucursalPaquete>0000</b:SucursalPaquete>
+						<b:TipoDescripcion i:nil="true"/>
+						<b:TipoID>6</b:TipoID>
+						<b:TipoModoOperacion>99</b:TipoModoOperacion>
+					</b:ClienteSvcObtenerClienteResponseTarjeta>
+					<b:ClienteSvcObtenerClienteResponseTarjeta>
+						<b:ClaseCuenta>P</b:ClaseCuenta>
+						<b:ClasePaquete>14</b:ClasePaquete>
+						<b:ClaveBancariaUnificada>1312211105460000005600</b:ClaveBancariaUnificada>
+						<b:CodigoAplicacion>AVIP</b:CodigoAplicacion>
+						<b:CodigoPaquete>1</b:CodigoPaquete>
+						<b:CodigoTitularidad>AD</b:CodigoTitularidad>
+						<b:ContratoAltair>200013100175</b:ContratoAltair>
+						<b:DepositoEfectivo>0</b:DepositoEfectivo>
+						<b:EstadoTarjetaCredito>20</b:EstadoTarjetaCredito>
+						<b:GrupoAfinidad>224</b:GrupoAfinidad>
+						<b:IndicadorJerarquiaCuenta>P</b:IndicadorJerarquiaCuenta>
+						<b:MonedaAltair i:nil="true"/>
+						<b:NroOrdenFirmante>4</b:NroOrdenFirmante>
+						<b:NroSucursal>0</b:NroSucursal>
+						<b:NroTarjetaCredito>4509950093361024</b:NroTarjetaCredito>
+						<b:Numero>13100175</b:Numero>
+						<b:NumeroPaquete>90000000013</b:NumeroPaquete>
+						<b:OficinaAltair>0000</b:OficinaAltair>
+						<b:ProductoAltair>40</b:ProductoAltair>
+						<b:SaldoCuenta>0.00</b:SaldoCuenta>
+						<b:SaldoParaConformar>0.00</b:SaldoParaConformar>
+						<b:SubproductoAltair>ORO</b:SubproductoAltair>
+						<b:SucursalPaquete>0000</b:SucursalPaquete>
+						<b:TipoDescripcion i:nil="true"/>
+						<b:TipoID>7</b:TipoID>
+						<b:TipoModoOperacion>99</b:TipoModoOperacion>
+					</b:ClienteSvcObtenerClienteResponseTarjeta>
+					<b:ClienteSvcObtenerClienteResponseTarjeta>
+						<b:ClaseCuenta>O</b:ClaseCuenta>
+						<b:ClasePaquete>0</b:ClasePaquete>
+						<b:ClaveBancariaUnificada>1203200318040000006100</b:ClaveBancariaUnificada>
+						<b:CodigoAplicacion>AEXP</b:CodigoAplicacion>
+						<b:CodigoPaquete>0</b:CodigoPaquete>
+						<b:CodigoTitularidad>TI</b:CodigoTitularidad>
+						<b:ContratoAltair>100048993175</b:ContratoAltair>
+						<b:DepositoEfectivo>0</b:DepositoEfectivo>
+						<b:EstadoTarjetaCredito>20</b:EstadoTarjetaCredito>
+						<b:GrupoAfinidad>9590</b:GrupoAfinidad>
+						<b:IndicadorJerarquiaCuenta>P</b:IndicadorJerarquiaCuenta>
+						<b:MonedaAltair i:nil="true"/>
+						<b:NroOrdenFirmante>1</b:NroOrdenFirmante>
+						<b:NroSucursal>0</b:NroSucursal>
+						<b:NroTarjetaCredito>3777900239872180</b:NroTarjetaCredito>
+						<b:Numero>48993175</b:Numero>
+						<b:NumeroPaquete>0</b:NumeroPaquete>
+						<b:OficinaAltair>0000</b:OficinaAltair>
+						<b:ProductoAltair>42</b:ProductoAltair>
+						<b:SaldoCuenta>0.00</b:SaldoCuenta>
+						<b:SaldoParaConformar>0.00</b:SaldoParaConformar>
+						<b:SubproductoAltair>INT</b:SubproductoAltair>
+						<b:SucursalPaquete>0000</b:SucursalPaquete>
+						<b:TipoDescripcion i:nil="true"/>
+						<b:TipoID>42</b:TipoID>
+						<b:TipoModoOperacion>99</b:TipoModoOperacion>
+					</b:ClienteSvcObtenerClienteResponseTarjeta>
+				</b:TarjetasPropias>
+				<b:TarjetasTerceros/>
+				<b:TipoId>N</b:TipoId>
+				<b:TipoPersona>I</b:TipoPersona>
+			</ObtenerClienteResult>
+		</ObtenerClienteResponse>
+	</s:Body>
+</s:Envelope>
+--------------------------------------
+
+Tx 5A Consulta de Tarjetas Asociadas Pago Aprobada
+
+2020-11-18 16:49:13,160|INFO  [tasRIOPTxnMgr:6 prepare com.banelco.tas.riop.WsListaTarjetasService] Outbound Message
+---------------------------
+ID: 1555
+Address: https://webfronthomo01.ar.bsch:8501/prisma_clientesvc.svc
+Encoding: UTF-8
+Content-Type: application/soap+xml
+Headers: {Accept=[*/*]}
+Payload: 
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+	<soap:Header>
+		<Action xmlns="http://www.w3.org/2005/08/addressing">http://tempuri.org/IClienteSvc/ObtenerCliente</Action>
+		<MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:17713a27-1f36-4ac7-94b7-0e4dd8c8f156</MessageID>
+		<To xmlns="http://www.w3.org/2005/08/addressing">https://webfronthomo01.ar.bsch:8501/prisma_clientesvc.svc</To>
+		<ReplyTo xmlns="http://www.w3.org/2005/08/addressing">
+			<Address>http://www.w3.org/2005/08/addressing/anonymous</Address>
+		</ReplyTo>
+	</soap:Header>
+	<soap:Body>
+		<ns2:ObtenerCliente xmlns="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:ns2="http://tempuri.org/" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:ns4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ns5="http://schemas.datacontract.org/2004/07/System" xmlns:ns6="http://schemas.datacontract.org/2004/07/BSR.ServiceModel.Common.Exceptions">
+			<ns2:request>
+				<IdTerminal>8</IdTerminal>
+				<NroSucursal>99087</NroSucursal>
+				<PasswordRACF>@HXU4AX0</PasswordRACF>
+				<UsuarioRACF>70AKMJ15</UsuarioRACF>
+				<FechaNacimiento>1947-05-02T00:00:00</FechaNacimiento>
+				<NroDocumento>5618792</NroDocumento>
+			</ns2:request>
+		</ns2:ObtenerCliente>
+	</soap:Body>
+</soap:Envelope>
+--------------------------------------
+2020-11-18 16:49:13,364|INFO  [tasRIOPTxnMgr:6 prepare com.banelco.tas.riop.WsListaTarjetasService] Inbound Message
+----------------------------
+ID: 1555
+Response-Code: 200
+Encoding: UTF-8
+Content-Type: application/soap+xml; charset=utf-8
+Headers: {Content-Length=[8242], content-type=[application/soap+xml; charset=utf-8], Date=[Wed, 18 Nov 2020 19:49:13 GMT], Server=[Microsoft-IIS/8.5], X-Powered-By=[ASP.NET]}
+Payload: 
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+	<s:Header>
+		<a:Action s:mustUnderstand="1">http://tempuri.org/IClienteSvc/ObtenerClienteResponse</a:Action>
+		<a:RelatesTo>urn:uuid:17713a27-1f36-4ac7-94b7-0e4dd8c8f156</a:RelatesTo>
+	</s:Header>
+	<s:Body>
+		<ObtenerClienteResponse xmlns="http://tempuri.org/">
+			<ObtenerClienteResult xmlns:b="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+				<b:CantidadCuentas>0</b:CantidadCuentas>
+				<b:ClaveClienteRacf>00000000</b:ClaveClienteRacf>
+				<b:CuentasPropias>
+					<b:ClienteSvcObtenerClienteResponseCuenta>
+						<b:ClaseCuenta>N</b:ClaseCuenta>
+						<b:ClasePaquete>14</b:ClasePaquete>
+						<b:ClaveBancariaUnificada>0720000788000006004468</b:ClaveBancariaUnificada>
+						<b:CodigoAplicacion>INFI</b:CodigoAplicacion>
+						<b:CodigoPaquete>1</b:CodigoPaquete>
+						<b:CodigoTitularidad>CT</b:CodigoTitularidad>
+						<b:ContratoAltair>7000600446</b:ContratoAltair>
+						<b:DepositoEfectivo>117573400</b:DepositoEfectivo>
+						<b:EstadoTarjetaCredito>A</b:EstadoTarjetaCredito>
+						<b:GrupoAfinidad>0</b:GrupoAfinidad>
+						<b:IndicadorJerarquiaCuenta>P</b:IndicadorJerarquiaCuenta>
+						<b:MonedaAltair>ARS</b:MonedaAltair>
+						<b:NroOrdenFirmante>3</b:NroOrdenFirmante>
+						<b:NroSucursal>0</b:NroSucursal>
+						<b:NroTarjetaCredito>0</b:NroTarjetaCredito>
+						<b:Numero>600446</b:Numero>
+						<b:NumeroPaquete>90000000013</b:NumeroPaquete>
+						<b:OficinaAltair>0000</b:OficinaAltair>
+						<b:ProductoAltair>07</b:ProductoAltair>
+						<b:SaldoCuenta>13429525.63</b:SaldoCuenta>
+						<b:SaldoParaConformar>0.00</b:SaldoParaConformar>
+						<b:SubproductoAltair>0001</b:SubproductoAltair>
+						<b:SucursalPaquete>0000</b:SucursalPaquete>
+						<b:TipoDescripcion>Cuenta Unica $</b:TipoDescripcion>
+						<b:TipoID>9</b:TipoID>
+						<b:TipoModoOperacion>02</b:TipoModoOperacion>
+					</b:ClienteSvcObtenerClienteResponseCuenta>
+					<b:ClienteSvcObtenerClienteResponseCuenta>
+						<b:ClaseCuenta>N</b:ClaseCuenta>
+						<b:ClasePaquete>14</b:ClasePaquete>
+						<b:ClaveBancariaUnificada>0720000788000006004468</b:ClaveBancariaUnificada>
+						<b:CodigoAplicacion>INFI</b:CodigoAplicacion>
+						<b:CodigoPaquete>1</b:CodigoPaquete>
+						<b:CodigoTitularidad>CT</b:CodigoTitularidad>
+						<b:ContratoAltair>7000600446</b:ContratoAltair>
+						<b:DepositoEfectivo>293000</b:DepositoEfectivo>
+						<b:EstadoTarjetaCredito>A</b:EstadoTarjetaCredito>
+						<b:GrupoAfinidad>0</b:GrupoAfinidad>
+						<b:IndicadorJerarquiaCuenta>P</b:IndicadorJerarquiaCuenta>
+						<b:MonedaAltair>USD</b:MonedaAltair>
+						<b:NroOrdenFirmante>3</b:NroOrdenFirmante>
+						<b:NroSucursal>0</b:NroSucursal>
+						<b:NroTarjetaCredito>0</b:NroTarjetaCredito>
+						<b:Numero>600446</b:Numero>
+						<b:NumeroPaquete>90000000013</b:NumeroPaquete>
+						<b:OficinaAltair>0000</b:OficinaAltair>
+						<b:ProductoAltair>07</b:ProductoAltair>
+						<b:SaldoCuenta>992530.68</b:SaldoCuenta>
+						<b:SaldoParaConformar>0.00</b:SaldoParaConformar>
+						<b:SubproductoAltair>0001</b:SubproductoAltair>
+						<b:SucursalPaquete>0000</b:SucursalPaquete>
+						<b:TipoDescripcion>Cuenta Unica U$S</b:TipoDescripcion>
+						<b:TipoID>10</b:TipoID>
+						<b:TipoModoOperacion>02</b:TipoModoOperacion>
+					</b:ClienteSvcObtenerClienteResponseCuenta>
+					<b:ClienteSvcObtenerClienteResponseCuenta>
+						<b:ClaseCuenta>N</b:ClaseCuenta>
+						<b:ClasePaquete>0</b:ClasePaquete>
+						<b:ClaveBancariaUnificada>0720000730000035317015</b:ClaveBancariaUnificada>
+						<b:CodigoAplicacion>ACAH</b:CodigoAplicacion>
+						<b:CodigoPaquete>0</b:CodigoPaquete>
+						<b:CodigoTitularidad>CT</b:CodigoTitularidad>
+						<b:ContratoAltair>2003531701</b:ContratoAltair>
+						<b:DepositoEfectivo>49400</b:DepositoEfectivo>
+						<b:EstadoTarjetaCredito>N</b:EstadoTarjetaCredito>
+						<b:GrupoAfinidad>0</b:GrupoAfinidad>
+						<b:IndicadorJerarquiaCuenta>S</b:IndicadorJerarquiaCuenta>
+						<b:MonedaAltair>ARS</b:MonedaAltair>
+						<b:NroOrdenFirmante>2</b:NroOrdenFirmante>
+						<b:NroSucursal>0</b:NroSucursal>
+						<b:NroTarjetaCredito>0</b:NroTarjetaCredito>
+						<b:Numero>3531701</b:Numero>
+						<b:NumeroPaquete>0</b:NumeroPaquete>
+						<b:OficinaAltair>0000</b:OficinaAltair>
+						<b:ProductoAltair>02</b:ProductoAltair>
+						<b:SaldoCuenta>1012626.32</b:SaldoCuenta>
+						<b:SaldoParaConformar>0.00</b:SaldoParaConformar>
+						<b:SubproductoAltair>0001</b:SubproductoAltair>
+						<b:SucursalPaquete>0000</b:SucursalPaquete>
+						<b:TipoDescripcion>Caja de Ahorro en $</b:TipoDescripcion>
+						<b:TipoID>1</b:TipoID>
+						<b:TipoModoOperacion>01</b:TipoModoOperacion>
+					</b:ClienteSvcObtenerClienteResponseCuenta>
+				</b:CuentasPropias>
+				<b:CuentasTerceros/>
+				<b:FechaNacimiento>1947-05-02T00:00:00</b:FechaNacimiento>
+				<b:IdCliente>5618792</b:IdCliente>
+				<b:IdClienteRacf i:nil="true"/>
+				<b:Nombre>OLGA MATILDE</b:Nombre>
+				<b:NumeroUnicoPersona>70002915</b:NumeroUnicoPersona>
+				<b:PrimerApellido>MARIN VILLALBA</b:PrimerApellido>
+				<b:SegundoApellido i:nil="true"/>
+				<b:TarjetasPropias>
+					<b:ClienteSvcObtenerClienteResponseTarjeta>
+						<b:ClaseCuenta>O</b:ClaseCuenta>
+						<b:ClasePaquete>0</b:ClasePaquete>
+						<b:ClaveBancariaUnificada>1712201100000000004100</b:ClaveBancariaUnificada>
+						<b:CodigoAplicacion>AMAO</b:CodigoAplicacion>
+						<b:CodigoPaquete>0</b:CodigoPaquete>
+						<b:CodigoTitularidad>TI</b:CodigoTitularidad>
+						<b:ContratoAltair>200001488809</b:ContratoAltair>
+						<b:DepositoEfectivo>0</b:DepositoEfectivo>
+						<b:EstadoTarjetaCredito>20</b:EstadoTarjetaCredito>
+						<b:GrupoAfinidad>111</b:GrupoAfinidad>
+						<b:IndicadorJerarquiaCuenta>P</b:IndicadorJerarquiaCuenta>
+						<b:MonedaAltair i:nil="true"/>
+						<b:NroOrdenFirmante>1</b:NroOrdenFirmante>
+						<b:NroSucursal>0</b:NroSucursal>
+						<b:NroTarjetaCredito>5239168101152509</b:NroTarjetaCredito>
+						<b:Numero>1488809</b:Numero>
+						<b:NumeroPaquete>0</b:NumeroPaquete>
+						<b:OficinaAltair>0000</b:OficinaAltair>
+						<b:ProductoAltair>41</b:ProductoAltair>
+						<b:SaldoCuenta>0.00</b:SaldoCuenta>
+						<b:SaldoParaConformar>0.00</b:SaldoParaConformar>
+						<b:SubproductoAltair>ORO</b:SubproductoAltair>
+						<b:SucursalPaquete>0000</b:SucursalPaquete>
+						<b:TipoDescripcion i:nil="true"/>
+						<b:TipoID>6</b:TipoID>
+						<b:TipoModoOperacion>99</b:TipoModoOperacion>
+					</b:ClienteSvcObtenerClienteResponseTarjeta>
+					<b:ClienteSvcObtenerClienteResponseTarjeta>
+						<b:ClaseCuenta>P</b:ClaseCuenta>
+						<b:ClasePaquete>14</b:ClasePaquete>
+						<b:ClaveBancariaUnificada>1312211105460000005600</b:ClaveBancariaUnificada>
+						<b:CodigoAplicacion>AVIP</b:CodigoAplicacion>
+						<b:CodigoPaquete>1</b:CodigoPaquete>
+						<b:CodigoTitularidad>AD</b:CodigoTitularidad>
+						<b:ContratoAltair>200013100175</b:ContratoAltair>
+						<b:DepositoEfectivo>0</b:DepositoEfectivo>
+						<b:EstadoTarjetaCredito>20</b:EstadoTarjetaCredito>
+						<b:GrupoAfinidad>224</b:GrupoAfinidad>
+						<b:IndicadorJerarquiaCuenta>P</b:IndicadorJerarquiaCuenta>
+						<b:MonedaAltair i:nil="true"/>
+						<b:NroOrdenFirmante>4</b:NroOrdenFirmante>
+						<b:NroSucursal>0</b:NroSucursal>
+						<b:NroTarjetaCredito>4509950093361024</b:NroTarjetaCredito>
+						<b:Numero>13100175</b:Numero>
+						<b:NumeroPaquete>90000000013</b:NumeroPaquete>
+						<b:OficinaAltair>0000</b:OficinaAltair>
+						<b:ProductoAltair>40</b:ProductoAltair>
+						<b:SaldoCuenta>0.00</b:SaldoCuenta>
+						<b:SaldoParaConformar>0.00</b:SaldoParaConformar>
+						<b:SubproductoAltair>ORO</b:SubproductoAltair>
+						<b:SucursalPaquete>0000</b:SucursalPaquete>
+						<b:TipoDescripcion i:nil="true"/>
+						<b:TipoID>7</b:TipoID>
+						<b:TipoModoOperacion>99</b:TipoModoOperacion>
+					</b:ClienteSvcObtenerClienteResponseTarjeta>
+					<b:ClienteSvcObtenerClienteResponseTarjeta>
+						<b:ClaseCuenta>O</b:ClaseCuenta>
+						<b:ClasePaquete>0</b:ClasePaquete>
+						<b:ClaveBancariaUnificada>1203200318040000006100</b:ClaveBancariaUnificada>
+						<b:CodigoAplicacion>AEXP</b:CodigoAplicacion>
+						<b:CodigoPaquete>0</b:CodigoPaquete>
+						<b:CodigoTitularidad>TI</b:CodigoTitularidad>
+						<b:ContratoAltair>100048993175</b:ContratoAltair>
+						<b:DepositoEfectivo>0</b:DepositoEfectivo>
+						<b:EstadoTarjetaCredito>20</b:EstadoTarjetaCredito>
+						<b:GrupoAfinidad>9590</b:GrupoAfinidad>
+						<b:IndicadorJerarquiaCuenta>P</b:IndicadorJerarquiaCuenta>
+						<b:MonedaAltair i:nil="true"/>
+						<b:NroOrdenFirmante>1</b:NroOrdenFirmante>
+						<b:NroSucursal>0</b:NroSucursal>
+						<b:NroTarjetaCredito>3777900239872180</b:NroTarjetaCredito>
+						<b:Numero>48993175</b:Numero>
+						<b:NumeroPaquete>0</b:NumeroPaquete>
+						<b:OficinaAltair>0000</b:OficinaAltair>
+						<b:ProductoAltair>42</b:ProductoAltair>
+						<b:SaldoCuenta>0.00</b:SaldoCuenta>
+						<b:SaldoParaConformar>0.00</b:SaldoParaConformar>
+						<b:SubproductoAltair>INT</b:SubproductoAltair>
+						<b:SucursalPaquete>0000</b:SucursalPaquete>
+						<b:TipoDescripcion i:nil="true"/>
+						<b:TipoID>42</b:TipoID>
+						<b:TipoModoOperacion>99</b:TipoModoOperacion>
+					</b:ClienteSvcObtenerClienteResponseTarjeta>
+				</b:TarjetasPropias>
+				<b:TarjetasTerceros/>
+				<b:TipoId>N</b:TipoId>
+				<b:TipoPersona>I</b:TipoPersona>
+			</ObtenerClienteResult>
+		</ObtenerClienteResponse>
+	</s:Body>
+</s:Envelope>
+--------------------------------------
+2020-11-18 16:49:13,426|INFO  [tasRIOPTxnMgr:6 prepare com.banelco.tas.riop.WsListaTarjetasService] Outbound Message
+---------------------------
+ID: 1556
+Address: https://webfronthomo01.ar.bsch:8501/prisma_pagotarjetasvc.svc
+Encoding: UTF-8
+Content-Type: application/soap+xml
+Headers: {Accept=[*/*]}
+Payload: 
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+	<soap:Header>
+		<Action xmlns="http://www.w3.org/2005/08/addressing">http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjeta</Action>
+		<MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:73fcc5a7-0579-47a6-a83b-61554ebb0a19</MessageID>
+		<To xmlns="http://www.w3.org/2005/08/addressing">https://webfronthomo01.ar.bsch:8501/prisma_pagotarjetasvc.svc</To>
+		<ReplyTo xmlns="http://www.w3.org/2005/08/addressing">
+			<Address>http://www.w3.org/2005/08/addressing/anonymous</Address>
+		</ReplyTo>
+	</soap:Header>
+	<soap:Body>
+		<ns2:ConsultarPagoTarjeta xmlns="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:ns2="http://tempuri.org/" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:ns4="http://schemas.datacontract.org/2004/07/System" xmlns:ns5="http://schemas.datacontract.org/2004/07/Isban.Common">
+			<ns2:request>
+				<IdTerminal>8</IdTerminal>
+				<NroSucursal>99087</NroSucursal>
+				<PasswordRACF>@HXU4AX0</PasswordRACF>
+				<UsuarioRACF>70AKMJ15</UsuarioRACF>
+				<NumeroTarjetaCredito>5239168101152509</NumeroTarjetaCredito>
+				<TipoTarjetaCredito>6</TipoTarjetaCredito>
+			</ns2:request>
+		</ns2:ConsultarPagoTarjeta>
+	</soap:Body>
+</soap:Envelope>
+--------------------------------------
+2020-11-18 16:49:14,089|INFO  [tasRIOPTxnMgr:6 prepare com.banelco.tas.riop.WsListaTarjetasService] Inbound Message
+----------------------------
+ID: 1556
+Response-Code: 200
+Encoding: UTF-8
+Content-Type: application/soap+xml; charset=utf-8
+Headers: {Content-Length=[1078], content-type=[application/soap+xml; charset=utf-8], Date=[Wed, 18 Nov 2020 19:49:13 GMT], Server=[Microsoft-IIS/8.5], X-Powered-By=[ASP.NET]}
+Payload: 
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+	<s:Header>
+		<a:Action s:mustUnderstand="1">http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaResponse</a:Action>
+		<a:RelatesTo>urn:uuid:73fcc5a7-0579-47a6-a83b-61554ebb0a19</a:RelatesTo>
+	</s:Header>
+	<s:Body>
+		<ConsultarPagoTarjetaResponse xmlns="http://tempuri.org/">
+			<ConsultarPagoTarjetaResult xmlns:b="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+				<b:FechaLiquidacionTC>2020-11-18T00:00:00</b:FechaLiquidacionTC>
+				<b:FechaVencimientoLiquidacionTC>2003-01-15T00:00:00</b:FechaVencimientoLiquidacionTC>
+				<b:FormaPagoTC>01</b:FormaPagoTC>
+				<b:IdRegistroOperacion>16422462</b:IdRegistroOperacion>
+				<b:NombreApellido>MARIN VILLALBA      *OLGA MATI</b:NombreApellido>
+				<b:NumeroCuentaTarjeta>1488809</b:NumeroCuentaTarjeta>
+				<b:PagoMinimoTC>0</b:PagoMinimoTC>
+				<b:SaldoDolaresTC>0.00</b:SaldoDolaresTC>
+				<b:SaldoPesosTC>0.00</b:SaldoPesosTC>
+			</ConsultarPagoTarjetaResult>
+		</ConsultarPagoTarjetaResponse>
+	</s:Body>
+</s:Envelope>
+--------------------------------------
+2020-11-18 16:49:14,119|INFO  [tasRIOPTxnMgr:6 prepare com.banelco.tas.riop.WsListaTarjetasService] Outbound Message
+---------------------------
+ID: 1557
+Address: https://webfronthomo01.ar.bsch:8501/prisma_pagotarjetasvc.svc
+Encoding: UTF-8
+Content-Type: application/soap+xml
+Headers: {Accept=[*/*]}
+Payload: 
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+	<soap:Header>
+		<Action xmlns="http://www.w3.org/2005/08/addressing">http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjeta</Action>
+		<MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:b7d671bc-db03-43d0-b705-be419b91963c</MessageID>
+		<To xmlns="http://www.w3.org/2005/08/addressing">https://webfronthomo01.ar.bsch:8501/prisma_pagotarjetasvc.svc</To>
+		<ReplyTo xmlns="http://www.w3.org/2005/08/addressing">
+			<Address>http://www.w3.org/2005/08/addressing/anonymous</Address>
+		</ReplyTo>
+	</soap:Header>
+	<soap:Body>
+		<ns2:ConsultarPagoTarjeta xmlns="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:ns2="http://tempuri.org/" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:ns4="http://schemas.datacontract.org/2004/07/System" xmlns:ns5="http://schemas.datacontract.org/2004/07/Isban.Common">
+			<ns2:request>
+				<IdTerminal>8</IdTerminal>
+				<NroSucursal>99087</NroSucursal>
+				<PasswordRACF>@HXU4AX0</PasswordRACF>
+				<UsuarioRACF>70AKMJ15</UsuarioRACF>
+				<NumeroTarjetaCredito>4509950093361024</NumeroTarjetaCredito>
+				<TipoTarjetaCredito>7</TipoTarjetaCredito>
+			</ns2:request>
+		</ns2:ConsultarPagoTarjeta>
+	</soap:Body>
+</soap:Envelope>
+--------------------------------------
+ID: 1557
+Response-Code: 200
+Encoding: UTF-8
+Content-Type: application/soap+xml; charset=utf-8
+Headers: {Content-Length=[1085], content-type=[application/soap+xml; charset=utf-8], Date=[Wed, 18 Nov 2020 19:49:13 GMT], Server=[Microsoft-IIS/8.5], X-Powered-By=[ASP.NET]}
+Payload: 
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+	<s:Header>
+		<a:Action s:mustUnderstand="1">http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaResponse</a:Action>
+		<a:RelatesTo>urn:uuid:b7d671bc-db03-43d0-b705-be419b91963c</a:RelatesTo>
+	</s:Header>
+	<s:Body>
+		<ConsultarPagoTarjetaResponse xmlns="http://tempuri.org/">
+			<ConsultarPagoTarjetaResult xmlns:b="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+				<b:FechaLiquidacionTC>2020-11-18T00:00:00</b:FechaLiquidacionTC>
+				<b:FechaVencimientoLiquidacionTC>2019-08-05T00:00:00</b:FechaVencimientoLiquidacionTC>
+				<b:FormaPagoTC>03</b:FormaPagoTC>
+				<b:IdRegistroOperacion>0</b:IdRegistroOperacion>
+				<b:NombreApellido>MARIN VILLALBA      *OLGA MATI</b:NombreApellido>
+				<b:NumeroCuentaTarjeta>13100175</b:NumeroCuentaTarjeta>
+				<b:PagoMinimoTC>3650.00</b:PagoMinimoTC>
+				<b:SaldoDolaresTC>1449.03</b:SaldoDolaresTC>
+				<b:SaldoPesosTC>23612.94</b:SaldoPesosTC>
+			</ConsultarPagoTarjetaResult>
+		</ConsultarPagoTarjetaResponse>
+	</s:Body>
+</s:Envelope>
+--------------------------------------
+2020-11-18 16:49:14,307|INFO  [tasRIOPTxnMgr:6 prepare com.banelco.tas.riop.WsListaTarjetasService] Outbound Message
+---------------------------
+ID: 1558
+Address: https://webfronthomo01.ar.bsch:8501/prisma_pagotarjetasvc.svc
+Encoding: UTF-8
+Content-Type: application/soap+xml
+Headers: {Accept=[*/*]}
+Payload: 
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+	<soap:Header>
+		<Action xmlns="http://www.w3.org/2005/08/addressing">http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjeta</Action>
+		<MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:32528fb2-c446-40aa-8872-3e830e228ffc</MessageID>
+		<To xmlns="http://www.w3.org/2005/08/addressing">https://webfronthomo01.ar.bsch:8501/prisma_pagotarjetasvc.svc</To>
+		<ReplyTo xmlns="http://www.w3.org/2005/08/addressing">
+			<Address>http://www.w3.org/2005/08/addressing/anonymous</Address>
+		</ReplyTo>
+	</soap:Header>
+	<soap:Body>
+		<ns2:ConsultarPagoTarjeta xmlns="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:ns2="http://tempuri.org/" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:ns4="http://schemas.datacontract.org/2004/07/System" xmlns:ns5="http://schemas.datacontract.org/2004/07/Isban.Common">
+			<ns2:request>
+				<IdTerminal>8</IdTerminal>
+				<NroSucursal>99087</NroSucursal>
+				<PasswordRACF>@HXU4AX0</PasswordRACF>
+				<UsuarioRACF>70AKMJ15</UsuarioRACF>
+				<NumeroTarjetaCredito>3777900239872180</NumeroTarjetaCredito>
+				<TipoTarjetaCredito>6</TipoTarjetaCredito>
+			</ns2:request>
+		</ns2:ConsultarPagoTarjeta>
+	</soap:Body>
+</soap:Envelope>
+--------------------------------------
+2020-11-18 16:49:14,358|INFO  [tasRIOPTxnMgr:6 prepare com.banelco.tas.riop.WsListaTarjetasService] Inbound Message
+----------------------------
+ID: 1558
+Response-Code: 200
+Encoding: UTF-8
+Content-Type: application/soap+xml; charset=utf-8
+Headers: {Content-Length=[1079], content-type=[application/soap+xml; charset=utf-8], Date=[Wed, 18 Nov 2020 19:49:14 GMT], Server=[Microsoft-IIS/8.5], X-Powered-By=[ASP.NET]}
+Payload: 
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+	<s:Header>
+		<a:Action s:mustUnderstand="1">http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaResponse</a:Action>
+		<a:RelatesTo>urn:uuid:32528fb2-c446-40aa-8872-3e830e228ffc</a:RelatesTo>
+	</s:Header>
+	<s:Body>
+		<ConsultarPagoTarjetaResponse xmlns="http://tempuri.org/">
+			<ConsultarPagoTarjetaResult xmlns:b="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+				<b:FechaLiquidacionTC>2020-11-18T00:00:00</b:FechaLiquidacionTC>
+				<b:FechaVencimientoLiquidacionTC>2013-10-09T00:00:00</b:FechaVencimientoLiquidacionTC>
+				<b:FormaPagoTC>03</b:FormaPagoTC>
+				<b:IdRegistroOperacion>16422411</b:IdRegistroOperacion>
+				<b:NombreApellido>MARIN VILLALBA      *OLGA MATI</b:NombreApellido>
+				<b:NumeroCuentaTarjeta>48993175</b:NumeroCuentaTarjeta>
+				<b:PagoMinimoTC>0</b:PagoMinimoTC>
+				<b:SaldoDolaresTC>0.00</b:SaldoDolaresTC>
+				<b:SaldoPesosTC>0.00</b:SaldoPesosTC>
+			</ConsultarPagoTarjetaResult>
+		</ConsultarPagoTarjetaResponse>
+	</s:Body>
+</s:Envelope>
+--------------------------------------
+Id TC + Clave Santander Bloqueada
+
+2021-02-01 16:02:31,347|INFO  [tasRIOPTxnMgr:7 prepare com.banelco.tas.riop.WsIdentificacionService] Outbound Message
+---------------------------
+ID: 92
+Address: https://webfronthomo01.ar.bsch:8501/prisma_seguridadsvc.svc
+Encoding: UTF-8
+Content-Type: application/soap+xml
+Headers: {Accept=[*/*]}
+Payload: 
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+	<soap:Header>
+		<Action xmlns="http://www.w3.org/2005/08/addressing">http://tempuri.org/ISeguridadSvc/ObtenerDocumentoPorNumeroTarjeta</Action>
+		<MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:f24cd58c-05db-4a42-9b0e-53a0f04df218</MessageID>
+		<To xmlns="http://www.w3.org/2005/08/addressing">https://webfronthomo01.ar.bsch:8501/prisma_seguridadsvc.svc</To>
+		<ReplyTo xmlns="http://www.w3.org/2005/08/addressing">
+			<Address>http://www.w3.org/2005/08/addressing/anonymous</Address>
+		</ReplyTo>
+	</soap:Header>
+	<soap:Body>
+		<ns2:ObtenerDocumentoPorNumeroTarjeta xmlns="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:ns2="http://tempuri.org/" xmlns:ns3="http://schemas.datacontract.org/2004/07/TAS.Common.ServiceContracts" xmlns:ns4="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:ns5="http://schemas.datacontract.org/2004/07/System" xmlns:ns6="http://schemas.datacontract.org/2004/07/BSR.ServiceModel.Common.Exceptions">
+			<ns2:request>
+				<IdTerminal>12</IdTerminal>
+				<NroSucursal>99000</NroSucursal>
+				<PasswordRACF>FREEUSER</PasswordRACF>
+				<UsuarioRACF>FREEUSER</UsuarioRACF>
+				<NumeroDeTarjeta>4509950048157170</NumeroDeTarjeta>
+			</ns2:request>
+		</ns2:ObtenerDocumentoPorNumeroTarjeta>
+	</soap:Body>
+</soap:Envelope>
+--------------------------------------
+2021-02-01 16:02:31,568|INFO  [tasRIOPTxnMgr:7 prepare com.banelco.tas.riop.WsIdentificacionService] Inbound Message
+----------------------------
+ID: 92
+Response-Code: 200
+Encoding: UTF-8
+Content-Type: application/soap+xml; charset=utf-8
+Headers: {Content-Length=[781], content-type=[application/soap+xml; charset=utf-8], Date=[Mon, 01 Feb 2021 19:02:31 GMT], Server=[Microsoft-IIS/8.5], X-Powered-By=[ASP.NET]}
+Payload: 
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+	<s:Header>
+		<a:Action s:mustUnderstand="1">http://tempuri.org/ISeguridadSvc/ObtenerDocumentoPorNumeroTarjetaResponse</a:Action>
+		<a:RelatesTo>urn:uuid:f24cd58c-05db-4a42-9b0e-53a0f04df218</a:RelatesTo>
+	</s:Header>
+	<s:Body>
+		<ObtenerDocumentoPorNumeroTarjetaResponse xmlns="http://tempuri.org/">
+			<ObtenerDocumentoPorNumeroTarjetaResult xmlns:b="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+				<b:FechaDeNacimiento>1959-10-05T00:00:00</b:FechaDeNacimiento>
+				<b:NumeroDeDocumento>13297205</b:NumeroDeDocumento>
+			</ObtenerDocumentoPorNumeroTarjetaResult>
+		</ObtenerDocumentoPorNumeroTarjetaResponse>
+	</s:Body>
+</s:Envelope>
+--------------------------------------
+2021-02-01 16:02:31,602|INFO  [tasRIOPTxnMgr:7 prepare com.banelco.tas.riop.WsIdentificacionService] Outbound Message
+---------------------------
+ID: 93
+Address: https://webfronthomo01.ar.bsch:8501/prisma_seguridadsvc.svc
+Encoding: UTF-8
+Content-Type: application/soap+xml
+Headers: {Accept=[*/*]}
+Payload: 
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+	<soap:Header>
+		<Action xmlns="http://www.w3.org/2005/08/addressing">http://tempuri.org/ISeguridadSvc/IdentificarCliente</Action>
+		<MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:0d63908a-e512-448c-b739-bfb08a33fcbc</MessageID>
+		<To xmlns="http://www.w3.org/2005/08/addressing">https://webfronthomo01.ar.bsch:8501/prisma_seguridadsvc.svc</To>
+		<ReplyTo xmlns="http://www.w3.org/2005/08/addressing">
+			<Address>http://www.w3.org/2005/08/addressing/anonymous</Address>
+		</ReplyTo>
+	</soap:Header>
+	<soap:Body>
+		<ns2:IdentificarCliente xmlns="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:ns2="http://tempuri.org/" xmlns:ns3="http://schemas.datacontract.org/2004/07/TAS.Common.ServiceContracts" xmlns:ns4="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:ns5="http://schemas.datacontract.org/2004/07/System" xmlns:ns6="http://schemas.datacontract.org/2004/07/BSR.ServiceModel.Common.Exceptions">
+			<ns2:request>
+				<ClienteFechaNacimiento>1959-10-05T00:00:00</ClienteFechaNacimiento>
+				<IdTerminal>12</IdTerminal>
+				<NroSucursal>99000</NroSucursal>
+				<PasswordRACF>FREEUSER</PasswordRACF>
+				<UsuarioRACF>FREEUSER</UsuarioRACF>
+				<Clave>6521</Clave>
+				<ClaveNueva>0</ClaveNueva>
+				<FechaNacimiento>1959-10-05T00:00:00</FechaNacimiento>
+				<NroDocumento>13297205</NroDocumento>
+			</ns2:request>
+		</ns2:IdentificarCliente>
+	</soap:Body>
+</soap:Envelope>
+--------------------------------------
+2021-02-01 16:02:31,889|INFO  [tasRIOPTxnMgr:7 prepare com.banelco.tas.riop.WsIdentificacionService] Inbound Message
+----------------------------
+ID: 93
+Response-Code: 500
+Encoding: UTF-8
+Content-Type: application/soap+xml; charset=utf-8
+Headers: {Content-Length=[1386], content-type=[application/soap+xml; charset=utf-8], Date=[Mon, 01 Feb 2021 19:02:31 GMT], Server=[Microsoft-IIS/8.5], X-Powered-By=[ASP.NET]}
+Payload: 
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+	<s:Header>
+		<a:Action s:mustUnderstand="1">http://www.w3.org/2005/08/addressing/soap/fault</a:Action>
+		<a:RelatesTo>urn:uuid:0d63908a-e512-448c-b739-bfb08a33fcbc</a:RelatesTo>
+	</s:Header>
+	<s:Body>
+		<s:Fault>
+			<s:Code>
+				<s:Value>s:Sender</s:Value>
+			</s:Code>
+			<s:Reason>
+				<s:Text xml:lang="es-AR">10001018|SEG|Por favor dirijase a cualquier cajero automatico de la Red Banelco o a su Sucursal.</s:Text>
+			</s:Reason>
+			<s:Detail>
+				<BusinessException xmlns="http://schemas.datacontract.org/2004/07/Isban.Common" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:x="http://www.w3.org/2001/XMLSchema">
+					<ClassName i:type="x:string" xmlns="">Isban.Common.BusinessException</ClassName>
+					<Message i:type="x:string" xmlns="">10001018|SEG|Por favor dirijase a cualquier cajero automatico de la Red Banelco o a su Sucursal.</Message>
+					<Data i:nil="true" xmlns=""/>
+					<InnerException i:nil="true" xmlns=""/>
+					<HelpURL i:nil="true" xmlns=""/>
+					<StackTraceString i:nil="true" xmlns=""/>
+					<RemoteStackTraceString i:nil="true" xmlns=""/>
+					<RemoteStackIndex i:type="x:int" xmlns="">0</RemoteStackIndex>
+					<ExceptionMethod i:nil="true" xmlns=""/>
+					<HResult i:type="x:int" xmlns="">-2146233088</HResult>
+					<Source i:nil="true" xmlns=""/>
+					<WatsonBuckets i:nil="true" xmlns=""/>
+				</BusinessException>
+			</s:Detail>
+		</s:Fault>
+	</s:Body>
+</s:Envelope>
+--------------------------------------
+Login Cobranzas Rechazado
+
+--------------------------------------
+2021-02-01 16:03:14,560|INFO  [tasRIOPTxnMgr:8 prepare com.banelco.tas.riop.WsTarjetaRecaudadoraService] Outbound Message
+---------------------------
+ID: 94
+Address: https://webfronthomo01.ar.bsch:8501/prisma_clientesvc.svc
+Encoding: UTF-8
+Content-Type: application/soap+xml
+Headers: {Accept=[*/*]}
+Payload: 
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+	<soap:Header>
+		<Action xmlns="http://www.w3.org/2005/08/addressing">http://tempuri.org/IClienteSvc/ObtenerAcuerdosDeRecaudaciones</Action>
+		<MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:476754c2-0083-4767-a2a8-8ab83448a21e</MessageID>
+		<To xmlns="http://www.w3.org/2005/08/addressing">https://webfronthomo01.ar.bsch:8501/prisma_clientesvc.svc</To>
+		<ReplyTo xmlns="http://www.w3.org/2005/08/addressing">
+			<Address>http://www.w3.org/2005/08/addressing/anonymous</Address>
+		</ReplyTo>
+	</soap:Header>
+	<soap:Body>
+		<ns2:ObtenerAcuerdosDeRecaudaciones xmlns="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:ns2="http://tempuri.org/" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:ns4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ns5="http://schemas.datacontract.org/2004/07/System" xmlns:ns6="http://schemas.datacontract.org/2004/07/BSR.ServiceModel.Common.Exceptions">
+			<ns2:request>
+				<IdTerminal>12</IdTerminal>
+				<NroSucursal>99000</NroSucursal>
+				<PasswordRACF>FREEUSER</PasswordRACF>
+				<UsuarioRACF>FREEUSER</UsuarioRACF>
+				<CantidadItems>1</CantidadItems>
+				<CuitEmpresa>30700005573</CuitEmpresa>
+				<DigVerificadorEmpresa>0</DigVerificadorEmpresa>
+				<LongDescripAcuerdo>0</LongDescripAcuerdo>
+				<NroInstancia>1</NroInstancia>
+				<NroProducto>1</NroProducto>
+				<Opcion>1</Opcion>
+			</ns2:request>
+		</ns2:ObtenerAcuerdosDeRecaudaciones>
+	</soap:Body>
+</soap:Envelope>
+--------------------------------------
+2021-02-01 16:03:15,281|INFO  [tasRIOPTxnMgr:8 prepare com.banelco.tas.riop.WsTarjetaRecaudadoraService] Inbound Message
+----------------------------
+ID: 94
+Response-Code: 200
+Encoding: UTF-8
+Content-Type: application/soap+xml; charset=utf-8
+Headers: {Content-Length=[3837], content-type=[application/soap+xml; charset=utf-8], Date=[Mon, 01 Feb 2021 19:03:15 GMT], Server=[Microsoft-IIS/8.5], X-Powered-By=[ASP.NET]}
+Payload: <s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+	<s:Header>
+		<a:Action s:mustUnderstand="1">http://tempuri.org/IClienteSvc/ObtenerAcuerdosDeRecaudacionesResponse</a:Action>
+		<a:RelatesTo>urn:uuid:476754c2-0083-4767-a2a8-8ab83448a21e</a:RelatesTo>
+	</s:Header>
+	<s:Body>
+		<ObtenerAcuerdosDeRecaudacionesResponse xmlns="http://tempuri.org/">
+			<ObtenerAcuerdosDeRecaudacionesResult xmlns:b="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+				<b:Acuerdos>
+					<b:ClienteSvcObtenerAcuerdosDeRecaudacionesResponseAcuerdo>
+						<b:CodBajaAcuerdo>0</b:CodBajaAcuerdo>
+						<b:CodMoneda>0</b:CodMoneda>
+						<b:CodTablaFormaPago>0</b:CodTablaFormaPago>
+						<b:CodTablaPrecios>2357</b:CodTablaPrecios>
+						<b:CuitEmpresa>30700005573</b:CuitEmpresa>
+						<b:DescripAcuerdo>BANCA TRANSACCIONAL PRUEBA    </b:DescripAcuerdo>
+						<b:DetalleFormaPago>010203040510111316171819212225262769700000000000000000000000</b:DetalleFormaPago>
+						<b:DetalleFormaPagoList xmlns:c="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+							<c:string>01</c:string>
+							<c:string>02</c:string>
+							<c:string>03</c:string>
+							<c:string>04</c:string>
+							<c:string>05</c:string>
+							<c:string>10</c:string>
+							<c:string>11</c:string>
+							<c:string>13</c:string>
+							<c:string>16</c:string>
+							<c:string>17</c:string>
+							<c:string>18</c:string>
+							<c:string>19</c:string>
+							<c:string>21</c:string>
+							<c:string>22</c:string>
+							<c:string>25</c:string>
+							<c:string>26</c:string>
+							<c:string>27</c:string>
+							<c:string>69</c:string>
+							<c:string>70</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+						</b:DetalleFormaPagoList>
+						<b:DigVerificadorEmpresa>0</b:DigVerificadorEmpresa>
+						<b:ImpBoletaRecBasica>0.00</b:ImpBoletaRecBasica>
+						<b:ImpComCanDoc3ra>0.00</b:ImpComCanDoc3ra>
+						<b:ImpComCanTrn3ra>0.00</b:ImpComCanTrn3ra>
+						<b:ImpComDoc3ra>0.00</b:ImpComDoc3ra>
+						<b:ImpComMaxDoc3ra>0.00</b:ImpComMaxDoc3ra>
+						<b:ImpComMaxTrn3ra>0.00</b:ImpComMaxTrn3ra>
+						<b:ImpComMinDoc3ra>0.00</b:ImpComMinDoc3ra>
+						<b:ImpComMinTrn3ra>0.00</b:ImpComMinTrn3ra>
+						<b:ImpComNoFina3ra>0.00</b:ImpComNoFina3ra>
+						<b:ImpComNoFinan>0.00</b:ImpComNoFinan>
+						<b:ImpComRecNoCliente>0.00</b:ImpComRecNoCliente>
+						<b:ImpComTrn3ra>0.00</b:ImpComTrn3ra>
+						<b:ImpComUsoAdic3ra>0.00</b:ImpComUsoAdic3ra>
+						<b:ImpComUsoCanDoc>0.00</b:ImpComUsoCanDoc>
+						<b:ImpComUsoCanTrn>0.00</b:ImpComUsoCanTrn>
+						<b:ImpComisionDoc>0.00</b:ImpComisionDoc>
+						<b:ImpComisionMaxDoc>0.00</b:ImpComisionMaxDoc>
+						<b:ImpComisionMaxTrn>0.00</b:ImpComisionMaxTrn>
+						<b:ImpComisionMinDoc>0.00</b:ImpComisionMinDoc>
+						<b:ImpComisionTrn>0.01</b:ImpComisionTrn>
+						<b:ImpComision_MinTrn>0.00</b:ImpComision_MinTrn>
+						<b:IndicaBcoCorres>N</b:IndicaBcoCorres>
+						<b:IndicaCargaManual>N</b:IndicaCargaManual>
+						<b:IndicaCheque>D</b:IndicaCheque>
+						<b:IndicaDto>N</b:IndicaDto>
+						<b:IndicaPgoParcial>S</b:IndicaPgoParcial>
+						<b:IndicaPuni>N</b:IndicaPuni>
+						<b:MarAcuerdoUnif>S</b:MarAcuerdoUnif>
+						<b:NroInstancia>1</b:NroInstancia>
+						<b:NroLimVtoCPD>2</b:NroLimVtoCPD>
+						<b:NroProducto>1</b:NroProducto>
+						<b:PorcentajeDNF>1000</b:PorcentajeDNF>
+						<b:Porm3ra>0.0000</b:Porm3ra>
+						<b:PormRecarNoCliente>0.0000</b:PormRecarNoCliente>
+						<b:PormUsoAdic3ra>0.0000</b:PormUsoAdic3ra>
+						<b:PormUsoCaDoc3ra>0.0000</b:PormUsoCaDoc3ra>
+						<b:PormUsoCaTrn3ra>0.0000</b:PormUsoCaTrn3ra>
+						<b:RazonSocial i:nil="true"/>
+						<b:TasaUsoCanalDoc>0.0000</b:TasaUsoCanalDoc>
+						<b:TasaUsoCanalTrn>0.0000</b:TasaUsoCanalTrn>
+						<b:TipoComision>E</b:TipoComision>
+						<b:TipoVencimiento>1</b:TipoVencimiento>
+						<b:UsaCuota>0</b:UsaCuota>
+					</b:ClienteSvcObtenerAcuerdosDeRecaudacionesResponseAcuerdo>
+				</b:Acuerdos>
+				<b:CantRepeticiones>0</b:CantRepeticiones>
+				<b:MarcaContinua i:nil="true"/>
+			</ObtenerAcuerdosDeRecaudacionesResult>
+		</ObtenerAcuerdosDeRecaudacionesResponse>
+	</s:Body>
+</s:Envelope>
+--------------------------------------
+2021-02-01 16:03:15,334|INFO  [tasRIOPTxnMgr:8 prepare com.banelco.tas.riop.WsTarjetaRecaudadoraService] Outbound Message
+---------------------------
+ID: 95
+Address: https://webfronthomo01.ar.bsch:8501/prisma_clientesvc.svc
+Encoding: UTF-8
+Content-Type: application/soap+xml
+Headers: {Accept=[*/*]}
+Payload: 
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+	<soap:Header>
+		<Action xmlns="http://www.w3.org/2005/08/addressing">http://tempuri.org/IClienteSvc/ObtenerDeudasDeRecaudacionesV2</Action>
+		<MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:1a084eec-ab2b-4b69-9798-09d343533d4d</MessageID>
+		<To xmlns="http://www.w3.org/2005/08/addressing">https://webfronthomo01.ar.bsch:8501/prisma_clientesvc.svc</To>
+		<ReplyTo xmlns="http://www.w3.org/2005/08/addressing">
+			<Address>http://www.w3.org/2005/08/addressing/anonymous</Address>
+		</ReplyTo>
+	</soap:Header>
+	<soap:Body>
+		<ns2:ObtenerDeudasDeRecaudacionesV2 xmlns="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:ns2="http://tempuri.org/" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:ns4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ns5="http://schemas.datacontract.org/2004/07/System" xmlns:ns6="http://schemas.datacontract.org/2004/07/BSR.ServiceModel.Common.Exceptions">
+			<ns2:request>
+				<IdTerminal>12</IdTerminal>
+				<NroSucursal>99000</NroSucursal>
+				<PasswordRACF>FREEUSER</PasswordRACF>
+				<UsuarioRACF>FREEUSER</UsuarioRACF>
+				<CantidadItems>8</CantidadItems>
+				<CuitEmpresa>30700005573</CuitEmpresa>
+				<DigVerificadorEmpresa>0</DigVerificadorEmpresa>
+				<NroCliente>000000000000008</NroCliente>
+				<NroComprobante/>
+				<NroCuota>0</NroCuota>
+				<NroInstancia>1</NroInstancia>
+				<NroProducto>1</NroProducto>
+				<Opcion>1</Opcion>
+				<TipoComprobante/>
+			</ns2:request>
+		</ns2:ObtenerDeudasDeRecaudacionesV2>
+	</soap:Body>
+</soap:Envelope>
+--------------------------------------
+2021-02-01 16:03:15,658|INFO  [tasRIOPTxnMgr:8 prepare com.banelco.tas.riop.WsTarjetaRecaudadoraService] Inbound Message
+----------------------------
+ID: 95
+Response-Code: 500
+Encoding: UTF-8
+Content-Type: application/soap+xml; charset=utf-8
+Headers: {Content-Length=[1440], content-type=[application/soap+xml; charset=utf-8], Date=[Mon, 01 Feb 2021 19:03:15 GMT], Server=[Microsoft-IIS/8.5], X-Powered-By=[ASP.NET]}
+Payload: <s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+	<s:Header>
+		<a:Action s:mustUnderstand="1">http://www.w3.org/2005/08/addressing/soap/fault</a:Action>
+		<a:RelatesTo>urn:uuid:1a084eec-ab2b-4b69-9798-09d343533d4d</a:RelatesTo>
+	</s:Header>
+	<s:Body>
+		<s:Fault>
+			<s:Code>
+				<s:Value>s:Sender</s:Value>
+			</s:Code>
+			<s:Reason>
+				<s:Text xml:lang="es-AR">10110001|RCE|No es posible realizar la operacion para el acuerdo indicado. Por favor contactese con la empresa recaudadora.</s:Text>
+			</s:Reason>
+			<s:Detail>
+				<BusinessException xmlns="http://schemas.datacontract.org/2004/07/Isban.Common" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:x="http://www.w3.org/2001/XMLSchema">
+					<ClassName i:type="x:string" xmlns="">Isban.Common.BusinessException</ClassName>
+					<Message i:type="x:string" xmlns="">10110001|RCE|No es posible realizar la operacion para el acuerdo indicado. Por favor contactese con la empresa recaudadora.</Message>
+					<Data i:nil="true" xmlns=""/>
+					<InnerException i:nil="true" xmlns=""/>
+					<HelpURL i:nil="true" xmlns=""/>
+					<StackTraceString i:nil="true" xmlns=""/>
+					<RemoteStackTraceString i:nil="true" xmlns=""/>
+					<RemoteStackIndex i:type="x:int" xmlns="">0</RemoteStackIndex>
+					<ExceptionMethod i:nil="true" xmlns=""/>
+					<HResult i:type="x:int" xmlns="">-2146233088</HResult>
+					<Source i:nil="true" xmlns=""/>
+					<WatsonBuckets i:nil="true" xmlns=""/>
+				</BusinessException>
+			</s:Detail>
+		</s:Fault>
+	</s:Body>
+</s:Envelope>
+--------------------------------------

@@ -1,0 +1,1865 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="ee900d46-d1db-4e66-b44d-084b6731fb67" activeEnvironment="Default" name="PRISMA_SeguridadSvc" resourceRoot="" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="566ad805-bd41-4945-8d22-8e31dc454b8f" wsaVersion="200508" name="PRISMA_SeguridadSvcEndpoint" type="wsdl" bindingName="{http://tempuri.org/}PRISMA_SeguridadSvcEndpoint" soapVersion="1_2" anonymous="optional" definition="file:/C:/Datos/OneDrive%20-%20Prisma%20Medios%20de%20Pago/Datos/Java/Mock_WS_%20Santander/WSDL/PRISMA_SeguridadSvc.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\Datos\OneDrive%20-%20Prisma%20Medios%20de%20Pago\Datos\Java\Mock_WS_%20Santander\WSDL\PRISMA_SeguridadSvc.xml"><con:part><con:url>file:\C:\Datos\OneDrive%20-%20Prisma%20Medios%20de%20Pago\Datos\Java\Mock_WS_%20Santander\WSDL\PRISMA_SeguridadSvc.xml</con:url><con:content><![CDATA[<wsdl:definitions name="SeguridadSvc" targetNamespace="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsp:Policy wsu:Id="PRISMA_SeguridadSvcEndpoint_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="true"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_SeguridadSvc/prisma_seguridadsvc0.xml"/>
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Isban.Common" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_SeguridadSvc/prisma_seguridadsvc3.xml"/>
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_SeguridadSvc/prisma_seguridadsvc1.xml"/>
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_SeguridadSvc/prisma_seguridadsvc2.xml"/>
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_SeguridadSvc/prisma_seguridadsvc4.xml"/>
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/TAS.Common.ServiceContracts" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_SeguridadSvc/prisma_seguridadsvc5.xml"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISeguridadSvc_IdentificarCliente_InputMessage">
+    <wsdl:part element="tns:IdentificarCliente" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_IdentificarCliente_OutputMessage">
+    <wsdl:part element="tns:IdentificarClienteResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_IdentificarCliente_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q1:BusinessException" name="detail" xmlns:q1="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_IdentificarCliente_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q2:TechnicalException" name="detail" xmlns:q2="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_IdentificarClienteConVencimiento_InputMessage">
+    <wsdl:part element="tns:IdentificarClienteConVencimiento" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_IdentificarClienteConVencimiento_OutputMessage">
+    <wsdl:part element="tns:IdentificarClienteConVencimientoResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_IdentificarClienteConVencimiento_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q3:BusinessException" name="detail" xmlns:q3="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_IdentificarClienteConVencimiento_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q4:TechnicalException" name="detail" xmlns:q4="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_ObtenerDocumentoPorNumeroTarjeta_InputMessage">
+    <wsdl:part element="tns:ObtenerDocumentoPorNumeroTarjeta" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_ObtenerDocumentoPorNumeroTarjeta_OutputMessage">
+    <wsdl:part element="tns:ObtenerDocumentoPorNumeroTarjetaResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_ObtenerDocumentoPorNumeroTarjeta_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q5:BusinessException" name="detail" xmlns:q5="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_ObtenerDocumentoPorNumeroTarjeta_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q6:TechnicalException" name="detail" xmlns:q6="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_CambiarClaveCanalIndividuo_InputMessage">
+    <wsdl:part element="tns:CambiarClaveCanalIndividuo" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_CambiarClaveCanalIndividuo_OutputMessage">
+    <wsdl:part element="tns:CambiarClaveCanalIndividuoResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_CambiarClaveCanalIndividuo_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q7:BusinessException" name="detail" xmlns:q7="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_CambiarClaveCanalIndividuo_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q8:TechnicalException" name="detail" xmlns:q8="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_CambiarClaveCanalEmpresa_InputMessage">
+    <wsdl:part element="tns:CambiarClaveCanalEmpresa" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_CambiarClaveCanalEmpresa_OutputMessage">
+    <wsdl:part element="tns:CambiarClaveCanalEmpresaResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_CambiarClaveCanalEmpresa_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q9:BusinessException" name="detail" xmlns:q9="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_CambiarClaveCanalEmpresa_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q10:TechnicalException" name="detail" xmlns:q10="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_CambiarClaveCanalFirmante_InputMessage">
+    <wsdl:part element="tns:CambiarClaveCanalFirmante" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_CambiarClaveCanalFirmante_OutputMessage">
+    <wsdl:part element="tns:CambiarClaveCanalFirmanteResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_CambiarClaveCanalFirmante_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q11:BusinessException" name="detail" xmlns:q11="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_CambiarClaveCanalFirmante_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q12:TechnicalException" name="detail" xmlns:q12="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_ValidarClaveFirmante_InputMessage">
+    <wsdl:part element="tns:ValidarClaveFirmante" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_ValidarClaveFirmante_OutputMessage">
+    <wsdl:part element="tns:ValidarClaveFirmanteResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_ValidarClaveFirmante_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q13:BusinessException" name="detail" xmlns:q13="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_ValidarClaveFirmante_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q14:TechnicalException" name="detail" xmlns:q14="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_ObtenerServiciosDebitoAutomatico_InputMessage">
+    <wsdl:part element="tns:ObtenerServiciosDebitoAutomatico" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_ObtenerServiciosDebitoAutomatico_OutputMessage">
+    <wsdl:part element="tns:ObtenerServiciosDebitoAutomaticoResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_ObtenerServiciosDebitoAutomatico_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q15:BusinessException" name="detail" xmlns:q15="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_ObtenerServiciosDebitoAutomatico_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q16:TechnicalException" name="detail" xmlns:q16="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_ObtenerTitularCuenta_InputMessage">
+    <wsdl:part element="tns:ObtenerTitularCuenta" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_ObtenerTitularCuenta_OutputMessage">
+    <wsdl:part element="tns:ObtenerTitularCuentaResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_ObtenerTitularCuenta_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q17:BusinessException" name="detail" xmlns:q17="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_ObtenerTitularCuenta_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q18:TechnicalException" name="detail" xmlns:q18="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_BlanquearPINBanelco_InputMessage">
+    <wsdl:part element="tns:BlanquearPINBanelco" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_BlanquearPINBanelco_OutputMessage">
+    <wsdl:part element="tns:BlanquearPINBanelcoResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_BlanquearPINBanelco_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q19:BusinessException" name="detail" xmlns:q19="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_BlanquearPINBanelco_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q20:TechnicalException" name="detail" xmlns:q20="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_LogoutSession_InputMessage">
+    <wsdl:part element="tns:LogoutSession" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_LogoutSession_OutputMessage">
+    <wsdl:part element="tns:LogoutSessionResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_LogoutSession_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q21:BusinessException" name="detail" xmlns:q21="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_LogoutSession_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q22:TechnicalException" name="detail" xmlns:q22="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_LoginSession_InputMessage">
+    <wsdl:part element="tns:LoginSession" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_LoginSession_OutputMessage">
+    <wsdl:part element="tns:LoginSessionResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_LoginSession_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q23:BusinessException" name="detail" xmlns:q23="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_LoginSession_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q24:TechnicalException" name="detail" xmlns:q24="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_UpdateSession_InputMessage">
+    <wsdl:part element="tns:UpdateSession" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_UpdateSession_OutputMessage">
+    <wsdl:part element="tns:UpdateSessionResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_UpdateSession_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q25:BusinessException" name="detail" xmlns:q25="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="ISeguridadSvc_UpdateSession_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q26:TechnicalException" name="detail" xmlns:q26="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:portType name="ISeguridadSvc">
+    <wsdl:operation name="IdentificarCliente">
+      <wsdl:input message="tns:ISeguridadSvc_IdentificarCliente_InputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/IdentificarCliente"/>
+      <wsdl:output message="tns:ISeguridadSvc_IdentificarCliente_OutputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/IdentificarClienteResponse"/>
+      <wsdl:fault message="tns:ISeguridadSvc_IdentificarCliente_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/IdentificarClienteBusinessExceptionFault"/>
+      <wsdl:fault message="tns:ISeguridadSvc_IdentificarCliente_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/IdentificarClienteTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="IdentificarClienteConVencimiento">
+      <wsdl:input message="tns:ISeguridadSvc_IdentificarClienteConVencimiento_InputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/IdentificarClienteConVencimiento"/>
+      <wsdl:output message="tns:ISeguridadSvc_IdentificarClienteConVencimiento_OutputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/IdentificarClienteConVencimientoResponse"/>
+      <wsdl:fault message="tns:ISeguridadSvc_IdentificarClienteConVencimiento_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/IdentificarClienteConVencimientoBusinessExceptionFault"/>
+      <wsdl:fault message="tns:ISeguridadSvc_IdentificarClienteConVencimiento_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/IdentificarClienteConVencimientoTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDocumentoPorNumeroTarjeta">
+      <wsdl:input message="tns:ISeguridadSvc_ObtenerDocumentoPorNumeroTarjeta_InputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/ObtenerDocumentoPorNumeroTarjeta"/>
+      <wsdl:output message="tns:ISeguridadSvc_ObtenerDocumentoPorNumeroTarjeta_OutputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/ObtenerDocumentoPorNumeroTarjetaResponse"/>
+      <wsdl:fault message="tns:ISeguridadSvc_ObtenerDocumentoPorNumeroTarjeta_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/ObtenerDocumentoPorNumeroTarjetaBusinessExceptionFault"/>
+      <wsdl:fault message="tns:ISeguridadSvc_ObtenerDocumentoPorNumeroTarjeta_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/ObtenerDocumentoPorNumeroTarjetaTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="CambiarClaveCanalIndividuo">
+      <wsdl:input message="tns:ISeguridadSvc_CambiarClaveCanalIndividuo_InputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalIndividuo"/>
+      <wsdl:output message="tns:ISeguridadSvc_CambiarClaveCanalIndividuo_OutputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalIndividuoResponse"/>
+      <wsdl:fault message="tns:ISeguridadSvc_CambiarClaveCanalIndividuo_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalIndividuoBusinessExceptionFault"/>
+      <wsdl:fault message="tns:ISeguridadSvc_CambiarClaveCanalIndividuo_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalIndividuoTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="CambiarClaveCanalEmpresa">
+      <wsdl:input message="tns:ISeguridadSvc_CambiarClaveCanalEmpresa_InputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalEmpresa"/>
+      <wsdl:output message="tns:ISeguridadSvc_CambiarClaveCanalEmpresa_OutputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalEmpresaResponse"/>
+      <wsdl:fault message="tns:ISeguridadSvc_CambiarClaveCanalEmpresa_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalEmpresaBusinessExceptionFault"/>
+      <wsdl:fault message="tns:ISeguridadSvc_CambiarClaveCanalEmpresa_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalEmpresaTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="CambiarClaveCanalFirmante">
+      <wsdl:input message="tns:ISeguridadSvc_CambiarClaveCanalFirmante_InputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalFirmante"/>
+      <wsdl:output message="tns:ISeguridadSvc_CambiarClaveCanalFirmante_OutputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalFirmanteResponse"/>
+      <wsdl:fault message="tns:ISeguridadSvc_CambiarClaveCanalFirmante_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalFirmanteBusinessExceptionFault"/>
+      <wsdl:fault message="tns:ISeguridadSvc_CambiarClaveCanalFirmante_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalFirmanteTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarClaveFirmante">
+      <wsdl:input message="tns:ISeguridadSvc_ValidarClaveFirmante_InputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/ValidarClaveFirmante"/>
+      <wsdl:output message="tns:ISeguridadSvc_ValidarClaveFirmante_OutputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/ValidarClaveFirmanteResponse"/>
+      <wsdl:fault message="tns:ISeguridadSvc_ValidarClaveFirmante_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/ValidarClaveFirmanteBusinessExceptionFault"/>
+      <wsdl:fault message="tns:ISeguridadSvc_ValidarClaveFirmante_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/ValidarClaveFirmanteTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerServiciosDebitoAutomatico">
+      <wsdl:input message="tns:ISeguridadSvc_ObtenerServiciosDebitoAutomatico_InputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/ObtenerServiciosDebitoAutomatico"/>
+      <wsdl:output message="tns:ISeguridadSvc_ObtenerServiciosDebitoAutomatico_OutputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/ObtenerServiciosDebitoAutomaticoResponse"/>
+      <wsdl:fault message="tns:ISeguridadSvc_ObtenerServiciosDebitoAutomatico_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/ObtenerServiciosDebitoAutomaticoBusinessExceptionFault"/>
+      <wsdl:fault message="tns:ISeguridadSvc_ObtenerServiciosDebitoAutomatico_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/ObtenerServiciosDebitoAutomaticoTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTitularCuenta">
+      <wsdl:input message="tns:ISeguridadSvc_ObtenerTitularCuenta_InputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/ObtenerTitularCuenta"/>
+      <wsdl:output message="tns:ISeguridadSvc_ObtenerTitularCuenta_OutputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/ObtenerTitularCuentaResponse"/>
+      <wsdl:fault message="tns:ISeguridadSvc_ObtenerTitularCuenta_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/ObtenerTitularCuentaBusinessExceptionFault"/>
+      <wsdl:fault message="tns:ISeguridadSvc_ObtenerTitularCuenta_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/ObtenerTitularCuentaTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="BlanquearPINBanelco">
+      <wsdl:input message="tns:ISeguridadSvc_BlanquearPINBanelco_InputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/BlanquearPINBanelco"/>
+      <wsdl:output message="tns:ISeguridadSvc_BlanquearPINBanelco_OutputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/BlanquearPINBanelcoResponse"/>
+      <wsdl:fault message="tns:ISeguridadSvc_BlanquearPINBanelco_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/BlanquearPINBanelcoBusinessExceptionFault"/>
+      <wsdl:fault message="tns:ISeguridadSvc_BlanquearPINBanelco_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/BlanquearPINBanelcoTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="LogoutSession">
+      <wsdl:input message="tns:ISeguridadSvc_LogoutSession_InputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/LogoutSession"/>
+      <wsdl:output message="tns:ISeguridadSvc_LogoutSession_OutputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/LogoutSessionResponse"/>
+      <wsdl:fault message="tns:ISeguridadSvc_LogoutSession_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/LogoutSessionBusinessExceptionFault"/>
+      <wsdl:fault message="tns:ISeguridadSvc_LogoutSession_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/LogoutSessionTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="LoginSession">
+      <wsdl:input message="tns:ISeguridadSvc_LoginSession_InputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/LoginSession"/>
+      <wsdl:output message="tns:ISeguridadSvc_LoginSession_OutputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/LoginSessionResponse"/>
+      <wsdl:fault message="tns:ISeguridadSvc_LoginSession_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/LoginSessionBusinessExceptionFault"/>
+      <wsdl:fault message="tns:ISeguridadSvc_LoginSession_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/LoginSessionTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSession">
+      <wsdl:input message="tns:ISeguridadSvc_UpdateSession_InputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/UpdateSession"/>
+      <wsdl:output message="tns:ISeguridadSvc_UpdateSession_OutputMessage" wsaw:Action="http://tempuri.org/ISeguridadSvc/UpdateSessionResponse"/>
+      <wsdl:fault message="tns:ISeguridadSvc_UpdateSession_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/UpdateSessionBusinessExceptionFault"/>
+      <wsdl:fault message="tns:ISeguridadSvc_UpdateSession_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/ISeguridadSvc/UpdateSessionTechnicalExceptionFault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PRISMA_SeguridadSvcEndpoint" type="tns:ISeguridadSvc">
+    <wsp:PolicyReference URI="#PRISMA_SeguridadSvcEndpoint_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="IdentificarCliente">
+      <soap12:operation soapAction="http://tempuri.org/ISeguridadSvc/IdentificarCliente" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="IdentificarClienteConVencimiento">
+      <soap12:operation soapAction="http://tempuri.org/ISeguridadSvc/IdentificarClienteConVencimiento" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDocumentoPorNumeroTarjeta">
+      <soap12:operation soapAction="http://tempuri.org/ISeguridadSvc/ObtenerDocumentoPorNumeroTarjeta" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CambiarClaveCanalIndividuo">
+      <soap12:operation soapAction="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalIndividuo" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CambiarClaveCanalEmpresa">
+      <soap12:operation soapAction="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalEmpresa" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CambiarClaveCanalFirmante">
+      <soap12:operation soapAction="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalFirmante" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarClaveFirmante">
+      <soap12:operation soapAction="http://tempuri.org/ISeguridadSvc/ValidarClaveFirmante" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerServiciosDebitoAutomatico">
+      <soap12:operation soapAction="http://tempuri.org/ISeguridadSvc/ObtenerServiciosDebitoAutomatico" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTitularCuenta">
+      <soap12:operation soapAction="http://tempuri.org/ISeguridadSvc/ObtenerTitularCuenta" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BlanquearPINBanelco">
+      <soap12:operation soapAction="http://tempuri.org/ISeguridadSvc/BlanquearPINBanelco" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LogoutSession">
+      <soap12:operation soapAction="http://tempuri.org/ISeguridadSvc/LogoutSession" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LoginSession">
+      <soap12:operation soapAction="http://tempuri.org/ISeguridadSvc/LoginSession" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSession">
+      <soap12:operation soapAction="http://tempuri.org/ISeguridadSvc/UpdateSession" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SeguridadSvc">
+    <wsdl:port binding="tns:PRISMA_SeguridadSvcEndpoint" name="PRISMA_SeguridadSvcEndpoint">
+      <soap12:address location="https://webfronthomo01.rio.ar.bsch:8501/prisma_seguridadsvc.svc"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://webfronthomo01.rio.ar.bsch:8501/prisma_seguridadsvc.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_SeguridadSvc/prisma_seguridadsvc0.xml</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:tns="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_SeguridadSvc/prisma_seguridadsvc2.xml"/>
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/TAS.Common.ServiceContracts" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_SeguridadSvc/prisma_seguridadsvc5.xml"/>
+  <xs:element name="IdentificarCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q1:SeguridadSvcIdentificarClienteRequest" xmlns:q1="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IdentificarClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdentificarClienteResult" nillable="true" type="q2:SeguridadSvcIdentificarClienteResponse" xmlns:q2="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IdentificarClienteConVencimiento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q3:SeguridadSvcIdentificarClienteRequest" xmlns:q3="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IdentificarClienteConVencimientoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdentificarClienteConVencimientoResult" nillable="true" type="q4:SeguridadSvcIdentificarClienteResponse" xmlns:q4="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDocumentoPorNumeroTarjeta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q5:SeguridadSvcObtenerDocumentoPorNumeroTarjetaRequest" xmlns:q5="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDocumentoPorNumeroTarjetaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerDocumentoPorNumeroTarjetaResult" nillable="true" type="q6:SeguridadSvcObtenerDocumentoPorNumeroTarjetaResponse" xmlns:q6="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CambiarClaveCanalIndividuo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q7:SeguridadSvcCambiarClaveCanalRequest" xmlns:q7="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CambiarClaveCanalIndividuoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CambiarClaveCanalIndividuoResult" nillable="true" type="q8:SeguridadSvcCambiarClaveCanalResponse" xmlns:q8="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CambiarClaveCanalEmpresa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q9:SeguridadSvcCambiarClaveCanalRequest" xmlns:q9="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CambiarClaveCanalEmpresaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CambiarClaveCanalEmpresaResult" nillable="true" type="q10:SeguridadSvcCambiarClaveCanalResponse" xmlns:q10="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CambiarClaveCanalFirmante">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q11:SeguridadSvcCambiarClaveCanalRequest" xmlns:q11="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CambiarClaveCanalFirmanteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CambiarClaveCanalFirmanteResult" nillable="true" type="q12:SeguridadSvcCambiarClaveCanalResponse" xmlns:q12="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarClaveFirmante">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q13:SeguridadSvcCambiarClaveCanalRequest" xmlns:q13="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarClaveFirmanteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidarClaveFirmanteResult" nillable="true" type="q14:SeguridadSvcCambiarClaveCanalResponse" xmlns:q14="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerServiciosDebitoAutomatico">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q15:SeguridadSvcObtenerServiciosDebitoAutomaticoRequest" xmlns:q15="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerServiciosDebitoAutomaticoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerServiciosDebitoAutomaticoResult" nillable="true" type="q16:SeguridadSvcObtenerServiciosDebitoAutomaticoResponse" xmlns:q16="http://schemas.datacontract.org/2004/07/TAS.Common.ServiceContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTitularCuenta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q17:SeguridadSvcObtenerTitularCuentaRequest" xmlns:q17="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTitularCuentaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerTitularCuentaResult" nillable="true" type="q18:SeguridadSvcObtenerTitularCuentaResponse" xmlns:q18="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BlanquearPINBanelco">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q19:SeguridadSvcBlanquearPINRequest" xmlns:q19="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BlanquearPINBanelcoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BlanquearPINBanelcoResult" nillable="true" type="q20:SeguridadSvcBlanquearPINResponse" xmlns:q20="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogoutSession">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q21:SeguridadSvcLogoutSessionRequest" xmlns:q21="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogoutSessionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LogoutSessionResult" nillable="true" type="q22:SeguridadSvcLogoutSessionResponse" xmlns:q22="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginSession">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q23:SeguridadSvcLoginSessionRequest" xmlns:q23="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginSessionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LoginSessionResult" nillable="true" type="q24:SeguridadSvcLoginSessionResponse" xmlns:q24="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSession">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q25:SeguridadSvcupdateSessionRequest" xmlns:q25="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSessionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateSessionResult" nillable="true" type="q26:SeguridadSvcupdateSessionResponse" xmlns:q26="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_SeguridadSvc/prisma_seguridadsvc2.xml</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:tns="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="SeguridadSvcIdentificarClienteRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonRACFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Clave" type="xs:int"/>
+          <xs:element minOccurs="0" name="ClaveNueva" type="xs:int"/>
+          <xs:element minOccurs="0" name="FechaNacimiento" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="NroDocumento" type="xs:long"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SeguridadSvcIdentificarClienteRequest" nillable="true" type="tns:SeguridadSvcIdentificarClienteRequest"/>
+  <xs:complexType name="CommonRACFRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonServiceRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ClienteFechaNacimiento" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="ClienteNumeroDoc" type="xs:long"/>
+          <xs:element minOccurs="0" name="ClienteTipoDoc" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ClienteTipoPersona" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="IdTerminal" type="xs:int"/>
+          <xs:element minOccurs="0" name="NUP" type="xs:int"/>
+          <xs:element minOccurs="0" name="NroSucursal" type="xs:int"/>
+          <xs:element minOccurs="0" name="PasswordRACF" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="UserID" type="xs:int"/>
+          <xs:element minOccurs="0" name="UsuarioRACF" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CommonRACFRequest" nillable="true" type="tns:CommonRACFRequest"/>
+  <xs:complexType name="CommonServiceRequest">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:element name="CommonServiceRequest" nillable="true" type="tns:CommonServiceRequest"/>
+  <xs:complexType name="SeguridadSvcIdentificarClienteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClaveInvalida" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="ClaveTrivialHistorica" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="ClaveVencida" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="ClaveVencidaEmpresa" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="ClienteEmpresaSinonimo" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="ClienteSinonimo" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="ExtensionCantidadDesc" type="xs:int"/>
+      <xs:element minOccurs="0" name="ExtensionDescripcion" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ExtensionSistemaId" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="FechaNacimiento" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="IdRegistroOperacion" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="NUP" type="xs:int"/>
+      <xs:element minOccurs="0" name="PasswordRACF" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TipoPersona" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="UsuarioRACF" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeguridadSvcIdentificarClienteResponse" nillable="true" type="tns:SeguridadSvcIdentificarClienteResponse"/>
+  <xs:complexType name="SeguridadSvcObtenerDocumentoPorNumeroTarjetaRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonRACFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NumeroDeTarjeta" type="xs:decimal"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SeguridadSvcObtenerDocumentoPorNumeroTarjetaRequest" nillable="true" type="tns:SeguridadSvcObtenerDocumentoPorNumeroTarjetaRequest"/>
+  <xs:complexType name="SeguridadSvcObtenerDocumentoPorNumeroTarjetaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FechaDeNacimiento" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="NumeroDeDocumento" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeguridadSvcObtenerDocumentoPorNumeroTarjetaResponse" nillable="true" type="tns:SeguridadSvcObtenerDocumentoPorNumeroTarjetaResponse"/>
+  <xs:complexType name="SeguridadSvcCambiarClaveCanalRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonRACFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActualizarIdentificacionPositiva" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="Clave" type="xs:int"/>
+          <xs:element minOccurs="0" name="ClaveFirmante" type="xs:int"/>
+          <xs:element minOccurs="0" name="ClaveNueva" type="xs:int"/>
+          <xs:element minOccurs="0" name="ClaveNuevaFirmante" type="xs:int"/>
+          <xs:element minOccurs="0" name="DocumentoFirmante" type="xs:long"/>
+          <xs:element minOccurs="0" name="FechaNacimiento" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="NroDocumento" type="xs:long"/>
+          <xs:element minOccurs="0" name="UsuarioFirmante" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="UsuarioNuevoFirmante" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SeguridadSvcCambiarClaveCanalRequest" nillable="true" type="tns:SeguridadSvcCambiarClaveCanalRequest"/>
+  <xs:complexType name="SeguridadSvcCambiarClaveCanalResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClaveInvalida" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="ClaveTrivialHistorica" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="ClaveVencida" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="ClaveVencidaEmpresa" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="ClienteBloqueado" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="ClienteEmpresaSinonimo" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="ClienteSinonimo" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="FechaNacimiento" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="IdRegistroOperacion" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="NUP" type="xs:int"/>
+      <xs:element minOccurs="0" name="PasswordRACF" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TipoPersona" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="UsuarioRACF" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeguridadSvcCambiarClaveCanalResponse" nillable="true" type="tns:SeguridadSvcCambiarClaveCanalResponse"/>
+  <xs:complexType name="SeguridadSvcObtenerServiciosDebitoAutomaticoRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonRACFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NumeroCuenta" type="xs:long"/>
+          <xs:element minOccurs="0" name="SucursalCuenta" type="xs:int"/>
+          <xs:element minOccurs="0" name="TipoCuenta" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SeguridadSvcObtenerServiciosDebitoAutomaticoRequest" nillable="true" type="tns:SeguridadSvcObtenerServiciosDebitoAutomaticoRequest"/>
+  <xs:complexType name="SeguridadSvcObtenerTitularCuentaRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonRACFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NumeroCuenta" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="NumeroCuentaTarjeta" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="NumeroTarjetaCredito" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="SucursalCuenta" type="xs:int"/>
+          <xs:element minOccurs="0" name="TipoCuenta" type="xs:int"/>
+          <xs:element minOccurs="0" name="TipoTarjetaCredito" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SeguridadSvcObtenerTitularCuentaRequest" nillable="true" type="tns:SeguridadSvcObtenerTitularCuentaRequest"/>
+  <xs:complexType name="SeguridadSvcObtenerTitularCuentaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NombreApellido" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="NumeroTarjetaCredito" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="TipoTarjetaCredito" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeguridadSvcObtenerTitularCuentaResponse" nillable="true" type="tns:SeguridadSvcObtenerTitularCuentaResponse"/>
+  <xs:complexType name="SeguridadSvcBlanquearPINRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonRACFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ClaveDeModificacion" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CodigoDeCambio" type="xs:int"/>
+          <xs:element minOccurs="0" name="TipoDeLlamado" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="TipoDeModificacion" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SeguridadSvcBlanquearPINRequest" nillable="true" type="tns:SeguridadSvcBlanquearPINRequest"/>
+  <xs:complexType name="SeguridadSvcBlanquearPINResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CantidadAfectada" type="xs:int"/>
+      <xs:element minOccurs="0" name="IdRegistroOperacion" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="NumerosTarjeta" nillable="true" type="tns:ArrayOfSeguridadSvcBlanquearPINResponseItem"/>
+      <xs:element minOccurs="0" name="TipoDeLlamado" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeguridadSvcBlanquearPINResponse" nillable="true" type="tns:SeguridadSvcBlanquearPINResponse"/>
+  <xs:complexType name="ArrayOfSeguridadSvcBlanquearPINResponseItem">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="SeguridadSvcBlanquearPINResponseItem" nillable="true" type="tns:SeguridadSvcBlanquearPINResponseItem"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSeguridadSvcBlanquearPINResponseItem" nillable="true" type="tns:ArrayOfSeguridadSvcBlanquearPINResponseItem"/>
+  <xs:complexType name="SeguridadSvcBlanquearPINResponseItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NumeroDeTarjeta" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeguridadSvcBlanquearPINResponseItem" nillable="true" type="tns:SeguridadSvcBlanquearPINResponseItem"/>
+  <xs:complexType name="SeguridadSvcLogoutSessionRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NUP" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeguridadSvcLogoutSessionRequest" nillable="true" type="tns:SeguridadSvcLogoutSessionRequest"/>
+  <xs:complexType name="SeguridadSvcLogoutSessionResponse">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:element name="SeguridadSvcLogoutSessionResponse" nillable="true" type="tns:SeguridadSvcLogoutSessionResponse"/>
+  <xs:complexType name="SeguridadSvcLoginSessionRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DNI" type="xs:long"/>
+      <xs:element minOccurs="0" name="NUP" type="xs:long"/>
+      <xs:element minOccurs="0" name="Sucursal" type="xs:long"/>
+      <xs:element minOccurs="0" name="Terminal" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeguridadSvcLoginSessionRequest" nillable="true" type="tns:SeguridadSvcLoginSessionRequest"/>
+  <xs:complexType name="SeguridadSvcLoginSessionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HoraUltimoLogin" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="SegundosRestantes" type="xs:int"/>
+      <xs:element minOccurs="0" name="TimeOut" type="xs:long"/>
+      <xs:element minOccurs="0" name="fechaUltimoLogin" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeguridadSvcLoginSessionResponse" nillable="true" type="tns:SeguridadSvcLoginSessionResponse"/>
+  <xs:complexType name="SeguridadSvcupdateSessionRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NUP" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeguridadSvcupdateSessionRequest" nillable="true" type="tns:SeguridadSvcupdateSessionRequest"/>
+  <xs:complexType name="SeguridadSvcupdateSessionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TimeOut" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeguridadSvcupdateSessionResponse" nillable="true" type="tns:SeguridadSvcupdateSessionResponse"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_SeguridadSvc/prisma_seguridadsvc5.xml</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TAS.Common.ServiceContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/TAS.Common.ServiceContracts">
+  <xs:complexType name="SeguridadSvcObtenerServiciosDebitoAutomaticoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CantidadRepeticiones" type="xs:int"/>
+      <xs:element minOccurs="0" name="Servicios" nillable="true" type="tns:ArrayOfSeguridadSvcObtenerServiciosDebitoAutomaticoResponseItem"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeguridadSvcObtenerServiciosDebitoAutomaticoResponse" nillable="true" type="tns:SeguridadSvcObtenerServiciosDebitoAutomaticoResponse"/>
+  <xs:complexType name="ArrayOfSeguridadSvcObtenerServiciosDebitoAutomaticoResponseItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SeguridadSvcObtenerServiciosDebitoAutomaticoResponseItem" nillable="true" type="tns:SeguridadSvcObtenerServiciosDebitoAutomaticoResponseItem"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSeguridadSvcObtenerServiciosDebitoAutomaticoResponseItem" nillable="true" type="tns:ArrayOfSeguridadSvcObtenerServiciosDebitoAutomaticoResponseItem"/>
+  <xs:complexType name="SeguridadSvcObtenerServiciosDebitoAutomaticoResponseItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoServicio" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="EstadoCliente" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="EstadoServicio" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="FechaServicio" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="NombreServicio" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="NumeroPartida" type="xs:long"/>
+      <xs:element minOccurs="0" name="TipoFecha" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TipoStopDebit" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeguridadSvcObtenerServiciosDebitoAutomaticoResponseItem" nillable="true" type="tns:SeguridadSvcObtenerServiciosDebitoAutomaticoResponseItem"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_SeguridadSvc/prisma_seguridadsvc3.xml</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Isban.Common" xmlns:tns="http://schemas.datacontract.org/2004/07/Isban.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/System" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_SeguridadSvc/prisma_seguridadsvc4.xml"/>
+  <xs:complexType name="BusinessException">
+    <xs:complexContent mixed="false">
+      <xs:extension base="q1:Exception" xmlns:q1="http://schemas.datacontract.org/2004/07/System"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BusinessException" nillable="true" type="tns:BusinessException"/>
+  <xs:complexType name="TechnicalException">
+    <xs:complexContent mixed="false">
+      <xs:extension base="q2:Exception" xmlns:q2="http://schemas.datacontract.org/2004/07/System"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TechnicalException" nillable="true" type="tns:TechnicalException"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_SeguridadSvc/prisma_seguridadsvc4.xml</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/System" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_SeguridadSvc/prisma_seguridadsvc1.xml"/>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:any maxOccurs="unbounded" minOccurs="0" namespace="##local" processContents="skip"/>
+    </xs:sequence>
+    <xs:attribute ref="ser:FactoryType"/>
+  </xs:complexType>
+  <xs:element name="Exception" nillable="true" type="tns:Exception"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_SeguridadSvc/prisma_seguridadsvc1.xml</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://NT-9992120:8090/PRISMA_SeguridadSvcMockService</con:endpoint><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_seguridadsvc.svc</con:endpoint></con:endpoints><con:operation id="a4868180-5ead-491d-b915-0e8403db79f7" isOneWay="false" action="http://tempuri.org/ISeguridadSvc/BlanquearPINBanelco" name="BlanquearPINBanelco" bindingOperationName="BlanquearPINBanelco" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a16074f4-6e1d-4fef-931d-748156d194b3" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_seguridadsvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:BlanquearPINBanelco>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:ClaveDeModificacion>?</tas:ClaveDeModificacion>\r
+            <!--Optional:-->\r
+            <tas:CodigoDeCambio>?</tas:CodigoDeCambio>\r
+            <!--Optional:-->\r
+            <tas:TipoDeLlamado>?</tas:TipoDeLlamado>\r
+            <!--Optional:-->\r
+            <tas:TipoDeModificacion>?</tas:TipoDeModificacion>\r
+         </tem:request>\r
+      </tem:BlanquearPINBanelco>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/BlanquearPINBanelco"/></con:call></con:operation><con:operation id="113a0b0d-2a53-4e35-827f-92d1ae0a6fbc" isOneWay="false" action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalEmpresa" name="CambiarClaveCanalEmpresa" bindingOperationName="CambiarClaveCanalEmpresa" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="da5a5de1-1f33-43bd-b48b-ccf81c5f46bc" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_seguridadsvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:CambiarClaveCanalEmpresa>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:ActualizarIdentificacionPositiva>?</tas:ActualizarIdentificacionPositiva>\r
+            <!--Optional:-->\r
+            <tas:Clave>?</tas:Clave>\r
+            <!--Optional:-->\r
+            <tas:ClaveFirmante>?</tas:ClaveFirmante>\r
+            <!--Optional:-->\r
+            <tas:ClaveNueva>?</tas:ClaveNueva>\r
+            <!--Optional:-->\r
+            <tas:ClaveNuevaFirmante>?</tas:ClaveNuevaFirmante>\r
+            <!--Optional:-->\r
+            <tas:DocumentoFirmante>?</tas:DocumentoFirmante>\r
+            <!--Optional:-->\r
+            <tas:FechaNacimiento>?</tas:FechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:NroDocumento>?</tas:NroDocumento>\r
+            <!--Optional:-->\r
+            <tas:UsuarioFirmante>?</tas:UsuarioFirmante>\r
+            <!--Optional:-->\r
+            <tas:UsuarioNuevoFirmante>?</tas:UsuarioNuevoFirmante>\r
+         </tem:request>\r
+      </tem:CambiarClaveCanalEmpresa>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalEmpresa"/></con:call></con:operation><con:operation id="68ed6b1c-4f53-4d5c-b121-689985fde152" isOneWay="false" action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalFirmante" name="CambiarClaveCanalFirmante" bindingOperationName="CambiarClaveCanalFirmante" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2b1d9093-1164-44d9-b0b4-2d4c6ad210b1" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_seguridadsvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:CambiarClaveCanalFirmante>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:ActualizarIdentificacionPositiva>?</tas:ActualizarIdentificacionPositiva>\r
+            <!--Optional:-->\r
+            <tas:Clave>?</tas:Clave>\r
+            <!--Optional:-->\r
+            <tas:ClaveFirmante>?</tas:ClaveFirmante>\r
+            <!--Optional:-->\r
+            <tas:ClaveNueva>?</tas:ClaveNueva>\r
+            <!--Optional:-->\r
+            <tas:ClaveNuevaFirmante>?</tas:ClaveNuevaFirmante>\r
+            <!--Optional:-->\r
+            <tas:DocumentoFirmante>?</tas:DocumentoFirmante>\r
+            <!--Optional:-->\r
+            <tas:FechaNacimiento>?</tas:FechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:NroDocumento>?</tas:NroDocumento>\r
+            <!--Optional:-->\r
+            <tas:UsuarioFirmante>?</tas:UsuarioFirmante>\r
+            <!--Optional:-->\r
+            <tas:UsuarioNuevoFirmante>?</tas:UsuarioNuevoFirmante>\r
+         </tem:request>\r
+      </tem:CambiarClaveCanalFirmante>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalFirmante"/></con:call></con:operation><con:operation id="543e8e7d-96d9-4e50-87ac-88583bd328e9" isOneWay="false" action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalIndividuo" name="CambiarClaveCanalIndividuo" bindingOperationName="CambiarClaveCanalIndividuo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="df348d71-cce6-4294-9f6d-013790c71a69" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_seguridadsvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:CambiarClaveCanalIndividuo>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:ActualizarIdentificacionPositiva>?</tas:ActualizarIdentificacionPositiva>\r
+            <!--Optional:-->\r
+            <tas:Clave>?</tas:Clave>\r
+            <!--Optional:-->\r
+            <tas:ClaveFirmante>?</tas:ClaveFirmante>\r
+            <!--Optional:-->\r
+            <tas:ClaveNueva>?</tas:ClaveNueva>\r
+            <!--Optional:-->\r
+            <tas:ClaveNuevaFirmante>?</tas:ClaveNuevaFirmante>\r
+            <!--Optional:-->\r
+            <tas:DocumentoFirmante>?</tas:DocumentoFirmante>\r
+            <!--Optional:-->\r
+            <tas:FechaNacimiento>?</tas:FechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:NroDocumento>?</tas:NroDocumento>\r
+            <!--Optional:-->\r
+            <tas:UsuarioFirmante>?</tas:UsuarioFirmante>\r
+            <!--Optional:-->\r
+            <tas:UsuarioNuevoFirmante>?</tas:UsuarioNuevoFirmante>\r
+         </tem:request>\r
+      </tem:CambiarClaveCanalIndividuo>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalIndividuo"/></con:call></con:operation><con:operation id="fa690c4c-07ff-4dad-9bb2-2423c8a668ee" isOneWay="false" action="http://tempuri.org/ISeguridadSvc/IdentificarCliente" name="IdentificarCliente" bindingOperationName="IdentificarCliente" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ffc321fd-d3fd-4021-bb44-e05d0a7d925e" name="Request 1" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/PRISMA_SeguridadSvcMockService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:IdentificarCliente>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>12</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>99000</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>FREEUSER</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID></tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>FREEUSER</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:Clave>6521</tas:Clave>\r
+            <!--Optional:-->\r
+            <tas:ClaveNueva>0</tas:ClaveNueva>\r
+            <!--Optional:-->\r
+            <tas:FechaNacimiento>1959-10-05T00:00:00</tas:FechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:NroDocumento>26926372</tas:NroDocumento>\r
+         </tem:request>\r
+      </tem:IdentificarCliente>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/IdentificarCliente"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="80d7dacd-15d0-464c-968f-41bd11be9e35" isOneWay="false" action="http://tempuri.org/ISeguridadSvc/IdentificarClienteConVencimiento" name="IdentificarClienteConVencimiento" bindingOperationName="IdentificarClienteConVencimiento" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="228738b6-b090-48c4-acc5-280ec43dd95c" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_seguridadsvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:IdentificarClienteConVencimiento>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:Clave>?</tas:Clave>\r
+            <!--Optional:-->\r
+            <tas:ClaveNueva>?</tas:ClaveNueva>\r
+            <!--Optional:-->\r
+            <tas:FechaNacimiento>?</tas:FechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:NroDocumento>?</tas:NroDocumento>\r
+         </tem:request>\r
+      </tem:IdentificarClienteConVencimiento>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/IdentificarClienteConVencimiento"/></con:call></con:operation><con:operation id="b32dd6ae-a99b-4159-9ec3-e531aa68e998" isOneWay="false" action="http://tempuri.org/ISeguridadSvc/LoginSession" name="LoginSession" bindingOperationName="LoginSession" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e0b6f7de-e01d-42a0-bfda-33c7a4604334" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_seguridadsvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:LoginSession>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:DNI>?</tas:DNI>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:Sucursal>?</tas:Sucursal>\r
+            <!--Optional:-->\r
+            <tas:Terminal>?</tas:Terminal>\r
+         </tem:request>\r
+      </tem:LoginSession>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/LoginSession"/></con:call></con:operation><con:operation id="68be0965-74e3-48ae-bf0a-0fa145c0e3ce" isOneWay="false" action="http://tempuri.org/ISeguridadSvc/LogoutSession" name="LogoutSession" bindingOperationName="LogoutSession" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="bbe764b9-42af-42b3-91fb-9890379b0f7e" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_seguridadsvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:LogoutSession>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+         </tem:request>\r
+      </tem:LogoutSession>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/LogoutSession"/></con:call></con:operation><con:operation id="b5a9d66f-39c8-439b-8e35-d1fe39e996cf" isOneWay="false" action="http://tempuri.org/ISeguridadSvc/ObtenerDocumentoPorNumeroTarjeta" name="ObtenerDocumentoPorNumeroTarjeta" bindingOperationName="ObtenerDocumentoPorNumeroTarjeta" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5293d8d0-0547-4068-8ab2-1b5ba9251b39" name="Request 1" useWsAddressing="true" sslKeystore=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/PRISMA_SeguridadSvcMockService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:ObtenerDocumentoPorNumeroTarjeta>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento></tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc></tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc></tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona></tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>12</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP></tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>99000</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>FREEUSER</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID></tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>FREEUSER</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:NumeroDeTarjeta>4517660025192567</tas:NumeroDeTarjeta>\r
+         </tem:request>\r
+      </tem:ObtenerDocumentoPorNumeroTarjeta>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/ObtenerDocumentoPorNumeroTarjeta"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="fc6d469b-4ed3-4e04-a875-0bb18d6b7c75" isOneWay="false" action="http://tempuri.org/ISeguridadSvc/ObtenerServiciosDebitoAutomatico" name="ObtenerServiciosDebitoAutomatico" bindingOperationName="ObtenerServiciosDebitoAutomatico" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="02d10ee7-e99f-4b51-9f47-9dff5b8b2ddd" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_seguridadsvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:ObtenerServiciosDebitoAutomatico>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:NumeroCuenta>?</tas:NumeroCuenta>\r
+            <!--Optional:-->\r
+            <tas:SucursalCuenta>?</tas:SucursalCuenta>\r
+            <!--Optional:-->\r
+            <tas:TipoCuenta>?</tas:TipoCuenta>\r
+         </tem:request>\r
+      </tem:ObtenerServiciosDebitoAutomatico>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/ObtenerServiciosDebitoAutomatico"/></con:call></con:operation><con:operation id="5c0af6b3-7887-4fa1-8613-ab1b2efccccb" isOneWay="false" action="http://tempuri.org/ISeguridadSvc/ObtenerTitularCuenta" name="ObtenerTitularCuenta" bindingOperationName="ObtenerTitularCuenta" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="61386d91-558c-4ae1-bcd6-a3eaff59262c" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_seguridadsvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:ObtenerTitularCuenta>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:NumeroCuenta>?</tas:NumeroCuenta>\r
+            <!--Optional:-->\r
+            <tas:NumeroCuentaTarjeta>?</tas:NumeroCuentaTarjeta>\r
+            <!--Optional:-->\r
+            <tas:NumeroTarjetaCredito>?</tas:NumeroTarjetaCredito>\r
+            <!--Optional:-->\r
+            <tas:SucursalCuenta>?</tas:SucursalCuenta>\r
+            <!--Optional:-->\r
+            <tas:TipoCuenta>?</tas:TipoCuenta>\r
+            <!--Optional:-->\r
+            <tas:TipoTarjetaCredito>?</tas:TipoTarjetaCredito>\r
+         </tem:request>\r
+      </tem:ObtenerTitularCuenta>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/ObtenerTitularCuenta"/></con:call></con:operation><con:operation id="a12043d5-df58-43c3-a9a5-cf80fdf80cea" isOneWay="false" action="http://tempuri.org/ISeguridadSvc/UpdateSession" name="UpdateSession" bindingOperationName="UpdateSession" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="95bfce61-651e-45b4-a6ec-fa240f597795" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_seguridadsvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:UpdateSession>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+         </tem:request>\r
+      </tem:UpdateSession>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/UpdateSession"/></con:call></con:operation><con:operation id="f5f4b473-e3b4-4c83-884d-35455b97afa1" isOneWay="false" action="http://tempuri.org/ISeguridadSvc/ValidarClaveFirmante" name="ValidarClaveFirmante" bindingOperationName="ValidarClaveFirmante" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b999bb6d-3912-452a-9794-b9376d19a85a" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_seguridadsvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:ValidarClaveFirmante>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:ActualizarIdentificacionPositiva>?</tas:ActualizarIdentificacionPositiva>\r
+            <!--Optional:-->\r
+            <tas:Clave>?</tas:Clave>\r
+            <!--Optional:-->\r
+            <tas:ClaveFirmante>?</tas:ClaveFirmante>\r
+            <!--Optional:-->\r
+            <tas:ClaveNueva>?</tas:ClaveNueva>\r
+            <!--Optional:-->\r
+            <tas:ClaveNuevaFirmante>?</tas:ClaveNuevaFirmante>\r
+            <!--Optional:-->\r
+            <tas:DocumentoFirmante>?</tas:DocumentoFirmante>\r
+            <!--Optional:-->\r
+            <tas:FechaNacimiento>?</tas:FechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:NroDocumento>?</tas:NroDocumento>\r
+            <!--Optional:-->\r
+            <tas:UsuarioFirmante>?</tas:UsuarioFirmante>\r
+            <!--Optional:-->\r
+            <tas:UsuarioNuevoFirmante>?</tas:UsuarioNuevoFirmante>\r
+         </tem:request>\r
+      </tem:ValidarClaveFirmante>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/ValidarClaveFirmante"/></con:call></con:operation></con:interface><con:mockService id="57fd69ec-b310-483e-8808-fbeaffa55230" port="8090" path="/PRISMA_SeguridadSvcMockService" host="localhost" name="PRISMA_SeguridadSvcMockService" bindToHostOnly="false" docroot=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:startScript>/*
+* Here we inicialice the context
+*/
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+
+//aproved accounts info
+context.TC1 = "4509950048157170"
+context.DNI1 = "13297205"
+context.birthDate1 ="1959-10-05T00:00:00"
+context.TD1 = "4517660045897724"
+context.DNI2 = "26926372"
+context.birthDate2 ="1979-01-18T00:00:00"
+context.DNI3 = "5618792"
+context.birthDate3 ="1947-05-02T00:00:00"
+context.Password1 = "6521"
+context.IdRegistroOperacion = 16422456
+
+</con:startScript><con:properties/><con:mockOperation name="BlanquearPINBanelco" id="d6afdd1e-0297-43ff-9431-05e60fc80787" interface="PRISMA_SeguridadSvcEndpoint" operation="BlanquearPINBanelco"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="aa70a7af-1956-40c1-b2bb-6d4be6d42a91" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
+   <soap:Header/>
+   <soap:Body>
+      <tem:BlanquearPINBanelcoResponse>
+         <!--Optional:-->
+         <tem:BlanquearPINBanelcoResult>
+            <!--Optional:-->
+            <tas:CantidadAfectada>?</tas:CantidadAfectada>
+            <!--Optional:-->
+            <tas:IdRegistroOperacion>?</tas:IdRegistroOperacion>
+            <!--Optional:-->
+            <tas:NumerosTarjeta>
+               <!--Zero or more repetitions:-->
+               <tas:SeguridadSvcBlanquearPINResponseItem>
+                  <!--Optional:-->
+                  <tas:NumeroDeTarjeta>?</tas:NumeroDeTarjeta>
+               </tas:SeguridadSvcBlanquearPINResponseItem>
+            </tas:NumerosTarjeta>
+            <!--Optional:-->
+            <tas:TipoDeLlamado>?</tas:TipoDeLlamado>
+         </tem:BlanquearPINBanelcoResult>
+      </tem:BlanquearPINBanelcoResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/BlanquearPINBanelcoResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="CambiarClaveCanalEmpresa" id="0d0cfca3-b531-412b-a5eb-8f7a210c62b8" interface="PRISMA_SeguridadSvcEndpoint" operation="CambiarClaveCanalEmpresa"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="a75392d3-9d66-4a11-971c-9b5fc783bb25" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
+   <soap:Header/>
+   <soap:Body>
+      <tem:CambiarClaveCanalEmpresaResponse>
+         <!--Optional:-->
+         <tem:CambiarClaveCanalEmpresaResult>
+            <!--Optional:-->
+            <tas:ClaveInvalida>?</tas:ClaveInvalida>
+            <!--Optional:-->
+            <tas:ClaveTrivialHistorica>?</tas:ClaveTrivialHistorica>
+            <!--Optional:-->
+            <tas:ClaveVencida>?</tas:ClaveVencida>
+            <!--Optional:-->
+            <tas:ClaveVencidaEmpresa>?</tas:ClaveVencidaEmpresa>
+            <!--Optional:-->
+            <tas:ClienteBloqueado>?</tas:ClienteBloqueado>
+            <!--Optional:-->
+            <tas:ClienteEmpresaSinonimo>?</tas:ClienteEmpresaSinonimo>
+            <!--Optional:-->
+            <tas:ClienteSinonimo>?</tas:ClienteSinonimo>
+            <!--Optional:-->
+            <tas:FechaNacimiento>?</tas:FechaNacimiento>
+            <!--Optional:-->
+            <tas:IdRegistroOperacion>?</tas:IdRegistroOperacion>
+            <!--Optional:-->
+            <tas:NUP>?</tas:NUP>
+            <!--Optional:-->
+            <tas:PasswordRACF>?</tas:PasswordRACF>
+            <!--Optional:-->
+            <tas:TipoPersona>?</tas:TipoPersona>
+            <!--Optional:-->
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>
+         </tem:CambiarClaveCanalEmpresaResult>
+      </tem:CambiarClaveCanalEmpresaResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalEmpresaResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="CambiarClaveCanalFirmante" id="5b237cdc-9a50-440f-a5de-73d20fb294d8" interface="PRISMA_SeguridadSvcEndpoint" operation="CambiarClaveCanalFirmante"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="838f1975-60f2-4e56-8e3a-5cd48bc7a6e4" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
+   <soap:Header/>
+   <soap:Body>
+      <tem:CambiarClaveCanalFirmanteResponse>
+         <!--Optional:-->
+         <tem:CambiarClaveCanalFirmanteResult>
+            <!--Optional:-->
+            <tas:ClaveInvalida>?</tas:ClaveInvalida>
+            <!--Optional:-->
+            <tas:ClaveTrivialHistorica>?</tas:ClaveTrivialHistorica>
+            <!--Optional:-->
+            <tas:ClaveVencida>?</tas:ClaveVencida>
+            <!--Optional:-->
+            <tas:ClaveVencidaEmpresa>?</tas:ClaveVencidaEmpresa>
+            <!--Optional:-->
+            <tas:ClienteBloqueado>?</tas:ClienteBloqueado>
+            <!--Optional:-->
+            <tas:ClienteEmpresaSinonimo>?</tas:ClienteEmpresaSinonimo>
+            <!--Optional:-->
+            <tas:ClienteSinonimo>?</tas:ClienteSinonimo>
+            <!--Optional:-->
+            <tas:FechaNacimiento>?</tas:FechaNacimiento>
+            <!--Optional:-->
+            <tas:IdRegistroOperacion>?</tas:IdRegistroOperacion>
+            <!--Optional:-->
+            <tas:NUP>?</tas:NUP>
+            <!--Optional:-->
+            <tas:PasswordRACF>?</tas:PasswordRACF>
+            <!--Optional:-->
+            <tas:TipoPersona>?</tas:TipoPersona>
+            <!--Optional:-->
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>
+         </tem:CambiarClaveCanalFirmanteResult>
+      </tem:CambiarClaveCanalFirmanteResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalFirmanteResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="CambiarClaveCanalIndividuo" id="b39906f7-f988-4b5c-8f56-7da65395fa2a" interface="PRISMA_SeguridadSvcEndpoint" operation="CambiarClaveCanalIndividuo"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="23f62c27-4cdd-4a29-8581-7abf07e370a5" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
+   <soap:Header/>
+   <soap:Body>
+      <tem:CambiarClaveCanalIndividuoResponse>
+         <!--Optional:-->
+         <tem:CambiarClaveCanalIndividuoResult>
+            <!--Optional:-->
+            <tas:ClaveInvalida>?</tas:ClaveInvalida>
+            <!--Optional:-->
+            <tas:ClaveTrivialHistorica>?</tas:ClaveTrivialHistorica>
+            <!--Optional:-->
+            <tas:ClaveVencida>?</tas:ClaveVencida>
+            <!--Optional:-->
+            <tas:ClaveVencidaEmpresa>?</tas:ClaveVencidaEmpresa>
+            <!--Optional:-->
+            <tas:ClienteBloqueado>?</tas:ClienteBloqueado>
+            <!--Optional:-->
+            <tas:ClienteEmpresaSinonimo>?</tas:ClienteEmpresaSinonimo>
+            <!--Optional:-->
+            <tas:ClienteSinonimo>?</tas:ClienteSinonimo>
+            <!--Optional:-->
+            <tas:FechaNacimiento>?</tas:FechaNacimiento>
+            <!--Optional:-->
+            <tas:IdRegistroOperacion>?</tas:IdRegistroOperacion>
+            <!--Optional:-->
+            <tas:NUP>?</tas:NUP>
+            <!--Optional:-->
+            <tas:PasswordRACF>?</tas:PasswordRACF>
+            <!--Optional:-->
+            <tas:TipoPersona>?</tas:TipoPersona>
+            <!--Optional:-->
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>
+         </tem:CambiarClaveCanalIndividuoResult>
+      </tem:CambiarClaveCanalIndividuoResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalIndividuoResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="IdentificarCliente" id="349fdec4-f433-47b0-9f13-e3f44f29421f" interface="PRISMA_SeguridadSvcEndpoint" operation="IdentificarCliente"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>//Define the request context
+def request = new XmlSlurper().parseText(mockRequest.requestContent)
+//geting the values from the xml request
+context.UserPassword = request.Body.IdentificarCliente.request.Clave.toString()
+context.NroDocumento = request.Body.IdentificarCliente.request.NroDocumento.toString()
+
+if (((context.NroDocumento == context.DNI1) || (context.NroDocumento == context.DNI2)||(context.NroDocumento == context.DNI3)) &amp;&amp; (context.UserPassword == context.Password1)){
+	context.IdRegistroOperacion = context.IdRegistroOperacion +1;	
+	if (context.NroDocumento == context.DNI1)
+		context.BirthDate = context.birthDate1
+	else if (context.NroDocumento == context.DNI2)
+		context.BirthDate = context.birthDate2
+	else if (context.NroDocumento == context.DNI3)
+		context.BirthDate = context.birthDate3	
+	return "Valid Password"
+}else{ 
+	return "Invalid Password"
+}
+
+
+</con:dispatchPath><con:response name="Valid Password" id="094403a1-5ba0-4415-9258-4cdeb30652c9" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
+   <soap:Header/>
+   <soap:Body>
+      <tem:IdentificarClienteResponse xmlns="http://tempuri.org/">
+      	<tem:IdentificarClienteResult xmlns:b="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+            <tas:ClaveInvalida>false</tas:ClaveInvalida>
+            <tas:ClaveTrivialHistorica>false</tas:ClaveTrivialHistorica>
+            <tas:ClaveVencida>false</tas:ClaveVencida>
+            <tas:ClaveVencidaEmpresa>false</tas:ClaveVencidaEmpresa>
+            <tas:ClienteEmpresaSinonimo>false</tas:ClienteEmpresaSinonimo>
+            <tas:ClienteSinonimo>false</tas:ClienteSinonimo>
+            <tas:ExtensionCantidadDesc>0</tas:ExtensionCantidadDesc>
+            <tas:ExtensionDescripcion i:nil="true"></tas:ExtensionDescripcion>
+            <tas:ExtensionSistemaId i:nil="true"></tas:ExtensionSistemaId>
+            <tas:FechaNacimiento>${BirthDate}</tas:FechaNacimiento>
+            <tas:IdRegistroOperacion>${IdRegistroOperacion}</tas:IdRegistroOperacion>
+            <tas:NUP>70002915</tas:NUP>
+            <tas:PasswordRACF>@HXU4AX0</tas:PasswordRACF>
+            <tas:TipoPersona>I</tas:TipoPersona>
+            <tas:UsuarioRACF>70AKMJ15</tas:UsuarioRACF>
+         </tem:IdentificarClienteResult>
+      </tem:IdentificarClienteResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/IdentificarClienteResponse"/></con:response><con:response name="Invalid Password" id="82431311-4840-416a-bd37-f26bef486e47" httpResponseStatus="500" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
+   <soap:Header/>
+   <soap:Body>
+      <s:Fault>
+		<s:Code>
+			<s:Value>s:Sender</s:Value>
+		</s:Code>
+		<s:Reason>
+			<s:Text xml:lang="es-AR">10001016|SEG|Por favor, verifique los datos ingresados.</s:Text>
+		</s:Reason>
+		<s:Detail>
+			<BusinessException xmlns="http://schemas.datacontract.org/2004/07/Isban.Common" "http://www.w3.org/2001/XMLSchema-instance" xmlns:x="http://www.w3.org/2001/XMLSchema">
+				<ClassName i:type="x:string" xmlns="">Isban.Common.BusinessException</ClassName>
+				<Message i:type="x:string" xmlns="">10001016|SEG|Por favor, verifique los datos ingresados.</Message>
+				<Data i:nil="true" xmlns=""/>
+				<InnerException i:nil="true" xmlns=""/>
+				<HelpURL i:nil="true" xmlns=""/>
+				<StackTraceString i:nil="true" xmlns=""/>
+				<RemoteStackTraceString i:nil="true" xmlns=""/>
+				<RemoteStackIndex i:type="x:int" xmlns="">0</RemoteStackIndex>
+				<ExceptionMethod i:nil="true" xmlns=""/>
+				<HResult i:type="x:int" xmlns="">-2146233088</HResult>
+				<Source i:nil="true" xmlns=""/>
+				<WatsonBuckets i:nil="true" xmlns=""/>
+			</BusinessException>
+		</s:Detail>
+	</s:Fault>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/IdentificarClienteResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="IdentificarClienteConVencimiento" id="fbf72558-a744-49d9-b2ae-e2702a98f677" interface="PRISMA_SeguridadSvcEndpoint" operation="IdentificarClienteConVencimiento"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="a7f792c4-d9c0-44e9-91f8-eaacfd034f56" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
+   <soap:Header/>
+   <soap:Body>
+      <tem:IdentificarClienteConVencimientoResponse>
+         <!--Optional:-->
+         <tem:IdentificarClienteConVencimientoResult>
+            <!--Optional:-->
+            <tas:ClaveInvalida>?</tas:ClaveInvalida>
+            <!--Optional:-->
+            <tas:ClaveTrivialHistorica>?</tas:ClaveTrivialHistorica>
+            <!--Optional:-->
+            <tas:ClaveVencida>?</tas:ClaveVencida>
+            <!--Optional:-->
+            <tas:ClaveVencidaEmpresa>?</tas:ClaveVencidaEmpresa>
+            <!--Optional:-->
+            <tas:ClienteEmpresaSinonimo>?</tas:ClienteEmpresaSinonimo>
+            <!--Optional:-->
+            <tas:ClienteSinonimo>?</tas:ClienteSinonimo>
+            <!--Optional:-->
+            <tas:ExtensionCantidadDesc>?</tas:ExtensionCantidadDesc>
+            <!--Optional:-->
+            <tas:ExtensionDescripcion>?</tas:ExtensionDescripcion>
+            <!--Optional:-->
+            <tas:ExtensionSistemaId>?</tas:ExtensionSistemaId>
+            <!--Optional:-->
+            <tas:FechaNacimiento>?</tas:FechaNacimiento>
+            <!--Optional:-->
+            <tas:IdRegistroOperacion>?</tas:IdRegistroOperacion>
+            <!--Optional:-->
+            <tas:NUP>?</tas:NUP>
+            <!--Optional:-->
+            <tas:PasswordRACF>?</tas:PasswordRACF>
+            <!--Optional:-->
+            <tas:TipoPersona>?</tas:TipoPersona>
+            <!--Optional:-->
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>
+         </tem:IdentificarClienteConVencimientoResult>
+      </tem:IdentificarClienteConVencimientoResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/IdentificarClienteConVencimientoResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="LoginSession" id="18094153-b027-40e1-8bb4-7a026bf9d762" interface="PRISMA_SeguridadSvcEndpoint" operation="LoginSession"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="3d3dd712-81f2-4718-9a1a-f3be124c067d" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
+   <soap:Header/>
+   <soap:Body>
+      <tem:LoginSessionResponse>
+         <!--Optional:-->
+         <tem:LoginSessionResult>
+            <!--Optional:-->
+            <tas:HoraUltimoLogin>?</tas:HoraUltimoLogin>
+            <!--Optional:-->
+            <tas:SegundosRestantes>?</tas:SegundosRestantes>
+            <!--Optional:-->
+            <tas:TimeOut>?</tas:TimeOut>
+            <!--Optional:-->
+            <tas:fechaUltimoLogin>?</tas:fechaUltimoLogin>
+         </tem:LoginSessionResult>
+      </tem:LoginSessionResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/LoginSessionResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="LogoutSession" id="a9e77b9d-a5ff-4a66-b4e8-1ee9d4c9107c" interface="PRISMA_SeguridadSvcEndpoint" operation="LogoutSession"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="bd0fa8e5-7e34-45b9-ae19-6d2dfe55a652" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+   <soap:Header/>
+   <soap:Body>
+      <tem:LogoutSessionResponse>
+         <!--Optional:-->
+         <tem:LogoutSessionResult/>
+      </tem:LogoutSessionResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/LogoutSessionResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="ObtenerDocumentoPorNumeroTarjeta" id="3b4d3761-fee3-4931-b339-c8657aec2bc2" interface="PRISMA_SeguridadSvcEndpoint" operation="ObtenerDocumentoPorNumeroTarjeta"><con:settings/><con:defaultResponse>Valid Card</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>//Define the request context
+def request = new XmlSlurper().parseText(mockRequest.requestContent)
+//geting the values from the xml request
+context.UserCard = request.Body.ObtenerDocumentoPorNumeroTarjeta.request.NumeroDeTarjeta.toString()
+
+if (context.UserCard == context.TC1){
+	context.NroDoc = context.DNI1
+	context.BirthDate = context.birthDate1
+}else if (context.UserCard == context.TD1){
+	context.NroDoc = context.DNI2
+	context.BirthDate = context.birthDate2
+}
+
+log.info context.NroDoc
+
+if (context.NroDoc != null)
+	return "Valid Card"
+else
+	return "Invalid Card"
+
+</con:dispatchPath><con:response name="Valid Card" id="e4c47b21-0122-4575-90b0-77c8a784ac99" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
+   <soap:Header/>
+   <soap:Body>
+      <tem:ObtenerDocumentoPorNumeroTarjetaResponse xmlns="http://tempuri.org/" >
+         <!--Optional:-->
+         <tem:ObtenerDocumentoPorNumeroTarjetaResult xmlns:b="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+            <!--Optional:-->
+            <tas:FechaDeNacimiento>${BirthDate}</tas:FechaDeNacimiento>
+            <!--Optional:-->
+            <tas:NumeroDeDocumento>${NroDoc}</tas:NumeroDeDocumento>
+         </tem:ObtenerDocumentoPorNumeroTarjetaResult>
+      </tem:ObtenerDocumentoPorNumeroTarjetaResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/ObtenerDocumentoPorNumeroTarjetaResponse"/></con:response><con:response name="Invalid Card" id="63dc0648-a5c8-4338-bb64-1b0a50830d6d" httpResponseStatus="500" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
+   <soap:Header/>
+   <soap:Body>
+      <s:Fault>
+      <s:Code>
+        <s:Value>s:Sender</s:Value>
+      </s:Code>
+      <s:Reason>
+        <s:Text xml:lang="es-AR">10000069|KUN|La operacion solicitada no puede ser realizada. Por favor, reintente mas tarde.Tarjeta no dada de alta.</s:Text>
+      </s:Reason>
+      <s:Detail>
+        <BusinessException xmlns="http://schemas.datacontract.org/2004/07/Isban.Common" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:x="http://www.w3.org/2001/XMLSchema">
+          <ClassName i:type="x:string" xmlns="">Isban.Common.BusinessException</ClassName>
+          <Message i:type="x:string" xmlns="">10000069|KUN|La operacion solicitada no puede ser realizada. Por favor, reintente mas tarde.Tarjeta no dada de alta.</Message>
+          <Data i:nil="true" xmlns=""/>
+          <InnerException i:nil="true" xmlns=""/>
+          <HelpURL i:nil="true" xmlns=""/>
+          <StackTraceString i:nil="true" xmlns=""/>
+          <RemoteStackTraceString i:nil="true" xmlns=""/>
+          <RemoteStackIndex i:type="x:int" xmlns="">0</RemoteStackIndex>
+          <ExceptionMethod i:nil="true" xmlns=""/>
+          <HResult i:type="x:int" xmlns="">-2146233088</HResult>
+          <Source i:nil="true" xmlns=""/>
+          <WatsonBuckets i:nil="true" xmlns=""/>
+        </BusinessException>
+      </s:Detail>
+    </s:Fault>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/ObtenerDocumentoPorNumeroTarjetaResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="ObtenerServiciosDebitoAutomatico" id="d2a7701f-82ec-4261-a7e2-28d1ad75766e" interface="PRISMA_SeguridadSvcEndpoint" operation="ObtenerServiciosDebitoAutomatico"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="606e8324-528d-4eed-888e-2ef18888d99c" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.ServiceContracts">
+   <soap:Header/>
+   <soap:Body>
+      <tem:ObtenerServiciosDebitoAutomaticoResponse>
+         <!--Optional:-->
+         <tem:ObtenerServiciosDebitoAutomaticoResult>
+            <!--Optional:-->
+            <tas:CantidadRepeticiones>?</tas:CantidadRepeticiones>
+            <!--Optional:-->
+            <tas:Servicios>
+               <!--Zero or more repetitions:-->
+               <tas:SeguridadSvcObtenerServiciosDebitoAutomaticoResponseItem>
+                  <!--Optional:-->
+                  <tas:CodigoServicio>?</tas:CodigoServicio>
+                  <!--Optional:-->
+                  <tas:EstadoCliente>?</tas:EstadoCliente>
+                  <!--Optional:-->
+                  <tas:EstadoServicio>?</tas:EstadoServicio>
+                  <!--Optional:-->
+                  <tas:FechaServicio>?</tas:FechaServicio>
+                  <!--Optional:-->
+                  <tas:NombreServicio>?</tas:NombreServicio>
+                  <!--Optional:-->
+                  <tas:NumeroPartida>?</tas:NumeroPartida>
+                  <!--Optional:-->
+                  <tas:TipoFecha>?</tas:TipoFecha>
+                  <!--Optional:-->
+                  <tas:TipoStopDebit>?</tas:TipoStopDebit>
+               </tas:SeguridadSvcObtenerServiciosDebitoAutomaticoResponseItem>
+            </tas:Servicios>
+         </tem:ObtenerServiciosDebitoAutomaticoResult>
+      </tem:ObtenerServiciosDebitoAutomaticoResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/ObtenerServiciosDebitoAutomaticoResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="ObtenerTitularCuenta" id="c45f0c5e-44eb-4685-94c1-e9b9a8607bca" interface="PRISMA_SeguridadSvcEndpoint" operation="ObtenerTitularCuenta"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="0884a559-3540-4669-aca5-c7fdf86d6a82" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
+   <soap:Header/>
+   <soap:Body>
+      <tem:ObtenerTitularCuentaResponse>
+         <!--Optional:-->
+         <tem:ObtenerTitularCuentaResult>
+            <!--Optional:-->
+            <tas:NombreApellido>?</tas:NombreApellido>
+            <!--Optional:-->
+            <tas:NumeroTarjetaCredito>?</tas:NumeroTarjetaCredito>
+            <!--Optional:-->
+            <tas:TipoTarjetaCredito>?</tas:TipoTarjetaCredito>
+         </tem:ObtenerTitularCuentaResult>
+      </tem:ObtenerTitularCuentaResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/ObtenerTitularCuentaResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="UpdateSession" id="be264adb-0181-4f36-8369-1bcdb177fb9d" interface="PRISMA_SeguridadSvcEndpoint" operation="UpdateSession"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="3e5835cc-5455-4117-87ea-6477297ae9b6" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
+   <soap:Header/>
+   <soap:Body>
+      <tem:UpdateSessionResponse>
+         <!--Optional:-->
+         <tem:UpdateSessionResult>
+            <!--Optional:-->
+            <tas:TimeOut>?</tas:TimeOut>
+         </tem:UpdateSessionResult>
+      </tem:UpdateSessionResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/UpdateSessionResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="ValidarClaveFirmante" id="1006a109-07ed-4a8b-bbd6-bede934a6bce" interface="PRISMA_SeguridadSvcEndpoint" operation="ValidarClaveFirmante"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="d05aa0bb-fe27-401a-a013-7f7fb36f0a2b" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
+   <soap:Header/>
+   <soap:Body>
+      <tem:ValidarClaveFirmanteResponse>
+         <!--Optional:-->
+         <tem:ValidarClaveFirmanteResult>
+            <!--Optional:-->
+            <tas:ClaveInvalida>?</tas:ClaveInvalida>
+            <!--Optional:-->
+            <tas:ClaveTrivialHistorica>?</tas:ClaveTrivialHistorica>
+            <!--Optional:-->
+            <tas:ClaveVencida>?</tas:ClaveVencida>
+            <!--Optional:-->
+            <tas:ClaveVencidaEmpresa>?</tas:ClaveVencidaEmpresa>
+            <!--Optional:-->
+            <tas:ClienteBloqueado>?</tas:ClienteBloqueado>
+            <!--Optional:-->
+            <tas:ClienteEmpresaSinonimo>?</tas:ClienteEmpresaSinonimo>
+            <!--Optional:-->
+            <tas:ClienteSinonimo>?</tas:ClienteSinonimo>
+            <!--Optional:-->
+            <tas:FechaNacimiento>?</tas:FechaNacimiento>
+            <!--Optional:-->
+            <tas:IdRegistroOperacion>?</tas:IdRegistroOperacion>
+            <!--Optional:-->
+            <tas:NUP>?</tas:NUP>
+            <!--Optional:-->
+            <tas:PasswordRACF>?</tas:PasswordRACF>
+            <!--Optional:-->
+            <tas:TipoPersona>?</tas:TipoPersona>
+            <!--Optional:-->
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>
+         </tem:ValidarClaveFirmanteResult>
+      </tem:ValidarClaveFirmanteResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/ValidarClaveFirmanteResponse"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

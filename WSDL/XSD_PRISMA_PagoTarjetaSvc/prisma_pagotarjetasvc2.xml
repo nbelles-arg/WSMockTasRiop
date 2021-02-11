@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:tns="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:complexType name="PagoTarjetaSvcPagarTarjetaRequest">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:CommonRACFRequest">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="CanalId" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="CantidadCheques" nillable="true" type="xs:int"/>
+					<xs:element minOccurs="0" name="CodigoMoneda" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="CodigoTitularidad" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="ImportePagoTC" type="xs:decimal"/>
+					<xs:element minOccurs="0" name="IndicadorReversa" type="xs:boolean"/>
+					<xs:element minOccurs="0" name="ModoPagoTC" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="MomentoPagoTC" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="NUO" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="NUPFiller" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="NumeroCuentaDebito" nillable="true" type="xs:int"/>
+					<xs:element minOccurs="0" name="NumeroCuentaTarjeta" type="xs:long"/>
+					<xs:element minOccurs="0" name="NumeroSobre" type="xs:int"/>
+					<xs:element minOccurs="0" name="NumeroTarjetaCredito" nillable="true" type="xs:long"/>
+					<xs:element minOccurs="0" name="SubCanalId" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="SucursalCuentaDebito" nillable="true" type="xs:int"/>
+					<xs:element minOccurs="0" name="SucursalCuentaTarjeta" nillable="true" type="xs:int"/>
+					<xs:element minOccurs="0" name="TipoCuentaDebito" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="TipoPagoTC" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="TipoTarjetaCredito" type="xs:int"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="PagoTarjetaSvcPagarTarjetaRequest" nillable="true" type="tns:PagoTarjetaSvcPagarTarjetaRequest"/>
+	<xs:complexType name="CommonRACFRequest">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:CommonServiceRequest">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="ClienteFechaNacimiento" type="xs:dateTime"/>
+					<xs:element minOccurs="0" name="ClienteNumeroDoc" type="xs:long"/>
+					<xs:element minOccurs="0" name="ClienteTipoDoc" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="ClienteTipoPersona" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="IdTerminal" type="xs:int"/>
+					<xs:element minOccurs="0" name="NUP" type="xs:int"/>
+					<xs:element minOccurs="0" name="NroSucursal" type="xs:int"/>
+					<xs:element minOccurs="0" name="PasswordRACF" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="UserID" type="xs:int"/>
+					<xs:element minOccurs="0" name="UsuarioRACF" nillable="true" type="xs:string"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="CommonRACFRequest" nillable="true" type="tns:CommonRACFRequest"/>
+	<xs:complexType name="CommonServiceRequest">
+		<xs:sequence/>
+	</xs:complexType>
+	<xs:element name="CommonServiceRequest" nillable="true" type="tns:CommonServiceRequest"/>
+	<xs:complexType name="PagoTarjetaSvcPagarTarjetaResponse">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Canal" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="ClaveJrRioself1" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="ClaveJrRioself2" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="FechaLiquidacionTC" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="FechaVencimientoLiquidacionTC" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="IdRegistroOperacion" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="IdentificadorParaReversar" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NombreApellido" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NumeroCuentaTarjeta" type="xs:int"/>
+			<xs:element minOccurs="0" name="Nuo" type="xs:int"/>
+			<xs:element minOccurs="0" name="PagoMinimoTC" type="xs:long"/>
+			<xs:element minOccurs="0" name="SaldoDolaresTC" type="xs:long"/>
+			<xs:element minOccurs="0" name="SaldoPesosTC" type="xs:long"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PagoTarjetaSvcPagarTarjetaResponse" nillable="true" type="tns:PagoTarjetaSvcPagarTarjetaResponse"/>
+	<xs:complexType name="PagoTarjetaSvcConsultarPagoDeTarjetaRequest">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:CommonRACFRequest">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="CodigoMoneda" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="CodigoTitularidad" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="ImportePagoTC" nillable="true" type="xs:decimal"/>
+					<xs:element minOccurs="0" name="IndicadorOperReversa" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="Marca" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="ModoPagoTC" nillable="true" type="xs:int"/>
+					<xs:element minOccurs="0" name="MomentoPagoTC" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="NumeroCuentaDebito" nillable="true" type="xs:int"/>
+					<xs:element minOccurs="0" name="NumeroCuentaTarjeta" nillable="true" type="xs:long"/>
+					<xs:element minOccurs="0" name="NumeroSobre" nillable="true" type="xs:int"/>
+					<xs:element minOccurs="0" name="NumeroTarjetaCredito" type="xs:long"/>
+					<xs:element minOccurs="0" name="SucursalCuentaDebito" nillable="true" type="xs:int"/>
+					<xs:element minOccurs="0" name="SucursalCuentaTarjeta" nillable="true" type="xs:int"/>
+					<xs:element minOccurs="0" name="TipoCuentaDebito" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="TipoPagoTC" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="TipoTarjetaCredito" nillable="true" type="xs:int"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="PagoTarjetaSvcConsultarPagoDeTarjetaRequest" nillable="true" type="tns:PagoTarjetaSvcConsultarPagoDeTarjetaRequest"/>
+	<xs:complexType name="PagoTarjetaSvcConsultarPagoDeTarjetaResponse">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="FechaLiquidacionTC" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="FechaVencimientoLiquidacionTC" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="FormaPagoTC" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="IdRegistroOperacion" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="NombreApellido" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NumeroCuentaTarjeta" type="xs:long"/>
+			<xs:element minOccurs="0" name="PagoMinimoTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoDolaresTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoPesosTC" type="xs:decimal"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PagoTarjetaSvcConsultarPagoDeTarjetaResponse" nillable="true" type="tns:PagoTarjetaSvcConsultarPagoDeTarjetaResponse"/>
+	<xs:complexType name="PagoTarjetaSvcObtenerDatosTarjetaRequest">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:CommonRACFRequest">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="CodigoTitularidad" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="NumeroTarjetaCredito" type="xs:long"/>
+					<xs:element minOccurs="0" name="SucursalCuentaTarjeta" type="xs:int"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="PagoTarjetaSvcObtenerDatosTarjetaRequest" nillable="true" type="tns:PagoTarjetaSvcObtenerDatosTarjetaRequest"/>
+	<xs:complexType name="PagoTarjetaSvcObtenerDatosTarjetaResponse">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="AdelantosDolaresTC" nillable="true" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="AdelantosPesosTC" nillable="true" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="AjusteCreditoDolaresTC" nillable="true" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="AjusteCreditoPesosTC" nillable="true" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="AjusteDebitoDolaresTC" nillable="true" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="AjusteDebitoPesosTC" nillable="true" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="CicloTarjetaCredito" type="xs:int"/>
+			<xs:element minOccurs="0" name="ClaveBancariaUnificada" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="ConsumosDolaresTC" nillable="true" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="ConsumosPesosTC" nillable="true" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="CotizacionComprador" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="CotizacionVendedor" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="EstadoTarjetaCredito" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Fecha2doVencimiento" nillable="true" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="Fecha3erVencimiento" nillable="true" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="FechaCotizacion" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="FechaProximoCierreTC" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="FechaProximoVencimientoTC" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="FechaUltimoCierreTC" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="FechaUltimoPagoTC" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="FechaVencimientoLiquidacionTC" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="FechaVencimientoVigente" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="FormaPagoTarjetaCredito" type="xs:int"/>
+			<xs:element minOccurs="0" name="IdRegistroOperacion" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="LimiteCompraPesosTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="LimiteFinanciacionTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="MarcaVigenciaVto0" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="MarcaVigenciaVto2" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="MarcaVigenciaVto3" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="PagoMinimoDolaresTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="PagoMinimoImpagoTC" nillable="true" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="PagoMinimoPendienteCancelarDolaresTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="PagoMinimoPendienteCancelarPesosTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="PagoMinimoPesosTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="PagosDolaresTC" nillable="true" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="PagosPesosTC" nillable="true" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoActualDolaresTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoActualPesosTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoDolaresTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoImpagoDolaresUNIFICADOTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoImpagoDolaresVigente" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoImpagoPesosUNIFICADOTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoImpagoPesosVigente" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoPesosTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoUltimoCierreDolaresTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoUltimoCierrePesosTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoUltimoResumenDolares2doVto" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoUltimoResumenDolares3erVto" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoUltimoResumenDolaresVigente" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoUltimoResumenPesos2doVto" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoUltimoResumenPesos3erVto" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoUltimoResumenPesosVigente" type="xs:decimal"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PagoTarjetaSvcObtenerDatosTarjetaResponse" nillable="true" type="tns:PagoTarjetaSvcObtenerDatosTarjetaResponse"/>
+	<xs:complexType name="PagoTarjetaSvcObtenerTitularTarjetaRequest">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:CommonRACFRequest">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="MarcaCuentaTarjeta" type="xs:int"/>
+					<xs:element minOccurs="0" name="NroCuentaTarjetaCredito" type="xs:decimal"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="PagoTarjetaSvcObtenerTitularTarjetaRequest" nillable="true" type="tns:PagoTarjetaSvcObtenerTitularTarjetaRequest"/>
+	<xs:complexType name="PagoTarjetaSvcObtenerTitularTarjetaResponse">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Cartera" type="xs:int"/>
+			<xs:element minOccurs="0" name="CodigoDeLimiteDeCompra" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="CodigoDeProducto" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Coeficiente" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="DescripcionGrupoAfinidad" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="DuracionTarjeta" type="xs:int"/>
+			<xs:element minOccurs="0" name="EstadoDeLaCuenta" type="xs:int"/>
+			<xs:element minOccurs="0" name="EstadoTarjeta" type="xs:int"/>
+			<xs:element minOccurs="0" name="FechaDeAlta" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="FechaDeBaja" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="FechaNoRenovacion" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="GrupoDeAfinidad" type="xs:int"/>
+			<xs:element minOccurs="0" name="ImporteLimiteDeCompra" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="ImporteLimiteDeFinanciacion" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="MarcaPaquete" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="ModelodeLiquidacion" type="xs:int"/>
+			<xs:element minOccurs="0" name="MotivoBaja" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="MotivoNoRenovacion" type="xs:int"/>
+			<xs:element minOccurs="0" name="NombreyApellidoEmbozado" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NumeroDeContrato" type="xs:long"/>
+			<xs:element minOccurs="0" name="NumeroDeTarjeta" type="xs:long"/>
+			<xs:element minOccurs="0" name="Nup" type="xs:int"/>
+			<xs:element minOccurs="0" name="SucursalDeLaCuenta" type="xs:int"/>
+			<xs:element minOccurs="0" name="Titutar" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="VigenciaDesde" type="xs:int"/>
+			<xs:element minOccurs="0" name="VigenciaHasta" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PagoTarjetaSvcObtenerTitularTarjetaResponse" nillable="true" type="tns:PagoTarjetaSvcObtenerTitularTarjetaResponse"/>
+	<xs:complexType name="PagoTarjetaSvcObtenerDatosTarjetasRequest">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:CommonRACFRequest">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="Tarjetas" nillable="true" type="tns:ArrayOfPagoTarjetaSvcObtenerDatosTarjetasRequestTarjeta"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="PagoTarjetaSvcObtenerDatosTarjetasRequest" nillable="true" type="tns:PagoTarjetaSvcObtenerDatosTarjetasRequest"/>
+	<xs:complexType name="ArrayOfPagoTarjetaSvcObtenerDatosTarjetasRequestTarjeta">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="PagoTarjetaSvcObtenerDatosTarjetasRequestTarjeta" nillable="true" type="tns:PagoTarjetaSvcObtenerDatosTarjetasRequestTarjeta"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfPagoTarjetaSvcObtenerDatosTarjetasRequestTarjeta" nillable="true" type="tns:ArrayOfPagoTarjetaSvcObtenerDatosTarjetasRequestTarjeta"/>
+	<xs:complexType name="PagoTarjetaSvcObtenerDatosTarjetasRequestTarjeta">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="CodigoTitularidad" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NumeroTarjetaCredito" type="xs:long"/>
+			<xs:element minOccurs="0" name="SucursalCuentaTarjeta" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PagoTarjetaSvcObtenerDatosTarjetasRequestTarjeta" nillable="true" type="tns:PagoTarjetaSvcObtenerDatosTarjetasRequestTarjeta"/>
+	<xs:complexType name="PagoTarjetaSvcObtenerDatosTarjetasResponse">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Tarjetas" nillable="true" type="tns:ArrayOfPagoTarjetaSvcObtenerDatosTarjetasResponseTarjeta"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PagoTarjetaSvcObtenerDatosTarjetasResponse" nillable="true" type="tns:PagoTarjetaSvcObtenerDatosTarjetasResponse"/>
+	<xs:complexType name="ArrayOfPagoTarjetaSvcObtenerDatosTarjetasResponseTarjeta">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="PagoTarjetaSvcObtenerDatosTarjetasResponseTarjeta" nillable="true" type="tns:PagoTarjetaSvcObtenerDatosTarjetasResponseTarjeta"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfPagoTarjetaSvcObtenerDatosTarjetasResponseTarjeta" nillable="true" type="tns:ArrayOfPagoTarjetaSvcObtenerDatosTarjetasResponseTarjeta"/>
+	<xs:complexType name="PagoTarjetaSvcObtenerDatosTarjetasResponseTarjeta">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="AdelantosDolaresTC" nillable="true" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="AdelantosPesosTC" nillable="true" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="AjusteCreditoDolaresTC" nillable="true" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="AjusteCreditoPesosTC" nillable="true" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="AjusteDebitoDolaresTC" nillable="true" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="AjusteDebitoPesosTC" nillable="true" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="CicloTarjetaCredito" type="xs:int"/>
+			<xs:element minOccurs="0" name="ConsumosDolaresTC" nillable="true" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="ConsumosPesosTC" nillable="true" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="CotizacionComprador" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="CotizacionVendedor" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="EstadoTarjetaCredito" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Fecha2doVencimiento" nillable="true" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="Fecha3erVencimiento" nillable="true" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="FechaCotizacion" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="FechaProximoCierreTC" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="FechaProximoVencimientoTC" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="FechaUltimoCierreTC" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="FechaUltimoPagoTC" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="FechaVencimientoLiquidacionTC" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="FechaVencimientoVigente" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="FormaPagoTarjetaCredito" type="xs:int"/>
+			<xs:element minOccurs="0" name="LimiteCompraPesosTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="LimiteFinanciacionTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="MarcaVigenciaVto0" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="MarcaVigenciaVto2" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="MarcaVigenciaVto3" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Numero" type="xs:long"/>
+			<xs:element minOccurs="0" name="PagoMinimoDolaresTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="PagoMinimoImpagoTC" nillable="true" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="PagoMinimoPendienteCancelarDolaresTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="PagoMinimoPendienteCancelarPesosTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="PagoMinimoPesosTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="PagosDolaresTC" nillable="true" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="PagosPesosTC" nillable="true" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoActualDolaresTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoActualPesosTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoDolaresTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoImpagoDolaresUNIFICADOTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoImpagoDolaresVigente" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoImpagoPesosUNIFICADOTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoImpagoPesosVigente" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoPesosTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoUltimoCierreDolaresTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoUltimoCierrePesosTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoUltimoResumenDolares2doVto" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoUltimoResumenDolares3erVto" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoUltimoResumenDolaresVigente" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoUltimoResumenPesos2doVto" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoUltimoResumenPesos3erVto" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoUltimoResumenPesosVigente" type="xs:decimal"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PagoTarjetaSvcObtenerDatosTarjetasResponseTarjeta" nillable="true" type="tns:PagoTarjetaSvcObtenerDatosTarjetasResponseTarjeta"/>
+	<xs:complexType name="PagoTarjetaSvcConsultarConsolidadoDeTarjetaRequest">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Anio" type="xs:int"/>
+			<xs:element minOccurs="0" name="CodigoBanco" type="xs:int"/>
+			<xs:element minOccurs="0" name="MarcaTarjeta" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Mes" type="xs:int"/>
+			<xs:element minOccurs="0" name="NombreTerminal" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NroCuenta" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="NroDocumento" type="xs:long"/>
+			<xs:element minOccurs="0" name="NroTarjeta" type="xs:decimal"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PagoTarjetaSvcConsultarConsolidadoDeTarjetaRequest" nillable="true" type="tns:PagoTarjetaSvcConsultarConsolidadoDeTarjetaRequest"/>
+	<xs:complexType name="PagoTarjetaSvcConsultarConsolidadoDeTarjetaResponse">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="TarjetaActiva" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="Tarjetas" nillable="true" type="tns:ArrayOfPagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseTarjeta"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PagoTarjetaSvcConsultarConsolidadoDeTarjetaResponse" nillable="true" type="tns:PagoTarjetaSvcConsultarConsolidadoDeTarjetaResponse"/>
+	<xs:complexType name="ArrayOfPagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseTarjeta">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="PagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseTarjeta" nillable="true" type="tns:PagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseTarjeta"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfPagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseTarjeta" nillable="true" type="tns:ArrayOfPagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseTarjeta"/>
+	<xs:complexType name="PagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseTarjeta">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Movimientos" nillable="true" type="tns:ArrayOfPagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseMovimiento"/>
+			<xs:element minOccurs="0" name="Numero" type="xs:decimal"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseTarjeta" nillable="true" type="tns:PagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseTarjeta"/>
+	<xs:complexType name="ArrayOfPagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseMovimiento">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="PagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseMovimiento" nillable="true" type="tns:PagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseMovimiento"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfPagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseMovimiento" nillable="true" type="tns:ArrayOfPagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseMovimiento"/>
+	<xs:complexType name="PagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseMovimiento">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="CantidadCuotas" type="xs:int"/>
+			<xs:element minOccurs="0" name="Cuota" type="xs:int"/>
+			<xs:element minOccurs="0" name="DescripcionMovimiento" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="FechaMovimiento" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="ImporteMovimiento" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="MonedaMovimiento" nillable="true" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseMovimiento" nillable="true" type="tns:PagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseMovimiento"/>
+	<xs:complexType name="PagoTarjetaSvcObtenerDatosCuentaTarjetaRequest">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:CommonRACFRequest">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="Aplicacion_CTA_Relacionada" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="Categoria" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="Clave_Reenganche" type="xs:decimal"/>
+					<xs:element minOccurs="0" name="Marca" type="xs:int"/>
+					<xs:element minOccurs="0" name="Nro_Firmante_CTA_Relacionada" type="xs:int"/>
+					<xs:element minOccurs="0" name="Numero_CTA_Relacionada" type="xs:decimal"/>
+					<xs:element minOccurs="0" name="Numero_Cuenta" type="xs:decimal"/>
+					<xs:element minOccurs="0" name="Numero_Tarjeta" type="xs:decimal"/>
+					<xs:element minOccurs="0" name="Opcion" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="Sucursal_CTA_Relacionada" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="Tipo_CTA_Relacionada" nillable="true" type="xs:int"/>
+					<xs:element minOccurs="0" name="Tipo_de_Cuenta" nillable="true" type="xs:int"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="PagoTarjetaSvcObtenerDatosCuentaTarjetaRequest" nillable="true" type="tns:PagoTarjetaSvcObtenerDatosCuentaTarjetaRequest"/>
+	<xs:complexType name="PagoTarjetaSvcObtenerDatosCuentaTarjetaResponse">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Cantidad_de_Elementos_Enviados" type="xs:int"/>
+			<xs:element minOccurs="0" name="Clave_Reenganche" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="Hay_Mas_Datos" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Numero_de_Cuenta_TC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="Tarjetas" nillable="true" type="tns:ArrayOfPagoTarjetaSvcObtenerDatosCuentaTarjetaResponseTarjeta"/>
+			<xs:element minOccurs="0" name="Tipo_Cuenta" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PagoTarjetaSvcObtenerDatosCuentaTarjetaResponse" nillable="true" type="tns:PagoTarjetaSvcObtenerDatosCuentaTarjetaResponse"/>
+	<xs:complexType name="ArrayOfPagoTarjetaSvcObtenerDatosCuentaTarjetaResponseTarjeta">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="PagoTarjetaSvcObtenerDatosCuentaTarjetaResponseTarjeta" nillable="true" type="tns:PagoTarjetaSvcObtenerDatosCuentaTarjetaResponseTarjeta"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfPagoTarjetaSvcObtenerDatosCuentaTarjetaResponseTarjeta" nillable="true" type="tns:ArrayOfPagoTarjetaSvcObtenerDatosCuentaTarjetaResponseTarjeta"/>
+	<xs:complexType name="PagoTarjetaSvcObtenerDatosCuentaTarjetaResponseTarjeta">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Apellido_Nombre_Embozado" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Aplicacion_CTA_Relacionada" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Autorizado_TC" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Campania_ID" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Campania_Nro_Shot" type="xs:int"/>
+			<xs:element minOccurs="0" name="Canal_Venta" type="xs:int"/>
+			<xs:element minOccurs="0" name="Codigo_Categoria" type="xs:int"/>
+			<xs:element minOccurs="0" name="Descripcion_Canal_Venta" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Descripcion_Codigo_Categoria" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Descripcion_Estado_Tarjeta" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Descripcion_Marca_TC" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Descripcion_Motivo_Baja" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Descripcion_Motivo_Inclusion" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Descripcion_Producto" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Descripcion_Tipo_Tarjeta" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Estado_Tarjeta" type="xs:int"/>
+			<xs:element minOccurs="0" name="Fecha_Alta" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Fecha_Baja" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Fecha_Inclusion_Boletin" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Fecha_Ultima_Modificacion" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Hora_Ultima_Modificacion" type="xs:int"/>
+			<xs:element minOccurs="0" name="Limite_de_Adelantos" type="xs:int"/>
+			<xs:element minOccurs="0" name="Limite_de_Compras" type="xs:int"/>
+			<xs:element minOccurs="0" name="Limite_de_Cuotas" type="xs:int"/>
+			<xs:element minOccurs="0" name="Marca_TC" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Motivo_Alta" type="xs:int"/>
+			<xs:element minOccurs="0" name="Motivo_Baja" type="xs:int"/>
+			<xs:element minOccurs="0" name="Motivo_Inclusion_Boletin" type="xs:int"/>
+			<xs:element minOccurs="0" name="Nro_Firmante_CTA_Relacionada" type="xs:int"/>
+			<xs:element minOccurs="0" name="Numero_CTA_Relacionada" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="Numero_de_Solicitud" type="xs:int"/>
+			<xs:element minOccurs="0" name="Numero_de_Tarjeta" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="Origen_Ultima_Modificacion" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Producto" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Sucursal_CTA_Relacionada" type="xs:int"/>
+			<xs:element minOccurs="0" name="Tipo_CTA_Relacionada" type="xs:int"/>
+			<xs:element minOccurs="0" name="Tipo_Tarjeta" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Usuario_Alta" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Usuario_Ultima_Modificacion" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="Vigencia_Anio_Desde" type="xs:int"/>
+			<xs:element minOccurs="0" name="Vigencia_Anio_Hasta" type="xs:int"/>
+			<xs:element minOccurs="0" name="Vigencia_Mes_Desde" type="xs:int"/>
+			<xs:element minOccurs="0" name="Vigencia_Mes_Hasta" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PagoTarjetaSvcObtenerDatosCuentaTarjetaResponseTarjeta" nillable="true" type="tns:PagoTarjetaSvcObtenerDatosCuentaTarjetaResponseTarjeta"/>
+	<xs:complexType name="PagoTarjetaSvcPagarTarjetaDepEfecRequest">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:CommonRACFRequest">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="ClaveRIOSELF" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="ImporteDolares" type="xs:decimal"/>
+					<xs:element minOccurs="0" name="ImportePesos" type="xs:decimal"/>
+					<xs:element minOccurs="0" name="IndOperacionDirecta" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="IndicadorOperReversa" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="NUO" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="NroCuentaTarjeta" type="xs:long"/>
+					<xs:element minOccurs="0" name="NroTarjeta" type="xs:long"/>
+					<xs:element minOccurs="0" name="TipoDePago" type="xs:long"/>
+					<xs:element minOccurs="0" name="TipoTarjeta" type="xs:int"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="PagoTarjetaSvcPagarTarjetaDepEfecRequest" nillable="true" type="tns:PagoTarjetaSvcPagarTarjetaDepEfecRequest"/>
+	<xs:complexType name="PagoTarjetaSvcPagarTarjetaDepEfecResponse">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="ApellidoYNombre" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="ClaveRIOSELF" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="FechaLiquidacion" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="FechaVencimLiq" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="FormaPago" type="xs:int"/>
+			<xs:element minOccurs="0" name="ImpDolar" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="ImpPesos" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="ImpTotalLiqDolar" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="ImpTotalLiqPesos" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="NUOOperacion" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NroCuentaTarjeta" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="PagoMinimo" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="TXHoraAConf" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="TipoTarjeta" nillable="true" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PagoTarjetaSvcPagarTarjetaDepEfecResponse" nillable="true" type="tns:PagoTarjetaSvcPagarTarjetaDepEfecResponse"/>
+	<xs:complexType name="PagoTarjetaSvcConsultarPagoDeTarjetaPrismaRequest">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:CommonRACFRequest">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="NumeroCuentaTarjeta" nillable="true" type="xs:long"/>
+					<xs:element minOccurs="0" name="NumeroTarjetaCredito" nillable="true" type="xs:long"/>
+					<xs:element minOccurs="0" name="TipoCuenta" nillable="true" type="xs:long"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="PagoTarjetaSvcConsultarPagoDeTarjetaPrismaRequest" nillable="true" type="tns:PagoTarjetaSvcConsultarPagoDeTarjetaPrismaRequest"/>
+	<xs:complexType name="PagoTarjetaSvcConsultarPagoDeTarjetaPrismaResponse">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="ApellidoNombre" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="FechaLiquidacionTC" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="FechaVencimientoLiquidacionTC" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="FormaPagoTC" type="xs:int"/>
+			<xs:element minOccurs="0" name="PagoMinimoPesosTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoDolaresTC" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="SaldoPesosTC" type="xs:decimal"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PagoTarjetaSvcConsultarPagoDeTarjetaPrismaResponse" nillable="true" type="tns:PagoTarjetaSvcConsultarPagoDeTarjetaPrismaResponse"/>
+	<xs:complexType name="PagoTarjetaSvcPagoTarjetaPrismaRequest">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:CommonRACFRequest">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="FechaNegocio" type="xs:dateTime"/>
+					<xs:element minOccurs="0" name="Importe" type="xs:decimal"/>
+					<xs:element minOccurs="0" name="Indicador_Oper_Reversa" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="Moneda" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="NombreTerminalFis" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="NroCuentaTarjeta" type="xs:long"/>
+					<xs:element minOccurs="0" name="NroTarjeta" type="xs:long"/>
+					<xs:element minOccurs="0" name="NroTicketBanelco" type="xs:long"/>
+					<xs:element minOccurs="0" name="TipoTarjeta" type="xs:int"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="PagoTarjetaSvcPagoTarjetaPrismaRequest" nillable="true" type="tns:PagoTarjetaSvcPagoTarjetaPrismaRequest"/>
+	<xs:complexType name="PagoTarjetaSvcPagoTarjetaPrismaResponse">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="ApellidoNombre" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="FechaVencimLiq" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="FormaPago" type="xs:int"/>
+			<xs:element minOccurs="0" name="ImpTotalLiqDolar" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="ImpTotalLiqPesos" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="Importe" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="Moneda" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NroCuentaTarjeta" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="PagoMinimo" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="TipoTarjeta" nillable="true" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PagoTarjetaSvcPagoTarjetaPrismaResponse" nillable="true" type="tns:PagoTarjetaSvcPagoTarjetaPrismaResponse"/>
+</xs:schema>

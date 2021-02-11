@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="DepositoSvc" targetNamespace="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<wsp:Policy wsu:Id="PRISMA_DepositoSvcEndpoint_policy">
+		<wsp:ExactlyOne>
+			<wsp:All>
+				<sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+					<wsp:Policy>
+						<sp:TransportToken>
+							<wsp:Policy>
+								<sp:HttpsToken RequireClientCertificate="true"/>
+							</wsp:Policy>
+						</sp:TransportToken>
+						<sp:AlgorithmSuite>
+							<wsp:Policy>
+								<sp:Basic256/>
+							</wsp:Policy>
+						</sp:AlgorithmSuite>
+						<sp:Layout>
+							<wsp:Policy>
+								<sp:Strict/>
+							</wsp:Policy>
+						</sp:Layout>
+					</wsp:Policy>
+				</sp:TransportBinding>
+				<wsaw:UsingAddressing/>
+			</wsp:All>
+		</wsp:ExactlyOne>
+	</wsp:Policy>
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://tempuri.org/Imports">
+			<xsd:import namespace="http://tempuri.org/" schemaLocation="https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc?xsd=xsd0"/>
+			<xsd:import namespace="http://schemas.datacontract.org/2004/07/Isban.Common" schemaLocation="https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc?xsd=xsd3"/>
+			<xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" schemaLocation="https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc?xsd=xsd1"/>
+			<xsd:import namespace="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" schemaLocation="https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc?xsd=xsd2"/>
+			<xsd:import namespace="http://schemas.datacontract.org/2004/07/System" schemaLocation="https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc?xsd=xsd4"/>
+			<xsd:import namespace="http://schemas.datacontract.org/2004/07/TAS.Common.ServiceContracts" schemaLocation="https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc?xsd=xsd5"/>
+			<xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" schemaLocation="https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc?xsd=xsd6"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="IDepositoSvc_DepositarEfectivoOCheques_InputMessage">
+		<wsdl:part element="tns:DepositarEfectivoOCheques" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositarEfectivoOCheques_OutputMessage">
+		<wsdl:part element="tns:DepositarEfectivoOChequesResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositarEfectivoOCheques_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q1:BusinessException" name="detail" xmlns:q1="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositarEfectivoOCheques_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q2:TechnicalException" name="detail" xmlns:q2="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_ObtenerSaldoYDatosAdicionales_InputMessage">
+		<wsdl:part element="tns:ObtenerSaldoYDatosAdicionales" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_ObtenerSaldoYDatosAdicionales_OutputMessage">
+		<wsdl:part element="tns:ObtenerSaldoYDatosAdicionalesResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_ObtenerSaldoYDatosAdicionales_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q3:BusinessException" name="detail" xmlns:q3="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_ObtenerSaldoYDatosAdicionales_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q4:TechnicalException" name="detail" xmlns:q4="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositarCupones_InputMessage">
+		<wsdl:part element="tns:DepositarCupones" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositarCupones_OutputMessage">
+		<wsdl:part element="tns:DepositarCuponesResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositarCupones_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q5:BusinessException" name="detail" xmlns:q5="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositarCupones_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q6:TechnicalException" name="detail" xmlns:q6="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_ConfirmarOperacionesPorBuzon_InputMessage">
+		<wsdl:part element="tns:ConfirmarOperacionesPorBuzon" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_ConfirmarOperacionesPorBuzon_OutputMessage">
+		<wsdl:part element="tns:ConfirmarOperacionesPorBuzonResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_ConfirmarOperacionesPorBuzon_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q7:BusinessException" name="detail" xmlns:q7="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_ConfirmarOperacionesPorBuzon_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q8:TechnicalException" name="detail" xmlns:q8="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositarChequesDigitalizadosConfirmacion_InputMessage">
+		<wsdl:part element="tns:DepositarChequesDigitalizadosConfirmacion" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositarChequesDigitalizadosConfirmacion_OutputMessage">
+		<wsdl:part element="tns:DepositarChequesDigitalizadosConfirmacionResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositarChequesDigitalizadosConfirmacion_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q9:BusinessException" name="detail" xmlns:q9="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositarChequesDigitalizadosConfirmacion_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q10:TechnicalException" name="detail" xmlns:q10="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositarChequesDigitalizados_InputMessage">
+		<wsdl:part element="tns:DepositarChequesDigitalizados" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositarChequesDigitalizados_OutputMessage">
+		<wsdl:part element="tns:DepositarChequesDigitalizadosResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositarChequesDigitalizados_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q11:BusinessException" name="detail" xmlns:q11="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositarChequesDigitalizados_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q12:TechnicalException" name="detail" xmlns:q12="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositarEfectivoOnline_InputMessage">
+		<wsdl:part element="tns:DepositarEfectivoOnline" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositarEfectivoOnline_OutputMessage">
+		<wsdl:part element="tns:DepositarEfectivoOnlineResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositarEfectivoOnline_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q13:BusinessException" name="detail" xmlns:q13="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositarEfectivoOnline_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q14:TechnicalException" name="detail" xmlns:q14="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_ConsultaDudosa_InputMessage">
+		<wsdl:part element="tns:ConsultaDudosa" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_ConsultaDudosa_OutputMessage">
+		<wsdl:part element="tns:ConsultaDudosaResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_ConsultaDudosa_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q15:BusinessException" name="detail" xmlns:q15="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_ConsultaDudosa_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q16:TechnicalException" name="detail" xmlns:q16="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_ObtenerEmpresasCupon_InputMessage">
+		<wsdl:part element="tns:ObtenerEmpresasCupon" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_ObtenerEmpresasCupon_OutputMessage">
+		<wsdl:part element="tns:ObtenerEmpresasCuponResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_ObtenerEmpresasCupon_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q17:BusinessException" name="detail" xmlns:q17="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_ObtenerEmpresasCupon_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q18:TechnicalException" name="detail" xmlns:q18="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_ObtenerTiposCupon_InputMessage">
+		<wsdl:part element="tns:ObtenerTiposCupon" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_ObtenerTiposCupon_OutputMessage">
+		<wsdl:part element="tns:ObtenerTiposCuponResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_ObtenerTiposCupon_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q19:BusinessException" name="detail" xmlns:q19="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_ObtenerTiposCupon_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q20:TechnicalException" name="detail" xmlns:q20="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositoPagoAProveedores_InputMessage">
+		<wsdl:part element="tns:DepositoPagoAProveedores" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositoPagoAProveedores_OutputMessage">
+		<wsdl:part element="tns:DepositoPagoAProveedoresResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositoPagoAProveedores_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q21:BusinessException" name="detail" xmlns:q21="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositoPagoAProveedores_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q22:TechnicalException" name="detail" xmlns:q22="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresV2_InputMessage">
+		<wsdl:part element="tns:DepositoPagoAProveedoresV2" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresV2_OutputMessage">
+		<wsdl:part element="tns:DepositoPagoAProveedoresV2Response" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresV2_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q23:BusinessException" name="detail" xmlns:q23="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresV2_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q24:TechnicalException" name="detail" xmlns:q24="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresAnonimo_InputMessage">
+		<wsdl:part element="tns:DepositoPagoAProveedoresAnonimo" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresAnonimo_OutputMessage">
+		<wsdl:part element="tns:DepositoPagoAProveedoresAnonimoResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresAnonimo_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q25:BusinessException" name="detail" xmlns:q25="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresAnonimo_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q26:TechnicalException" name="detail" xmlns:q26="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresPrisma_InputMessage">
+		<wsdl:part element="tns:DepositoPagoAProveedoresPrisma" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresPrisma_OutputMessage">
+		<wsdl:part element="tns:DepositoPagoAProveedoresPrismaResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresPrisma_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q27:BusinessException" name="detail" xmlns:q27="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresPrisma_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q28:TechnicalException" name="detail" xmlns:q28="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresAnonimoPrisma_InputMessage">
+		<wsdl:part element="tns:DepositoPagoAProveedoresAnonimoPrisma" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresAnonimoPrisma_OutputMessage">
+		<wsdl:part element="tns:DepositoPagoAProveedoresAnonimoPrismaResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresAnonimoPrisma_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q29:BusinessException" name="detail" xmlns:q29="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresAnonimoPrisma_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q30:TechnicalException" name="detail" xmlns:q30="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:portType name="IDepositoSvc">
+		<wsdl:operation name="DepositarEfectivoOCheques">
+			<wsdl:input message="tns:IDepositoSvc_DepositarEfectivoOCheques_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarEfectivoOCheques"/>
+			<wsdl:output message="tns:IDepositoSvc_DepositarEfectivoOCheques_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarEfectivoOChequesResponse"/>
+			<wsdl:fault message="tns:IDepositoSvc_DepositarEfectivoOCheques_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarEfectivoOChequesBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IDepositoSvc_DepositarEfectivoOCheques_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarEfectivoOChequesTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerSaldoYDatosAdicionales">
+			<wsdl:input message="tns:IDepositoSvc_ObtenerSaldoYDatosAdicionales_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/ObtenerSaldoYDatosAdicionales"/>
+			<wsdl:output message="tns:IDepositoSvc_ObtenerSaldoYDatosAdicionales_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/ObtenerSaldoYDatosAdicionalesResponse"/>
+			<wsdl:fault message="tns:IDepositoSvc_ObtenerSaldoYDatosAdicionales_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/ObtenerSaldoYDatosAdicionalesBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IDepositoSvc_ObtenerSaldoYDatosAdicionales_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/ObtenerSaldoYDatosAdicionalesTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="DepositarCupones">
+			<wsdl:input message="tns:IDepositoSvc_DepositarCupones_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarCupones"/>
+			<wsdl:output message="tns:IDepositoSvc_DepositarCupones_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarCuponesResponse"/>
+			<wsdl:fault message="tns:IDepositoSvc_DepositarCupones_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarCuponesBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IDepositoSvc_DepositarCupones_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarCuponesTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="ConfirmarOperacionesPorBuzon">
+			<wsdl:input message="tns:IDepositoSvc_ConfirmarOperacionesPorBuzon_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/ConfirmarOperacionesPorBuzon"/>
+			<wsdl:output message="tns:IDepositoSvc_ConfirmarOperacionesPorBuzon_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/ConfirmarOperacionesPorBuzonResponse"/>
+			<wsdl:fault message="tns:IDepositoSvc_ConfirmarOperacionesPorBuzon_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/ConfirmarOperacionesPorBuzonBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IDepositoSvc_ConfirmarOperacionesPorBuzon_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/ConfirmarOperacionesPorBuzonTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="DepositarChequesDigitalizadosConfirmacion">
+			<wsdl:input message="tns:IDepositoSvc_DepositarChequesDigitalizadosConfirmacion_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarChequesDigitalizadosConfirmacion"/>
+			<wsdl:output message="tns:IDepositoSvc_DepositarChequesDigitalizadosConfirmacion_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarChequesDigitalizadosConfirmacionResponse"/>
+			<wsdl:fault message="tns:IDepositoSvc_DepositarChequesDigitalizadosConfirmacion_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarChequesDigitalizadosConfirmacionBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IDepositoSvc_DepositarChequesDigitalizadosConfirmacion_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarChequesDigitalizadosConfirmacionTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="DepositarChequesDigitalizados">
+			<wsdl:input message="tns:IDepositoSvc_DepositarChequesDigitalizados_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarChequesDigitalizados"/>
+			<wsdl:output message="tns:IDepositoSvc_DepositarChequesDigitalizados_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarChequesDigitalizadosResponse"/>
+			<wsdl:fault message="tns:IDepositoSvc_DepositarChequesDigitalizados_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarChequesDigitalizadosBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IDepositoSvc_DepositarChequesDigitalizados_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarChequesDigitalizadosTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="DepositarEfectivoOnline">
+			<wsdl:input message="tns:IDepositoSvc_DepositarEfectivoOnline_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarEfectivoOnline"/>
+			<wsdl:output message="tns:IDepositoSvc_DepositarEfectivoOnline_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarEfectivoOnlineResponse"/>
+			<wsdl:fault message="tns:IDepositoSvc_DepositarEfectivoOnline_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarEfectivoOnlineBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IDepositoSvc_DepositarEfectivoOnline_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarEfectivoOnlineTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultaDudosa">
+			<wsdl:input message="tns:IDepositoSvc_ConsultaDudosa_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/ConsultaDudosa"/>
+			<wsdl:output message="tns:IDepositoSvc_ConsultaDudosa_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/ConsultaDudosaResponse"/>
+			<wsdl:fault message="tns:IDepositoSvc_ConsultaDudosa_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/ConsultaDudosaBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IDepositoSvc_ConsultaDudosa_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/ConsultaDudosaTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerEmpresasCupon">
+			<wsdl:input message="tns:IDepositoSvc_ObtenerEmpresasCupon_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/ObtenerEmpresasCupon"/>
+			<wsdl:output message="tns:IDepositoSvc_ObtenerEmpresasCupon_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/ObtenerEmpresasCuponResponse"/>
+			<wsdl:fault message="tns:IDepositoSvc_ObtenerEmpresasCupon_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/ObtenerEmpresasCuponBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IDepositoSvc_ObtenerEmpresasCupon_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/ObtenerEmpresasCuponTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerTiposCupon">
+			<wsdl:input message="tns:IDepositoSvc_ObtenerTiposCupon_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/ObtenerTiposCupon"/>
+			<wsdl:output message="tns:IDepositoSvc_ObtenerTiposCupon_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/ObtenerTiposCuponResponse"/>
+			<wsdl:fault message="tns:IDepositoSvc_ObtenerTiposCupon_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/ObtenerTiposCuponBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IDepositoSvc_ObtenerTiposCupon_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/ObtenerTiposCuponTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="DepositoPagoAProveedores">
+			<wsdl:input message="tns:IDepositoSvc_DepositoPagoAProveedores_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedores"/>
+			<wsdl:output message="tns:IDepositoSvc_DepositoPagoAProveedores_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresResponse"/>
+			<wsdl:fault message="tns:IDepositoSvc_DepositoPagoAProveedores_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IDepositoSvc_DepositoPagoAProveedores_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="DepositoPagoAProveedoresV2">
+			<wsdl:input message="tns:IDepositoSvc_DepositoPagoAProveedoresV2_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresV2"/>
+			<wsdl:output message="tns:IDepositoSvc_DepositoPagoAProveedoresV2_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresV2Response"/>
+			<wsdl:fault message="tns:IDepositoSvc_DepositoPagoAProveedoresV2_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresV2BusinessExceptionFault"/>
+			<wsdl:fault message="tns:IDepositoSvc_DepositoPagoAProveedoresV2_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresV2TechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="DepositoPagoAProveedoresAnonimo">
+			<wsdl:input message="tns:IDepositoSvc_DepositoPagoAProveedoresAnonimo_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresAnonimo"/>
+			<wsdl:output message="tns:IDepositoSvc_DepositoPagoAProveedoresAnonimo_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresAnonimoResponse"/>
+			<wsdl:fault message="tns:IDepositoSvc_DepositoPagoAProveedoresAnonimo_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresAnonimoBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IDepositoSvc_DepositoPagoAProveedoresAnonimo_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresAnonimoTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="DepositoPagoAProveedoresPrisma">
+			<wsdl:input message="tns:IDepositoSvc_DepositoPagoAProveedoresPrisma_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresPrisma"/>
+			<wsdl:output message="tns:IDepositoSvc_DepositoPagoAProveedoresPrisma_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresPrismaResponse"/>
+			<wsdl:fault message="tns:IDepositoSvc_DepositoPagoAProveedoresPrisma_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresPrismaBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IDepositoSvc_DepositoPagoAProveedoresPrisma_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresPrismaTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="DepositoPagoAProveedoresAnonimoPrisma">
+			<wsdl:input message="tns:IDepositoSvc_DepositoPagoAProveedoresAnonimoPrisma_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresAnonimoPrisma"/>
+			<wsdl:output message="tns:IDepositoSvc_DepositoPagoAProveedoresAnonimoPrisma_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresAnonimoPrismaResponse"/>
+			<wsdl:fault message="tns:IDepositoSvc_DepositoPagoAProveedoresAnonimoPrisma_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresAnonimoPrismaBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IDepositoSvc_DepositoPagoAProveedoresAnonimoPrisma_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresAnonimoPrismaTechnicalExceptionFault"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="PRISMA_DepositoSvcEndpoint" type="tns:IDepositoSvc">
+		<wsp:PolicyReference URI="#PRISMA_DepositoSvcEndpoint_policy"/>
+		<soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="DepositarEfectivoOCheques">
+			<soap12:operation soapAction="http://tempuri.org/IDepositoSvc/DepositarEfectivoOCheques" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerSaldoYDatosAdicionales">
+			<soap12:operation soapAction="http://tempuri.org/IDepositoSvc/ObtenerSaldoYDatosAdicionales" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DepositarCupones">
+			<soap12:operation soapAction="http://tempuri.org/IDepositoSvc/DepositarCupones" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ConfirmarOperacionesPorBuzon">
+			<soap12:operation soapAction="http://tempuri.org/IDepositoSvc/ConfirmarOperacionesPorBuzon" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DepositarChequesDigitalizadosConfirmacion">
+			<soap12:operation soapAction="http://tempuri.org/IDepositoSvc/DepositarChequesDigitalizadosConfirmacion" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DepositarChequesDigitalizados">
+			<soap12:operation soapAction="http://tempuri.org/IDepositoSvc/DepositarChequesDigitalizados" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DepositarEfectivoOnline">
+			<soap12:operation soapAction="http://tempuri.org/IDepositoSvc/DepositarEfectivoOnline" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ConsultaDudosa">
+			<soap12:operation soapAction="http://tempuri.org/IDepositoSvc/ConsultaDudosa" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerEmpresasCupon">
+			<soap12:operation soapAction="http://tempuri.org/IDepositoSvc/ObtenerEmpresasCupon" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerTiposCupon">
+			<soap12:operation soapAction="http://tempuri.org/IDepositoSvc/ObtenerTiposCupon" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DepositoPagoAProveedores">
+			<soap12:operation soapAction="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedores" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DepositoPagoAProveedoresV2">
+			<soap12:operation soapAction="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresV2" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DepositoPagoAProveedoresAnonimo">
+			<soap12:operation soapAction="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresAnonimo" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DepositoPagoAProveedoresPrisma">
+			<soap12:operation soapAction="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresPrisma" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DepositoPagoAProveedoresAnonimoPrisma">
+			<soap12:operation soapAction="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresAnonimoPrisma" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="DepositoSvc">
+		<wsdl:port binding="tns:PRISMA_DepositoSvcEndpoint" name="PRISMA_DepositoSvcEndpoint">
+			<soap12:address location="https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc"/>
+			<wsa10:EndpointReference>
+				<wsa10:Address>https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc</wsa10:Address>
+			</wsa10:EndpointReference>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

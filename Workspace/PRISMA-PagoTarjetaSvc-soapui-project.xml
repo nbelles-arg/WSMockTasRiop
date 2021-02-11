@@ -1,0 +1,1579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="afabde65-5cae-4077-8d58-2d75df2a5f9d" activeEnvironment="Default" name="PRISMA_PagoTarjetaSvc" resourceRoot="" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="8c4f8e36-01dc-4ede-a746-d1ee6f449f9f" wsaVersion="200508" name="PRISMA_PagoTarjetaSvcEndPoint" type="wsdl" bindingName="{http://tempuri.org/}PRISMA_PagoTarjetaSvcEndPoint" soapVersion="1_2" anonymous="optional" definition="file:/C:/Datos/OneDrive%20-%20Prisma%20Medios%20de%20Pago/Datos/Java/Mock_WS_%20Santander/WSDL/PRISMA_PagoTarjetaSvc.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\Datos\OneDrive%20-%20Prisma%20Medios%20de%20Pago\Datos\Java\Mock_WS_%20Santander\WSDL\PRISMA_PagoTarjetaSvc.xml"><con:part><con:url>file:\C:\Datos\OneDrive%20-%20Prisma%20Medios%20de%20Pago\Datos\Java\Mock_WS_%20Santander\WSDL\PRISMA_PagoTarjetaSvc.xml</con:url><con:content><![CDATA[<wsdl:definitions name="PagoTarjetaSvc" targetNamespace="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsp:Policy wsu:Id="PRISMA_PagoTarjetaSvcEndPoint_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="true"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_PagoTarjetaSvc/prisma_pagotarjetasvc0.xml"/>
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Isban.Common" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_PagoTarjetaSvc/prisma_pagotarjetasvc3.xml"/>
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_PagoTarjetaSvc/prisma_pagotarjetasvc1.xml"/>
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_PagoTarjetaSvc/prisma_pagotarjetasvc2.xml"/>
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_PagoTarjetaSvc/prisma_pagotarjetasvc4.xml"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPagoTarjeta_PagarTarjeta_InputMessage">
+    <wsdl:part element="tns:PagarTarjeta" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_PagarTarjeta_OutputMessage">
+    <wsdl:part element="tns:PagarTarjetaResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_PagarTarjeta_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q1:BusinessException" name="detail" xmlns:q1="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_PagarTarjeta_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q2:TechnicalException" name="detail" xmlns:q2="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_ConsultarPagoTarjeta_InputMessage">
+    <wsdl:part element="tns:ConsultarPagoTarjeta" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_ConsultarPagoTarjeta_OutputMessage">
+    <wsdl:part element="tns:ConsultarPagoTarjetaResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_ConsultarPagoTarjeta_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q3:BusinessException" name="detail" xmlns:q3="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_ConsultarPagoTarjeta_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q4:TechnicalException" name="detail" xmlns:q4="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_ObtenerDatosTarjeta_InputMessage">
+    <wsdl:part element="tns:ObtenerDatosTarjeta" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_ObtenerDatosTarjeta_OutputMessage">
+    <wsdl:part element="tns:ObtenerDatosTarjetaResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_ObtenerDatosTarjeta_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q5:BusinessException" name="detail" xmlns:q5="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_ObtenerDatosTarjeta_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q6:TechnicalException" name="detail" xmlns:q6="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_ObtenerTitularTarjeta_InputMessage">
+    <wsdl:part element="tns:ObtenerTitularTarjeta" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_ObtenerTitularTarjeta_OutputMessage">
+    <wsdl:part element="tns:ObtenerTitularTarjetaResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_ObtenerTitularTarjeta_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q7:BusinessException" name="detail" xmlns:q7="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_ObtenerTitularTarjeta_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q8:TechnicalException" name="detail" xmlns:q8="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_ObtenerDatosTarjetas_InputMessage">
+    <wsdl:part element="tns:ObtenerDatosTarjetas" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_ObtenerDatosTarjetas_OutputMessage">
+    <wsdl:part element="tns:ObtenerDatosTarjetasResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_ObtenerDatosTarjetas_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q9:BusinessException" name="detail" xmlns:q9="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_ObtenerDatosTarjetas_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q10:TechnicalException" name="detail" xmlns:q10="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_ConsultarConsolidadoDeTarjeta_InputMessage">
+    <wsdl:part element="tns:ConsultarConsolidadoDeTarjeta" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_ConsultarConsolidadoDeTarjeta_OutputMessage">
+    <wsdl:part element="tns:ConsultarConsolidadoDeTarjetaResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_ConsultarConsolidadoDeTarjeta_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q11:BusinessException" name="detail" xmlns:q11="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_ConsultarConsolidadoDeTarjeta_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q12:TechnicalException" name="detail" xmlns:q12="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_ObtenerDatosDeCuentaTarjeta_InputMessage">
+    <wsdl:part element="tns:ObtenerDatosDeCuentaTarjeta" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_ObtenerDatosDeCuentaTarjeta_OutputMessage">
+    <wsdl:part element="tns:ObtenerDatosDeCuentaTarjetaResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_ObtenerDatosDeCuentaTarjeta_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q13:BusinessException" name="detail" xmlns:q13="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_ObtenerDatosDeCuentaTarjeta_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q14:TechnicalException" name="detail" xmlns:q14="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_PagarTarjetaDepEfec_InputMessage">
+    <wsdl:part element="tns:PagarTarjetaDepEfec" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_PagarTarjetaDepEfec_OutputMessage">
+    <wsdl:part element="tns:PagarTarjetaDepEfecResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_PagarTarjetaDepEfec_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q15:BusinessException" name="detail" xmlns:q15="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_PagarTarjetaDepEfec_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q16:TechnicalException" name="detail" xmlns:q16="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_ConsultarPagoTarjetaPrisma_InputMessage">
+    <wsdl:part element="tns:ConsultarPagoTarjetaPrisma" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_ConsultarPagoTarjetaPrisma_OutputMessage">
+    <wsdl:part element="tns:ConsultarPagoTarjetaPrismaResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_ConsultarPagoTarjetaPrisma_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q17:BusinessException" name="detail" xmlns:q17="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_ConsultarPagoTarjetaPrisma_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q18:TechnicalException" name="detail" xmlns:q18="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_PagoTarjetaPrisma_InputMessage">
+    <wsdl:part element="tns:PagoTarjetaPrisma" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_PagoTarjetaPrisma_OutputMessage">
+    <wsdl:part element="tns:PagoTarjetaPrismaResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_PagoTarjetaPrisma_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q19:BusinessException" name="detail" xmlns:q19="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IPagoTarjeta_PagoTarjetaPrisma_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q20:TechnicalException" name="detail" xmlns:q20="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:portType name="IPagoTarjeta">
+    <wsdl:operation name="PagarTarjeta">
+      <wsdl:input message="tns:IPagoTarjeta_PagarTarjeta_InputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/PagarTarjeta"/>
+      <wsdl:output message="tns:IPagoTarjeta_PagarTarjeta_OutputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/PagarTarjetaResponse"/>
+      <wsdl:fault message="tns:IPagoTarjeta_PagarTarjeta_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/PagarTarjetaBusinessExceptionFault"/>
+      <wsdl:fault message="tns:IPagoTarjeta_PagarTarjeta_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/PagarTarjetaTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPagoTarjeta">
+      <wsdl:input message="tns:IPagoTarjeta_ConsultarPagoTarjeta_InputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjeta"/>
+      <wsdl:output message="tns:IPagoTarjeta_ConsultarPagoTarjeta_OutputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaResponse"/>
+      <wsdl:fault message="tns:IPagoTarjeta_ConsultarPagoTarjeta_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaBusinessExceptionFault"/>
+      <wsdl:fault message="tns:IPagoTarjeta_ConsultarPagoTarjeta_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatosTarjeta">
+      <wsdl:input message="tns:IPagoTarjeta_ObtenerDatosTarjeta_InputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerDatosTarjeta"/>
+      <wsdl:output message="tns:IPagoTarjeta_ObtenerDatosTarjeta_OutputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerDatosTarjetaResponse"/>
+      <wsdl:fault message="tns:IPagoTarjeta_ObtenerDatosTarjeta_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerDatosTarjetaBusinessExceptionFault"/>
+      <wsdl:fault message="tns:IPagoTarjeta_ObtenerDatosTarjeta_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerDatosTarjetaTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTitularTarjeta">
+      <wsdl:input message="tns:IPagoTarjeta_ObtenerTitularTarjeta_InputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerTitularTarjeta"/>
+      <wsdl:output message="tns:IPagoTarjeta_ObtenerTitularTarjeta_OutputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerTitularTarjetaResponse"/>
+      <wsdl:fault message="tns:IPagoTarjeta_ObtenerTitularTarjeta_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerTitularTarjetaBusinessExceptionFault"/>
+      <wsdl:fault message="tns:IPagoTarjeta_ObtenerTitularTarjeta_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerTitularTarjetaTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatosTarjetas">
+      <wsdl:input message="tns:IPagoTarjeta_ObtenerDatosTarjetas_InputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerDatosTarjetas"/>
+      <wsdl:output message="tns:IPagoTarjeta_ObtenerDatosTarjetas_OutputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerDatosTarjetasResponse"/>
+      <wsdl:fault message="tns:IPagoTarjeta_ObtenerDatosTarjetas_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerDatosTarjetasBusinessExceptionFault"/>
+      <wsdl:fault message="tns:IPagoTarjeta_ObtenerDatosTarjetas_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerDatosTarjetasTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarConsolidadoDeTarjeta">
+      <wsdl:input message="tns:IPagoTarjeta_ConsultarConsolidadoDeTarjeta_InputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/ConsultarConsolidadoDeTarjeta"/>
+      <wsdl:output message="tns:IPagoTarjeta_ConsultarConsolidadoDeTarjeta_OutputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/ConsultarConsolidadoDeTarjetaResponse"/>
+      <wsdl:fault message="tns:IPagoTarjeta_ConsultarConsolidadoDeTarjeta_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/ConsultarConsolidadoDeTarjetaBusinessExceptionFault"/>
+      <wsdl:fault message="tns:IPagoTarjeta_ConsultarConsolidadoDeTarjeta_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/ConsultarConsolidadoDeTarjetaTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatosDeCuentaTarjeta">
+      <wsdl:input message="tns:IPagoTarjeta_ObtenerDatosDeCuentaTarjeta_InputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerDatosDeCuentaTarjeta"/>
+      <wsdl:output message="tns:IPagoTarjeta_ObtenerDatosDeCuentaTarjeta_OutputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerDatosDeCuentaTarjetaResponse"/>
+      <wsdl:fault message="tns:IPagoTarjeta_ObtenerDatosDeCuentaTarjeta_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerDatosDeCuentaTarjetaBusinessExceptionFault"/>
+      <wsdl:fault message="tns:IPagoTarjeta_ObtenerDatosDeCuentaTarjeta_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/ObtenerDatosDeCuentaTarjetaTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="PagarTarjetaDepEfec">
+      <wsdl:input message="tns:IPagoTarjeta_PagarTarjetaDepEfec_InputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/PagarTarjetaDepEfec"/>
+      <wsdl:output message="tns:IPagoTarjeta_PagarTarjetaDepEfec_OutputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/PagarTarjetaDepEfecResponse"/>
+      <wsdl:fault message="tns:IPagoTarjeta_PagarTarjetaDepEfec_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/PagarTarjetaDepEfecBusinessExceptionFault"/>
+      <wsdl:fault message="tns:IPagoTarjeta_PagarTarjetaDepEfec_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/PagarTarjetaDepEfecTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPagoTarjetaPrisma">
+      <wsdl:input message="tns:IPagoTarjeta_ConsultarPagoTarjetaPrisma_InputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaPrisma"/>
+      <wsdl:output message="tns:IPagoTarjeta_ConsultarPagoTarjetaPrisma_OutputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaPrismaResponse"/>
+      <wsdl:fault message="tns:IPagoTarjeta_ConsultarPagoTarjetaPrisma_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaPrismaBusinessExceptionFault"/>
+      <wsdl:fault message="tns:IPagoTarjeta_ConsultarPagoTarjetaPrisma_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaPrismaTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="PagoTarjetaPrisma">
+      <wsdl:input message="tns:IPagoTarjeta_PagoTarjetaPrisma_InputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/PagoTarjetaPrisma"/>
+      <wsdl:output message="tns:IPagoTarjeta_PagoTarjetaPrisma_OutputMessage" wsaw:Action="http://tempuri.org/IPagoTarjeta/PagoTarjetaPrismaResponse"/>
+      <wsdl:fault message="tns:IPagoTarjeta_PagoTarjetaPrisma_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/PagoTarjetaPrismaBusinessExceptionFault"/>
+      <wsdl:fault message="tns:IPagoTarjeta_PagoTarjetaPrisma_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IPagoTarjeta/PagoTarjetaPrismaTechnicalExceptionFault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PRISMA_PagoTarjetaSvcEndPoint" type="tns:IPagoTarjeta">
+    <wsp:PolicyReference URI="#PRISMA_PagoTarjetaSvcEndPoint_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="PagarTarjeta">
+      <soap12:operation soapAction="http://tempuri.org/IPagoTarjeta/PagarTarjeta" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPagoTarjeta">
+      <soap12:operation soapAction="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjeta" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatosTarjeta">
+      <soap12:operation soapAction="http://tempuri.org/IPagoTarjeta/ObtenerDatosTarjeta" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTitularTarjeta">
+      <soap12:operation soapAction="http://tempuri.org/IPagoTarjeta/ObtenerTitularTarjeta" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatosTarjetas">
+      <soap12:operation soapAction="http://tempuri.org/IPagoTarjeta/ObtenerDatosTarjetas" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarConsolidadoDeTarjeta">
+      <soap12:operation soapAction="http://tempuri.org/IPagoTarjeta/ConsultarConsolidadoDeTarjeta" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatosDeCuentaTarjeta">
+      <soap12:operation soapAction="http://tempuri.org/IPagoTarjeta/ObtenerDatosDeCuentaTarjeta" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PagarTarjetaDepEfec">
+      <soap12:operation soapAction="http://tempuri.org/IPagoTarjeta/PagarTarjetaDepEfec" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPagoTarjetaPrisma">
+      <soap12:operation soapAction="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaPrisma" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PagoTarjetaPrisma">
+      <soap12:operation soapAction="http://tempuri.org/IPagoTarjeta/PagoTarjetaPrisma" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PagoTarjetaSvc">
+    <wsdl:port binding="tns:PRISMA_PagoTarjetaSvcEndPoint" name="PRISMA_PagoTarjetaSvcEndPoint">
+      <soap12:address location="https://webfronthomo01.rio.ar.bsch:8501/prisma_pagotarjetasvc.svc"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://webfronthomo01.rio.ar.bsch:8501/prisma_pagotarjetasvc.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_PagoTarjetaSvc/prisma_pagotarjetasvc0.xml</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:tns="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_PagoTarjetaSvc/prisma_pagotarjetasvc2.xml"/>
+  <xs:element name="PagarTarjeta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q1:PagoTarjetaSvcPagarTarjetaRequest" xmlns:q1="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PagarTarjetaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PagarTarjetaResult" nillable="true" type="q2:PagoTarjetaSvcPagarTarjetaResponse" xmlns:q2="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarPagoTarjeta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q3:PagoTarjetaSvcConsultarPagoDeTarjetaRequest" xmlns:q3="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarPagoTarjetaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConsultarPagoTarjetaResult" nillable="true" type="q4:PagoTarjetaSvcConsultarPagoDeTarjetaResponse" xmlns:q4="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDatosTarjeta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q5:PagoTarjetaSvcObtenerDatosTarjetaRequest" xmlns:q5="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDatosTarjetaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerDatosTarjetaResult" nillable="true" type="q6:PagoTarjetaSvcObtenerDatosTarjetaResponse" xmlns:q6="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTitularTarjeta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q7:PagoTarjetaSvcObtenerTitularTarjetaRequest" xmlns:q7="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTitularTarjetaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerTitularTarjetaResult" nillable="true" type="q8:PagoTarjetaSvcObtenerTitularTarjetaResponse" xmlns:q8="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDatosTarjetas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q9:PagoTarjetaSvcObtenerDatosTarjetasRequest" xmlns:q9="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDatosTarjetasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerDatosTarjetasResult" nillable="true" type="q10:PagoTarjetaSvcObtenerDatosTarjetasResponse" xmlns:q10="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarConsolidadoDeTarjeta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q11:PagoTarjetaSvcConsultarConsolidadoDeTarjetaRequest" xmlns:q11="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarConsolidadoDeTarjetaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConsultarConsolidadoDeTarjetaResult" nillable="true" type="q12:PagoTarjetaSvcConsultarConsolidadoDeTarjetaResponse" xmlns:q12="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDatosDeCuentaTarjeta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q13:PagoTarjetaSvcObtenerDatosCuentaTarjetaRequest" xmlns:q13="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDatosDeCuentaTarjetaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerDatosDeCuentaTarjetaResult" nillable="true" type="q14:PagoTarjetaSvcObtenerDatosCuentaTarjetaResponse" xmlns:q14="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PagarTarjetaDepEfec">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q15:PagoTarjetaSvcPagarTarjetaDepEfecRequest" xmlns:q15="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PagarTarjetaDepEfecResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PagarTarjetaDepEfecResult" nillable="true" type="q16:PagoTarjetaSvcPagarTarjetaDepEfecResponse" xmlns:q16="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarPagoTarjetaPrisma">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q17:PagoTarjetaSvcConsultarPagoDeTarjetaPrismaRequest" xmlns:q17="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarPagoTarjetaPrismaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConsultarPagoTarjetaPrismaResult" nillable="true" type="q18:PagoTarjetaSvcConsultarPagoDeTarjetaPrismaResponse" xmlns:q18="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PagoTarjetaPrisma">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q19:PagoTarjetaSvcPagoTarjetaPrismaRequest" xmlns:q19="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PagoTarjetaPrismaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PagoTarjetaPrismaResult" nillable="true" type="q20:PagoTarjetaSvcPagoTarjetaPrismaResponse" xmlns:q20="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_PagoTarjetaSvc/prisma_pagotarjetasvc2.xml</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:tns="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="PagoTarjetaSvcPagarTarjetaRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonRACFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CanalId" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CantidadCheques" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="CodigoMoneda" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CodigoTitularidad" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ImportePagoTC" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="IndicadorReversa" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="ModoPagoTC" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="MomentoPagoTC" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="NUO" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="NUPFiller" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="NumeroCuentaDebito" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="NumeroCuentaTarjeta" type="xs:long"/>
+          <xs:element minOccurs="0" name="NumeroSobre" type="xs:int"/>
+          <xs:element minOccurs="0" name="NumeroTarjetaCredito" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="SubCanalId" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="SucursalCuentaDebito" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="SucursalCuentaTarjeta" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="TipoCuentaDebito" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="TipoPagoTC" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="TipoTarjetaCredito" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PagoTarjetaSvcPagarTarjetaRequest" nillable="true" type="tns:PagoTarjetaSvcPagarTarjetaRequest"/>
+  <xs:complexType name="CommonRACFRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonServiceRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ClienteFechaNacimiento" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="ClienteNumeroDoc" type="xs:long"/>
+          <xs:element minOccurs="0" name="ClienteTipoDoc" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ClienteTipoPersona" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="IdTerminal" type="xs:int"/>
+          <xs:element minOccurs="0" name="NUP" type="xs:int"/>
+          <xs:element minOccurs="0" name="NroSucursal" type="xs:int"/>
+          <xs:element minOccurs="0" name="PasswordRACF" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="UserID" type="xs:int"/>
+          <xs:element minOccurs="0" name="UsuarioRACF" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CommonRACFRequest" nillable="true" type="tns:CommonRACFRequest"/>
+  <xs:complexType name="CommonServiceRequest">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:element name="CommonServiceRequest" nillable="true" type="tns:CommonServiceRequest"/>
+  <xs:complexType name="PagoTarjetaSvcPagarTarjetaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Canal" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ClaveJrRioself1" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ClaveJrRioself2" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="FechaLiquidacionTC" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FechaVencimientoLiquidacionTC" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="IdRegistroOperacion" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="IdentificadorParaReversar" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="NombreApellido" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="NumeroCuentaTarjeta" type="xs:int"/>
+      <xs:element minOccurs="0" name="Nuo" type="xs:int"/>
+      <xs:element minOccurs="0" name="PagoMinimoTC" type="xs:long"/>
+      <xs:element minOccurs="0" name="SaldoDolaresTC" type="xs:long"/>
+      <xs:element minOccurs="0" name="SaldoPesosTC" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PagoTarjetaSvcPagarTarjetaResponse" nillable="true" type="tns:PagoTarjetaSvcPagarTarjetaResponse"/>
+  <xs:complexType name="PagoTarjetaSvcConsultarPagoDeTarjetaRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonRACFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoMoneda" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CodigoTitularidad" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ImportePagoTC" nillable="true" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="IndicadorOperReversa" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Marca" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ModoPagoTC" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="MomentoPagoTC" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="NumeroCuentaDebito" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="NumeroCuentaTarjeta" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="NumeroSobre" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="NumeroTarjetaCredito" type="xs:long"/>
+          <xs:element minOccurs="0" name="SucursalCuentaDebito" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="SucursalCuentaTarjeta" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="TipoCuentaDebito" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="TipoPagoTC" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="TipoTarjetaCredito" nillable="true" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PagoTarjetaSvcConsultarPagoDeTarjetaRequest" nillable="true" type="tns:PagoTarjetaSvcConsultarPagoDeTarjetaRequest"/>
+  <xs:complexType name="PagoTarjetaSvcConsultarPagoDeTarjetaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FechaLiquidacionTC" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FechaVencimientoLiquidacionTC" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FormaPagoTC" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="IdRegistroOperacion" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="NombreApellido" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="NumeroCuentaTarjeta" type="xs:long"/>
+      <xs:element minOccurs="0" name="PagoMinimoTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoDolaresTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoPesosTC" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PagoTarjetaSvcConsultarPagoDeTarjetaResponse" nillable="true" type="tns:PagoTarjetaSvcConsultarPagoDeTarjetaResponse"/>
+  <xs:complexType name="PagoTarjetaSvcObtenerDatosTarjetaRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonRACFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoTitularidad" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="NumeroTarjetaCredito" type="xs:long"/>
+          <xs:element minOccurs="0" name="SucursalCuentaTarjeta" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PagoTarjetaSvcObtenerDatosTarjetaRequest" nillable="true" type="tns:PagoTarjetaSvcObtenerDatosTarjetaRequest"/>
+  <xs:complexType name="PagoTarjetaSvcObtenerDatosTarjetaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdelantosDolaresTC" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="AdelantosPesosTC" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="AjusteCreditoDolaresTC" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="AjusteCreditoPesosTC" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="AjusteDebitoDolaresTC" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="AjusteDebitoPesosTC" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="CicloTarjetaCredito" type="xs:int"/>
+      <xs:element minOccurs="0" name="ClaveBancariaUnificada" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ConsumosDolaresTC" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="ConsumosPesosTC" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="CotizacionComprador" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="CotizacionVendedor" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="EstadoTarjetaCredito" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Fecha2doVencimiento" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="Fecha3erVencimiento" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FechaCotizacion" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FechaProximoCierreTC" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FechaProximoVencimientoTC" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FechaUltimoCierreTC" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FechaUltimoPagoTC" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FechaVencimientoLiquidacionTC" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FechaVencimientoVigente" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FormaPagoTarjetaCredito" type="xs:int"/>
+      <xs:element minOccurs="0" name="IdRegistroOperacion" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="LimiteCompraPesosTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="LimiteFinanciacionTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="MarcaVigenciaVto0" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="MarcaVigenciaVto2" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="MarcaVigenciaVto3" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PagoMinimoDolaresTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="PagoMinimoImpagoTC" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="PagoMinimoPendienteCancelarDolaresTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="PagoMinimoPendienteCancelarPesosTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="PagoMinimoPesosTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="PagosDolaresTC" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="PagosPesosTC" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoActualDolaresTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoActualPesosTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoDolaresTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoImpagoDolaresUNIFICADOTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoImpagoDolaresVigente" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoImpagoPesosUNIFICADOTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoImpagoPesosVigente" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoPesosTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoUltimoCierreDolaresTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoUltimoCierrePesosTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoUltimoResumenDolares2doVto" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoUltimoResumenDolares3erVto" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoUltimoResumenDolaresVigente" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoUltimoResumenPesos2doVto" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoUltimoResumenPesos3erVto" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoUltimoResumenPesosVigente" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PagoTarjetaSvcObtenerDatosTarjetaResponse" nillable="true" type="tns:PagoTarjetaSvcObtenerDatosTarjetaResponse"/>
+  <xs:complexType name="PagoTarjetaSvcObtenerTitularTarjetaRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonRACFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MarcaCuentaTarjeta" type="xs:int"/>
+          <xs:element minOccurs="0" name="NroCuentaTarjetaCredito" type="xs:decimal"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PagoTarjetaSvcObtenerTitularTarjetaRequest" nillable="true" type="tns:PagoTarjetaSvcObtenerTitularTarjetaRequest"/>
+  <xs:complexType name="PagoTarjetaSvcObtenerTitularTarjetaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cartera" type="xs:int"/>
+      <xs:element minOccurs="0" name="CodigoDeLimiteDeCompra" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="CodigoDeProducto" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Coeficiente" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="DescripcionGrupoAfinidad" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="DuracionTarjeta" type="xs:int"/>
+      <xs:element minOccurs="0" name="EstadoDeLaCuenta" type="xs:int"/>
+      <xs:element minOccurs="0" name="EstadoTarjeta" type="xs:int"/>
+      <xs:element minOccurs="0" name="FechaDeAlta" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FechaDeBaja" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FechaNoRenovacion" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="GrupoDeAfinidad" type="xs:int"/>
+      <xs:element minOccurs="0" name="ImporteLimiteDeCompra" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="ImporteLimiteDeFinanciacion" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="MarcaPaquete" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ModelodeLiquidacion" type="xs:int"/>
+      <xs:element minOccurs="0" name="MotivoBaja" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="MotivoNoRenovacion" type="xs:int"/>
+      <xs:element minOccurs="0" name="NombreyApellidoEmbozado" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="NumeroDeContrato" type="xs:long"/>
+      <xs:element minOccurs="0" name="NumeroDeTarjeta" type="xs:long"/>
+      <xs:element minOccurs="0" name="Nup" type="xs:int"/>
+      <xs:element minOccurs="0" name="SucursalDeLaCuenta" type="xs:int"/>
+      <xs:element minOccurs="0" name="Titutar" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="VigenciaDesde" type="xs:int"/>
+      <xs:element minOccurs="0" name="VigenciaHasta" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PagoTarjetaSvcObtenerTitularTarjetaResponse" nillable="true" type="tns:PagoTarjetaSvcObtenerTitularTarjetaResponse"/>
+  <xs:complexType name="PagoTarjetaSvcObtenerDatosTarjetasRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonRACFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Tarjetas" nillable="true" type="tns:ArrayOfPagoTarjetaSvcObtenerDatosTarjetasRequestTarjeta"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PagoTarjetaSvcObtenerDatosTarjetasRequest" nillable="true" type="tns:PagoTarjetaSvcObtenerDatosTarjetasRequest"/>
+  <xs:complexType name="ArrayOfPagoTarjetaSvcObtenerDatosTarjetasRequestTarjeta">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="PagoTarjetaSvcObtenerDatosTarjetasRequestTarjeta" nillable="true" type="tns:PagoTarjetaSvcObtenerDatosTarjetasRequestTarjeta"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPagoTarjetaSvcObtenerDatosTarjetasRequestTarjeta" nillable="true" type="tns:ArrayOfPagoTarjetaSvcObtenerDatosTarjetasRequestTarjeta"/>
+  <xs:complexType name="PagoTarjetaSvcObtenerDatosTarjetasRequestTarjeta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoTitularidad" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="NumeroTarjetaCredito" type="xs:long"/>
+      <xs:element minOccurs="0" name="SucursalCuentaTarjeta" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PagoTarjetaSvcObtenerDatosTarjetasRequestTarjeta" nillable="true" type="tns:PagoTarjetaSvcObtenerDatosTarjetasRequestTarjeta"/>
+  <xs:complexType name="PagoTarjetaSvcObtenerDatosTarjetasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Tarjetas" nillable="true" type="tns:ArrayOfPagoTarjetaSvcObtenerDatosTarjetasResponseTarjeta"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PagoTarjetaSvcObtenerDatosTarjetasResponse" nillable="true" type="tns:PagoTarjetaSvcObtenerDatosTarjetasResponse"/>
+  <xs:complexType name="ArrayOfPagoTarjetaSvcObtenerDatosTarjetasResponseTarjeta">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="PagoTarjetaSvcObtenerDatosTarjetasResponseTarjeta" nillable="true" type="tns:PagoTarjetaSvcObtenerDatosTarjetasResponseTarjeta"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPagoTarjetaSvcObtenerDatosTarjetasResponseTarjeta" nillable="true" type="tns:ArrayOfPagoTarjetaSvcObtenerDatosTarjetasResponseTarjeta"/>
+  <xs:complexType name="PagoTarjetaSvcObtenerDatosTarjetasResponseTarjeta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdelantosDolaresTC" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="AdelantosPesosTC" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="AjusteCreditoDolaresTC" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="AjusteCreditoPesosTC" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="AjusteDebitoDolaresTC" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="AjusteDebitoPesosTC" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="CicloTarjetaCredito" type="xs:int"/>
+      <xs:element minOccurs="0" name="ConsumosDolaresTC" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="ConsumosPesosTC" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="CotizacionComprador" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="CotizacionVendedor" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="EstadoTarjetaCredito" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Fecha2doVencimiento" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="Fecha3erVencimiento" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FechaCotizacion" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FechaProximoCierreTC" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FechaProximoVencimientoTC" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FechaUltimoCierreTC" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FechaUltimoPagoTC" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FechaVencimientoLiquidacionTC" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FechaVencimientoVigente" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FormaPagoTarjetaCredito" type="xs:int"/>
+      <xs:element minOccurs="0" name="LimiteCompraPesosTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="LimiteFinanciacionTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="MarcaVigenciaVto0" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="MarcaVigenciaVto2" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="MarcaVigenciaVto3" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Numero" type="xs:long"/>
+      <xs:element minOccurs="0" name="PagoMinimoDolaresTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="PagoMinimoImpagoTC" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="PagoMinimoPendienteCancelarDolaresTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="PagoMinimoPendienteCancelarPesosTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="PagoMinimoPesosTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="PagosDolaresTC" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="PagosPesosTC" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoActualDolaresTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoActualPesosTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoDolaresTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoImpagoDolaresUNIFICADOTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoImpagoDolaresVigente" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoImpagoPesosUNIFICADOTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoImpagoPesosVigente" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoPesosTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoUltimoCierreDolaresTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoUltimoCierrePesosTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoUltimoResumenDolares2doVto" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoUltimoResumenDolares3erVto" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoUltimoResumenDolaresVigente" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoUltimoResumenPesos2doVto" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoUltimoResumenPesos3erVto" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoUltimoResumenPesosVigente" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PagoTarjetaSvcObtenerDatosTarjetasResponseTarjeta" nillable="true" type="tns:PagoTarjetaSvcObtenerDatosTarjetasResponseTarjeta"/>
+  <xs:complexType name="PagoTarjetaSvcConsultarConsolidadoDeTarjetaRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Anio" type="xs:int"/>
+      <xs:element minOccurs="0" name="CodigoBanco" type="xs:int"/>
+      <xs:element minOccurs="0" name="MarcaTarjeta" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Mes" type="xs:int"/>
+      <xs:element minOccurs="0" name="NombreTerminal" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="NroCuenta" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="NroDocumento" type="xs:long"/>
+      <xs:element minOccurs="0" name="NroTarjeta" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PagoTarjetaSvcConsultarConsolidadoDeTarjetaRequest" nillable="true" type="tns:PagoTarjetaSvcConsultarConsolidadoDeTarjetaRequest"/>
+  <xs:complexType name="PagoTarjetaSvcConsultarConsolidadoDeTarjetaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TarjetaActiva" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="Tarjetas" nillable="true" type="tns:ArrayOfPagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseTarjeta"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PagoTarjetaSvcConsultarConsolidadoDeTarjetaResponse" nillable="true" type="tns:PagoTarjetaSvcConsultarConsolidadoDeTarjetaResponse"/>
+  <xs:complexType name="ArrayOfPagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseTarjeta">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="PagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseTarjeta" nillable="true" type="tns:PagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseTarjeta"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseTarjeta" nillable="true" type="tns:ArrayOfPagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseTarjeta"/>
+  <xs:complexType name="PagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseTarjeta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Movimientos" nillable="true" type="tns:ArrayOfPagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseMovimiento"/>
+      <xs:element minOccurs="0" name="Numero" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseTarjeta" nillable="true" type="tns:PagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseTarjeta"/>
+  <xs:complexType name="ArrayOfPagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseMovimiento">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="PagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseMovimiento" nillable="true" type="tns:PagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseMovimiento"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseMovimiento" nillable="true" type="tns:ArrayOfPagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseMovimiento"/>
+  <xs:complexType name="PagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseMovimiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CantidadCuotas" type="xs:int"/>
+      <xs:element minOccurs="0" name="Cuota" type="xs:int"/>
+      <xs:element minOccurs="0" name="DescripcionMovimiento" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="FechaMovimiento" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="ImporteMovimiento" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="MonedaMovimiento" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseMovimiento" nillable="true" type="tns:PagoTarjetaSvcConsultaConsolidadoDeTarjetaResponseMovimiento"/>
+  <xs:complexType name="PagoTarjetaSvcObtenerDatosCuentaTarjetaRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonRACFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Aplicacion_CTA_Relacionada" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Categoria" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Clave_Reenganche" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Marca" type="xs:int"/>
+          <xs:element minOccurs="0" name="Nro_Firmante_CTA_Relacionada" type="xs:int"/>
+          <xs:element minOccurs="0" name="Numero_CTA_Relacionada" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Numero_Cuenta" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Numero_Tarjeta" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Opcion" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Sucursal_CTA_Relacionada" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Tipo_CTA_Relacionada" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="Tipo_de_Cuenta" nillable="true" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PagoTarjetaSvcObtenerDatosCuentaTarjetaRequest" nillable="true" type="tns:PagoTarjetaSvcObtenerDatosCuentaTarjetaRequest"/>
+  <xs:complexType name="PagoTarjetaSvcObtenerDatosCuentaTarjetaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cantidad_de_Elementos_Enviados" type="xs:int"/>
+      <xs:element minOccurs="0" name="Clave_Reenganche" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="Hay_Mas_Datos" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Numero_de_Cuenta_TC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="Tarjetas" nillable="true" type="tns:ArrayOfPagoTarjetaSvcObtenerDatosCuentaTarjetaResponseTarjeta"/>
+      <xs:element minOccurs="0" name="Tipo_Cuenta" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PagoTarjetaSvcObtenerDatosCuentaTarjetaResponse" nillable="true" type="tns:PagoTarjetaSvcObtenerDatosCuentaTarjetaResponse"/>
+  <xs:complexType name="ArrayOfPagoTarjetaSvcObtenerDatosCuentaTarjetaResponseTarjeta">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="PagoTarjetaSvcObtenerDatosCuentaTarjetaResponseTarjeta" nillable="true" type="tns:PagoTarjetaSvcObtenerDatosCuentaTarjetaResponseTarjeta"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPagoTarjetaSvcObtenerDatosCuentaTarjetaResponseTarjeta" nillable="true" type="tns:ArrayOfPagoTarjetaSvcObtenerDatosCuentaTarjetaResponseTarjeta"/>
+  <xs:complexType name="PagoTarjetaSvcObtenerDatosCuentaTarjetaResponseTarjeta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Apellido_Nombre_Embozado" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Aplicacion_CTA_Relacionada" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Autorizado_TC" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Campania_ID" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Campania_Nro_Shot" type="xs:int"/>
+      <xs:element minOccurs="0" name="Canal_Venta" type="xs:int"/>
+      <xs:element minOccurs="0" name="Codigo_Categoria" type="xs:int"/>
+      <xs:element minOccurs="0" name="Descripcion_Canal_Venta" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Descripcion_Codigo_Categoria" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Descripcion_Estado_Tarjeta" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Descripcion_Marca_TC" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Descripcion_Motivo_Baja" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Descripcion_Motivo_Inclusion" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Descripcion_Producto" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Descripcion_Tipo_Tarjeta" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Estado_Tarjeta" type="xs:int"/>
+      <xs:element minOccurs="0" name="Fecha_Alta" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Fecha_Baja" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Fecha_Inclusion_Boletin" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Fecha_Ultima_Modificacion" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Hora_Ultima_Modificacion" type="xs:int"/>
+      <xs:element minOccurs="0" name="Limite_de_Adelantos" type="xs:int"/>
+      <xs:element minOccurs="0" name="Limite_de_Compras" type="xs:int"/>
+      <xs:element minOccurs="0" name="Limite_de_Cuotas" type="xs:int"/>
+      <xs:element minOccurs="0" name="Marca_TC" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Motivo_Alta" type="xs:int"/>
+      <xs:element minOccurs="0" name="Motivo_Baja" type="xs:int"/>
+      <xs:element minOccurs="0" name="Motivo_Inclusion_Boletin" type="xs:int"/>
+      <xs:element minOccurs="0" name="Nro_Firmante_CTA_Relacionada" type="xs:int"/>
+      <xs:element minOccurs="0" name="Numero_CTA_Relacionada" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="Numero_de_Solicitud" type="xs:int"/>
+      <xs:element minOccurs="0" name="Numero_de_Tarjeta" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="Origen_Ultima_Modificacion" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Producto" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Sucursal_CTA_Relacionada" type="xs:int"/>
+      <xs:element minOccurs="0" name="Tipo_CTA_Relacionada" type="xs:int"/>
+      <xs:element minOccurs="0" name="Tipo_Tarjeta" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Usuario_Alta" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Usuario_Ultima_Modificacion" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Vigencia_Anio_Desde" type="xs:int"/>
+      <xs:element minOccurs="0" name="Vigencia_Anio_Hasta" type="xs:int"/>
+      <xs:element minOccurs="0" name="Vigencia_Mes_Desde" type="xs:int"/>
+      <xs:element minOccurs="0" name="Vigencia_Mes_Hasta" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PagoTarjetaSvcObtenerDatosCuentaTarjetaResponseTarjeta" nillable="true" type="tns:PagoTarjetaSvcObtenerDatosCuentaTarjetaResponseTarjeta"/>
+  <xs:complexType name="PagoTarjetaSvcPagarTarjetaDepEfecRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonRACFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ClaveRIOSELF" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ImporteDolares" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="ImportePesos" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="IndOperacionDirecta" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="IndicadorOperReversa" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="NUO" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="NroCuentaTarjeta" type="xs:long"/>
+          <xs:element minOccurs="0" name="NroTarjeta" type="xs:long"/>
+          <xs:element minOccurs="0" name="TipoDePago" type="xs:long"/>
+          <xs:element minOccurs="0" name="TipoTarjeta" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PagoTarjetaSvcPagarTarjetaDepEfecRequest" nillable="true" type="tns:PagoTarjetaSvcPagarTarjetaDepEfecRequest"/>
+  <xs:complexType name="PagoTarjetaSvcPagarTarjetaDepEfecResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApellidoYNombre" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ClaveRIOSELF" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="FechaLiquidacion" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FechaVencimLiq" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FormaPago" type="xs:int"/>
+      <xs:element minOccurs="0" name="ImpDolar" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="ImpPesos" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="ImpTotalLiqDolar" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="ImpTotalLiqPesos" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="NUOOperacion" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="NroCuentaTarjeta" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PagoMinimo" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="TXHoraAConf" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TipoTarjeta" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PagoTarjetaSvcPagarTarjetaDepEfecResponse" nillable="true" type="tns:PagoTarjetaSvcPagarTarjetaDepEfecResponse"/>
+  <xs:complexType name="PagoTarjetaSvcConsultarPagoDeTarjetaPrismaRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonRACFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NumeroCuentaTarjeta" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="NumeroTarjetaCredito" nillable="true" type="xs:long"/>
+          <xs:element minOccurs="0" name="TipoCuenta" nillable="true" type="xs:long"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PagoTarjetaSvcConsultarPagoDeTarjetaPrismaRequest" nillable="true" type="tns:PagoTarjetaSvcConsultarPagoDeTarjetaPrismaRequest"/>
+  <xs:complexType name="PagoTarjetaSvcConsultarPagoDeTarjetaPrismaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApellidoNombre" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="FechaLiquidacionTC" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FechaVencimientoLiquidacionTC" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FormaPagoTC" type="xs:int"/>
+      <xs:element minOccurs="0" name="PagoMinimoPesosTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoDolaresTC" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoPesosTC" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PagoTarjetaSvcConsultarPagoDeTarjetaPrismaResponse" nillable="true" type="tns:PagoTarjetaSvcConsultarPagoDeTarjetaPrismaResponse"/>
+  <xs:complexType name="PagoTarjetaSvcPagoTarjetaPrismaRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonRACFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FechaNegocio" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="Importe" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Indicador_Oper_Reversa" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Moneda" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="NombreTerminalFis" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="NroCuentaTarjeta" type="xs:long"/>
+          <xs:element minOccurs="0" name="NroTarjeta" type="xs:long"/>
+          <xs:element minOccurs="0" name="NroTicketBanelco" type="xs:long"/>
+          <xs:element minOccurs="0" name="TipoTarjeta" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PagoTarjetaSvcPagoTarjetaPrismaRequest" nillable="true" type="tns:PagoTarjetaSvcPagoTarjetaPrismaRequest"/>
+  <xs:complexType name="PagoTarjetaSvcPagoTarjetaPrismaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApellidoNombre" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="FechaVencimLiq" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FormaPago" type="xs:int"/>
+      <xs:element minOccurs="0" name="ImpTotalLiqDolar" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="ImpTotalLiqPesos" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="Importe" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="Moneda" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="NroCuentaTarjeta" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PagoMinimo" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="TipoTarjeta" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PagoTarjetaSvcPagoTarjetaPrismaResponse" nillable="true" type="tns:PagoTarjetaSvcPagoTarjetaPrismaResponse"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_PagoTarjetaSvc/prisma_pagotarjetasvc3.xml</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Isban.Common" xmlns:tns="http://schemas.datacontract.org/2004/07/Isban.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/System" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_PagoTarjetaSvc/prisma_pagotarjetasvc4.xml"/>
+  <xs:complexType name="BusinessException">
+    <xs:complexContent mixed="false">
+      <xs:extension base="q1:Exception" xmlns:q1="http://schemas.datacontract.org/2004/07/System"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BusinessException" nillable="true" type="tns:BusinessException"/>
+  <xs:complexType name="TechnicalException">
+    <xs:complexContent mixed="false">
+      <xs:extension base="q2:Exception" xmlns:q2="http://schemas.datacontract.org/2004/07/System"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TechnicalException" nillable="true" type="tns:TechnicalException"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_PagoTarjetaSvc/prisma_pagotarjetasvc4.xml</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/System" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_PagoTarjetaSvc/prisma_pagotarjetasvc1.xml"/>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:any maxOccurs="unbounded" minOccurs="0" namespace="##local" processContents="skip"/>
+    </xs:sequence>
+    <xs:attribute ref="ser:FactoryType"/>
+  </xs:complexType>
+  <xs:element name="Exception" nillable="true" type="tns:Exception"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_PagoTarjetaSvc/prisma_pagotarjetasvc1.xml</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_pagotarjetasvc.svc</con:endpoint></con:endpoints><con:operation id="3e07f371-3727-4fc7-8737-6b06ef3cec36" isOneWay="false" action="http://tempuri.org/IPagoTarjeta/ConsultarConsolidadoDeTarjeta" name="ConsultarConsolidadoDeTarjeta" bindingOperationName="ConsultarConsolidadoDeTarjeta" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2b32228d-45c7-4731-83bd-c0fd3167a826" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_pagotarjetasvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:ConsultarConsolidadoDeTarjeta>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:Anio>?</tas:Anio>\r
+            <!--Optional:-->\r
+            <tas:CodigoBanco>?</tas:CodigoBanco>\r
+            <!--Optional:-->\r
+            <tas:MarcaTarjeta>?</tas:MarcaTarjeta>\r
+            <!--Optional:-->\r
+            <tas:Mes>?</tas:Mes>\r
+            <!--Optional:-->\r
+            <tas:NombreTerminal>?</tas:NombreTerminal>\r
+            <!--Optional:-->\r
+            <tas:NroCuenta>?</tas:NroCuenta>\r
+            <!--Optional:-->\r
+            <tas:NroDocumento>?</tas:NroDocumento>\r
+            <!--Optional:-->\r
+            <tas:NroTarjeta>?</tas:NroTarjeta>\r
+         </tem:request>\r
+      </tem:ConsultarConsolidadoDeTarjeta>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IPagoTarjeta/ConsultarConsolidadoDeTarjeta"/></con:call></con:operation><con:operation id="bad0f733-99a8-476f-9240-a950d72e12e5" isOneWay="false" action="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjeta" name="ConsultarPagoTarjeta" bindingOperationName="ConsultarPagoTarjeta" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3fdbbf22-29f7-4948-8a4b-84fd3f946d82" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_pagotarjetasvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:ConsultarPagoTarjeta>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:CodigoMoneda>?</tas:CodigoMoneda>\r
+            <!--Optional:-->\r
+            <tas:CodigoTitularidad>?</tas:CodigoTitularidad>\r
+            <!--Optional:-->\r
+            <tas:ImportePagoTC>?</tas:ImportePagoTC>\r
+            <!--Optional:-->\r
+            <tas:IndicadorOperReversa>?</tas:IndicadorOperReversa>\r
+            <!--Optional:-->\r
+            <tas:Marca>?</tas:Marca>\r
+            <!--Optional:-->\r
+            <tas:ModoPagoTC>?</tas:ModoPagoTC>\r
+            <!--Optional:-->\r
+            <tas:MomentoPagoTC>?</tas:MomentoPagoTC>\r
+            <!--Optional:-->\r
+            <tas:NumeroCuentaDebito>?</tas:NumeroCuentaDebito>\r
+            <!--Optional:-->\r
+            <tas:NumeroCuentaTarjeta>?</tas:NumeroCuentaTarjeta>\r
+            <!--Optional:-->\r
+            <tas:NumeroSobre>?</tas:NumeroSobre>\r
+            <!--Optional:-->\r
+            <tas:NumeroTarjetaCredito>?</tas:NumeroTarjetaCredito>\r
+            <!--Optional:-->\r
+            <tas:SucursalCuentaDebito>?</tas:SucursalCuentaDebito>\r
+            <!--Optional:-->\r
+            <tas:SucursalCuentaTarjeta>?</tas:SucursalCuentaTarjeta>\r
+            <!--Optional:-->\r
+            <tas:TipoCuentaDebito>?</tas:TipoCuentaDebito>\r
+            <!--Optional:-->\r
+            <tas:TipoPagoTC>?</tas:TipoPagoTC>\r
+            <!--Optional:-->\r
+            <tas:TipoTarjetaCredito>?</tas:TipoTarjetaCredito>\r
+         </tem:request>\r
+      </tem:ConsultarPagoTarjeta>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjeta"/></con:call></con:operation><con:operation id="9147d7e7-2cc3-48c1-be08-0b3cc06d9a69" isOneWay="false" action="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaPrisma" name="ConsultarPagoTarjetaPrisma" bindingOperationName="ConsultarPagoTarjetaPrisma" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7b7b5680-f858-48c2-8b48-50a0b3df1773" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_pagotarjetasvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:ConsultarPagoTarjetaPrisma>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:NumeroCuentaTarjeta>?</tas:NumeroCuentaTarjeta>\r
+            <!--Optional:-->\r
+            <tas:NumeroTarjetaCredito>?</tas:NumeroTarjetaCredito>\r
+            <!--Optional:-->\r
+            <tas:TipoCuenta>?</tas:TipoCuenta>\r
+         </tem:request>\r
+      </tem:ConsultarPagoTarjetaPrisma>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaPrisma"/></con:call></con:operation><con:operation id="3a9020b7-273f-4a75-a8b5-b2e3da66b228" isOneWay="false" action="http://tempuri.org/IPagoTarjeta/ObtenerDatosDeCuentaTarjeta" name="ObtenerDatosDeCuentaTarjeta" bindingOperationName="ObtenerDatosDeCuentaTarjeta" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="19233b8f-53d2-43c3-8cc3-83c8f64d1709" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_pagotarjetasvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:ObtenerDatosDeCuentaTarjeta>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:Aplicacion_CTA_Relacionada>?</tas:Aplicacion_CTA_Relacionada>\r
+            <!--Optional:-->\r
+            <tas:Categoria>?</tas:Categoria>\r
+            <!--Optional:-->\r
+            <tas:Clave_Reenganche>?</tas:Clave_Reenganche>\r
+            <!--Optional:-->\r
+            <tas:Marca>?</tas:Marca>\r
+            <!--Optional:-->\r
+            <tas:Nro_Firmante_CTA_Relacionada>?</tas:Nro_Firmante_CTA_Relacionada>\r
+            <!--Optional:-->\r
+            <tas:Numero_CTA_Relacionada>?</tas:Numero_CTA_Relacionada>\r
+            <!--Optional:-->\r
+            <tas:Numero_Cuenta>?</tas:Numero_Cuenta>\r
+            <!--Optional:-->\r
+            <tas:Numero_Tarjeta>?</tas:Numero_Tarjeta>\r
+            <!--Optional:-->\r
+            <tas:Opcion>?</tas:Opcion>\r
+            <!--Optional:-->\r
+            <tas:Sucursal_CTA_Relacionada>?</tas:Sucursal_CTA_Relacionada>\r
+            <!--Optional:-->\r
+            <tas:Tipo_CTA_Relacionada>?</tas:Tipo_CTA_Relacionada>\r
+            <!--Optional:-->\r
+            <tas:Tipo_de_Cuenta>?</tas:Tipo_de_Cuenta>\r
+         </tem:request>\r
+      </tem:ObtenerDatosDeCuentaTarjeta>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IPagoTarjeta/ObtenerDatosDeCuentaTarjeta"/></con:call></con:operation><con:operation id="6efed2e2-baec-4b23-8733-26a16f6b09ee" isOneWay="false" action="http://tempuri.org/IPagoTarjeta/ObtenerDatosTarjeta" name="ObtenerDatosTarjeta" bindingOperationName="ObtenerDatosTarjeta" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ecca9e9b-f8a8-4b8f-b227-fbf7a77b7306" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_pagotarjetasvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:ObtenerDatosTarjeta>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:CodigoTitularidad>?</tas:CodigoTitularidad>\r
+            <!--Optional:-->\r
+            <tas:NumeroTarjetaCredito>?</tas:NumeroTarjetaCredito>\r
+            <!--Optional:-->\r
+            <tas:SucursalCuentaTarjeta>?</tas:SucursalCuentaTarjeta>\r
+         </tem:request>\r
+      </tem:ObtenerDatosTarjeta>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IPagoTarjeta/ObtenerDatosTarjeta"/></con:call></con:operation><con:operation id="18cce99a-d231-4bf8-82c7-36088d78ddde" isOneWay="false" action="http://tempuri.org/IPagoTarjeta/ObtenerDatosTarjetas" name="ObtenerDatosTarjetas" bindingOperationName="ObtenerDatosTarjetas" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="89bf31ce-920e-4662-8f2f-e57655cab402" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_pagotarjetasvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:ObtenerDatosTarjetas>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:Tarjetas>\r
+               <!--Zero or more repetitions:-->\r
+               <tas:PagoTarjetaSvcObtenerDatosTarjetasRequestTarjeta>\r
+                  <!--Optional:-->\r
+                  <tas:CodigoTitularidad>?</tas:CodigoTitularidad>\r
+                  <!--Optional:-->\r
+                  <tas:NumeroTarjetaCredito>?</tas:NumeroTarjetaCredito>\r
+                  <!--Optional:-->\r
+                  <tas:SucursalCuentaTarjeta>?</tas:SucursalCuentaTarjeta>\r
+               </tas:PagoTarjetaSvcObtenerDatosTarjetasRequestTarjeta>\r
+            </tas:Tarjetas>\r
+         </tem:request>\r
+      </tem:ObtenerDatosTarjetas>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IPagoTarjeta/ObtenerDatosTarjetas"/></con:call></con:operation><con:operation id="b5771e91-97a0-4f34-b63c-7dd34fe3a4f8" isOneWay="false" action="http://tempuri.org/IPagoTarjeta/ObtenerTitularTarjeta" name="ObtenerTitularTarjeta" bindingOperationName="ObtenerTitularTarjeta" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="243da508-2472-406e-9572-1b68d027937f" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_pagotarjetasvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:ObtenerTitularTarjeta>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:MarcaCuentaTarjeta>?</tas:MarcaCuentaTarjeta>\r
+            <!--Optional:-->\r
+            <tas:NroCuentaTarjetaCredito>?</tas:NroCuentaTarjetaCredito>\r
+         </tem:request>\r
+      </tem:ObtenerTitularTarjeta>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IPagoTarjeta/ObtenerTitularTarjeta"/></con:call></con:operation><con:operation id="e4024f4f-f5c4-45a1-b500-bce4472227b8" isOneWay="false" action="http://tempuri.org/IPagoTarjeta/PagarTarjeta" name="PagarTarjeta" bindingOperationName="PagarTarjeta" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="23665889-a73a-42e9-b6b7-a9c4df92ea66" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_pagotarjetasvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:PagarTarjeta>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:CanalId>?</tas:CanalId>\r
+            <!--Optional:-->\r
+            <tas:CantidadCheques>?</tas:CantidadCheques>\r
+            <!--Optional:-->\r
+            <tas:CodigoMoneda>?</tas:CodigoMoneda>\r
+            <!--Optional:-->\r
+            <tas:CodigoTitularidad>?</tas:CodigoTitularidad>\r
+            <!--Optional:-->\r
+            <tas:ImportePagoTC>?</tas:ImportePagoTC>\r
+            <!--Optional:-->\r
+            <tas:IndicadorReversa>?</tas:IndicadorReversa>\r
+            <!--Optional:-->\r
+            <tas:ModoPagoTC>?</tas:ModoPagoTC>\r
+            <!--Optional:-->\r
+            <tas:MomentoPagoTC>?</tas:MomentoPagoTC>\r
+            <!--Optional:-->\r
+            <tas:NUO>?</tas:NUO>\r
+            <!--Optional:-->\r
+            <tas:NUPFiller>?</tas:NUPFiller>\r
+            <!--Optional:-->\r
+            <tas:NumeroCuentaDebito>?</tas:NumeroCuentaDebito>\r
+            <!--Optional:-->\r
+            <tas:NumeroCuentaTarjeta>?</tas:NumeroCuentaTarjeta>\r
+            <!--Optional:-->\r
+            <tas:NumeroSobre>?</tas:NumeroSobre>\r
+            <!--Optional:-->\r
+            <tas:NumeroTarjetaCredito>?</tas:NumeroTarjetaCredito>\r
+            <!--Optional:-->\r
+            <tas:SubCanalId>?</tas:SubCanalId>\r
+            <!--Optional:-->\r
+            <tas:SucursalCuentaDebito>?</tas:SucursalCuentaDebito>\r
+            <!--Optional:-->\r
+            <tas:SucursalCuentaTarjeta>?</tas:SucursalCuentaTarjeta>\r
+            <!--Optional:-->\r
+            <tas:TipoCuentaDebito>?</tas:TipoCuentaDebito>\r
+            <!--Optional:-->\r
+            <tas:TipoPagoTC>?</tas:TipoPagoTC>\r
+            <!--Optional:-->\r
+            <tas:TipoTarjetaCredito>?</tas:TipoTarjetaCredito>\r
+         </tem:request>\r
+      </tem:PagarTarjeta>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IPagoTarjeta/PagarTarjeta"/></con:call></con:operation><con:operation id="132d3a36-54b7-4f2e-ab10-b733afed0d7b" isOneWay="false" action="http://tempuri.org/IPagoTarjeta/PagarTarjetaDepEfec" name="PagarTarjetaDepEfec" bindingOperationName="PagarTarjetaDepEfec" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="73261232-5433-4ec8-9748-fdc223e969b2" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_pagotarjetasvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:PagarTarjetaDepEfec>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:ClaveRIOSELF>?</tas:ClaveRIOSELF>\r
+            <!--Optional:-->\r
+            <tas:ImporteDolares>?</tas:ImporteDolares>\r
+            <!--Optional:-->\r
+            <tas:ImportePesos>?</tas:ImportePesos>\r
+            <!--Optional:-->\r
+            <tas:IndOperacionDirecta>?</tas:IndOperacionDirecta>\r
+            <!--Optional:-->\r
+            <tas:IndicadorOperReversa>?</tas:IndicadorOperReversa>\r
+            <!--Optional:-->\r
+            <tas:NUO>?</tas:NUO>\r
+            <!--Optional:-->\r
+            <tas:NroCuentaTarjeta>?</tas:NroCuentaTarjeta>\r
+            <!--Optional:-->\r
+            <tas:NroTarjeta>?</tas:NroTarjeta>\r
+            <!--Optional:-->\r
+            <tas:TipoDePago>?</tas:TipoDePago>\r
+            <!--Optional:-->\r
+            <tas:TipoTarjeta>?</tas:TipoTarjeta>\r
+         </tem:request>\r
+      </tem:PagarTarjetaDepEfec>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IPagoTarjeta/PagarTarjetaDepEfec"/></con:call></con:operation><con:operation id="eab7b77b-92fc-4d9e-b77e-bb1ae9c82278" isOneWay="false" action="http://tempuri.org/IPagoTarjeta/PagoTarjetaPrisma" name="PagoTarjetaPrisma" bindingOperationName="PagoTarjetaPrisma" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8af9eb4d-b6df-4d7d-8091-0f62df0c9e7c" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_pagotarjetasvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:PagoTarjetaPrisma>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:FechaNegocio>?</tas:FechaNegocio>\r
+            <!--Optional:-->\r
+            <tas:Importe>?</tas:Importe>\r
+            <!--Optional:-->\r
+            <tas:Indicador_Oper_Reversa>?</tas:Indicador_Oper_Reversa>\r
+            <!--Optional:-->\r
+            <tas:Moneda>?</tas:Moneda>\r
+            <!--Optional:-->\r
+            <tas:NombreTerminalFis>?</tas:NombreTerminalFis>\r
+            <!--Optional:-->\r
+            <tas:NroCuentaTarjeta>?</tas:NroCuentaTarjeta>\r
+            <!--Optional:-->\r
+            <tas:NroTarjeta>?</tas:NroTarjeta>\r
+            <!--Optional:-->\r
+            <tas:NroTicketBanelco>?</tas:NroTicketBanelco>\r
+            <!--Optional:-->\r
+            <tas:TipoTarjeta>?</tas:TipoTarjeta>\r
+         </tem:request>\r
+      </tem:PagoTarjetaPrisma>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IPagoTarjeta/PagoTarjetaPrisma"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

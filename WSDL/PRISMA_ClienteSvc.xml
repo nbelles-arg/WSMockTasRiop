@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="ClienteSvc" targetNamespace="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<wsp:Policy wsu:Id="PRISMA_ClienteSvcEndpoint_policy">
+		<wsp:ExactlyOne>
+			<wsp:All>
+				<sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+					<wsp:Policy>
+						<sp:TransportToken>
+							<wsp:Policy>
+								<sp:HttpsToken RequireClientCertificate="true"/>
+							</wsp:Policy>
+						</sp:TransportToken>
+						<sp:AlgorithmSuite>
+							<wsp:Policy>
+								<sp:Basic256/>
+							</wsp:Policy>
+						</sp:AlgorithmSuite>
+						<sp:Layout>
+							<wsp:Policy>
+								<sp:Strict/>
+							</wsp:Policy>
+						</sp:Layout>
+					</wsp:Policy>
+				</sp:TransportBinding>
+				<wsaw:UsingAddressing/>
+			</wsp:All>
+		</wsp:ExactlyOne>
+	</wsp:Policy>
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://tempuri.org/Imports">
+			<xsd:import namespace="http://tempuri.org/" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_ClienteSvc/prisma_clientesvc0.xml"/>
+			<xsd:import namespace="http://schemas.datacontract.org/2004/07/Isban.Common" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_ClienteSvc/prisma_clientesvc3.xml"/>
+			<xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_ClienteSvc/prisma_clientesvc1.xml"/>
+			<xsd:import namespace="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_ClienteSvc/prisma_clientesvc2.xml"/>
+			<xsd:import namespace="http://schemas.datacontract.org/2004/07/System" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_ClienteSvc/prisma_clientesvc4.xml"/>
+			<xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_ClienteSvc/prisma_clientesvc5.xml"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="IClienteSvc_ObtenerCliente_InputMessage">
+		<wsdl:part element="tns:ObtenerCliente" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerCliente_OutputMessage">
+		<wsdl:part element="tns:ObtenerClienteResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerCliente_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q1:BusinessException" name="detail" xmlns:q1="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerCliente_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q2:TechnicalException" name="detail" xmlns:q2="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerDatosDeCuenta_InputMessage">
+		<wsdl:part element="tns:ObtenerDatosDeCuenta" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerDatosDeCuenta_OutputMessage">
+		<wsdl:part element="tns:ObtenerDatosDeCuentaResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerDatosDeCuenta_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q3:BusinessException" name="detail" xmlns:q3="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerDatosDeCuenta_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q4:TechnicalException" name="detail" xmlns:q4="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerEstadoYClave_InputMessage">
+		<wsdl:part element="tns:ObtenerEstadoYClave" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerEstadoYClave_OutputMessage">
+		<wsdl:part element="tns:ObtenerEstadoYClaveResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerEstadoYClave_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q5:BusinessException" name="detail" xmlns:q5="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerEstadoYClave_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q6:TechnicalException" name="detail" xmlns:q6="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerMovimientosCuenta_InputMessage">
+		<wsdl:part element="tns:ObtenerMovimientosCuenta" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerMovimientosCuenta_OutputMessage">
+		<wsdl:part element="tns:ObtenerMovimientosCuentaResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerMovimientosCuenta_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q7:BusinessException" name="detail" xmlns:q7="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerMovimientosCuenta_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q8:TechnicalException" name="detail" xmlns:q8="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerMovimientosCuentaV160_InputMessage">
+		<wsdl:part element="tns:ObtenerMovimientosCuentaV160" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerMovimientosCuentaV160_OutputMessage">
+		<wsdl:part element="tns:ObtenerMovimientosCuentaV160Response" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerMovimientosCuentaV160_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q9:BusinessException" name="detail" xmlns:q9="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerMovimientosCuentaV160_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q10:TechnicalException" name="detail" xmlns:q10="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerAcuerdosDeRecaudaciones_InputMessage">
+		<wsdl:part element="tns:ObtenerAcuerdosDeRecaudaciones" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerAcuerdosDeRecaudaciones_OutputMessage">
+		<wsdl:part element="tns:ObtenerAcuerdosDeRecaudacionesResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerAcuerdosDeRecaudaciones_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q11:BusinessException" name="detail" xmlns:q11="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerAcuerdosDeRecaudaciones_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q12:TechnicalException" name="detail" xmlns:q12="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerDeudasDeRecaudaciones_InputMessage">
+		<wsdl:part element="tns:ObtenerDeudasDeRecaudaciones" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerDeudasDeRecaudaciones_OutputMessage">
+		<wsdl:part element="tns:ObtenerDeudasDeRecaudacionesResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerDeudasDeRecaudaciones_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q13:BusinessException" name="detail" xmlns:q13="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerDeudasDeRecaudaciones_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q14:TechnicalException" name="detail" xmlns:q14="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerPagoRecaudacionesPorID_InputMessage">
+		<wsdl:part element="tns:ObtenerPagoRecaudacionesPorID" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerPagoRecaudacionesPorID_OutputMessage">
+		<wsdl:part element="tns:ObtenerPagoRecaudacionesPorIDResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerPagoRecaudacionesPorID_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q15:BusinessException" name="detail" xmlns:q15="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerPagoRecaudacionesPorID_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q16:TechnicalException" name="detail" xmlns:q16="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerDeudasDeRecaudacionesV2_InputMessage">
+		<wsdl:part element="tns:ObtenerDeudasDeRecaudacionesV2" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerDeudasDeRecaudacionesV2_OutputMessage">
+		<wsdl:part element="tns:ObtenerDeudasDeRecaudacionesV2Response" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerDeudasDeRecaudacionesV2_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q17:BusinessException" name="detail" xmlns:q17="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerDeudasDeRecaudacionesV2_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q18:TechnicalException" name="detail" xmlns:q18="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerFormaDePagoRecaudaciones_InputMessage">
+		<wsdl:part element="tns:ObtenerFormaDePagoRecaudaciones" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerFormaDePagoRecaudaciones_OutputMessage">
+		<wsdl:part element="tns:ObtenerFormaDePagoRecaudacionesResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerFormaDePagoRecaudaciones_BusinessExceptionFault_FaultMessage">
+		<wsdl:part element="q19:BusinessException" name="detail" xmlns:q19="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:message name="IClienteSvc_ObtenerFormaDePagoRecaudaciones_TechnicalExceptionFault_FaultMessage">
+		<wsdl:part element="q20:TechnicalException" name="detail" xmlns:q20="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+	</wsdl:message>
+	<wsdl:portType name="IClienteSvc">
+		<wsdl:operation name="ObtenerCliente">
+			<wsdl:input message="tns:IClienteSvc_ObtenerCliente_InputMessage" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerCliente"/>
+			<wsdl:output message="tns:IClienteSvc_ObtenerCliente_OutputMessage" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerClienteResponse"/>
+			<wsdl:fault message="tns:IClienteSvc_ObtenerCliente_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerClienteBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IClienteSvc_ObtenerCliente_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerClienteTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerDatosDeCuenta">
+			<wsdl:input message="tns:IClienteSvc_ObtenerDatosDeCuenta_InputMessage" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerDatosDeCuenta"/>
+			<wsdl:output message="tns:IClienteSvc_ObtenerDatosDeCuenta_OutputMessage" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerDatosDeCuentaResponse"/>
+			<wsdl:fault message="tns:IClienteSvc_ObtenerDatosDeCuenta_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerDatosDeCuentaBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IClienteSvc_ObtenerDatosDeCuenta_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerDatosDeCuentaTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerEstadoYClave">
+			<wsdl:input message="tns:IClienteSvc_ObtenerEstadoYClave_InputMessage" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerEstadoYClave"/>
+			<wsdl:output message="tns:IClienteSvc_ObtenerEstadoYClave_OutputMessage" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerEstadoYClaveResponse"/>
+			<wsdl:fault message="tns:IClienteSvc_ObtenerEstadoYClave_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerEstadoYClaveBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IClienteSvc_ObtenerEstadoYClave_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerEstadoYClaveTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerMovimientosCuenta">
+			<wsdl:input message="tns:IClienteSvc_ObtenerMovimientosCuenta_InputMessage" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerMovimientosCuenta"/>
+			<wsdl:output message="tns:IClienteSvc_ObtenerMovimientosCuenta_OutputMessage" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerMovimientosCuentaResponse"/>
+			<wsdl:fault message="tns:IClienteSvc_ObtenerMovimientosCuenta_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerMovimientosCuentaBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IClienteSvc_ObtenerMovimientosCuenta_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerMovimientosCuentaTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerMovimientosCuentaV160">
+			<wsdl:input message="tns:IClienteSvc_ObtenerMovimientosCuentaV160_InputMessage" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerMovimientosCuentaV160"/>
+			<wsdl:output message="tns:IClienteSvc_ObtenerMovimientosCuentaV160_OutputMessage" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerMovimientosCuentaV160Response"/>
+			<wsdl:fault message="tns:IClienteSvc_ObtenerMovimientosCuentaV160_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerMovimientosCuentaV160BusinessExceptionFault"/>
+			<wsdl:fault message="tns:IClienteSvc_ObtenerMovimientosCuentaV160_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerMovimientosCuentaV160TechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerAcuerdosDeRecaudaciones">
+			<wsdl:input message="tns:IClienteSvc_ObtenerAcuerdosDeRecaudaciones_InputMessage" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerAcuerdosDeRecaudaciones"/>
+			<wsdl:output message="tns:IClienteSvc_ObtenerAcuerdosDeRecaudaciones_OutputMessage" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerAcuerdosDeRecaudacionesResponse"/>
+			<wsdl:fault message="tns:IClienteSvc_ObtenerAcuerdosDeRecaudaciones_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerAcuerdosDeRecaudacionesBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IClienteSvc_ObtenerAcuerdosDeRecaudaciones_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerAcuerdosDeRecaudacionesTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerDeudasDeRecaudaciones">
+			<wsdl:input message="tns:IClienteSvc_ObtenerDeudasDeRecaudaciones_InputMessage" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerDeudasDeRecaudaciones"/>
+			<wsdl:output message="tns:IClienteSvc_ObtenerDeudasDeRecaudaciones_OutputMessage" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerDeudasDeRecaudacionesResponse"/>
+			<wsdl:fault message="tns:IClienteSvc_ObtenerDeudasDeRecaudaciones_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerDeudasDeRecaudacionesBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IClienteSvc_ObtenerDeudasDeRecaudaciones_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerDeudasDeRecaudacionesTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerPagoRecaudacionesPorID">
+			<wsdl:input message="tns:IClienteSvc_ObtenerPagoRecaudacionesPorID_InputMessage" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerPagoRecaudacionesPorID"/>
+			<wsdl:output message="tns:IClienteSvc_ObtenerPagoRecaudacionesPorID_OutputMessage" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerPagoRecaudacionesPorIDResponse"/>
+			<wsdl:fault message="tns:IClienteSvc_ObtenerPagoRecaudacionesPorID_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerPagoRecaudacionesPorIDBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IClienteSvc_ObtenerPagoRecaudacionesPorID_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerPagoRecaudacionesPorIDTechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerDeudasDeRecaudacionesV2">
+			<wsdl:input message="tns:IClienteSvc_ObtenerDeudasDeRecaudacionesV2_InputMessage" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerDeudasDeRecaudacionesV2"/>
+			<wsdl:output message="tns:IClienteSvc_ObtenerDeudasDeRecaudacionesV2_OutputMessage" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerDeudasDeRecaudacionesV2Response"/>
+			<wsdl:fault message="tns:IClienteSvc_ObtenerDeudasDeRecaudacionesV2_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerDeudasDeRecaudacionesV2BusinessExceptionFault"/>
+			<wsdl:fault message="tns:IClienteSvc_ObtenerDeudasDeRecaudacionesV2_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerDeudasDeRecaudacionesV2TechnicalExceptionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerFormaDePagoRecaudaciones">
+			<wsdl:input message="tns:IClienteSvc_ObtenerFormaDePagoRecaudaciones_InputMessage" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerFormaDePagoRecaudaciones"/>
+			<wsdl:output message="tns:IClienteSvc_ObtenerFormaDePagoRecaudaciones_OutputMessage" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerFormaDePagoRecaudacionesResponse"/>
+			<wsdl:fault message="tns:IClienteSvc_ObtenerFormaDePagoRecaudaciones_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerFormaDePagoRecaudacionesBusinessExceptionFault"/>
+			<wsdl:fault message="tns:IClienteSvc_ObtenerFormaDePagoRecaudaciones_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IClienteSvc/ObtenerFormaDePagoRecaudacionesTechnicalExceptionFault"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="PRISMA_ClienteSvcEndpoint" type="tns:IClienteSvc">
+		<wsp:PolicyReference URI="#PRISMA_ClienteSvcEndpoint_policy"/>
+		<soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="ObtenerCliente">
+			<soap12:operation soapAction="http://tempuri.org/IClienteSvc/ObtenerCliente" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerDatosDeCuenta">
+			<soap12:operation soapAction="http://tempuri.org/IClienteSvc/ObtenerDatosDeCuenta" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerEstadoYClave">
+			<soap12:operation soapAction="http://tempuri.org/IClienteSvc/ObtenerEstadoYClave" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerMovimientosCuenta">
+			<soap12:operation soapAction="http://tempuri.org/IClienteSvc/ObtenerMovimientosCuenta" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerMovimientosCuentaV160">
+			<soap12:operation soapAction="http://tempuri.org/IClienteSvc/ObtenerMovimientosCuentaV160" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerAcuerdosDeRecaudaciones">
+			<soap12:operation soapAction="http://tempuri.org/IClienteSvc/ObtenerAcuerdosDeRecaudaciones" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerDeudasDeRecaudaciones">
+			<soap12:operation soapAction="http://tempuri.org/IClienteSvc/ObtenerDeudasDeRecaudaciones" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerPagoRecaudacionesPorID">
+			<soap12:operation soapAction="http://tempuri.org/IClienteSvc/ObtenerPagoRecaudacionesPorID" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerDeudasDeRecaudacionesV2">
+			<soap12:operation soapAction="http://tempuri.org/IClienteSvc/ObtenerDeudasDeRecaudacionesV2" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ObtenerFormaDePagoRecaudaciones">
+			<soap12:operation soapAction="http://tempuri.org/IClienteSvc/ObtenerFormaDePagoRecaudaciones" style="document"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="BusinessExceptionFault">
+				<soap12:fault name="BusinessExceptionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="TechnicalExceptionFault">
+				<soap12:fault name="TechnicalExceptionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ClienteSvc">
+		<wsdl:port binding="tns:PRISMA_ClienteSvcEndpoint" name="PRISMA_ClienteSvcEndpoint">
+			<soap12:address location="https://webfronthomo01.rio.ar.bsch:8501/prisma_clientesvc.svc"/>
+			<wsa10:EndpointReference>
+				<wsa10:Address>https://webfronthomo01.rio.ar.bsch:8501/prisma_clientesvc.svc</wsa10:Address>
+			</wsa10:EndpointReference>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Isban.Common" xmlns:tns="http://schemas.datacontract.org/2004/07/Isban.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://schemas.datacontract.org/2004/07/System" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_ClienteSvc/prisma_clientesvc4.xml"/>
+	<xs:complexType name="BusinessException">
+		<xs:complexContent mixed="false">
+			<xs:extension base="q1:Exception" xmlns:q1="http://schemas.datacontract.org/2004/07/System"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="BusinessException" nillable="true" type="tns:BusinessException"/>
+	<xs:complexType name="TechnicalException">
+		<xs:complexContent mixed="false">
+			<xs:extension base="q2:Exception" xmlns:q2="http://schemas.datacontract.org/2004/07/System"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="TechnicalException" nillable="true" type="tns:TechnicalException"/>
+</xs:schema>

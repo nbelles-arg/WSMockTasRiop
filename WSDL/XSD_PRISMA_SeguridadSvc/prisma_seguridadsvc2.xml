@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:tns="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:complexType name="SeguridadSvcIdentificarClienteRequest">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:CommonRACFRequest">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="Clave" type="xs:int"/>
+					<xs:element minOccurs="0" name="ClaveNueva" type="xs:int"/>
+					<xs:element minOccurs="0" name="FechaNacimiento" nillable="true" type="xs:dateTime"/>
+					<xs:element minOccurs="0" name="NroDocumento" type="xs:long"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="SeguridadSvcIdentificarClienteRequest" nillable="true" type="tns:SeguridadSvcIdentificarClienteRequest"/>
+	<xs:complexType name="CommonRACFRequest">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:CommonServiceRequest">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="ClienteFechaNacimiento" type="xs:dateTime"/>
+					<xs:element minOccurs="0" name="ClienteNumeroDoc" type="xs:long"/>
+					<xs:element minOccurs="0" name="ClienteTipoDoc" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="ClienteTipoPersona" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="IdTerminal" type="xs:int"/>
+					<xs:element minOccurs="0" name="NUP" type="xs:int"/>
+					<xs:element minOccurs="0" name="NroSucursal" type="xs:int"/>
+					<xs:element minOccurs="0" name="PasswordRACF" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="UserID" type="xs:int"/>
+					<xs:element minOccurs="0" name="UsuarioRACF" nillable="true" type="xs:string"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="CommonRACFRequest" nillable="true" type="tns:CommonRACFRequest"/>
+	<xs:complexType name="CommonServiceRequest">
+		<xs:sequence/>
+	</xs:complexType>
+	<xs:element name="CommonServiceRequest" nillable="true" type="tns:CommonServiceRequest"/>
+	<xs:complexType name="SeguridadSvcIdentificarClienteResponse">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="ClaveInvalida" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="ClaveTrivialHistorica" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="ClaveVencida" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="ClaveVencidaEmpresa" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="ClienteEmpresaSinonimo" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="ClienteSinonimo" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="ExtensionCantidadDesc" type="xs:int"/>
+			<xs:element minOccurs="0" name="ExtensionDescripcion" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="ExtensionSistemaId" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="FechaNacimiento" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="IdRegistroOperacion" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="NUP" type="xs:int"/>
+			<xs:element minOccurs="0" name="PasswordRACF" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="TipoPersona" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="UsuarioRACF" nillable="true" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SeguridadSvcIdentificarClienteResponse" nillable="true" type="tns:SeguridadSvcIdentificarClienteResponse"/>
+	<xs:complexType name="SeguridadSvcObtenerDocumentoPorNumeroTarjetaRequest">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:CommonRACFRequest">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="NumeroDeTarjeta" type="xs:decimal"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="SeguridadSvcObtenerDocumentoPorNumeroTarjetaRequest" nillable="true" type="tns:SeguridadSvcObtenerDocumentoPorNumeroTarjetaRequest"/>
+	<xs:complexType name="SeguridadSvcObtenerDocumentoPorNumeroTarjetaResponse">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="FechaDeNacimiento" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="NumeroDeDocumento" type="xs:long"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SeguridadSvcObtenerDocumentoPorNumeroTarjetaResponse" nillable="true" type="tns:SeguridadSvcObtenerDocumentoPorNumeroTarjetaResponse"/>
+	<xs:complexType name="SeguridadSvcCambiarClaveCanalRequest">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:CommonRACFRequest">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="ActualizarIdentificacionPositiva" type="xs:boolean"/>
+					<xs:element minOccurs="0" name="Clave" type="xs:int"/>
+					<xs:element minOccurs="0" name="ClaveFirmante" type="xs:int"/>
+					<xs:element minOccurs="0" name="ClaveNueva" type="xs:int"/>
+					<xs:element minOccurs="0" name="ClaveNuevaFirmante" type="xs:int"/>
+					<xs:element minOccurs="0" name="DocumentoFirmante" type="xs:long"/>
+					<xs:element minOccurs="0" name="FechaNacimiento" nillable="true" type="xs:dateTime"/>
+					<xs:element minOccurs="0" name="NroDocumento" type="xs:long"/>
+					<xs:element minOccurs="0" name="UsuarioFirmante" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="UsuarioNuevoFirmante" nillable="true" type="xs:string"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="SeguridadSvcCambiarClaveCanalRequest" nillable="true" type="tns:SeguridadSvcCambiarClaveCanalRequest"/>
+	<xs:complexType name="SeguridadSvcCambiarClaveCanalResponse">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="ClaveInvalida" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="ClaveTrivialHistorica" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="ClaveVencida" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="ClaveVencidaEmpresa" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="ClienteBloqueado" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="ClienteEmpresaSinonimo" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="ClienteSinonimo" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="FechaNacimiento" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="IdRegistroOperacion" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="NUP" type="xs:int"/>
+			<xs:element minOccurs="0" name="PasswordRACF" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="TipoPersona" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="UsuarioRACF" nillable="true" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SeguridadSvcCambiarClaveCanalResponse" nillable="true" type="tns:SeguridadSvcCambiarClaveCanalResponse"/>
+	<xs:complexType name="SeguridadSvcObtenerServiciosDebitoAutomaticoRequest">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:CommonRACFRequest">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="NumeroCuenta" type="xs:long"/>
+					<xs:element minOccurs="0" name="SucursalCuenta" type="xs:int"/>
+					<xs:element minOccurs="0" name="TipoCuenta" type="xs:int"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="SeguridadSvcObtenerServiciosDebitoAutomaticoRequest" nillable="true" type="tns:SeguridadSvcObtenerServiciosDebitoAutomaticoRequest"/>
+	<xs:complexType name="SeguridadSvcObtenerTitularCuentaRequest">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:CommonRACFRequest">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="NumeroCuenta" type="xs:decimal"/>
+					<xs:element minOccurs="0" name="NumeroCuentaTarjeta" type="xs:decimal"/>
+					<xs:element minOccurs="0" name="NumeroTarjetaCredito" type="xs:decimal"/>
+					<xs:element minOccurs="0" name="SucursalCuenta" type="xs:int"/>
+					<xs:element minOccurs="0" name="TipoCuenta" type="xs:int"/>
+					<xs:element minOccurs="0" name="TipoTarjetaCredito" type="xs:int"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="SeguridadSvcObtenerTitularCuentaRequest" nillable="true" type="tns:SeguridadSvcObtenerTitularCuentaRequest"/>
+	<xs:complexType name="SeguridadSvcObtenerTitularCuentaResponse">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="NombreApellido" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="NumeroTarjetaCredito" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="TipoTarjetaCredito" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SeguridadSvcObtenerTitularCuentaResponse" nillable="true" type="tns:SeguridadSvcObtenerTitularCuentaResponse"/>
+	<xs:complexType name="SeguridadSvcBlanquearPINRequest">
+		<xs:complexContent mixed="false">
+			<xs:extension base="tns:CommonRACFRequest">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="ClaveDeModificacion" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="CodigoDeCambio" type="xs:int"/>
+					<xs:element minOccurs="0" name="TipoDeLlamado" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="TipoDeModificacion" nillable="true" type="xs:string"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="SeguridadSvcBlanquearPINRequest" nillable="true" type="tns:SeguridadSvcBlanquearPINRequest"/>
+	<xs:complexType name="SeguridadSvcBlanquearPINResponse">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="CantidadAfectada" type="xs:int"/>
+			<xs:element minOccurs="0" name="IdRegistroOperacion" type="xs:decimal"/>
+			<xs:element minOccurs="0" name="NumerosTarjeta" nillable="true" type="tns:ArrayOfSeguridadSvcBlanquearPINResponseItem"/>
+			<xs:element minOccurs="0" name="TipoDeLlamado" nillable="true" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SeguridadSvcBlanquearPINResponse" nillable="true" type="tns:SeguridadSvcBlanquearPINResponse"/>
+	<xs:complexType name="ArrayOfSeguridadSvcBlanquearPINResponseItem">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="SeguridadSvcBlanquearPINResponseItem" nillable="true" type="tns:SeguridadSvcBlanquearPINResponseItem"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfSeguridadSvcBlanquearPINResponseItem" nillable="true" type="tns:ArrayOfSeguridadSvcBlanquearPINResponseItem"/>
+	<xs:complexType name="SeguridadSvcBlanquearPINResponseItem">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="NumeroDeTarjeta" nillable="true" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SeguridadSvcBlanquearPINResponseItem" nillable="true" type="tns:SeguridadSvcBlanquearPINResponseItem"/>
+	<xs:complexType name="SeguridadSvcLogoutSessionRequest">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="NUP" type="xs:long"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SeguridadSvcLogoutSessionRequest" nillable="true" type="tns:SeguridadSvcLogoutSessionRequest"/>
+	<xs:complexType name="SeguridadSvcLogoutSessionResponse">
+		<xs:sequence/>
+	</xs:complexType>
+	<xs:element name="SeguridadSvcLogoutSessionResponse" nillable="true" type="tns:SeguridadSvcLogoutSessionResponse"/>
+	<xs:complexType name="SeguridadSvcLoginSessionRequest">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="DNI" type="xs:long"/>
+			<xs:element minOccurs="0" name="NUP" type="xs:long"/>
+			<xs:element minOccurs="0" name="Sucursal" type="xs:long"/>
+			<xs:element minOccurs="0" name="Terminal" type="xs:long"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SeguridadSvcLoginSessionRequest" nillable="true" type="tns:SeguridadSvcLoginSessionRequest"/>
+	<xs:complexType name="SeguridadSvcLoginSessionResponse">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="HoraUltimoLogin" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="SegundosRestantes" type="xs:int"/>
+			<xs:element minOccurs="0" name="TimeOut" type="xs:long"/>
+			<xs:element minOccurs="0" name="fechaUltimoLogin" nillable="true" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SeguridadSvcLoginSessionResponse" nillable="true" type="tns:SeguridadSvcLoginSessionResponse"/>
+	<xs:complexType name="SeguridadSvcupdateSessionRequest">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="NUP" type="xs:long"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SeguridadSvcupdateSessionRequest" nillable="true" type="tns:SeguridadSvcupdateSessionRequest"/>
+	<xs:complexType name="SeguridadSvcupdateSessionResponse">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="TimeOut" type="xs:long"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SeguridadSvcupdateSessionResponse" nillable="true" type="tns:SeguridadSvcupdateSessionResponse"/>
+</xs:schema>
