@@ -1712,6 +1712,11 @@ context.saldo213297205 = 9998723.10
 context.saldo313297205 = 0.00
 context.saldo413297205 = 0.00
 
+//Clients DNIs
+context.DNI1 = "13297205"
+context.DNI2 = "26926372"
+context.DNI3 = "5618792"
+
 //cuits of the collectios companies
 context.cuitEmpresa1 = "30700005573"
 
@@ -1908,11 +1913,11 @@ def request = new XmlSlurper().parseText(mockRequest.requestContent)
 context.NumeroDoc = request.Body.ObtenerCliente.request.NroDocumento.toString()
 context.FechaNacimiento = request.Body.ObtenerCliente.request.FechaNacimiento.toString()
   
-if (context.NumeroDoc == "26926372")
+if (context.NumeroDoc == context.DNI2)
 	return "Ok TD"
-else if (context.NumeroDoc == "5618792")
+else if (context.NumeroDoc == context.DNI3)
 	return "Ok DNI"
-else if (context.NumeroDoc == "13297205")
+else if (context.NumeroDoc == context.DNI1)
 	return "Ok TC"
 else
 	return "Invalid Client"
