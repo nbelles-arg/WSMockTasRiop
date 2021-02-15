@@ -1,0 +1,221 @@
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+	<s:Header>
+		<a:Action s:mustUnderstand="1">http://tempuri.org/IClienteSvc/ObtenerDeudasDeRecaudacionesV2Response</a:Action>
+		<a:RelatesTo>urn:uuid:8f94034b-d1ed-4e66-900a-dea63598f712</a:RelatesTo>
+	</s:Header>
+	<s:Body>
+		<ObtenerDeudasDeRecaudacionesV2Response xmlns="http://tempuri.org/">
+			<ObtenerDeudasDeRecaudacionesV2Result xmlns:b="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+				<b:CantRepeticiones>8</b:CantRepeticiones>
+				<b:ClientePropio>N</b:ClientePropio>
+				<b:CodCondIVACliente>9</b:CodCondIVACliente>
+				<b:CuitCliente>30502793175</b:CuitCliente>
+				<b:CuitEmpresa>30700005573</b:CuitEmpresa>
+				<b:Deudas>
+					<!--Deuda1:-->
+					<b:ClienteSvcObtenerDeudasDeRecaudacionesResponseDeuda>
+						<b:CodConcept>0</b:CodConcept>
+						<b:Dat1 i:nil="true"/>
+						<b:Dat2 i:nil="true"/>
+						<b:Dat3 i:nil="true"/>
+						<b:Dat4 i:nil="true"/>
+						<b:Dat5 i:nil="true"/>
+						<b:DesConcept i:nil="true"/>
+						<b:EstadoDeuda>1</b:EstadoDeuda>
+						<b:FechaProntPago>00000000</b:FechaProntPago>
+						<b:FechaVencimientoComprobante>99990101</b:FechaVencimientoComprobante>
+						<b:FormPago i:nil="true"/>
+						<b:FormasDePago>0170000000000000000000000000000000000000</b:FormasDePago>
+						<b:ImpIVAAdicInter>0</b:ImpIVAAdicInter>
+						<b:ImpIVAIntereses>0</b:ImpIVAIntereses>
+						<b:ImpProntoPago>0</b:ImpProntoPago>
+						<b:ImpPunit>0</b:ImpPunit>
+						<b:ImpSaldo>9999998368</b:ImpSaldo>
+						<b:NroComprobante>PRUEBATAS000001</b:NroComprobante>
+						<b:NroCuota>0000</b:NroCuota>
+						<b:TasaIntPunit>0</b:TasaIntPunit>
+						<b:TipoComprobante>AP</b:TipoComprobante>
+					</b:ClienteSvcObtenerDeudasDeRecaudacionesResponseDeuda>
+					<!--Deuda2:-->
+					<b:ClienteSvcObtenerDeudasDeRecaudacionesResponseDeuda>
+						<b:CodConcept>0</b:CodConcept>
+						<b:Dat1 i:nil="true"/>
+						<b:Dat2 i:nil="true"/>
+						<b:Dat3 i:nil="true"/>
+						<b:Dat4 i:nil="true"/>
+						<b:Dat5 i:nil="true"/>
+						<b:DesConcept i:nil="true"/>
+						<b:EstadoDeuda>1</b:EstadoDeuda>
+						<b:FechaProntPago>00000000</b:FechaProntPago>
+						<b:FechaVencimientoComprobante>99990101</b:FechaVencimientoComprobante>
+						<b:FormPago i:nil="true"/>
+						<b:FormasDePago>0170000000000000000000000000000000000000</b:FormasDePago>
+						<b:ImpIVAAdicInter>0</b:ImpIVAAdicInter>
+						<b:ImpIVAIntereses>0</b:ImpIVAIntereses>
+						<b:ImpProntoPago>0</b:ImpProntoPago>
+						<b:ImpPunit>0</b:ImpPunit>
+						<b:ImpSaldo>9999988685</b:ImpSaldo>
+						<b:NroComprobante>PRUEBATAS000002</b:NroComprobante>
+						<b:NroCuota>0000</b:NroCuota>
+						<b:TasaIntPunit>0</b:TasaIntPunit>
+						<b:TipoComprobante>AP</b:TipoComprobante>
+					</b:ClienteSvcObtenerDeudasDeRecaudacionesResponseDeuda>
+					<!--Deuda3:-->
+					<b:ClienteSvcObtenerDeudasDeRecaudacionesResponseDeuda>
+						<b:CodConcept>0</b:CodConcept>
+						<b:Dat1 i:nil="true"/>
+						<b:Dat2 i:nil="true"/>
+						<b:Dat3 i:nil="true"/>
+						<b:Dat4 i:nil="true"/>
+						<b:Dat5 i:nil="true"/>
+						<b:DesConcept i:nil="true"/>
+						<b:EstadoDeuda>1</b:EstadoDeuda>
+						<b:FechaProntPago>00000000</b:FechaProntPago>
+						<b:FechaVencimientoComprobante>99990101</b:FechaVencimientoComprobante>
+						<b:FormPago i:nil="true"/>
+						<b:FormasDePago>0170000000000000000000000000000000000000</b:FormasDePago>
+						<b:ImpIVAAdicInter>0</b:ImpIVAAdicInter>
+						<b:ImpIVAIntereses>0</b:ImpIVAIntereses>
+						<b:ImpProntoPago>0</b:ImpProntoPago>
+						<b:ImpPunit>0</b:ImpPunit>
+						<b:ImpSaldo>9999998398</b:ImpSaldo>
+						<b:NroComprobante>PRUEBATAS000003</b:NroComprobante>
+						<b:NroCuota>0000</b:NroCuota>
+						<b:TasaIntPunit>0</b:TasaIntPunit>
+						<b:TipoComprobante>AP</b:TipoComprobante>
+					</b:ClienteSvcObtenerDeudasDeRecaudacionesResponseDeuda>
+					<!--Deuda4:-->
+					<b:ClienteSvcObtenerDeudasDeRecaudacionesResponseDeuda>
+						<b:CodConcept>0</b:CodConcept>
+						<b:Dat1 i:nil="true"/>
+						<b:Dat2 i:nil="true"/>
+						<b:Dat3 i:nil="true"/>
+						<b:Dat4 i:nil="true"/>
+						<b:Dat5 i:nil="true"/>
+						<b:DesConcept i:nil="true"/>
+						<b:EstadoDeuda>1</b:EstadoDeuda>
+						<b:FechaProntPago>00000000</b:FechaProntPago>
+						<b:FechaVencimientoComprobante>99990101</b:FechaVencimientoComprobante>
+						<b:FormPago i:nil="true"/>
+						<b:FormasDePago>0170000000000000000000000000000000000000</b:FormasDePago>
+						<b:ImpIVAAdicInter>0</b:ImpIVAAdicInter>
+						<b:ImpIVAIntereses>0</b:ImpIVAIntereses>
+						<b:ImpProntoPago>0</b:ImpProntoPago>
+						<b:ImpPunit>0</b:ImpPunit>
+						<b:ImpSaldo>9999990880</b:ImpSaldo>
+						<b:NroComprobante>PRUEBATAS000004</b:NroComprobante>
+						<b:NroCuota>0000</b:NroCuota>
+						<b:TasaIntPunit>0</b:TasaIntPunit>
+						<b:TipoComprobante>AP</b:TipoComprobante>
+					</b:ClienteSvcObtenerDeudasDeRecaudacionesResponseDeuda>
+					<!--Deuda5:-->
+					<b:ClienteSvcObtenerDeudasDeRecaudacionesResponseDeuda>
+						<b:CodConcept>0</b:CodConcept>
+						<b:Dat1 i:nil="true"/>
+						<b:Dat2 i:nil="true"/>
+						<b:Dat3 i:nil="true"/>
+						<b:Dat4 i:nil="true"/>
+						<b:Dat5 i:nil="true"/>
+						<b:DesConcept i:nil="true"/>
+						<b:EstadoDeuda>1</b:EstadoDeuda>
+						<b:FechaProntPago>00000000</b:FechaProntPago>
+						<b:FechaVencimientoComprobante>99990101</b:FechaVencimientoComprobante>
+						<b:FormPago i:nil="true"/>
+						<b:FormasDePago>0170000000000000000000000000000000000000</b:FormasDePago>
+						<b:ImpIVAAdicInter>0</b:ImpIVAAdicInter>
+						<b:ImpIVAIntereses>0</b:ImpIVAIntereses>
+						<b:ImpProntoPago>0</b:ImpProntoPago>
+						<b:ImpPunit>0</b:ImpPunit>
+						<b:ImpSaldo>9999997984</b:ImpSaldo>
+						<b:NroComprobante>PRUEBATAS000005</b:NroComprobante>
+						<b:NroCuota>0000</b:NroCuota>
+						<b:TasaIntPunit>0</b:TasaIntPunit>
+						<b:TipoComprobante>AP</b:TipoComprobante>
+					</b:ClienteSvcObtenerDeudasDeRecaudacionesResponseDeuda>
+					<!--Deuda6:-->
+					<b:ClienteSvcObtenerDeudasDeRecaudacionesResponseDeuda>
+						<b:CodConcept>0</b:CodConcept>
+						<b:Dat1 i:nil="true"/>
+						<b:Dat2 i:nil="true"/>
+						<b:Dat3 i:nil="true"/>
+						<b:Dat4 i:nil="true"/>
+						<b:Dat5 i:nil="true"/>
+						<b:DesConcept i:nil="true"/>
+						<b:EstadoDeuda>1</b:EstadoDeuda>
+						<b:FechaProntPago>00000000</b:FechaProntPago>
+						<b:FechaVencimientoComprobante>99990101</b:FechaVencimientoComprobante>
+						<b:FormPago i:nil="true"/>
+						<b:FormasDePago>0170000000000000000000000000000000000000</b:FormasDePago>
+						<b:ImpIVAAdicInter>0</b:ImpIVAAdicInter>
+						<b:ImpIVAIntereses>0</b:ImpIVAIntereses>
+						<b:ImpProntoPago>0</b:ImpProntoPago>
+						<b:ImpPunit>0</b:ImpPunit>
+						<b:ImpSaldo>9999998500</b:ImpSaldo>
+						<b:NroComprobante>PRUEBATAS000006</b:NroComprobante>
+						<b:NroCuota>0000</b:NroCuota>
+						<b:TasaIntPunit>0</b:TasaIntPunit>
+						<b:TipoComprobante>AP</b:TipoComprobante>
+					</b:ClienteSvcObtenerDeudasDeRecaudacionesResponseDeuda>
+					<!--Deuda7:-->
+					<b:ClienteSvcObtenerDeudasDeRecaudacionesResponseDeuda>
+						<b:CodConcept>0</b:CodConcept>
+						<b:Dat1 i:nil="true"/>
+						<b:Dat2 i:nil="true"/>
+						<b:Dat3 i:nil="true"/>
+						<b:Dat4 i:nil="true"/>
+						<b:Dat5 i:nil="true"/>
+						<b:DesConcept i:nil="true"/>
+						<b:EstadoDeuda>1</b:EstadoDeuda>
+						<b:FechaProntPago>00000000</b:FechaProntPago>
+						<b:FechaVencimientoComprobante>99990101</b:FechaVencimientoComprobante>
+						<b:FormPago i:nil="true"/>
+						<b:FormasDePago>0170000000000000000000000000000000000000</b:FormasDePago>
+						<b:ImpIVAAdicInter>0</b:ImpIVAAdicInter>
+						<b:ImpIVAIntereses>0</b:ImpIVAIntereses>
+						<b:ImpProntoPago>0</b:ImpProntoPago>
+						<b:ImpPunit>0</b:ImpPunit>
+						<b:ImpSaldo>9999999935</b:ImpSaldo>
+						<b:NroComprobante>PRUEBATAS000007</b:NroComprobante>
+						<b:NroCuota>0000</b:NroCuota>
+						<b:TasaIntPunit>0</b:TasaIntPunit>
+						<b:TipoComprobante>AP</b:TipoComprobante>
+					</b:ClienteSvcObtenerDeudasDeRecaudacionesResponseDeuda>
+					<!--Deuda8:-->
+					<b:ClienteSvcObtenerDeudasDeRecaudacionesResponseDeuda>
+						<b:CodConcept>0</b:CodConcept>
+						<b:Dat1 i:nil="true"/>
+						<b:Dat2 i:nil="true"/>
+						<b:Dat3 i:nil="true"/>
+						<b:Dat4 i:nil="true"/>
+						<b:Dat5 i:nil="true"/>
+						<b:DesConcept i:nil="true"/>
+						<b:EstadoDeuda>1</b:EstadoDeuda>
+						<b:FechaProntPago>00000000</b:FechaProntPago>
+						<b:FechaVencimientoComprobante>99990101</b:FechaVencimientoComprobante>
+						<b:FormPago i:nil="true"/>
+						<b:FormasDePago>0170000000000000000000000000000000000000</b:FormasDePago>
+						<b:ImpIVAAdicInter>0</b:ImpIVAAdicInter>
+						<b:ImpIVAIntereses>0</b:ImpIVAIntereses>
+						<b:ImpProntoPago>0</b:ImpProntoPago>
+						<b:ImpPunit>0</b:ImpPunit>
+						<b:ImpSaldo>9999999935</b:ImpSaldo>
+						<b:NroComprobante>PRUEBATAS000008</b:NroComprobante>
+						<b:NroCuota>0000</b:NroCuota>
+						<b:TasaIntPunit>0</b:TasaIntPunit>
+						<b:TipoComprobante>AP</b:TipoComprobante>
+					</b:ClienteSvcObtenerDeudasDeRecaudacionesResponseDeuda>
+				</b:Deudas>
+				<b:DigVerificadorEmpresa>0</b:DigVerificadorEmpresa>
+				<b:Excep3ra>N</b:Excep3ra>
+				<b:IngesosBrutos>0</b:IngesosBrutos>
+				<b:MarcaContinua>N</b:MarcaContinua>
+				<b:NombreCliente>ECO TV S.A.         </b:NombreCliente>
+				<b:NombreEmpresa>BANCA TRANSACCIONAL PRUEBA    </b:NombreEmpresa>
+				<b:NroCliente>8</b:NroCliente>
+				<b:NroInstancia>1</b:NroInstancia>
+				<b:NroProducto>1</b:NroProducto>
+				<b:TipoComision>E</b:TipoComision>
+			</ObtenerDeudasDeRecaudacionesV2Result>
+		</ObtenerDeudasDeRecaudacionesV2Response>
+	</s:Body>
+</s:Envelope>

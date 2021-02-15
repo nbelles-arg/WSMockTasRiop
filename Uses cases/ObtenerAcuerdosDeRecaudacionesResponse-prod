@@ -1,0 +1,101 @@
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+	<s:Header>
+		<a:Action s:mustUnderstand="1">http://tempuri.org/IClienteSvc/ObtenerAcuerdosDeRecaudacionesResponse</a:Action>
+		<a:RelatesTo>urn:uuid:cfc93764-cbf5-486e-8072-f405c17a9962</a:RelatesTo>
+	</s:Header>
+	<s:Body>
+		<ObtenerAcuerdosDeRecaudacionesResponse xmlns="http://tempuri.org/">
+			<ObtenerAcuerdosDeRecaudacionesResult xmlns:b="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+				<b:Acuerdos>
+					<b:ClienteSvcObtenerAcuerdosDeRecaudacionesResponseAcuerdo>
+						<b:CodBajaAcuerdo>0</b:CodBajaAcuerdo>
+						<b:CodMoneda>0</b:CodMoneda>
+						<b:CodTablaFormaPago>0</b:CodTablaFormaPago>
+						<b:CodTablaPrecios>1450</b:CodTablaPrecios>
+						<b:CuitEmpresa>30692317021</b:CuitEmpresa>
+						<b:DescripAcuerdo>COMPA?IA DE ALIMENTOS FARGO SA</b:DescripAcuerdo>
+						<b:DetalleFormaPago>010203040506071113181969700000000000000000000000000000000000</b:DetalleFormaPago>
+						<b:DetalleFormaPagoList xmlns:c="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+							<c:string>01</c:string>
+							<c:string>02</c:string>
+							<c:string>03</c:string>
+							<c:string>04</c:string>
+							<c:string>05</c:string>
+							<c:string>06</c:string>
+							<c:string>07</c:string>
+							<c:string>11</c:string>
+							<c:string>13</c:string>
+							<c:string>18</c:string>
+							<c:string>19</c:string>
+							<c:string>69</c:string>
+							<c:string>70</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+							<c:string>00</c:string>
+						</b:DetalleFormaPagoList>
+						<b:DigVerificadorEmpresa>0</b:DigVerificadorEmpresa>
+						<b:ImpBoletaRecBasica>0.00</b:ImpBoletaRecBasica>
+						<b:ImpComCanDoc3ra>0.00</b:ImpComCanDoc3ra>
+						<b:ImpComCanTrn3ra>0.00</b:ImpComCanTrn3ra>
+						<b:ImpComDoc3ra>0.00</b:ImpComDoc3ra>
+						<b:ImpComMaxDoc3ra>0.00</b:ImpComMaxDoc3ra>
+						<b:ImpComMaxTrn3ra>0.00</b:ImpComMaxTrn3ra>
+						<b:ImpComMinDoc3ra>0.00</b:ImpComMinDoc3ra>
+						<b:ImpComMinTrn3ra>0.00</b:ImpComMinTrn3ra>
+						<b:ImpComNoFina3ra>0.00</b:ImpComNoFina3ra>
+						<b:ImpComNoFinan>0.00</b:ImpComNoFinan>
+						<b:ImpComRecNoCliente>0.00</b:ImpComRecNoCliente>
+						<b:ImpComTrn3ra>0.00</b:ImpComTrn3ra>
+						<b:ImpComUsoAdic3ra>0.00</b:ImpComUsoAdic3ra>
+						<b:ImpComUsoCanDoc>0.00</b:ImpComUsoCanDoc>
+						<b:ImpComUsoCanTrn>0.00</b:ImpComUsoCanTrn>
+						<b:ImpComisionDoc>0.00</b:ImpComisionDoc>
+						<b:ImpComisionMaxDoc>0.00</b:ImpComisionMaxDoc>
+						<b:ImpComisionMaxTrn>0.00</b:ImpComisionMaxTrn>
+						<b:ImpComisionMinDoc>0.00</b:ImpComisionMinDoc>
+						<b:ImpComisionTrn>1.50</b:ImpComisionTrn>
+						<b:ImpComision_MinTrn>0.00</b:ImpComision_MinTrn>
+						<b:IndicaBcoCorres>N</b:IndicaBcoCorres>
+						<b:IndicaCargaManual>N</b:IndicaCargaManual>
+						<b:IndicaCheque>D</b:IndicaCheque>
+						<b:IndicaDto>N</b:IndicaDto>
+						<b:IndicaPgoParcial>S</b:IndicaPgoParcial>
+						<b:IndicaPuni>N</b:IndicaPuni>
+						<b:MarAcuerdoUnif>N</b:MarAcuerdoUnif>
+						<b:NroInstancia>1</b:NroInstancia>
+						<b:NroLimVtoCPD>0</b:NroLimVtoCPD>
+						<b:NroProducto>1</b:NroProducto>
+						<b:PorcentajeDNF>0</b:PorcentajeDNF>
+						<b:Porm3ra>0.0000</b:Porm3ra>
+						<b:PormRecarNoCliente>0.0000</b:PormRecarNoCliente>
+						<b:PormUsoAdic3ra>0.0000</b:PormUsoAdic3ra>
+						<b:PormUsoCaDoc3ra>0.0000</b:PormUsoCaDoc3ra>
+						<b:PormUsoCaTrn3ra>0.0000</b:PormUsoCaTrn3ra>
+						<b:RazonSocial>COMPA?IA DE ALIMENTOS FARGO SA          </b:RazonSocial>
+						<b:TasaUsoCanalDoc>0.0000</b:TasaUsoCanalDoc>
+						<b:TasaUsoCanalTrn>0.0000</b:TasaUsoCanalTrn>
+						<b:TipoComision>E</b:TipoComision>
+						<b:TipoVencimiento>0</b:TipoVencimiento>
+						<b:UsaCuota>0</b:UsaCuota>
+					</b:ClienteSvcObtenerAcuerdosDeRecaudacionesResponseAcuerdo>
+				</b:Acuerdos>
+				<b:CantRepeticiones>0</b:CantRepeticiones>
+				<b:MarcaContinua i:nil="true"/>
+			</ObtenerAcuerdosDeRecaudacionesResult>
+		</ObtenerAcuerdosDeRecaudacionesResponse>
+	</s:Body>
+</s:Envelope>

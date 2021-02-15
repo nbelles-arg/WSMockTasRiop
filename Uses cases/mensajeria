@@ -903,7 +903,8 @@ Response-Code: 200
 Encoding: UTF-8
 Content-Type: application/soap+xml; charset=utf-8
 Headers: {Content-Length=[3837], content-type=[application/soap+xml; charset=utf-8], Date=[Mon, 01 Feb 2021 19:03:15 GMT], Server=[Microsoft-IIS/8.5], X-Powered-By=[ASP.NET]}
-Payload: <s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+Payload: 
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
 	<s:Header>
 		<a:Action s:mustUnderstand="1">http://tempuri.org/IClienteSvc/ObtenerAcuerdosDeRecaudacionesResponse</a:Action>
 		<a:RelatesTo>urn:uuid:476754c2-0083-4767-a2a8-8ab83448a21e</a:RelatesTo>

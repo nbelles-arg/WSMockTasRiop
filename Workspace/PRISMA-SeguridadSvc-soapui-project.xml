@@ -1592,8 +1592,11 @@ if (((context.NroDocumento == context.DNI1) || (context.NroDocumento == context.
 }
 
 
-</con:dispatchPath><con:response name="Valid Password" id="094403a1-5ba0-4415-9258-4cdeb30652c9" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
-   <soap:Header/>
+</con:dispatchPath><con:response name="Valid Password" id="094403a1-5ba0-4415-9258-4cdeb30652c9" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+  <s:Header>
+    <a:Action s:mustUnderstand="1">http://tempuri.org/ISeguridadSvc/IdentificarClienteResponse</a:Action>
+    <a:RelatesTo>urn:uuid:e8452da1-9bb4-4872-9a8c-4209df8dcf38</a:RelatesTo>
+  </s:Header>
    <soap:Body>
       <tem:IdentificarClienteResponse xmlns="http://tempuri.org/">
       	<tem:IdentificarClienteResult xmlns:b="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
@@ -1615,8 +1618,11 @@ if (((context.NroDocumento == context.DNI1) || (context.NroDocumento == context.
          </tem:IdentificarClienteResult>
       </tem:IdentificarClienteResponse>
    </soap:Body>
-</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/IdentificarClienteResponse"/></con:response><con:response name="Invalid Password" id="82431311-4840-416a-bd37-f26bef486e47" httpResponseStatus="500" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
-   <soap:Header/>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/IdentificarClienteResponse"/></con:response><con:response name="Invalid Password" id="82431311-4840-416a-bd37-f26bef486e47" httpResponseStatus="500" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing">
+  <s:Header>
+    <a:Action s:mustUnderstand="1">http://www.w3.org/2005/08/addressing/soap/fault</a:Action>
+    <a:RelatesTo>urn:uuid:6fed738a-3ce5-4f5e-8d4c-30a0ab115dd0</a:RelatesTo>
+  </s:Header>
    <soap:Body>
       <s:Fault>
 		<s:Code>
@@ -1727,8 +1733,11 @@ if (context.NroDoc != null)
 else
 	return "Invalid Card"
 
-</con:dispatchPath><con:response name="Valid Card" id="e4c47b21-0122-4575-90b0-77c8a784ac99" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
-   <soap:Header/>
+</con:dispatchPath><con:response name="Valid Card" id="e4c47b21-0122-4575-90b0-77c8a784ac99" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+  <s:Header>
+    <a:Action s:mustUnderstand="1">http://tempuri.org/ISeguridadSvc/ObtenerDocumentoPorNumeroTarjetaResponse</a:Action>
+    <a:RelatesTo>urn:uuid:cf92c4eb-1374-4d2f-9199-df2a32dd7e39</a:RelatesTo>
+  </s:Header>
    <soap:Body>
       <tem:ObtenerDocumentoPorNumeroTarjetaResponse xmlns="http://tempuri.org/" >
          <!--Optional:-->
@@ -1740,8 +1749,11 @@ else
          </tem:ObtenerDocumentoPorNumeroTarjetaResult>
       </tem:ObtenerDocumentoPorNumeroTarjetaResponse>
    </soap:Body>
-</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/ObtenerDocumentoPorNumeroTarjetaResponse"/></con:response><con:response name="Invalid Card" id="63dc0648-a5c8-4338-bb64-1b0a50830d6d" httpResponseStatus="500" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
-   <soap:Header/>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/ObtenerDocumentoPorNumeroTarjetaResponse"/></con:response><con:response name="Invalid Card" id="63dc0648-a5c8-4338-bb64-1b0a50830d6d" httpResponseStatus="500" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+  <s:Header>
+    <a:Action s:mustUnderstand="1">http://www.w3.org/2005/08/addressing/soap/fault</a:Action>
+    <a:RelatesTo>urn:uuid:c1c3c582-3496-41a6-8890-9b02fb23291c</a:RelatesTo>
+  </s:Header>
    <soap:Body>
       <s:Fault>
       <s:Code>

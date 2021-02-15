@@ -1,0 +1,52 @@
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+	<s:Header>
+		<a:Action s:mustUnderstand="1">http://tempuri.org/IClienteSvc/ObtenerDeudasDeRecaudacionesV2Response</a:Action>
+		<a:RelatesTo>urn:uuid:67cf86e4-46f1-4f36-86c1-c491d18f0d23</a:RelatesTo>
+	</s:Header>
+	<s:Body>
+		<ObtenerDeudasDeRecaudacionesV2Response xmlns="http://tempuri.org/">
+			<ObtenerDeudasDeRecaudacionesV2Result xmlns:b="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+				<b:CantRepeticiones>1</b:CantRepeticiones>
+				<b:ClientePropio>N</b:ClientePropio>
+				<b:CodCondIVACliente>0</b:CodCondIVACliente>
+				<b:CuitCliente>20229167791</b:CuitCliente>
+				<b:CuitEmpresa>30692317021</b:CuitEmpresa>
+				<b:Deudas>
+					<b:ClienteSvcObtenerDeudasDeRecaudacionesResponseDeuda>
+						<b:CodConcept>0</b:CodConcept>
+						<b:Dat1 i:nil="true"/>
+						<b:Dat2 i:nil="true"/>
+						<b:Dat3 i:nil="true"/>
+						<b:Dat4 i:nil="true"/>
+						<b:Dat5 i:nil="true"/>
+						<b:DesConcept i:nil="true"/>
+						<b:EstadoDeuda>1</b:EstadoDeuda>
+						<b:FechaProntPago>00000000</b:FechaProntPago>
+						<b:FechaVencimientoComprobante>99990101</b:FechaVencimientoComprobante>
+						<b:FormPago i:nil="true"/>
+						<b:FormasDePago>0170000000000000000000000000000000000000</b:FormasDePago>
+						<b:ImpIVAAdicInter>0</b:ImpIVAAdicInter>
+						<b:ImpIVAIntereses>0</b:ImpIVAIntereses>
+						<b:ImpProntoPago>0</b:ImpProntoPago>
+						<b:ImpPunit>0</b:ImpPunit>
+						<b:ImpSaldo>999996056999.99</b:ImpSaldo>
+						<b:NroComprobante>588            </b:NroComprobante>
+						<b:NroCuota>0000</b:NroCuota>
+						<b:TasaIntPunit>0</b:TasaIntPunit>
+						<b:TipoComprobante>AP</b:TipoComprobante>
+					</b:ClienteSvcObtenerDeudasDeRecaudacionesResponseDeuda>
+				</b:Deudas>
+				<b:DigVerificadorEmpresa>0</b:DigVerificadorEmpresa>
+				<b:Excep3ra>N</b:Excep3ra>
+				<b:IngesosBrutos>0</b:IngesosBrutos>
+				<b:MarcaContinua>N</b:MarcaContinua>
+				<b:NombreCliente>Miguel Rodolfo Daniel II      </b:NombreCliente>
+				<b:NombreEmpresa>COMPA?IA DE ALIMENTOS FARGO SA</b:NombreEmpresa>
+				<b:NroCliente>20229167791</b:NroCliente>
+				<b:NroInstancia>1</b:NroInstancia>
+				<b:NroProducto>1</b:NroProducto>
+				<b:TipoComision>E</b:TipoComision>
+			</ObtenerDeudasDeRecaudacionesV2Result>
+		</ObtenerDeudasDeRecaudacionesV2Response>
+	</s:Body>
+</s:Envelope>
