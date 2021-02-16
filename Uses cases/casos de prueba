@@ -2512,17 +2512,39 @@ Encoding: UTF-8
 Content-Type: application/soap+xml; charset=utf-8
 Headers: {Content-Length=[1378], content-type=[application/soap+xml; charset=utf-8], Date=[Tue, 26 Jan 2021 10:03:12 GMT], Server=
 [Microsoft-IIS/8.5], X-Powered-By=[ASP.NET]}
-Payload: <s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing"><s:Header><a
-:Action s:mustUnderstand="1">http://www.w3.org/2005/08/addressing/soap/fault</a:Action><a:RelatesTo>urn:uuid:b73c4814-17ad-43fc-94
-54-b9baa2678ee6</a:RelatesTo></s:Header><s:Body><s:Fault><s:Code><s:Value>s:Sender</s:Value></s:Code><s:Reason><s:Text xml:lang="e
-s-AR">19620004|PRP|La operacion solicitada no puede ser realizada. Por favor, reintente mas tarde.</s:Text></s:Reason><s:Detail><B
-usinessException xmlns="http://schemas.datacontract.org/2004/07/Isban.Common" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
-xmlns:x="http://www.w3.org/2001/XMLSchema"><ClassName i:type="x:string" xmlns="">Isban.Common.BusinessException</ClassName><Messag
-e i:type="x:string" xmlns="">19620004|PRP|La operacion solicitada no puede ser realizada. Por favor, reintente mas tarde.</Message
-><Data i:nil="true" xmlns=""/><InnerException i:nil="true" xmlns=""/><HelpURL i:nil="true" xmlns=""/><StackTraceString i:nil="true
-" xmlns=""/><RemoteStackTraceString i:nil="true" xmlns=""/><RemoteStackIndex i:type="x:int" xmlns="">0</RemoteStackIndex><Exceptio
-nMethod i:nil="true" xmlns=""/><HResult i:type="x:int" xmlns="">-2146233088</HResult><Source i:nil="true" xmlns=""/><WatsonBuckets
- i:nil="true" xmlns=""/></BusinessException></s:Detail></s:Fault></s:Body></s:Envelope>
+Payload: 
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+  <s:Header>
+    <a:Action s:mustUnderstand="1">http://www.w3.org/2005/08/addressing/soap/fault</a:Action>
+    <a:RelatesTo>urn:uuid:b73c4814-17ad-43fc-9454-b9baa2678ee6</a:RelatesTo>
+  </s:Header>
+  <s:Body>
+    <s:Fault>
+      <s:Code>
+        <s:Value>s:Sender</s:Value>
+      </s:Code>
+      <s:Reason>
+        <s:Text xml:lang="es-AR">19620004|PRP|La operacion solicitada no puede ser realizada. Por favor, reintente mas tarde.</s:Text>
+      </s:Reason>
+      <s:Detail>
+        <BusinessException xmlns="http://schemas.datacontract.org/2004/07/Isban.Common" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:x="http://www.w3.org/2001/XMLSchema">
+          <ClassName i:type="x:string" xmlns="">Isban.Common.BusinessException</ClassName>
+          <Message i:type="x:string" xmlns="">19620004|PRP|La operacion solicitada no puede ser realizada. Por favor, reintente mas tarde.</Message>
+          <Data i:nil="true" xmlns=""/>
+          <InnerException i:nil="true" xmlns=""/>
+          <HelpURL i:nil="true" xmlns=""/>
+          <StackTraceString i:nil="true" xmlns=""/>
+          <RemoteStackTraceString i:nil="true" xmlns=""/>
+          <RemoteStackIndex i:type="x:int" xmlns="">0</RemoteStackIndex>
+          <ExceptionMethod i:nil="true" xmlns=""/>
+          <HResult i:type="x:int" xmlns="">-2146233088</HResult>
+          <Source i:nil="true" xmlns=""/>
+          <WatsonBuckets i:nil="true" xmlns=""/>
+        </BusinessException>
+      </s:Detail>
+    </s:Fault>
+  </s:Body>
+</s:Envelope>
 --------------------------------------
 ObtenerPagoRecaudacionesPorID Aprobado
 
@@ -2637,6 +2659,88 @@ Payload:
         <b:Verificador>0</b:Verificador>
       </ObtenerPagoRecaudacionesPorIDResult>
     </ObtenerPagoRecaudacionesPorIDResponse>
+  </s:Body>
+</s:Envelope>
+--------------------------------------
+ObtenerAcuerdosDeRecaudaciones Rechazado
+
+--------------------------------------
+2021-01-27 00:05:16,804|INFO  [tasRIOPTxnMgr:791841 prepare com.banelco.tas.riop.WsTarjetaRecaudadoraService] Outbound Message
+---------------------------
+ID: 5322212
+Address: https://tashostprisma.ar.bsch:8443/prisma_clientesvc.svc
+Encoding: UTF-8
+Content-Type: application/soap+xml
+Headers: {Accept=[*/*]}
+Payload: 
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+  <soap:Header>
+    <Action:/addressing xmlns="http://www.w3.org/2005/08 /addressing">http://tempuri.org/IClienteSvc/ObtenerAcuerdosDeRecaudaciones</Action:/addressing>
+    <MessageID:ressing xmlns="http://www.w3.org/2005/08/add ressing">urn:uuid:56446d7f-77e0-4226-8662-dce1eff0f5f9</MessageID:ressing>
+    <To xmlns="http://www.w3.org/2005/08/addressing">https://tashost
+prisma.ar.bsch:8443/prisma_clientesvc.svc </To>
+    <ReplyTo xmlns="http://www.w3.org/2005/08/addressing">
+      <Address>http://www.w3.org/20
+05/08/addressing/anonymous</Address>
+    </ReplyTo>
+  </soap:Header>
+  <soap:Body>
+    <ns2:ObtenerAcuerdosDeRecaudaciones xmlns="http://schemas.d atacontract.org/2004/07/TAS.Common.DataContracts" xmlns:ns2="http://tempuri.org/" xmlns:ns3="http://schemas.microsoft.com/2003/10/ Serialization/" xmlns:ns4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ns5="http://schemas.datacontract.org/2004/07/System" xmlns:ns6="http://schemas.datacontract.org/2004/07/BSR.ServiceModel.Common.Exceptions">
+      <ns2:request>
+        <IdTerminal:atacontract.org/2004/07/TAS.Common.DataContracts>2</IdTerminal:atacontract.org/2004/07/TAS.Common.DataContracts>
+        <NroSucursal:atacontract.org/2004/07/TAS.Common.DataContracts>99295</NroSucursal:atacontract.org/2004/07/TAS.Common.DataContracts>
+        <PasswordRACF:atacontract.org/2004/07/TAS.Common.DataContracts>FREEUSER</PasswordRACF:atacontract.org/2004/07/TAS.Common.DataContracts>
+        <UsuarioRACF:atacontract.org/2004/07/TAS.Common.DataContracts>FREEUSER</UsuarioRACF:atacontract.org/2004/07/TAS.Common.DataContracts>
+        <CantidadItems:atacontract.org/2004/07/TAS.Common.DataContracts>1</CantidadItems:atacontract.org/2004/07/TAS.Common.DataContracts>
+        <CuitEmpresa:atacontract.org/2004/07/TAS.Common.DataContracts>43981858589</CuitEmpresa:atacontract.org/2004/07/TAS.Common.DataContracts>
+        <DigVerificadorEmpresa:atacontract.org/2004/07/TAS.Common.DataContracts>0</DigVerificadorEmpresa:atacontract.org/2004/07/TAS.Common.DataContracts>
+        <LongDescripAcuerdo:atacontract.org/2004/07/TAS.Common.DataContracts>0</LongDescripAcuerdo:atacontract.org/2004/07/TAS.Common.DataContracts>
+        <NroInstancia:atacontract.org/2004/07/TAS.Common.DataContracts>81</NroInstancia:atacontract.org/2004/07/TAS.Common.DataContracts>
+        <NroProducto:atacontract.org/2004/07/TAS.Common.DataContracts>1</NroProducto:atacontract.org/2004/07/TAS.Common.DataContracts>
+        <Opcion:atacontract.org/2004/07/TAS.Common.DataContracts>1</Opcion:atacontract.org/2004/07/TAS.Common.DataContracts>
+      </ns2:request>
+    </ns2:ObtenerAcuerdosDeRecaudaciones>
+  </soap:Body>
+</soap:Envelope>
+--------------------------------------
+2021-01-27 00:05:16,850|INFO  [tasRIOPTxnMgr:791841 prepare com.banelco.tas.riop.WsTarjetaRecaudadoraService] Inbound Message
+----------------------------
+ID: 5322212
+Response-Code: 500
+Encoding: UTF-8
+Content-Type: application/soap+xml; charset=utf-8
+Headers: {Content-Length=[1404], content-type=[application/soap+xml; charset=utf-8], Date=[Wed, 27 Jan 2021 03:05:16 GMT], Server=[Microsoft-IIS/8.5], X-Powered-By=[ASP.NET]}
+Payload: 
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+  <s:Header>
+    <a:Action s:mustUnderstand="1">http://www.w3.org/2005/08/addressing/soap/fault</a:Action>
+    <a:RelatesTo>urn:uuid:56446d7f-77e0-4226-8662-dce1eff0f5f9</a:RelatesTo>
+  </s:Header>
+  <s:Body>
+    <s:Fault>
+      <s:Code>
+        <s:Value>s:Sender</s:Value>
+      </s:Code>
+      <s:Reason>
+        <s:Text xml:lang="es-AR">18888801|CCO|Si desea realizar esta operacion de 21 a 7 Hs., solicite ser transferido a un representante.</s:Text>
+      </s:Reason>
+      <s:Detail>
+        <BusinessException xmlns="http://schemas.datacontract.org/2004/07/Isban.Common" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:x="http://www.w3.org/2001/XMLSchema">
+          <ClassName i:type="x:string" xmlns="">Isban.Common.BusinessException</ClassName>
+          <Message i:type="x:string" xmlns="">18888801|CCO|Si desea realizar esta operacion de 21 a 7 Hs., solicite ser transferido a un representante.</Message>
+          <Data i:nil="true" xmlns=""/>
+          <InnerException i:nil="true" xmlns=""/>
+          <HelpURL i:nil="true" xmlns=""/>
+          <StackTraceString i:nil="true" xmlns=""/>
+          <RemoteStackTraceString i:nil="true" xmlns=""/>
+          <RemoteStackIndex i:type="x:int" xmlns="">0</RemoteStackIndex>
+          <ExceptionMethod i:nil="true" xmlns=""/>
+          <HResult i:type="x:int" xmlns="">-2146233088</HResult>
+          <Source i:nil="true" xmlns=""/>
+          <WatsonBuckets i:nil="true" xmlns=""/>
+        </BusinessException>
+      </s:Detail>
+    </s:Fault>
   </s:Body>
 </s:Envelope>
 --------------------------------------
