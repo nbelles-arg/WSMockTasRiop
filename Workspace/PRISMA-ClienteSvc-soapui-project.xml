@@ -1352,7 +1352,7 @@
          </tem:requestAgenda>\r
       </tem:ObtenerCliente>\r
    </soap:Body>\r
-</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IClienteSvc/ObtenerCliente"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="8f96e291-de29-43ca-8e57-1cbf1b901fbb" isOneWay="false" action="http://tempuri.org/IClienteSvc/ObtenerDatosDeCuenta" name="ObtenerDatosDeCuenta" bindingOperationName="ObtenerDatosDeCuenta" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="090cfb82-8549-452a-aa54-8c2e974f41c8" name="Request 1" useWsAddressing="true" sslKeystore="tasriop.p12"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_clientesvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IClienteSvc/ObtenerCliente"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="8f96e291-de29-43ca-8e57-1cbf1b901fbb" isOneWay="false" action="http://tempuri.org/IClienteSvc/ObtenerDatosDeCuenta" name="ObtenerDatosDeCuenta" bindingOperationName="ObtenerDatosDeCuenta" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="090cfb82-8549-452a-aa54-8c2e974f41c8" name="Request 1" useWsAddressing="true" sslKeystore="tasriop.p12"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/mockPRISMA_ClienteSvc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
    <soap:Header/>\r
    <soap:Body>\r
       <tem:ObtenerDatosDeCuenta>\r
@@ -1526,7 +1526,7 @@
          </tem:request>\r
       </tem:ObtenerEstadoYClave>\r
    </soap:Body>\r
-</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IClienteSvc/ObtenerEstadoYClave"/></con:call></con:operation><con:operation id="98ea6724-2430-466a-9feb-8070e624a72a" isOneWay="false" action="http://tempuri.org/IClienteSvc/ObtenerFormaDePagoRecaudaciones" name="ObtenerFormaDePagoRecaudaciones" bindingOperationName="ObtenerFormaDePagoRecaudaciones" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1fa9130e-99c2-456c-8ccb-5bdc5ab5d072" name="Request 1" useWsAddressing="true" sslKeystore="tasriop.p12"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_clientesvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IClienteSvc/ObtenerEstadoYClave"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="98ea6724-2430-466a-9feb-8070e624a72a" isOneWay="false" action="http://tempuri.org/IClienteSvc/ObtenerFormaDePagoRecaudaciones" name="ObtenerFormaDePagoRecaudaciones" bindingOperationName="ObtenerFormaDePagoRecaudaciones" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1fa9130e-99c2-456c-8ccb-5bdc5ab5d072" name="Request 1" useWsAddressing="true" sslKeystore="tasriop.p12"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_clientesvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
    <soap:Header/>\r
    <soap:Body>\r
       <tem:ObtenerFormaDePagoRecaudaciones>\r
@@ -1557,7 +1557,7 @@
          </tem:request>\r
       </tem:ObtenerFormaDePagoRecaudaciones>\r
    </soap:Body>\r
-</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IClienteSvc/ObtenerFormaDePagoRecaudaciones"/></con:call></con:operation><con:operation id="ea41d721-39bd-4faa-8eea-4fc504ee3622" isOneWay="false" action="http://tempuri.org/IClienteSvc/ObtenerMovimientosCuenta" name="ObtenerMovimientosCuenta" bindingOperationName="ObtenerMovimientosCuenta" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="cfda14ff-0d04-4c47-9968-adf11df43dc5" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_clientesvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IClienteSvc/ObtenerFormaDePagoRecaudaciones"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="ea41d721-39bd-4faa-8eea-4fc504ee3622" isOneWay="false" action="http://tempuri.org/IClienteSvc/ObtenerMovimientosCuenta" name="ObtenerMovimientosCuenta" bindingOperationName="ObtenerMovimientosCuenta" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="cfda14ff-0d04-4c47-9968-adf11df43dc5" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_clientesvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
    <soap:Header/>\r
    <soap:Body>\r
       <tem:ObtenerMovimientosCuenta>\r
@@ -1604,7 +1604,7 @@
          </tem:request>\r
       </tem:ObtenerMovimientosCuenta>\r
    </soap:Body>\r
-</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IClienteSvc/ObtenerMovimientosCuenta"/></con:call></con:operation><con:operation id="8871e0a7-595d-4c0d-b9c3-e52d85dfb60d" isOneWay="false" action="http://tempuri.org/IClienteSvc/ObtenerMovimientosCuentaV160" name="ObtenerMovimientosCuentaV160" bindingOperationName="ObtenerMovimientosCuentaV160" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2f6ac0e3-6a63-4553-8f98-52ba43cd7611" name="Request 1" useWsAddressing="true" sslKeystore="tasriop.p12"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_clientesvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IClienteSvc/ObtenerMovimientosCuenta"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="8871e0a7-595d-4c0d-b9c3-e52d85dfb60d" isOneWay="false" action="http://tempuri.org/IClienteSvc/ObtenerMovimientosCuentaV160" name="ObtenerMovimientosCuentaV160" bindingOperationName="ObtenerMovimientosCuentaV160" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2f6ac0e3-6a63-4553-8f98-52ba43cd7611" name="Request 1" useWsAddressing="true" sslKeystore="tasriop.p12"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_clientesvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
    <soap:Header/>\r
    <soap:Body>\r
       <tem:ObtenerMovimientosCuentaV160>\r
@@ -1651,46 +1651,46 @@
          </tem:request>\r
       </tem:ObtenerMovimientosCuentaV160>\r
    </soap:Body>\r
-</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IClienteSvc/ObtenerMovimientosCuentaV160"/></con:call></con:operation><con:operation id="f6c03a41-a3da-4cd6-bfb3-ab6ed7846c18" isOneWay="false" action="http://tempuri.org/IClienteSvc/ObtenerPagoRecaudacionesPorID" name="ObtenerPagoRecaudacionesPorID" bindingOperationName="ObtenerPagoRecaudacionesPorID" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="23288d1f-f03b-40c3-b373-7af675c62ddf" name="Request 1" useWsAddressing="true" sslKeystore="tasriop.p12"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_clientesvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IClienteSvc/ObtenerMovimientosCuentaV160"/></con:call></con:operation><con:operation id="f6c03a41-a3da-4cd6-bfb3-ab6ed7846c18" isOneWay="false" action="http://tempuri.org/IClienteSvc/ObtenerPagoRecaudacionesPorID" name="ObtenerPagoRecaudacionesPorID" bindingOperationName="ObtenerPagoRecaudacionesPorID" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="23288d1f-f03b-40c3-b373-7af675c62ddf" name="Request 1" useWsAddressing="true" sslKeystore="tasriop.p12"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/mockPRISMA_ClienteSvc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
    <soap:Header/>\r
    <soap:Body>\r
       <tem:ObtenerPagoRecaudacionesPorID>\r
          <!--Optional:-->\r
          <tem:request>\r
             <!--Optional:-->\r
-            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <tas:ClienteFechaNacimiento></tas:ClienteFechaNacimiento>\r
             <!--Optional:-->\r
-            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <tas:ClienteNumeroDoc></tas:ClienteNumeroDoc>\r
             <!--Optional:-->\r
-            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <tas:ClienteTipoDoc></tas:ClienteTipoDoc>\r
             <!--Optional:-->\r
-            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <tas:ClienteTipoPersona></tas:ClienteTipoPersona>\r
             <!--Optional:-->\r
-            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <tas:IdTerminal>1</tas:IdTerminal>\r
             <!--Optional:-->\r
-            <tas:NUP>?</tas:NUP>\r
+            <tas:NUP></tas:NUP>\r
             <!--Optional:-->\r
-            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <tas:NroSucursal>99455</tas:NroSucursal>\r
             <!--Optional:-->\r
-            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <tas:PasswordRACF>FREEUSER</tas:PasswordRACF>\r
             <!--Optional:-->\r
-            <tas:UserID>?</tas:UserID>\r
+            <tas:UserID></tas:UserID>\r
             <!--Optional:-->\r
-            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <tas:UsuarioRACF>FREEUSER</tas:UsuarioRACF>\r
             <!--Optional:-->\r
-            <tas:IdPago>?</tas:IdPago>\r
+            <tas:IdPago>012466</tas:IdPago>\r
             <!--Optional:-->\r
-            <tas:NroCuit>?</tas:NroCuit>\r
+            <tas:NroCuit></tas:NroCuit>\r
             <!--Optional:-->\r
-            <tas:NroInstancia>?</tas:NroInstancia>\r
+            <tas:NroInstancia></tas:NroInstancia>\r
             <!--Optional:-->\r
-            <tas:NroProducto>?</tas:NroProducto>\r
+            <tas:NroProducto></tas:NroProducto>\r
             <!--Optional:-->\r
-            <tas:Verificador>?</tas:Verificador>\r
+            <tas:Verificador></tas:Verificador>\r
          </tem:request>\r
       </tem:ObtenerPagoRecaudacionesPorID>\r
    </soap:Body>\r
-</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IClienteSvc/ObtenerPagoRecaudacionesPorID"/></con:call></con:operation></con:interface><con:mockService id="859ecf27-aab8-45dd-8866-affd4a1b5288" port="8080" path="/mockPRISMA_ClienteSvc" host="NT-9992120" name="PRISMA_ClienteSvc MockService" incomingWss="" outgoingWss="" dispatchResponseMessages="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-version">false</con:setting></con:settings><con:startScript>/*
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IClienteSvc/ObtenerPagoRecaudacionesPorID"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="859ecf27-aab8-45dd-8866-affd4a1b5288" port="8080" path="/mockPRISMA_ClienteSvc" host="NT-9992120" name="PRISMA_ClienteSvc MockService" incomingWss="" outgoingWss="" dispatchResponseMessages="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-version">false</con:setting></con:settings><con:startScript>/*
 * Here we inicialice the context
 */
 def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
@@ -1719,13 +1719,18 @@ context.DNI3 = "5618792"
 
 //cuits of the collectios companies
 context.cuitEmpresa1 = "30700005573"
+context.cuitEmpresa2 = "30500008454"
 
 //information of the collections clients
 context.DescripAcuerdo = "BANCA TRANSACCIONAL PRUEBA    "
 context.CuitCliente1 = 30502793175
+context.CiutCliente2 = 20161167496
 context.NombreCliente1 = "ECO TV S.A.         "
-
-
+context.NombreCliente2 = "LARRARTE SERGIO IVAR          "
+context.Nro
+//id de pagos
+context.IdPagoCorto1 = "012466"
+context.IdPagoLargo1 = "2021012609167910007"
 </con:startScript><con:properties/><con:mockOperation name="ObtenerAcuerdosDeRecaudaciones" id="a275a3fb-e671-4411-810c-7829f505c576" interface="PRISMA_ClienteSvcEndpoint" operation="ObtenerAcuerdosDeRecaudaciones"><con:settings/><con:defaultResponse>Invalid Cuit</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>//importing groovyUtils
 def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
 //Define the request context
@@ -3535,131 +3540,118 @@ context.CuitEmpresa = request.Body.ObtenerDeudasDeRecaudacionesV2.request.CuitEm
          </tem:ObtenerMovimientosCuentaV160Result>
       </tem:ObtenerMovimientosCuentaV160Response>
    </soap:Body>
-</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IClienteSvc/ObtenerMovimientosCuentaV160Response"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="ObtenerPagoRecaudacionesPorID" id="4293f53b-24dc-4eb4-bb14-c6dcbdb60964" interface="PRISMA_ClienteSvcEndpoint" operation="ObtenerPagoRecaudacionesPorID"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="cf5694a1-1461-433d-835d-924d787c64fc" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
-   <soap:Header/>
-   <soap:Body>
-      <tem:ObtenerPagoRecaudacionesPorIDResponse>
-         <!--Optional:-->
-         <tem:ObtenerPagoRecaudacionesPorIDResult>
-            <!--Optional:-->
-            <tas:Banco>?</tas:Banco>
-            <!--Optional:-->
-            <tas:CUITCliente>?</tas:CUITCliente>
-            <!--Optional:-->
-            <tas:CUITEmpresa>?</tas:CUITEmpresa>
-            <!--Optional:-->
-            <tas:Cantidad>?</tas:Cantidad>
-            <!--Optional:-->
-            <tas:Codigo>?</tas:Codigo>
-            <!--Optional:-->
-            <tas:CodigoIVA>?</tas:CodigoIVA>
-            <!--Optional:-->
-            <tas:CotDolarCompra>?</tas:CotDolarCompra>
-            <!--Optional:-->
-            <tas:CotDolarVenta>?</tas:CotDolarVenta>
-            <!--Optional:-->
-            <tas:FechaAlta>?</tas:FechaAlta>
-            <!--Optional:-->
-            <tas:FechaPago>?</tas:FechaPago>
-            <!--Optional:-->
-            <tas:FormaPago>?</tas:FormaPago>
-            <!--Optional:-->
-            <tas:IdPago>?</tas:IdPago>
-            <!--Optional:-->
-            <tas:ImporteComision>?</tas:ImporteComision>
-            <!--Optional:-->
-            <tas:ImporteIIBB>?</tas:ImporteIIBB>
-            <!--Optional:-->
-            <tas:ImporteIVAAdic>?</tas:ImporteIVAAdic>
-            <!--Optional:-->
-            <tas:ImporteIVATerceros>?</tas:ImporteIVATerceros>
-            <!--Optional:-->
-            <tas:ImportePago>?</tas:ImportePago>
-            <!--Optional:-->
-            <tas:ImporteTerceros>?</tas:ImporteTerceros>
-            <!--Optional:-->
-            <tas:InfoPagos>
-               <!--Zero or more repetitions:-->
-               <tas:ClienteSvcObtenerPagoPorIdResponseInfoPagos>
-                  <!--Optional:-->
-                  <tas:CodPosta>?</tas:CodPosta>
-                  <!--Optional:-->
-                  <tas:FechaVencimiento>?</tas:FechaVencimiento>
-                  <!--Optional:-->
-                  <tas:FormaPago>?</tas:FormaPago>
-                  <!--Optional:-->
-                  <tas:Importe>?</tas:Importe>
-                  <!--Optional:-->
-                  <tas:MarLibre>?</tas:MarLibre>
-                  <!--Optional:-->
-                  <tas:NroBanco>?</tas:NroBanco>
-                  <!--Optional:-->
-                  <tas:NroCheque>?</tas:NroCheque>
-                  <!--Optional:-->
-                  <tas:NroCuenta>?</tas:NroCuenta>
-                  <!--Optional:-->
-                  <tas:Sucursal>?</tas:Sucursal>
-                  <!--Optional:-->
-                  <tas:TipoCuenta>?</tas:TipoCuenta>
-               </tas:ClienteSvcObtenerPagoPorIdResponseInfoPagos>
-            </tas:InfoPagos>
-            <!--Optional:-->
-            <tas:Instancia>?</tas:Instancia>
-            <!--Optional:-->
-            <tas:NombreCliente>?</tas:NombreCliente>
-            <!--Optional:-->
-            <tas:NroBoleta>?</tas:NroBoleta>
-            <!--Optional:-->
-            <tas:NroCliente>?</tas:NroCliente>
-            <!--Optional:-->
-            <tas:NroCuenta>?</tas:NroCuenta>
-            <!--Optional:-->
-            <tas:Pagos>
-               <!--Zero or more repetitions:-->
-               <tas:ClienteSvcObtenerPagoPorIdResponseComprobantes>
-                  <!--Optional:-->
-                  <tas:FechaVenc>?</tas:FechaVenc>
-                  <!--Optional:-->
-                  <tas:ImporteDesc>?</tas:ImporteDesc>
-                  <!--Optional:-->
-                  <tas:ImporteIVA>?</tas:ImporteIVA>
-                  <!--Optional:-->
-                  <tas:ImporteIVAAdic>?</tas:ImporteIVAAdic>
-                  <!--Optional:-->
-                  <tas:ImportePUnit>?</tas:ImportePUnit>
-                  <!--Optional:-->
-                  <tas:ImportePago>?</tas:ImportePago>
-                  <!--Optional:-->
-                  <tas:ImporteSaldoAct>?</tas:ImporteSaldoAct>
-                  <!--Optional:-->
-                  <tas:ImporteSaldoAnt>?</tas:ImporteSaldoAnt>
-                  <!--Optional:-->
-                  <tas:NroComprobante>?</tas:NroComprobante>
-                  <!--Optional:-->
-                  <tas:NroCuota>?</tas:NroCuota>
-                  <!--Optional:-->
-                  <tas:Tasa>?</tas:Tasa>
-                  <!--Optional:-->
-                  <tas:TextoLibre1>?</tas:TextoLibre1>
-                  <!--Optional:-->
-                  <tas:TextoLibre2>?</tas:TextoLibre2>
-                  <!--Optional:-->
-                  <tas:TextoLibre3>?</tas:TextoLibre3>
-                  <!--Optional:-->
-                  <tas:TipoComprobante>?</tas:TipoComprobante>
-               </tas:ClienteSvcObtenerPagoPorIdResponseComprobantes>
-            </tas:Pagos>
-            <!--Optional:-->
-            <tas:Producto>?</tas:Producto>
-            <!--Optional:-->
-            <tas:Sucursal>?</tas:Sucursal>
-            <!--Optional:-->
-            <tas:TipoCuenta>?</tas:TipoCuenta>
-            <!--Optional:-->
-            <tas:TipoIIBB>?</tas:TipoIIBB>
-            <!--Optional:-->
-            <tas:Verificador>?</tas:Verificador>
-         </tem:ObtenerPagoRecaudacionesPorIDResult>
-      </tem:ObtenerPagoRecaudacionesPorIDResponse>
-   </soap:Body>
-</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IClienteSvc/ObtenerPagoRecaudacionesPorIDResponse"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer><con:crypto><con:source>C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java/Mock_WS_ Santander/WSDL/TrustStore/tasriop.p12</con:source><con:password/><con:type>TRUSTSTORE</con:type></con:crypto><con:crypto><con:source>C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java/Mock_WS_ Santander/WSDL/TrustStore/tasriop.p12</con:source><con:password>123456</con:password><con:type>TRUSTSTORE</con:type></con:crypto><con:crypto><con:source>C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java/Mock_WS_ Santander/WSDL/TrustStore/tasriop.p12</con:source><con:password/><con:type>KEYSTORE</con:type></con:crypto></con:wssContainer><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IClienteSvc/ObtenerMovimientosCuentaV160Response"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="ObtenerPagoRecaudacionesPorID" id="4293f53b-24dc-4eb4-bb14-c6dcbdb60964" interface="PRISMA_ClienteSvcEndpoint" operation="ObtenerPagoRecaudacionesPorID"><con:settings/><con:defaultResponse>Valid IdPago</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>//importing groovyUtils
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+//Define the request context
+def request = new XmlSlurper().parseText(mockRequest.requestContent)
+//geting the values from the xml request
+context.IdPago = request.Body.ObtenerPagoRecaudacionesPorID.request.IdPago.toString()
+
+ if (context.IdPago == context.IdPagoCorto1)
+ 	return "Valid IdPago"
+ else 
+ 	return "Invalid IdPago"
+</con:dispatchPath><con:response name="Valid IdPago" id="cf5694a1-1461-433d-835d-924d787c64fc" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+  <s:Header>
+    <a:Action s:mustUnderstand="1">http://tempuri.org/IClienteSvc/ObtenerPagoRecaudacionesPorIDResponse</a:Action>
+    <a:RelatesTo>urn:uuid:6d07cfe7-8352-43b3-b2b6-a098e79d32b0</a:RelatesTo>
+  </s:Header>
+  <s:Body>
+    <ObtenerPagoRecaudacionesPorIDResponse xmlns="http://tempuri.org/">
+      <ObtenerPagoRecaudacionesPorIDResult xmlns:b="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+        <b:Banco>0</b:Banco>
+        <b:CUITCliente>${CiutCliente2}</b:CUITCliente>
+        <b:CUITEmpresa>${cuitEmpresa2}</b:CUITEmpresa>
+        <b:Cantidad>1</b:Cantidad>
+        <b:Codigo>G  </b:Codigo>
+        <b:CodigoIVA>0</b:CodigoIVA>
+        <b:CotDolarCompra>0</b:CotDolarCompra>
+        <b:CotDolarVenta>0</b:CotDolarVenta>
+        <b:FechaAlta>2021-01-26</b:FechaAlta>
+        <b:FechaPago i:nil="true"/>
+        <b:FormaPago>0</b:FormaPago>
+        <b:IdPago>${IdPagoLargo1}</b:IdPago>
+        <b:ImporteComision>0</b:ImporteComision>
+        <b:ImporteIIBB>0</b:ImporteIIBB>
+        <b:ImporteIVAAdic>0</b:ImporteIVAAdic>
+        <b:ImporteIVATerceros>0</b:ImporteIVATerceros>
+        <b:ImportePago>2500.00</b:ImportePago>
+        <b:ImporteTerceros>0</b:ImporteTerceros>
+        <b:InfoPagos>
+          <b:ClienteSvcObtenerPagoPorIdResponseInfoPagos>
+            <b:CodPosta>0</b:CodPosta>
+            <b:FechaVencimiento>10101</b:FechaVencimiento>
+            <b:FormaPago>69</b:FormaPago>
+            <b:Importe>250000</b:Importe>
+            <b:MarLibre/>
+            <b:NroBanco>0</b:NroBanco>
+            <b:NroCheque>0</b:NroCheque>
+            <b:NroCuenta>0</b:NroCuenta>
+            <b:Sucursal>0</b:Sucursal>
+            <b:TipoCuenta/>
+          </b:ClienteSvcObtenerPagoPorIdResponseInfoPagos>
+        </b:InfoPagos>
+        <b:Instancia>3</b:Instancia>
+        <b:NombreCliente>${NombreCliente2}</b:NombreCliente>
+        <b:NroBoleta i:nil="true"/>
+        <b:NroCliente>000020161167496</b:NroCliente>
+        <b:NroCuenta>0</b:NroCuenta>
+        <b:Pagos>
+          <b:ClienteSvcObtenerPagoPorIdResponseComprobantes>
+            <b:FechaVenc>99990101</b:FechaVenc>
+            <b:ImporteDesc>0</b:ImporteDesc>
+            <b:ImporteIVA>0</b:ImporteIVA>
+            <b:ImporteIVAAdic>0</b:ImporteIVAAdic>
+            <b:ImportePUnit>0</b:ImportePUnit>
+            <b:ImportePago>2350.00</b:ImportePago>
+            <b:ImporteSaldoAct>0</b:ImporteSaldoAct>
+            <b:ImporteSaldoAnt>99999999999999</b:ImporteSaldoAnt>
+            <b:NroComprobante>ALQUEZAR MARCEL                </b:NroComprobante>
+            <b:NroCuota>0000</b:NroCuota>
+            <b:Tasa>0</b:Tasa>
+            <b:TextoLibre1 i:nil="true"/>
+            <b:TextoLibre2>T 20161167496  </b:TextoLibre2>
+            <b:TextoLibre3>T 30690032445  </b:TextoLibre3>
+            <b:TipoComprobante>AP</b:TipoComprobante>
+          </b:ClienteSvcObtenerPagoPorIdResponseComprobantes>
+        </b:Pagos>
+        <b:Producto>1</b:Producto>
+        <b:Sucursal>0</b:Sucursal>
+        <b:TipoCuenta i:nil="true"/>
+        <b:TipoIIBB i:nil="true"/>
+        <b:Verificador>0</b:Verificador>
+      </ObtenerPagoRecaudacionesPorIDResult>
+    </ObtenerPagoRecaudacionesPorIDResponse>
+  </s:Body>
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IClienteSvc/ObtenerPagoRecaudacionesPorIDResponse"/></con:response><con:response name="Invalid IdPago" id="e3f186d6-746b-485c-8245-091c60405d9a" httpResponseStatus="500" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+	<s:Header>
+		<a:Action s:mustUnderstand="1">http://www.w3.org/2005/08/addressing/soap/fault</a:Action>
+		<a:RelatesTo>urn:uuid:b73c4814-17ad-43fc-9454-b9baa2678ee6</a:RelatesTo>
+	</s:Header>
+	<s:Body>
+		<s:Fault>
+			<s:Code>
+				<s:Value>s:Sender</s:Value>
+			</s:Code>
+			<s:Reason>
+				<s:Text xml:lang="es-AR">19620004|PRP|La operacion solicitada no puede ser realizada. Por favor, valide sus datos.</s:Text>
+			</s:Reason>
+			<s:Detail>
+				<BusinessException xmlns="http://schemas.datacontract.org/2004/07/Isban.Common" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:x="http://www.w3.org/2001/XMLSchema">
+					<ClassName i:type="x:string" xmlns="">Isban.Common.BusinessException</ClassName>
+					<Message i:type="x:string" xmlns="">19620004|PRP|La operacion solicitada no puede ser realizada. Por favor, valide sus datos.</Message>
+					<Data i:nil="true" xmlns=""/>
+					<InnerException i:nil="true" xmlns=""/>
+					<HelpURL i:nil="true" xmlns=""/>
+					<StackTraceString i:nil="true" xmlns=""/>
+					<RemoteStackTraceString i:nil="true" xmlns=""/>
+					<RemoteStackIndex i:type="x:int" xmlns="">0</RemoteStackIndex>
+					<ExceptionMethod i:nil="true" xmlns=""/>
+					<HResult i:type="x:int" xmlns="">-2146233088</HResult>
+					<Source i:nil="true" xmlns=""/>
+					<WatsonBuckets i:nil="true" xmlns=""/>
+				</BusinessException>
+			</s:Detail>
+		</s:Fault>
+	</s:Body>
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IClienteSvc/ObtenerPagoRecaudacionesPorIDResponse"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer><con:crypto><con:source>C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java/Mock_WS_ Santander/WSDL/TrustStore/tasriop.p12</con:source><con:password/><con:type>TRUSTSTORE</con:type></con:crypto><con:crypto><con:source>C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java/Mock_WS_ Santander/WSDL/TrustStore/tasriop.p12</con:source><con:password>123456</con:password><con:type>TRUSTSTORE</con:type></con:crypto><con:crypto><con:source>C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java/Mock_WS_ Santander/WSDL/TrustStore/tasriop.p12</con:source><con:password/><con:type>KEYSTORE</con:type></con:crypto></con:wssContainer><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
