@@ -1085,3 +1085,78 @@ Payload: <s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="htt
 	</s:Body>
 </s:Envelope>
 --------------------------------------
+Consulta de Tarjeta inválido
+
+--------------------------------------
+2021-02-09 00:22:59,346|INFO  [tasRIOPTxnMgr:621297 prepare com.banelco.tas.riop.WsConsultaTarjetaNoPESService] Outbound Message
+---------------------------
+ID: 4512028
+Address: https://tashostprisma.ar.bsch:8443/prisma_pagotarjetasvc.svc
+Encoding: UTF-8
+Content-Type: application/soap+xml
+Headers: {Accept=[*/*]}
+Payload: 
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+	<soap:Header>
+		<Action xmlns="http://www.w3.org/2005/08/addressing">http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaPrisma</Action>
+		<MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:aefff236-c1b9-494d-85da-9dd5a7dedc75</MessageID>
+		<To xmlns="http://www.w3.org/2005/08/addressing">https://tashostprisma.ar.bsch:8443/prisma_pagotarjetasvc.svc</To>
+		<ReplyTo xmlns="http://www.w3.org/2005/08/addressing">
+			<Address>http://www.w3.org/2005/08/addressing/anonymous</Address>
+		</ReplyTo>
+	</soap:Header>
+	<soap:Body>
+		<ns2:ConsultarPagoTarjetaPrisma xmlns="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:ns2="http://tempuri.org/" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:ns4="http://schemas.datacontract.org/2004/07/Isban.Common" xmlns:ns5="http://schemas.datacontract.org/2004/07/System">
+			<ns2:request>
+				<IdTerminal>3</IdTerminal>
+				<NroSucursal>99397</NroSucursal>
+				<PasswordRACF>FREEUSER</PasswordRACF>
+				<UsuarioRACF>FREEUSER</UsuarioRACF>
+				<NumeroCuentaTarjeta>993613266</NumeroCuentaTarjeta>
+				<TipoCuenta>1</TipoCuenta>
+			</ns2:request>
+		</ns2:ConsultarPagoTarjetaPrisma>
+	</soap:Body>
+</soap:Envelope>
+--------------------------------------
+2021-02-09 00:22:59,414|INFO  [tasRIOPTxnMgr:621297 prepare com.banelco.tas.riop.WsConsultaTarjetaNoPESService] Inbound Message
+----------------------------
+ID: 4512028
+Response-Code: 500
+Encoding: UTF-8
+Content-Type: application/soap+xml; charset=utf-8
+Headers: {Content-Length=[1308], content-type=[application/soap+xml; charset=utf-8], Date=[Tue, 09 Feb 2021 03:22:59 GMT], Server=[Microsoft-IIS/8.5], X-Powered-By=[ASP.NET]}
+Payload: 
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+	<s:Header>
+		<a:Action s:mustUnderstand="1">http://www.w3.org/2005/08/addressing/soap/fault</a:Action>
+		<a:RelatesTo>urn:uuid:aefff236-c1b9-494d-85da-9dd5a7dedc75</a:RelatesTo>
+	</s:Header>
+	<s:Body>
+		<s:Fault>
+			<s:Code>
+				<s:Value>s:Sender</s:Value>
+			</s:Code>
+			<s:Reason>
+				<s:Text xml:lang="es-AR">10000003|AZT|El numero de tarjeta ingresado no es valido.</s:Text>
+			</s:Reason>
+			<s:Detail>
+				<BusinessException xmlns="http://schemas.datacontract.org/2004/07/Isban.Common" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:x="http://www.w3.org/2001/XMLSchema">
+					<ClassName i:type="x:string" xmlns="">Isban.Common.BusinessException</ClassName>
+					<Message i:type="x:string" xmlns="">10000003|AZT|El numero de tarjeta ingresado no es valido.</Message>
+					<Data i:nil="true" xmlns=""/>
+					<InnerException i:nil="true" xmlns=""/>
+					<HelpURL i:nil="true" xmlns=""/>
+					<StackTraceString i:nil="true" xmlns=""/>
+					<RemoteStackTraceString i:nil="true" xmlns=""/>
+					<RemoteStackIndex i:type="x:int" xmlns="">0</RemoteStackIndex>
+					<ExceptionMethod i:nil="true" xmlns=""/>
+					<HResult i:type="x:int" xmlns="">-2146233088</HResult>
+					<Source i:nil="true" xmlns=""/>
+					<WatsonBuckets i:nil="true" xmlns=""/>
+				</BusinessException>
+			</s:Detail>
+		</s:Fault>
+	</s:Body>
+</s:Envelope>
+--------------------------------------

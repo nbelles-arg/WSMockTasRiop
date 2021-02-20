@@ -1767,8 +1767,6 @@ if (context.UserCard == context.TC1){
 	context.BirthDate = context.birthDate2
 }
 
-log.info context.NroDoc
-
 if (context.NroDoc != null)
 	return "Valid Card"
 else
