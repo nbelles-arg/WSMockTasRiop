@@ -28,13 +28,13 @@
 	</wsp:Policy>
 	<wsdl:types>
 		<xsd:schema targetNamespace="http://tempuri.org/Imports">
-			<xsd:import namespace="http://tempuri.org/" schemaLocation="https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc?xsd=xsd0"/>
-			<xsd:import namespace="http://schemas.datacontract.org/2004/07/Isban.Common" schemaLocation="https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc?xsd=xsd3"/>
-			<xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" schemaLocation="https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc?xsd=xsd1"/>
-			<xsd:import namespace="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" schemaLocation="https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc?xsd=xsd2"/>
-			<xsd:import namespace="http://schemas.datacontract.org/2004/07/System" schemaLocation="https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc?xsd=xsd4"/>
-			<xsd:import namespace="http://schemas.datacontract.org/2004/07/TAS.Common.ServiceContracts" schemaLocation="https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc?xsd=xsd5"/>
-			<xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" schemaLocation="https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc?xsd=xsd6"/>
+			<xsd:import namespace="http://tempuri.org/" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_DepositoSvc/prisma_depositosvc0.xml"/>
+			<xsd:import namespace="http://schemas.datacontract.org/2004/07/Isban.Common" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_DepositoSvc/prisma_depositosvc3.xml"/>
+			<xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_DepositoSvc/prisma_depositosvc1.xml"/>
+			<xsd:import namespace="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_DepositoSvc/prisma_depositosvc2.xml"/>
+			<xsd:import namespace="http://schemas.datacontract.org/2004/07/System" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_DepositoSvc/prisma_depositosvc4.xml"/>
+			<xsd:import namespace="http://schemas.datacontract.org/2004/07/TAS.Common.ServiceContracts" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_DepositoSvc/prisma_depositosvc5.xml"/>
+			<xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_DepositoSvc/prisma_depositosvc6.xml"/>
 		</xsd:schema>
 	</wsdl:types>
 	<wsdl:message name="IDepositoSvc_DepositarEfectivoOCheques_InputMessage">

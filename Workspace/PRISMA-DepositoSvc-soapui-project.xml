@@ -1,0 +1,2966 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="2be7b633-1e7b-4a19-8545-31f27da0ce89" activeEnvironment="Default" name="PRISMA_DepositoSvc" resourceRoot="" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="eab0b83e-7289-4eb1-8286-1e0bb279e90e" wsaVersion="200508" name="PRISMA_DepositoSvcEndpoint" type="wsdl" bindingName="{http://tempuri.org/}PRISMA_DepositoSvcEndpoint" soapVersion="1_2" anonymous="optional" definition="file:/C:/Datos/OneDrive%20-%20Prisma%20Medios%20de%20Pago/Datos/Java/Mock_WS_%20Santander/WSDL/PRISMA_DepositoSvc.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\Datos\OneDrive%20-%20Prisma%20Medios%20de%20Pago\Datos\Java\Mock_WS_%20Santander\WSDL\PRISMA_DepositoSvc.xml"><con:part><con:url>file:\C:\Datos\OneDrive%20-%20Prisma%20Medios%20de%20Pago\Datos\Java\Mock_WS_%20Santander\WSDL\PRISMA_DepositoSvc.xml</con:url><con:content><![CDATA[<wsdl:definitions name="DepositoSvc" targetNamespace="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsp:Policy wsu:Id="PRISMA_DepositoSvcEndpoint_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="true"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_DepositoSvc/prisma_depositosvc0.xml"/>
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Isban.Common" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_DepositoSvc/prisma_depositosvc3.xml"/>
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_DepositoSvc/prisma_depositosvc1.xml"/>
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_DepositoSvc/prisma_depositosvc2.xml"/>
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_DepositoSvc/prisma_depositosvc4.xml"/>
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/TAS.Common.ServiceContracts" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_DepositoSvc/prisma_depositosvc5.xml"/>
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_DepositoSvc/prisma_depositosvc6.xml"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDepositoSvc_DepositarEfectivoOCheques_InputMessage">
+    <wsdl:part element="tns:DepositarEfectivoOCheques" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositarEfectivoOCheques_OutputMessage">
+    <wsdl:part element="tns:DepositarEfectivoOChequesResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositarEfectivoOCheques_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q1:BusinessException" name="detail" xmlns:q1="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositarEfectivoOCheques_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q2:TechnicalException" name="detail" xmlns:q2="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_ObtenerSaldoYDatosAdicionales_InputMessage">
+    <wsdl:part element="tns:ObtenerSaldoYDatosAdicionales" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_ObtenerSaldoYDatosAdicionales_OutputMessage">
+    <wsdl:part element="tns:ObtenerSaldoYDatosAdicionalesResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_ObtenerSaldoYDatosAdicionales_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q3:BusinessException" name="detail" xmlns:q3="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_ObtenerSaldoYDatosAdicionales_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q4:TechnicalException" name="detail" xmlns:q4="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositarCupones_InputMessage">
+    <wsdl:part element="tns:DepositarCupones" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositarCupones_OutputMessage">
+    <wsdl:part element="tns:DepositarCuponesResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositarCupones_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q5:BusinessException" name="detail" xmlns:q5="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositarCupones_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q6:TechnicalException" name="detail" xmlns:q6="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_ConfirmarOperacionesPorBuzon_InputMessage">
+    <wsdl:part element="tns:ConfirmarOperacionesPorBuzon" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_ConfirmarOperacionesPorBuzon_OutputMessage">
+    <wsdl:part element="tns:ConfirmarOperacionesPorBuzonResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_ConfirmarOperacionesPorBuzon_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q7:BusinessException" name="detail" xmlns:q7="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_ConfirmarOperacionesPorBuzon_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q8:TechnicalException" name="detail" xmlns:q8="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositarChequesDigitalizadosConfirmacion_InputMessage">
+    <wsdl:part element="tns:DepositarChequesDigitalizadosConfirmacion" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositarChequesDigitalizadosConfirmacion_OutputMessage">
+    <wsdl:part element="tns:DepositarChequesDigitalizadosConfirmacionResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositarChequesDigitalizadosConfirmacion_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q9:BusinessException" name="detail" xmlns:q9="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositarChequesDigitalizadosConfirmacion_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q10:TechnicalException" name="detail" xmlns:q10="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositarChequesDigitalizados_InputMessage">
+    <wsdl:part element="tns:DepositarChequesDigitalizados" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositarChequesDigitalizados_OutputMessage">
+    <wsdl:part element="tns:DepositarChequesDigitalizadosResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositarChequesDigitalizados_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q11:BusinessException" name="detail" xmlns:q11="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositarChequesDigitalizados_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q12:TechnicalException" name="detail" xmlns:q12="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositarEfectivoOnline_InputMessage">
+    <wsdl:part element="tns:DepositarEfectivoOnline" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositarEfectivoOnline_OutputMessage">
+    <wsdl:part element="tns:DepositarEfectivoOnlineResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositarEfectivoOnline_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q13:BusinessException" name="detail" xmlns:q13="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositarEfectivoOnline_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q14:TechnicalException" name="detail" xmlns:q14="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_ConsultaDudosa_InputMessage">
+    <wsdl:part element="tns:ConsultaDudosa" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_ConsultaDudosa_OutputMessage">
+    <wsdl:part element="tns:ConsultaDudosaResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_ConsultaDudosa_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q15:BusinessException" name="detail" xmlns:q15="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_ConsultaDudosa_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q16:TechnicalException" name="detail" xmlns:q16="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_ObtenerEmpresasCupon_InputMessage">
+    <wsdl:part element="tns:ObtenerEmpresasCupon" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_ObtenerEmpresasCupon_OutputMessage">
+    <wsdl:part element="tns:ObtenerEmpresasCuponResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_ObtenerEmpresasCupon_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q17:BusinessException" name="detail" xmlns:q17="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_ObtenerEmpresasCupon_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q18:TechnicalException" name="detail" xmlns:q18="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_ObtenerTiposCupon_InputMessage">
+    <wsdl:part element="tns:ObtenerTiposCupon" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_ObtenerTiposCupon_OutputMessage">
+    <wsdl:part element="tns:ObtenerTiposCuponResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_ObtenerTiposCupon_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q19:BusinessException" name="detail" xmlns:q19="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_ObtenerTiposCupon_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q20:TechnicalException" name="detail" xmlns:q20="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositoPagoAProveedores_InputMessage">
+    <wsdl:part element="tns:DepositoPagoAProveedores" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositoPagoAProveedores_OutputMessage">
+    <wsdl:part element="tns:DepositoPagoAProveedoresResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositoPagoAProveedores_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q21:BusinessException" name="detail" xmlns:q21="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositoPagoAProveedores_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q22:TechnicalException" name="detail" xmlns:q22="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresV2_InputMessage">
+    <wsdl:part element="tns:DepositoPagoAProveedoresV2" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresV2_OutputMessage">
+    <wsdl:part element="tns:DepositoPagoAProveedoresV2Response" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresV2_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q23:BusinessException" name="detail" xmlns:q23="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresV2_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q24:TechnicalException" name="detail" xmlns:q24="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresAnonimo_InputMessage">
+    <wsdl:part element="tns:DepositoPagoAProveedoresAnonimo" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresAnonimo_OutputMessage">
+    <wsdl:part element="tns:DepositoPagoAProveedoresAnonimoResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresAnonimo_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q25:BusinessException" name="detail" xmlns:q25="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresAnonimo_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q26:TechnicalException" name="detail" xmlns:q26="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresPrisma_InputMessage">
+    <wsdl:part element="tns:DepositoPagoAProveedoresPrisma" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresPrisma_OutputMessage">
+    <wsdl:part element="tns:DepositoPagoAProveedoresPrismaResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresPrisma_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q27:BusinessException" name="detail" xmlns:q27="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresPrisma_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q28:TechnicalException" name="detail" xmlns:q28="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresAnonimoPrisma_InputMessage">
+    <wsdl:part element="tns:DepositoPagoAProveedoresAnonimoPrisma" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresAnonimoPrisma_OutputMessage">
+    <wsdl:part element="tns:DepositoPagoAProveedoresAnonimoPrismaResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresAnonimoPrisma_BusinessExceptionFault_FaultMessage">
+    <wsdl:part element="q29:BusinessException" name="detail" xmlns:q29="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:message name="IDepositoSvc_DepositoPagoAProveedoresAnonimoPrisma_TechnicalExceptionFault_FaultMessage">
+    <wsdl:part element="q30:TechnicalException" name="detail" xmlns:q30="http://schemas.datacontract.org/2004/07/Isban.Common"/>
+  </wsdl:message>
+  <wsdl:portType name="IDepositoSvc">
+    <wsdl:operation name="DepositarEfectivoOCheques">
+      <wsdl:input message="tns:IDepositoSvc_DepositarEfectivoOCheques_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarEfectivoOCheques"/>
+      <wsdl:output message="tns:IDepositoSvc_DepositarEfectivoOCheques_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarEfectivoOChequesResponse"/>
+      <wsdl:fault message="tns:IDepositoSvc_DepositarEfectivoOCheques_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarEfectivoOChequesBusinessExceptionFault"/>
+      <wsdl:fault message="tns:IDepositoSvc_DepositarEfectivoOCheques_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarEfectivoOChequesTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSaldoYDatosAdicionales">
+      <wsdl:input message="tns:IDepositoSvc_ObtenerSaldoYDatosAdicionales_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/ObtenerSaldoYDatosAdicionales"/>
+      <wsdl:output message="tns:IDepositoSvc_ObtenerSaldoYDatosAdicionales_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/ObtenerSaldoYDatosAdicionalesResponse"/>
+      <wsdl:fault message="tns:IDepositoSvc_ObtenerSaldoYDatosAdicionales_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/ObtenerSaldoYDatosAdicionalesBusinessExceptionFault"/>
+      <wsdl:fault message="tns:IDepositoSvc_ObtenerSaldoYDatosAdicionales_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/ObtenerSaldoYDatosAdicionalesTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="DepositarCupones">
+      <wsdl:input message="tns:IDepositoSvc_DepositarCupones_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarCupones"/>
+      <wsdl:output message="tns:IDepositoSvc_DepositarCupones_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarCuponesResponse"/>
+      <wsdl:fault message="tns:IDepositoSvc_DepositarCupones_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarCuponesBusinessExceptionFault"/>
+      <wsdl:fault message="tns:IDepositoSvc_DepositarCupones_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarCuponesTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarOperacionesPorBuzon">
+      <wsdl:input message="tns:IDepositoSvc_ConfirmarOperacionesPorBuzon_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/ConfirmarOperacionesPorBuzon"/>
+      <wsdl:output message="tns:IDepositoSvc_ConfirmarOperacionesPorBuzon_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/ConfirmarOperacionesPorBuzonResponse"/>
+      <wsdl:fault message="tns:IDepositoSvc_ConfirmarOperacionesPorBuzon_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/ConfirmarOperacionesPorBuzonBusinessExceptionFault"/>
+      <wsdl:fault message="tns:IDepositoSvc_ConfirmarOperacionesPorBuzon_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/ConfirmarOperacionesPorBuzonTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="DepositarChequesDigitalizadosConfirmacion">
+      <wsdl:input message="tns:IDepositoSvc_DepositarChequesDigitalizadosConfirmacion_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarChequesDigitalizadosConfirmacion"/>
+      <wsdl:output message="tns:IDepositoSvc_DepositarChequesDigitalizadosConfirmacion_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarChequesDigitalizadosConfirmacionResponse"/>
+      <wsdl:fault message="tns:IDepositoSvc_DepositarChequesDigitalizadosConfirmacion_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarChequesDigitalizadosConfirmacionBusinessExceptionFault"/>
+      <wsdl:fault message="tns:IDepositoSvc_DepositarChequesDigitalizadosConfirmacion_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarChequesDigitalizadosConfirmacionTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="DepositarChequesDigitalizados">
+      <wsdl:input message="tns:IDepositoSvc_DepositarChequesDigitalizados_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarChequesDigitalizados"/>
+      <wsdl:output message="tns:IDepositoSvc_DepositarChequesDigitalizados_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarChequesDigitalizadosResponse"/>
+      <wsdl:fault message="tns:IDepositoSvc_DepositarChequesDigitalizados_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarChequesDigitalizadosBusinessExceptionFault"/>
+      <wsdl:fault message="tns:IDepositoSvc_DepositarChequesDigitalizados_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarChequesDigitalizadosTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="DepositarEfectivoOnline">
+      <wsdl:input message="tns:IDepositoSvc_DepositarEfectivoOnline_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarEfectivoOnline"/>
+      <wsdl:output message="tns:IDepositoSvc_DepositarEfectivoOnline_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarEfectivoOnlineResponse"/>
+      <wsdl:fault message="tns:IDepositoSvc_DepositarEfectivoOnline_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarEfectivoOnlineBusinessExceptionFault"/>
+      <wsdl:fault message="tns:IDepositoSvc_DepositarEfectivoOnline_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositarEfectivoOnlineTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDudosa">
+      <wsdl:input message="tns:IDepositoSvc_ConsultaDudosa_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/ConsultaDudosa"/>
+      <wsdl:output message="tns:IDepositoSvc_ConsultaDudosa_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/ConsultaDudosaResponse"/>
+      <wsdl:fault message="tns:IDepositoSvc_ConsultaDudosa_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/ConsultaDudosaBusinessExceptionFault"/>
+      <wsdl:fault message="tns:IDepositoSvc_ConsultaDudosa_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/ConsultaDudosaTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEmpresasCupon">
+      <wsdl:input message="tns:IDepositoSvc_ObtenerEmpresasCupon_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/ObtenerEmpresasCupon"/>
+      <wsdl:output message="tns:IDepositoSvc_ObtenerEmpresasCupon_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/ObtenerEmpresasCuponResponse"/>
+      <wsdl:fault message="tns:IDepositoSvc_ObtenerEmpresasCupon_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/ObtenerEmpresasCuponBusinessExceptionFault"/>
+      <wsdl:fault message="tns:IDepositoSvc_ObtenerEmpresasCupon_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/ObtenerEmpresasCuponTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposCupon">
+      <wsdl:input message="tns:IDepositoSvc_ObtenerTiposCupon_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/ObtenerTiposCupon"/>
+      <wsdl:output message="tns:IDepositoSvc_ObtenerTiposCupon_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/ObtenerTiposCuponResponse"/>
+      <wsdl:fault message="tns:IDepositoSvc_ObtenerTiposCupon_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/ObtenerTiposCuponBusinessExceptionFault"/>
+      <wsdl:fault message="tns:IDepositoSvc_ObtenerTiposCupon_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/ObtenerTiposCuponTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="DepositoPagoAProveedores">
+      <wsdl:input message="tns:IDepositoSvc_DepositoPagoAProveedores_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedores"/>
+      <wsdl:output message="tns:IDepositoSvc_DepositoPagoAProveedores_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresResponse"/>
+      <wsdl:fault message="tns:IDepositoSvc_DepositoPagoAProveedores_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresBusinessExceptionFault"/>
+      <wsdl:fault message="tns:IDepositoSvc_DepositoPagoAProveedores_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="DepositoPagoAProveedoresV2">
+      <wsdl:input message="tns:IDepositoSvc_DepositoPagoAProveedoresV2_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresV2"/>
+      <wsdl:output message="tns:IDepositoSvc_DepositoPagoAProveedoresV2_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresV2Response"/>
+      <wsdl:fault message="tns:IDepositoSvc_DepositoPagoAProveedoresV2_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresV2BusinessExceptionFault"/>
+      <wsdl:fault message="tns:IDepositoSvc_DepositoPagoAProveedoresV2_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresV2TechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="DepositoPagoAProveedoresAnonimo">
+      <wsdl:input message="tns:IDepositoSvc_DepositoPagoAProveedoresAnonimo_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresAnonimo"/>
+      <wsdl:output message="tns:IDepositoSvc_DepositoPagoAProveedoresAnonimo_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresAnonimoResponse"/>
+      <wsdl:fault message="tns:IDepositoSvc_DepositoPagoAProveedoresAnonimo_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresAnonimoBusinessExceptionFault"/>
+      <wsdl:fault message="tns:IDepositoSvc_DepositoPagoAProveedoresAnonimo_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresAnonimoTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="DepositoPagoAProveedoresPrisma">
+      <wsdl:input message="tns:IDepositoSvc_DepositoPagoAProveedoresPrisma_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresPrisma"/>
+      <wsdl:output message="tns:IDepositoSvc_DepositoPagoAProveedoresPrisma_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresPrismaResponse"/>
+      <wsdl:fault message="tns:IDepositoSvc_DepositoPagoAProveedoresPrisma_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresPrismaBusinessExceptionFault"/>
+      <wsdl:fault message="tns:IDepositoSvc_DepositoPagoAProveedoresPrisma_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresPrismaTechnicalExceptionFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="DepositoPagoAProveedoresAnonimoPrisma">
+      <wsdl:input message="tns:IDepositoSvc_DepositoPagoAProveedoresAnonimoPrisma_InputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresAnonimoPrisma"/>
+      <wsdl:output message="tns:IDepositoSvc_DepositoPagoAProveedoresAnonimoPrisma_OutputMessage" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresAnonimoPrismaResponse"/>
+      <wsdl:fault message="tns:IDepositoSvc_DepositoPagoAProveedoresAnonimoPrisma_BusinessExceptionFault_FaultMessage" name="BusinessExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresAnonimoPrismaBusinessExceptionFault"/>
+      <wsdl:fault message="tns:IDepositoSvc_DepositoPagoAProveedoresAnonimoPrisma_TechnicalExceptionFault_FaultMessage" name="TechnicalExceptionFault" wsaw:Action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresAnonimoPrismaTechnicalExceptionFault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PRISMA_DepositoSvcEndpoint" type="tns:IDepositoSvc">
+    <wsp:PolicyReference URI="#PRISMA_DepositoSvcEndpoint_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="DepositarEfectivoOCheques">
+      <soap12:operation soapAction="http://tempuri.org/IDepositoSvc/DepositarEfectivoOCheques" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSaldoYDatosAdicionales">
+      <soap12:operation soapAction="http://tempuri.org/IDepositoSvc/ObtenerSaldoYDatosAdicionales" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DepositarCupones">
+      <soap12:operation soapAction="http://tempuri.org/IDepositoSvc/DepositarCupones" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarOperacionesPorBuzon">
+      <soap12:operation soapAction="http://tempuri.org/IDepositoSvc/ConfirmarOperacionesPorBuzon" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DepositarChequesDigitalizadosConfirmacion">
+      <soap12:operation soapAction="http://tempuri.org/IDepositoSvc/DepositarChequesDigitalizadosConfirmacion" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DepositarChequesDigitalizados">
+      <soap12:operation soapAction="http://tempuri.org/IDepositoSvc/DepositarChequesDigitalizados" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DepositarEfectivoOnline">
+      <soap12:operation soapAction="http://tempuri.org/IDepositoSvc/DepositarEfectivoOnline" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDudosa">
+      <soap12:operation soapAction="http://tempuri.org/IDepositoSvc/ConsultaDudosa" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEmpresasCupon">
+      <soap12:operation soapAction="http://tempuri.org/IDepositoSvc/ObtenerEmpresasCupon" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposCupon">
+      <soap12:operation soapAction="http://tempuri.org/IDepositoSvc/ObtenerTiposCupon" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DepositoPagoAProveedores">
+      <soap12:operation soapAction="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedores" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DepositoPagoAProveedoresV2">
+      <soap12:operation soapAction="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresV2" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DepositoPagoAProveedoresAnonimo">
+      <soap12:operation soapAction="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresAnonimo" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DepositoPagoAProveedoresPrisma">
+      <soap12:operation soapAction="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresPrisma" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DepositoPagoAProveedoresAnonimoPrisma">
+      <soap12:operation soapAction="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresAnonimoPrisma" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessExceptionFault">
+        <soap12:fault name="BusinessExceptionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TechnicalExceptionFault">
+        <soap12:fault name="TechnicalExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DepositoSvc">
+    <wsdl:port binding="tns:PRISMA_DepositoSvcEndpoint" name="PRISMA_DepositoSvcEndpoint">
+      <soap12:address location="https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_DepositoSvc/prisma_depositosvc0.xml</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:tns="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_DepositoSvc/prisma_depositosvc2.xml"/>
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/TAS.Common.ServiceContracts" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_DepositoSvc/prisma_depositosvc5.xml"/>
+  <xs:element name="DepositarEfectivoOCheques">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q1:DepositoSvcDepositarEfectivoOChequesRequest" xmlns:q1="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DepositarEfectivoOChequesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DepositarEfectivoOChequesResult" nillable="true" type="q2:DepositoSvcDepositarEfectivoOChequesResponse" xmlns:q2="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerSaldoYDatosAdicionales">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q3:DepositoSvcObtenerSaldoYDatosAdicionalesRequest" xmlns:q3="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerSaldoYDatosAdicionalesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerSaldoYDatosAdicionalesResult" nillable="true" type="q4:DepositoSvcObtenerSaldoYDatosAdicionalesResponse" xmlns:q4="http://schemas.datacontract.org/2004/07/TAS.Common.ServiceContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DepositarCupones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q5:DepositoSvcDepositarCuponesRequest" xmlns:q5="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DepositarCuponesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DepositarCuponesResult" nillable="true" type="q6:DepositoSvcDepositarCuponesResponse" xmlns:q6="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfirmarOperacionesPorBuzon">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q7:DepositoSvcConfirmarOperacionesPorBuzonRequest" xmlns:q7="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfirmarOperacionesPorBuzonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConfirmarOperacionesPorBuzonResult" nillable="true" type="q8:DepositoSvcConfirmarOperacionesPorBuzonResponse" xmlns:q8="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DepositarChequesDigitalizadosConfirmacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q9:DepositoSvcDepositarDigitalizadoDeChequesConfirmacionRequest" xmlns:q9="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DepositarChequesDigitalizadosConfirmacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DepositarChequesDigitalizadosConfirmacionResult" nillable="true" type="q10:DepositoSvcDepositarDigitalizadoDeChequesConfirmacionResponse" xmlns:q10="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DepositarChequesDigitalizados">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q11:DepositoSvcDepositarDigitalizadoDeChequesRequest" xmlns:q11="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DepositarChequesDigitalizadosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DepositarChequesDigitalizadosResult" nillable="true" type="q12:DepositoSvcDepositarDigitalizadoDeChequesResponse" xmlns:q12="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DepositarEfectivoOnline">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q13:DepositoSvcDepositarEfectivoOnlineRequest" xmlns:q13="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DepositarEfectivoOnlineResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DepositarEfectivoOnlineResult" nillable="true" type="q14:DepositoSvcDepositarEfectivoOnlineResponse" xmlns:q14="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaDudosa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q15:DepositoSvcConsultaDudosaRequest" xmlns:q15="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaDudosaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConsultaDudosaResult" nillable="true" type="q16:DepositoSvcConsultaDudosaResponse" xmlns:q16="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerEmpresasCupon">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q17:DepositoSvcObtenerEmpresasCuponRequest" xmlns:q17="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerEmpresasCuponResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerEmpresasCuponResult" nillable="true" type="q18:DepositoSvcObtenerEmpresasCuponResponse" xmlns:q18="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTiposCupon">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q19:DepositoSvcObtenerTiposCuponRequest" xmlns:q19="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTiposCuponResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerTiposCuponResult" nillable="true" type="q20:DepositoSvcObtenerTiposCuponResponse" xmlns:q20="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DepositoPagoAProveedores">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q21:DepositoPagoAProveedoresRequest" xmlns:q21="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DepositoPagoAProveedoresResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DepositoPagoAProveedoresResult" nillable="true" type="q22:DepositoPagoAProveedoresResponse" xmlns:q22="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DepositoPagoAProveedoresV2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q23:DepositoPagoAProveedoresRequest" xmlns:q23="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DepositoPagoAProveedoresV2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DepositoPagoAProveedoresV2Result" nillable="true" type="q24:DepositoPagoAProveedoresResponse" xmlns:q24="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DepositoPagoAProveedoresAnonimo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q25:DepositoPagoAProveedoresAnonimoRequest" xmlns:q25="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DepositoPagoAProveedoresAnonimoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DepositoPagoAProveedoresAnonimoResult" nillable="true" type="q26:DepositoPagoAProveedoresAnonimoResponse" xmlns:q26="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DepositoPagoAProveedoresPrisma">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q27:DepositoPagoAProveedoresPrismaRequest" xmlns:q27="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DepositoPagoAProveedoresPrismaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DepositoPagoAProveedoresPrismaResult" nillable="true" type="q28:DepositoPagoAProveedoresResponse" xmlns:q28="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DepositoPagoAProveedoresAnonimoPrisma">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="q29:DepositoPagoAProveedoresAnonimoPrismaRequest" xmlns:q29="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DepositoPagoAProveedoresAnonimoPrismaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DepositoPagoAProveedoresAnonimoPrismaResult" nillable="true" type="q30:DepositoPagoAProveedoresAnonimoResponse" xmlns:q30="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_DepositoSvc/prisma_depositosvc2.xml</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:tns="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_DepositoSvc/prisma_depositosvc6.xml"/>
+  <xs:complexType name="DepositoSvcDepositarEfectivoOChequesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonRACFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CantidadCheques" type="xs:int"/>
+          <xs:element minOccurs="0" name="ImporteDepositado" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="IndicadorOperReversa" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="NumeroCuenta" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="NumeroSobre" type="xs:int"/>
+          <xs:element minOccurs="0" name="SucursalCuenta" type="xs:int"/>
+          <xs:element minOccurs="0" name="TipoCuenta" type="xs:int"/>
+          <xs:element minOccurs="0" name="TipoDeposito" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DepositoSvcDepositarEfectivoOChequesRequest" nillable="true" type="tns:DepositoSvcDepositarEfectivoOChequesRequest"/>
+  <xs:complexType name="CommonRACFRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonServiceRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ClienteFechaNacimiento" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="ClienteNumeroDoc" type="xs:long"/>
+          <xs:element minOccurs="0" name="ClienteTipoDoc" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ClienteTipoPersona" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="IdTerminal" type="xs:int"/>
+          <xs:element minOccurs="0" name="NUP" type="xs:int"/>
+          <xs:element minOccurs="0" name="NroSucursal" type="xs:int"/>
+          <xs:element minOccurs="0" name="PasswordRACF" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="UserID" type="xs:int"/>
+          <xs:element minOccurs="0" name="UsuarioRACF" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CommonRACFRequest" nillable="true" type="tns:CommonRACFRequest"/>
+  <xs:complexType name="CommonServiceRequest">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:element name="CommonServiceRequest" nillable="true" type="tns:CommonServiceRequest"/>
+  <xs:complexType name="DepositoSvcDepositarEfectivoOChequesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Canal" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ClaveRioself" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ComisionesPendientes" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="IdRegistroOperacion" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="NombreSesion" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="NombreTitular" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DepositoSvcDepositarEfectivoOChequesResponse" nillable="true" type="tns:DepositoSvcDepositarEfectivoOChequesResponse"/>
+  <xs:complexType name="DepositoSvcObtenerSaldoYDatosAdicionalesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonRACFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NumeroCuenta" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="SucursalCuenta" type="xs:int"/>
+          <xs:element minOccurs="0" name="TipoCuenta" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DepositoSvcObtenerSaldoYDatosAdicionalesRequest" nillable="true" type="tns:DepositoSvcObtenerSaldoYDatosAdicionalesRequest"/>
+  <xs:complexType name="DepositoSvcDepositarCuponesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonRACFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CantidadCupones" type="xs:int"/>
+          <xs:element minOccurs="0" name="ImporteDepositado" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="IndicadorOperReversa" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="NumeroCuenta" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="SucursalCuenta" type="xs:int"/>
+          <xs:element minOccurs="0" name="TipoCuenta" type="xs:int"/>
+          <xs:element minOccurs="0" name="TipoCupon" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="TipoTarjetaCredito" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DepositoSvcDepositarCuponesRequest" nillable="true" type="tns:DepositoSvcDepositarCuponesRequest"/>
+  <xs:complexType name="DepositoSvcDepositarCuponesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Canal" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ClaveRioself" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="IdRegistroOperacion" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="NombreSesion" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="NombreTitular" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DepositoSvcDepositarCuponesResponse" nillable="true" type="tns:DepositoSvcDepositarCuponesResponse"/>
+  <xs:complexType name="DepositoSvcConfirmarOperacionesPorBuzonRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonRACFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Canal" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ClaveRioself" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="NombreSesion" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DepositoSvcConfirmarOperacionesPorBuzonRequest" nillable="true" type="tns:DepositoSvcConfirmarOperacionesPorBuzonRequest"/>
+  <xs:complexType name="DepositoSvcConfirmarOperacionesPorBuzonResponse">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:element name="DepositoSvcConfirmarOperacionesPorBuzonResponse" nillable="true" type="tns:DepositoSvcConfirmarOperacionesPorBuzonResponse"/>
+  <xs:complexType name="DepositoSvcDepositarDigitalizadoDeChequesConfirmacionRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonRACFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CantidadCheques" type="xs:int"/>
+          <xs:element minOccurs="0" name="ClaveRioself" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ImporteDepositado" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="ListadoCMC7" nillable="true" type="q1:ArrayOfstring" xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+          <xs:element minOccurs="0" name="NUO" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="NumeroCuenta" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="OperacionConfirmada" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="SucursalCuenta" type="xs:int"/>
+          <xs:element minOccurs="0" name="TipoCuenta" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DepositoSvcDepositarDigitalizadoDeChequesConfirmacionRequest" nillable="true" type="tns:DepositoSvcDepositarDigitalizadoDeChequesConfirmacionRequest"/>
+  <xs:complexType name="DepositoSvcDepositarDigitalizadoDeChequesConfirmacionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdRegistroOperacion" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DepositoSvcDepositarDigitalizadoDeChequesConfirmacionResponse" nillable="true" type="tns:DepositoSvcDepositarDigitalizadoDeChequesConfirmacionResponse"/>
+  <xs:complexType name="DepositoSvcDepositarDigitalizadoDeChequesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonRACFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CantidadCheques" type="xs:int"/>
+          <xs:element minOccurs="0" name="ClaveRioself" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ImporteDepositado" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="IndicadorOperReversa" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ListadoCMC7" nillable="true" type="q2:ArrayOfstring" xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+          <xs:element minOccurs="0" name="NUO" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="NumeroCuenta" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="OperacionConfirmada" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="SucursalCuenta" type="xs:int"/>
+          <xs:element minOccurs="0" name="TipoCuenta" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DepositoSvcDepositarDigitalizadoDeChequesRequest" nillable="true" type="tns:DepositoSvcDepositarDigitalizadoDeChequesRequest"/>
+  <xs:complexType name="DepositoSvcDepositarDigitalizadoDeChequesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClaveRioself" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ComisionesPendientes" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="IdRegistroOperacion" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="NombreSesion" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="NombreTitular" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DepositoSvcDepositarDigitalizadoDeChequesResponse" nillable="true" type="tns:DepositoSvcDepositarDigitalizadoDeChequesResponse"/>
+  <xs:complexType name="DepositoSvcDepositarEfectivoOnlineRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonRACFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ApellidoyNombreMandante" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ApellidoyNombreTitular" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ClaveRioself" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Comision" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="ConPresentacionDNI" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Cotizacion" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="ImporteDepositado" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="IndicadorOperReversa" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="MandanteTitular" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="MarcaTAS" type="xs:int"/>
+          <xs:element minOccurs="0" name="Minima" type="xs:int"/>
+          <xs:element minOccurs="0" name="Modo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Moneda" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="NIO" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="NroCuenta" type="xs:long"/>
+          <xs:element minOccurs="0" name="NroDeDocumento" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="NumeroUnicoOperacion" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="OperacionConfirmada" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="PorCuentaDeTerceros" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="SucursalCuenta" type="xs:int"/>
+          <xs:element minOccurs="0" name="TipoCuenta" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="TipoDeDocumento" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="TopeControlPadronBCRA" type="xs:decimal"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DepositoSvcDepositarEfectivoOnlineRequest" nillable="true" type="tns:DepositoSvcDepositarEfectivoOnlineRequest"/>
+  <xs:complexType name="DepositoSvcDepositarEfectivoOnlineResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApellidoyNombreDepositante" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ApellidoyNombreMandante" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ApellidoyNombreTitular" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ClaveRioself" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ComisionesPendientes" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="HoraaConfirmar" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="NIO" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="NumDocumentoDepositante" type="xs:long"/>
+      <xs:element minOccurs="0" name="NumDocumentoMandante" type="xs:long"/>
+      <xs:element minOccurs="0" name="NumeroUnicoOperacion" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="SaldoDolares" type="xs:double"/>
+      <xs:element minOccurs="0" name="SaldoPesos" type="xs:double"/>
+      <xs:element minOccurs="0" name="TipoDocumentoDepositante" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TipoDocumentoMandante" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DepositoSvcDepositarEfectivoOnlineResponse" nillable="true" type="tns:DepositoSvcDepositarEfectivoOnlineResponse"/>
+  <xs:complexType name="DepositoSvcConsultaDudosaRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonRACFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Canal" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Fecha" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="NUO" type="xs:long"/>
+          <xs:element minOccurs="0" name="Servicio" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="SubCanal" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="TerminalLogica" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DepositoSvcConsultaDudosaRequest" nillable="true" type="tns:DepositoSvcConsultaDudosaRequest"/>
+  <xs:complexType name="DepositoSvcConsultaDudosaResponse">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:element name="DepositoSvcConsultaDudosaResponse" nillable="true" type="tns:DepositoSvcConsultaDudosaResponse"/>
+  <xs:complexType name="DepositoSvcObtenerEmpresasCuponRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonServiceRequest">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DepositoSvcObtenerEmpresasCuponRequest" nillable="true" type="tns:DepositoSvcObtenerEmpresasCuponRequest"/>
+  <xs:complexType name="DepositoSvcObtenerEmpresasCuponResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EmpresasCupon" nillable="true" type="tns:ArrayOfDepositoSvcObtenerEmpresasCuponResponseItem"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DepositoSvcObtenerEmpresasCuponResponse" nillable="true" type="tns:DepositoSvcObtenerEmpresasCuponResponse"/>
+  <xs:complexType name="ArrayOfDepositoSvcObtenerEmpresasCuponResponseItem">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="DepositoSvcObtenerEmpresasCuponResponseItem" nillable="true" type="tns:DepositoSvcObtenerEmpresasCuponResponseItem"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDepositoSvcObtenerEmpresasCuponResponseItem" nillable="true" type="tns:ArrayOfDepositoSvcObtenerEmpresasCuponResponseItem"/>
+  <xs:complexType name="DepositoSvcObtenerEmpresasCuponResponseItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ID" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DepositoSvcObtenerEmpresasCuponResponseItem" nillable="true" type="tns:DepositoSvcObtenerEmpresasCuponResponseItem"/>
+  <xs:complexType name="DepositoSvcObtenerTiposCuponRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonServiceRequest">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DepositoSvcObtenerTiposCuponRequest" nillable="true" type="tns:DepositoSvcObtenerTiposCuponRequest"/>
+  <xs:complexType name="DepositoSvcObtenerTiposCuponResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TiposCupon" nillable="true" type="tns:ArrayOfDepositoSvcObtenerTiposCuponResponseItem"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DepositoSvcObtenerTiposCuponResponse" nillable="true" type="tns:DepositoSvcObtenerTiposCuponResponse"/>
+  <xs:complexType name="ArrayOfDepositoSvcObtenerTiposCuponResponseItem">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="DepositoSvcObtenerTiposCuponResponseItem" nillable="true" type="tns:DepositoSvcObtenerTiposCuponResponseItem"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDepositoSvcObtenerTiposCuponResponseItem" nillable="true" type="tns:ArrayOfDepositoSvcObtenerTiposCuponResponseItem"/>
+  <xs:complexType name="DepositoSvcObtenerTiposCuponResponseItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DepositoSvcObtenerTiposCuponResponseItem" nillable="true" type="tns:DepositoSvcObtenerTiposCuponResponseItem"/>
+  <xs:complexType name="DepositoPagoAProveedoresRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonRACFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Bco_Corresp" type="xs:int"/>
+          <xs:element minOccurs="0" name="CantidadCheques" type="xs:int"/>
+          <xs:element minOccurs="0" name="Clave_Rioself" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Clte_Propio" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Cod_Cond_IVA_Clte" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Cod_Mone_Com" type="xs:int"/>
+          <xs:element minOccurs="0" name="Commit_RollBack" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Cotiz_Dolar" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Cuit_Clte" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Excep_3ra" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Form_Pago_Com" type="xs:int"/>
+          <xs:element minOccurs="0" name="Funcion" type="xs:int"/>
+          <xs:element minOccurs="0" name="Ide_Clte" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Ide_Cta_Com" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Imp_Com" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Imp_Com_3ra" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Imp_IIBB" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Imp_IVA_Ad_Com_3ra" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Imp_IVA_Com_3ra" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Imp_Total_Pago" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="ImporteEfectivo" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="IndicadorOperReversa" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="LNegocio" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ListaComprobantesDePago" nillable="true" type="tns:ArrayOfPagoAProveedoresComprobantes"/>
+          <xs:element minOccurs="0" name="ListaInstrumentosDePago" nillable="true" type="tns:ArrayOfPagoAProveedoresInsPago"/>
+          <xs:element minOccurs="0" name="NUO" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Nro_Dig_Empr" type="xs:int"/>
+          <xs:element minOccurs="0" name="Nro_Empr" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Nro_Instan" type="xs:int"/>
+          <xs:element minOccurs="0" name="Nro_Prod" type="xs:int"/>
+          <xs:element minOccurs="0" name="RegistroEstadisticasAutomatico" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="Terminal" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Tipo_IIBB" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Trn" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DepositoPagoAProveedoresRequest" nillable="true" type="tns:DepositoPagoAProveedoresRequest"/>
+  <xs:complexType name="ArrayOfPagoAProveedoresComprobantes">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="PagoAProveedoresComprobantes" nillable="true" type="tns:PagoAProveedoresComprobantes"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPagoAProveedoresComprobantes" nillable="true" type="tns:ArrayOfPagoAProveedoresComprobantes"/>
+  <xs:complexType name="PagoAProveedoresComprobantes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cod_Mone_Cprb" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Dato_1" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Dato_2" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Dato_3" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Dato_4" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Dato_5" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Fec_vto" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="Imp_Iva" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="Imp_Iva_Adic" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="Imp_Pago" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="Imp_puni" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="Nro_Cprb" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Nro_Cuo" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Tipo_Cprb" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Tipo_De_Carga" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PagoAProveedoresComprobantes" nillable="true" type="tns:PagoAProveedoresComprobantes"/>
+  <xs:complexType name="ArrayOfPagoAProveedoresInsPago">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="PagoAProveedoresInsPago" nillable="true" type="tns:PagoAProveedoresInsPago"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPagoAProveedoresInsPago" nillable="true" type="tns:ArrayOfPagoAProveedoresInsPago"/>
+  <xs:complexType name="PagoAProveedoresInsPago">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cod_mone" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Fec_Vto_Instr" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="Form_pago" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Ide_Instr" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Importe" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="Mar_Libre_Disp" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PagoAProveedoresInsPago" nillable="true" type="tns:PagoAProveedoresInsPago"/>
+  <xs:complexType name="DepositoPagoAProveedoresResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CUIT_Cliente" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="Clave_Rioself" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Id_Cliente" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Id_Pago" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="NUO" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DepositoPagoAProveedoresResponse" nillable="true" type="tns:DepositoPagoAProveedoresResponse"/>
+  <xs:complexType name="DepositoPagoAProveedoresAnonimoRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonRACFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BancoCorresponsal" type="xs:int"/>
+          <xs:element minOccurs="0" name="CantidadCheques" type="xs:int"/>
+          <xs:element minOccurs="0" name="CantidadComprobantesInformados" type="xs:int"/>
+          <xs:element minOccurs="0" name="CantidadInstrumentosPago" type="xs:int"/>
+          <xs:element minOccurs="0" name="ClaveRioself" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ClientePropio" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CodCliente" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CodigoCondicionIva" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ComprobantesInformados" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CotizacionDolar" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="CuitCliente" type="xs:long"/>
+          <xs:element minOccurs="0" name="CuitEmpresa" type="xs:long"/>
+          <xs:element minOccurs="0" name="DigitoVerificador" type="xs:int"/>
+          <xs:element minOccurs="0" name="Excep3Ra" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="FormaPagoComision" type="xs:int"/>
+          <xs:element minOccurs="0" name="IdPago" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ImporteComisionTerceros" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="ImporteIngresoBrutos" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="ImporteIvaAdicionalComisionTerceros" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="ImporteIvaComisionTerceros" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="ImportePagoComision" type="xs:int"/>
+          <xs:element minOccurs="0" name="ImporteTotalEfectivo" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="ImporteTotalPago" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="IndicadorOperReversa" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="InstrumentosDePago" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ListInstrumentosdePago" nillable="true" type="tns:ArrayOfInstrumentoPagoRequest"/>
+          <xs:element minOccurs="0" name="ListaComprobantesDePago" nillable="true" type="tns:ArrayOfComprobantePagoRequest"/>
+          <xs:element minOccurs="0" name="ModoRegistroEstadisticasAutomatico" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="NroBoleta" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="NroCuentaDebito" type="xs:int"/>
+          <xs:element minOccurs="0" name="NroInstancia" type="xs:int"/>
+          <xs:element minOccurs="0" name="NroProducto" type="xs:int"/>
+          <xs:element minOccurs="0" name="Nuo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Opcion" type="xs:int"/>
+          <xs:element minOccurs="0" name="SucursalRadicacionCuentaDebito" type="xs:int"/>
+          <xs:element minOccurs="0" name="Terminal" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="TipoCuentaDebito" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="TipoIngresoBrutos" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Transaccion" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DepositoPagoAProveedoresAnonimoRequest" nillable="true" type="tns:DepositoPagoAProveedoresAnonimoRequest"/>
+  <xs:complexType name="ArrayOfInstrumentoPagoRequest">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="InstrumentoPagoRequest" nillable="true" type="tns:InstrumentoPagoRequest"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInstrumentoPagoRequest" nillable="true" type="tns:ArrayOfInstrumentoPagoRequest"/>
+  <xs:complexType name="InstrumentoPagoRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoDeBancoRadicacionCuenta" type="xs:int"/>
+      <xs:element minOccurs="0" name="CodigoPostal" type="xs:int"/>
+      <xs:element minOccurs="0" name="FechaDeVencimiento" type="xs:int"/>
+      <xs:element minOccurs="0" name="FormaDePago" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ImporteDelPago" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="MarcaDeLibreDisponibilidad" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="NroCuenta" type="xs:long"/>
+      <xs:element minOccurs="0" name="NumeroDeCheque" type="xs:long"/>
+      <xs:element minOccurs="0" name="Sucursal" type="xs:int"/>
+      <xs:element minOccurs="0" name="TipoDeCuenta" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InstrumentoPagoRequest" nillable="true" type="tns:InstrumentoPagoRequest"/>
+  <xs:complexType name="ArrayOfComprobantePagoRequest">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ComprobantePagoRequest" nillable="true" type="tns:ComprobantePagoRequest"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComprobantePagoRequest" nillable="true" type="tns:ArrayOfComprobantePagoRequest"/>
+  <xs:complexType name="ComprobantePagoRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DatoLibre1" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="DatoLibre2" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="DatoLibre3" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="DatoLibre4" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="DatoLibre5" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="FechaVencimiento" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ImporteDelPago" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="ImporteIVA" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="ImporteIVAAdicional" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="ImportePunitorio" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="NroDeComprobante" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="NroDeCuota" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TipoDeCarga" type="xs:int"/>
+      <xs:element minOccurs="0" name="TipoDeComprobante" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComprobantePagoRequest" nillable="true" type="tns:ComprobantePagoRequest"/>
+  <xs:complexType name="DepositoPagoAProveedoresAnonimoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Clave_Rioself" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="NUO" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DepositoPagoAProveedoresAnonimoResponse" nillable="true" type="tns:DepositoPagoAProveedoresAnonimoResponse"/>
+  <xs:complexType name="DepositoPagoAProveedoresPrismaRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonRACFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Bco_Corresp" type="xs:int"/>
+          <xs:element minOccurs="0" name="CantidadCheques" type="xs:int"/>
+          <xs:element minOccurs="0" name="Clave_Rioself" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Clte_Propio" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Cod_Cond_IVA_Clte" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Cod_Mone_Com" type="xs:int"/>
+          <xs:element minOccurs="0" name="Commit_RollBack" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Cotiz_Dolar" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Cuit_Clte" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Excep_3ra" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="FechaNegocio" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="Form_Pago_Com" type="xs:int"/>
+          <xs:element minOccurs="0" name="Funcion" type="xs:int"/>
+          <xs:element minOccurs="0" name="Ide_Clte" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Ide_Cta_Com" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Imp_Com" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Imp_Com_3ra" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Imp_IIBB" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Imp_IVA_Ad_Com_3ra" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Imp_IVA_Com_3ra" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Imp_Total_Pago" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="ImporteEfectivo" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="IndicadorOperReversa" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="LNegocio" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ListaComprobantesDePago" nillable="true" type="tns:ArrayOfPagoAProveedoresComprobantes"/>
+          <xs:element minOccurs="0" name="ListaInstrumentosDePago" nillable="true" type="tns:ArrayOfPagoAProveedoresInsPago"/>
+          <xs:element minOccurs="0" name="NUO" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Nombre_Terminal_Fis" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Nro_Dig_Empr" type="xs:int"/>
+          <xs:element minOccurs="0" name="Nro_Empr" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="Nro_Instan" type="xs:int"/>
+          <xs:element minOccurs="0" name="Nro_Prod" type="xs:int"/>
+          <xs:element minOccurs="0" name="Nro_Ticket_Banelco" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="RegistroEstadisticasAutomatico" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="Terminal" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Tipo_IIBB" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Trn" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DepositoPagoAProveedoresPrismaRequest" nillable="true" type="tns:DepositoPagoAProveedoresPrismaRequest"/>
+  <xs:complexType name="DepositoPagoAProveedoresAnonimoPrismaRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CommonRACFRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BancoCorresponsal" type="xs:int"/>
+          <xs:element minOccurs="0" name="CantidadCheques" type="xs:int"/>
+          <xs:element minOccurs="0" name="CantidadComprobantesInformados" type="xs:int"/>
+          <xs:element minOccurs="0" name="CantidadInstrumentosPago" type="xs:int"/>
+          <xs:element minOccurs="0" name="ClaveRioself" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ClientePropio" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CodCliente" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CodigoCondicionIva" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ComprobantesInformados" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CotizacionDolar" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="CuitCliente" type="xs:long"/>
+          <xs:element minOccurs="0" name="CuitEmpresa" type="xs:long"/>
+          <xs:element minOccurs="0" name="DigitoVerificador" type="xs:int"/>
+          <xs:element minOccurs="0" name="Excep3Ra" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="FechaNegocio" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="FormaPagoComision" type="xs:int"/>
+          <xs:element minOccurs="0" name="IdPago" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Imp_Tot_Efec" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="ImporteComisionTerceros" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="ImporteIngresoBrutos" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="ImporteIvaAdicionalComisionTerceros" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="ImporteIvaComisionTerceros" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="ImportePagoComision" type="xs:int"/>
+          <xs:element minOccurs="0" name="ImporteTotalEfectivo" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="ImporteTotalPago" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="IndicadorOperReversa" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="InstrumentosDePago" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ListInstrumentosdePago" nillable="true" type="tns:ArrayOfInstrumentoPagoRequest"/>
+          <xs:element minOccurs="0" name="ListaComprobantesDePago" nillable="true" type="tns:ArrayOfComprobantePagoRequest"/>
+          <xs:element minOccurs="0" name="ModoRegistroEstadisticasAutomatico" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="Nombre_Terminal_Fis" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="NroBoleta" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="NroCuentaDebito" type="xs:int"/>
+          <xs:element minOccurs="0" name="NroInstancia" type="xs:int"/>
+          <xs:element minOccurs="0" name="NroProducto" type="xs:int"/>
+          <xs:element minOccurs="0" name="Nro_Ticket_Banelco" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Nuo" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Opcion" type="xs:int"/>
+          <xs:element minOccurs="0" name="SucursalRadicacionCuentaDebito" type="xs:int"/>
+          <xs:element minOccurs="0" name="Terminal" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="TipoCuentaDebito" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="TipoIngresoBrutos" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Transaccion" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DepositoPagoAProveedoresAnonimoPrismaRequest" nillable="true" type="tns:DepositoPagoAProveedoresAnonimoPrismaRequest"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_DepositoSvc/prisma_depositosvc6.xml</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfstring">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="string" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_DepositoSvc/prisma_depositosvc5.xml</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TAS.Common.ServiceContracts" xmlns:tns="http://schemas.datacontract.org/2004/07/TAS.Common.ServiceContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="DepositoSvcObtenerSaldoYDatosAdicionalesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AcumuladoARSCuenta" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="AcumuladoUSDCuenta" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="ChequesRechazadosDolares" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="ChequesRechazadosPesos" type="xs:int"/>
+      <xs:element minOccurs="0" name="ClasePaquete" type="xs:int"/>
+      <xs:element minOccurs="0" name="Depositos24hsCCDolares" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="Depositos24hsCCPesos" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="Depositos48hsCCDolares" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="Depositos48hsCCPesos" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="Depositos72hsCCDolares" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="Depositos72hsCCPesos" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="DepositosEfectivoDolares" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="DepositosEfectivoPesos" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="DisponibleARSCuenta" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="DisponibleARSMenorCuentaDelConjunto" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="DisponibleUSDCuenta" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="DisponibleUSDMenorCuentaDelConjunto" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="DispuestoARSCuenta" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="DispuestoUSDCuenta" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="FechaAperturaDolares" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FechaAperturaPesos" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="InteresesGanadosCADolares" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="InteresesGanadosCAPesos" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="LimiteAcuerdoCCDolares" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="LimiteAcuerdoCCPesos" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="NombreTitularCuenta" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="NumeroCuenta" type="xs:int"/>
+      <xs:element minOccurs="0" name="SaldoCuentaDolares" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoCuentaPesos" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoPorConformarDolares" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SaldoPorConformarPesos" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="SucursalCuenta" type="xs:int"/>
+      <xs:element minOccurs="0" name="TipoCoberturaCuenta" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TipoCuenta" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TipoPosicionamientoCuenta" type="xs:int"/>
+      <xs:element minOccurs="0" name="TopeARSCuenta" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="TopeUSDCuenta" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DepositoSvcObtenerSaldoYDatosAdicionalesResponse" nillable="true" type="tns:DepositoSvcObtenerSaldoYDatosAdicionalesResponse"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_DepositoSvc/prisma_depositosvc3.xml</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Isban.Common" xmlns:tns="http://schemas.datacontract.org/2004/07/Isban.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/System" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_DepositoSvc/prisma_depositosvc4.xml"/>
+  <xs:complexType name="BusinessException">
+    <xs:complexContent mixed="false">
+      <xs:extension base="q1:Exception" xmlns:q1="http://schemas.datacontract.org/2004/07/System"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BusinessException" nillable="true" type="tns:BusinessException"/>
+  <xs:complexType name="TechnicalException">
+    <xs:complexContent mixed="false">
+      <xs:extension base="q2:Exception" xmlns:q2="http://schemas.datacontract.org/2004/07/System"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TechnicalException" nillable="true" type="tns:TechnicalException"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_DepositoSvc/prisma_depositosvc4.xml</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/System" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" schemaLocation="file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_DepositoSvc/prisma_depositosvc1.xml"/>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:any maxOccurs="unbounded" minOccurs="0" namespace="##local" processContents="skip"/>
+    </xs:sequence>
+    <xs:attribute ref="ser:FactoryType"/>
+  </xs:complexType>
+  <xs:element name="Exception" nillable="true" type="tns:Exception"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:///C:/Datos/OneDrive - Prisma Medios de Pago/Datos/Java\Mock_WS_ Santander/WSDL/XSD_PRISMA_DepositoSvc/prisma_depositosvc1.xml</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://NT-9992120:8060/mockPRISMA_DepositoSvc</con:endpoint><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc</con:endpoint></con:endpoints><con:operation id="662be4e1-fa22-4416-bb3f-4ad27e14cfa2" isOneWay="false" action="http://tempuri.org/IDepositoSvc/ConfirmarOperacionesPorBuzon" name="ConfirmarOperacionesPorBuzon" bindingOperationName="ConfirmarOperacionesPorBuzon" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0526a81c-eb4a-414c-9c95-05923f725a86" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:ConfirmarOperacionesPorBuzon>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:Canal>?</tas:Canal>\r
+            <!--Optional:-->\r
+            <tas:ClaveRioself>?</tas:ClaveRioself>\r
+            <!--Optional:-->\r
+            <tas:NombreSesion>?</tas:NombreSesion>\r
+            <!--Optional:-->\r
+            <tas:Timestamp>?</tas:Timestamp>\r
+         </tem:request>\r
+      </tem:ConfirmarOperacionesPorBuzon>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/ConfirmarOperacionesPorBuzon"/></con:call></con:operation><con:operation id="2f5c4ef7-fe1a-4232-8565-fe5390cd3451" isOneWay="false" action="http://tempuri.org/IDepositoSvc/ConsultaDudosa" name="ConsultaDudosa" bindingOperationName="ConsultaDudosa" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5f0eedee-b476-4411-a420-3b7cd20e0039" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:ConsultaDudosa>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:Canal>?</tas:Canal>\r
+            <!--Optional:-->\r
+            <tas:Fecha>?</tas:Fecha>\r
+            <!--Optional:-->\r
+            <tas:NUO>?</tas:NUO>\r
+            <!--Optional:-->\r
+            <tas:Servicio>?</tas:Servicio>\r
+            <!--Optional:-->\r
+            <tas:SubCanal>?</tas:SubCanal>\r
+            <!--Optional:-->\r
+            <tas:TerminalLogica>?</tas:TerminalLogica>\r
+         </tem:request>\r
+      </tem:ConsultaDudosa>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/ConsultaDudosa"/></con:call></con:operation><con:operation id="c4851b75-35bd-4917-95ce-ec325feaaca0" isOneWay="false" action="http://tempuri.org/IDepositoSvc/DepositarChequesDigitalizados" name="DepositarChequesDigitalizados" bindingOperationName="DepositarChequesDigitalizados" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="737ab174-89a6-4428-abfa-c1e3ea0d96a4" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:DepositarChequesDigitalizados>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:CantidadCheques>?</tas:CantidadCheques>\r
+            <!--Optional:-->\r
+            <tas:ClaveRioself>?</tas:ClaveRioself>\r
+            <!--Optional:-->\r
+            <tas:ImporteDepositado>?</tas:ImporteDepositado>\r
+            <!--Optional:-->\r
+            <tas:IndicadorOperReversa>?</tas:IndicadorOperReversa>\r
+            <!--Optional:-->\r
+            <tas:ListadoCMC7>\r
+               <!--Zero or more repetitions:-->\r
+               <arr:string>?</arr:string>\r
+            </tas:ListadoCMC7>\r
+            <!--Optional:-->\r
+            <tas:NUO>?</tas:NUO>\r
+            <!--Optional:-->\r
+            <tas:NumeroCuenta>?</tas:NumeroCuenta>\r
+            <!--Optional:-->\r
+            <tas:OperacionConfirmada>?</tas:OperacionConfirmada>\r
+            <!--Optional:-->\r
+            <tas:SucursalCuenta>?</tas:SucursalCuenta>\r
+            <!--Optional:-->\r
+            <tas:TipoCuenta>?</tas:TipoCuenta>\r
+         </tem:request>\r
+      </tem:DepositarChequesDigitalizados>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/DepositarChequesDigitalizados"/></con:call></con:operation><con:operation id="c2b27473-838b-4412-ac1b-183ce1d0d328" isOneWay="false" action="http://tempuri.org/IDepositoSvc/DepositarChequesDigitalizadosConfirmacion" name="DepositarChequesDigitalizadosConfirmacion" bindingOperationName="DepositarChequesDigitalizadosConfirmacion" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6a4c61b8-85b4-49a6-aab2-efe2865e1786" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:DepositarChequesDigitalizadosConfirmacion>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:CantidadCheques>?</tas:CantidadCheques>\r
+            <!--Optional:-->\r
+            <tas:ClaveRioself>?</tas:ClaveRioself>\r
+            <!--Optional:-->\r
+            <tas:ImporteDepositado>?</tas:ImporteDepositado>\r
+            <!--Optional:-->\r
+            <tas:ListadoCMC7>\r
+               <!--Zero or more repetitions:-->\r
+               <arr:string>?</arr:string>\r
+            </tas:ListadoCMC7>\r
+            <!--Optional:-->\r
+            <tas:NUO>?</tas:NUO>\r
+            <!--Optional:-->\r
+            <tas:NumeroCuenta>?</tas:NumeroCuenta>\r
+            <!--Optional:-->\r
+            <tas:OperacionConfirmada>?</tas:OperacionConfirmada>\r
+            <!--Optional:-->\r
+            <tas:SucursalCuenta>?</tas:SucursalCuenta>\r
+            <!--Optional:-->\r
+            <tas:TipoCuenta>?</tas:TipoCuenta>\r
+         </tem:request>\r
+      </tem:DepositarChequesDigitalizadosConfirmacion>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/DepositarChequesDigitalizadosConfirmacion"/></con:call></con:operation><con:operation id="04f98553-4117-4183-a516-c71834db671a" isOneWay="false" action="http://tempuri.org/IDepositoSvc/DepositarCupones" name="DepositarCupones" bindingOperationName="DepositarCupones" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="95687df6-d176-4fc5-aaa8-ca1819dc52c1" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:DepositarCupones>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:CantidadCupones>?</tas:CantidadCupones>\r
+            <!--Optional:-->\r
+            <tas:ImporteDepositado>?</tas:ImporteDepositado>\r
+            <!--Optional:-->\r
+            <tas:IndicadorOperReversa>?</tas:IndicadorOperReversa>\r
+            <!--Optional:-->\r
+            <tas:NumeroCuenta>?</tas:NumeroCuenta>\r
+            <!--Optional:-->\r
+            <tas:SucursalCuenta>?</tas:SucursalCuenta>\r
+            <!--Optional:-->\r
+            <tas:TipoCuenta>?</tas:TipoCuenta>\r
+            <!--Optional:-->\r
+            <tas:TipoCupon>?</tas:TipoCupon>\r
+            <!--Optional:-->\r
+            <tas:TipoTarjetaCredito>?</tas:TipoTarjetaCredito>\r
+         </tem:request>\r
+      </tem:DepositarCupones>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/DepositarCupones"/></con:call></con:operation><con:operation id="1f6129ae-1ed5-4aa4-9ece-630074d4cebc" isOneWay="false" action="http://tempuri.org/IDepositoSvc/DepositarEfectivoOCheques" name="DepositarEfectivoOCheques" bindingOperationName="DepositarEfectivoOCheques" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="712505e9-668f-415a-9d49-2e6367de5ff0" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:DepositarEfectivoOCheques>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:CantidadCheques>?</tas:CantidadCheques>\r
+            <!--Optional:-->\r
+            <tas:ImporteDepositado>?</tas:ImporteDepositado>\r
+            <!--Optional:-->\r
+            <tas:IndicadorOperReversa>?</tas:IndicadorOperReversa>\r
+            <!--Optional:-->\r
+            <tas:NumeroCuenta>?</tas:NumeroCuenta>\r
+            <!--Optional:-->\r
+            <tas:NumeroSobre>?</tas:NumeroSobre>\r
+            <!--Optional:-->\r
+            <tas:SucursalCuenta>?</tas:SucursalCuenta>\r
+            <!--Optional:-->\r
+            <tas:TipoCuenta>?</tas:TipoCuenta>\r
+            <!--Optional:-->\r
+            <tas:TipoDeposito>?</tas:TipoDeposito>\r
+         </tem:request>\r
+      </tem:DepositarEfectivoOCheques>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/DepositarEfectivoOCheques"/></con:call></con:operation><con:operation id="5771a91c-3344-4bd5-a4d6-145d688cb6ae" isOneWay="false" action="http://tempuri.org/IDepositoSvc/DepositarEfectivoOnline" name="DepositarEfectivoOnline" bindingOperationName="DepositarEfectivoOnline" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ae1b1756-6a95-4438-ab95-d3591866ad24" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:DepositarEfectivoOnline>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:ApellidoyNombreMandante>?</tas:ApellidoyNombreMandante>\r
+            <!--Optional:-->\r
+            <tas:ApellidoyNombreTitular>?</tas:ApellidoyNombreTitular>\r
+            <!--Optional:-->\r
+            <tas:ClaveRioself>?</tas:ClaveRioself>\r
+            <!--Optional:-->\r
+            <tas:Comision>?</tas:Comision>\r
+            <!--Optional:-->\r
+            <tas:ConPresentacionDNI>?</tas:ConPresentacionDNI>\r
+            <!--Optional:-->\r
+            <tas:Cotizacion>?</tas:Cotizacion>\r
+            <!--Optional:-->\r
+            <tas:ImporteDepositado>?</tas:ImporteDepositado>\r
+            <!--Optional:-->\r
+            <tas:IndicadorOperReversa>?</tas:IndicadorOperReversa>\r
+            <!--Optional:-->\r
+            <tas:MandanteTitular>?</tas:MandanteTitular>\r
+            <!--Optional:-->\r
+            <tas:MarcaTAS>?</tas:MarcaTAS>\r
+            <!--Optional:-->\r
+            <tas:Minima>?</tas:Minima>\r
+            <!--Optional:-->\r
+            <tas:Modo>?</tas:Modo>\r
+            <!--Optional:-->\r
+            <tas:Moneda>?</tas:Moneda>\r
+            <!--Optional:-->\r
+            <tas:NIO>?</tas:NIO>\r
+            <!--Optional:-->\r
+            <tas:NroCuenta>?</tas:NroCuenta>\r
+            <!--Optional:-->\r
+            <tas:NroDeDocumento>?</tas:NroDeDocumento>\r
+            <!--Optional:-->\r
+            <tas:NumeroUnicoOperacion>?</tas:NumeroUnicoOperacion>\r
+            <!--Optional:-->\r
+            <tas:OperacionConfirmada>?</tas:OperacionConfirmada>\r
+            <!--Optional:-->\r
+            <tas:PorCuentaDeTerceros>?</tas:PorCuentaDeTerceros>\r
+            <!--Optional:-->\r
+            <tas:SucursalCuenta>?</tas:SucursalCuenta>\r
+            <!--Optional:-->\r
+            <tas:TipoCuenta>?</tas:TipoCuenta>\r
+            <!--Optional:-->\r
+            <tas:TipoDeDocumento>?</tas:TipoDeDocumento>\r
+            <!--Optional:-->\r
+            <tas:TopeControlPadronBCRA>?</tas:TopeControlPadronBCRA>\r
+         </tem:request>\r
+      </tem:DepositarEfectivoOnline>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/DepositarEfectivoOnline"/></con:call></con:operation><con:operation id="50b7e412-25fb-41cc-9687-9ce8e5f93f91" isOneWay="false" action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedores" name="DepositoPagoAProveedores" bindingOperationName="DepositoPagoAProveedores" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d0a72d67-c735-41a0-b30d-eba74418c713" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:DepositoPagoAProveedores>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:Bco_Corresp>?</tas:Bco_Corresp>\r
+            <!--Optional:-->\r
+            <tas:CantidadCheques>?</tas:CantidadCheques>\r
+            <!--Optional:-->\r
+            <tas:Clave_Rioself>?</tas:Clave_Rioself>\r
+            <!--Optional:-->\r
+            <tas:Clte_Propio>?</tas:Clte_Propio>\r
+            <!--Optional:-->\r
+            <tas:Cod_Cond_IVA_Clte>?</tas:Cod_Cond_IVA_Clte>\r
+            <!--Optional:-->\r
+            <tas:Cod_Mone_Com>?</tas:Cod_Mone_Com>\r
+            <!--Optional:-->\r
+            <tas:Commit_RollBack>?</tas:Commit_RollBack>\r
+            <!--Optional:-->\r
+            <tas:Cotiz_Dolar>?</tas:Cotiz_Dolar>\r
+            <!--Optional:-->\r
+            <tas:Cuit_Clte>?</tas:Cuit_Clte>\r
+            <!--Optional:-->\r
+            <tas:Excep_3ra>?</tas:Excep_3ra>\r
+            <!--Optional:-->\r
+            <tas:Form_Pago_Com>?</tas:Form_Pago_Com>\r
+            <!--Optional:-->\r
+            <tas:Funcion>?</tas:Funcion>\r
+            <!--Optional:-->\r
+            <tas:Ide_Clte>?</tas:Ide_Clte>\r
+            <!--Optional:-->\r
+            <tas:Ide_Cta_Com>?</tas:Ide_Cta_Com>\r
+            <!--Optional:-->\r
+            <tas:Imp_Com>?</tas:Imp_Com>\r
+            <!--Optional:-->\r
+            <tas:Imp_Com_3ra>?</tas:Imp_Com_3ra>\r
+            <!--Optional:-->\r
+            <tas:Imp_IIBB>?</tas:Imp_IIBB>\r
+            <!--Optional:-->\r
+            <tas:Imp_IVA_Ad_Com_3ra>?</tas:Imp_IVA_Ad_Com_3ra>\r
+            <!--Optional:-->\r
+            <tas:Imp_IVA_Com_3ra>?</tas:Imp_IVA_Com_3ra>\r
+            <!--Optional:-->\r
+            <tas:Imp_Total_Pago>?</tas:Imp_Total_Pago>\r
+            <!--Optional:-->\r
+            <tas:ImporteEfectivo>?</tas:ImporteEfectivo>\r
+            <!--Optional:-->\r
+            <tas:IndicadorOperReversa>?</tas:IndicadorOperReversa>\r
+            <!--Optional:-->\r
+            <tas:LNegocio>?</tas:LNegocio>\r
+            <!--Optional:-->\r
+            <tas:ListaComprobantesDePago>\r
+               <!--Zero or more repetitions:-->\r
+               <tas:PagoAProveedoresComprobantes>\r
+                  <!--Optional:-->\r
+                  <tas:Cod_Mone_Cprb>?</tas:Cod_Mone_Cprb>\r
+                  <!--Optional:-->\r
+                  <tas:Dato_1>?</tas:Dato_1>\r
+                  <!--Optional:-->\r
+                  <tas:Dato_2>?</tas:Dato_2>\r
+                  <!--Optional:-->\r
+                  <tas:Dato_3>?</tas:Dato_3>\r
+                  <!--Optional:-->\r
+                  <tas:Dato_4>?</tas:Dato_4>\r
+                  <!--Optional:-->\r
+                  <tas:Dato_5>?</tas:Dato_5>\r
+                  <!--Optional:-->\r
+                  <tas:Fec_vto>?</tas:Fec_vto>\r
+                  <!--Optional:-->\r
+                  <tas:Imp_Iva>?</tas:Imp_Iva>\r
+                  <!--Optional:-->\r
+                  <tas:Imp_Iva_Adic>?</tas:Imp_Iva_Adic>\r
+                  <!--Optional:-->\r
+                  <tas:Imp_Pago>?</tas:Imp_Pago>\r
+                  <!--Optional:-->\r
+                  <tas:Imp_puni>?</tas:Imp_puni>\r
+                  <!--Optional:-->\r
+                  <tas:Nro_Cprb>?</tas:Nro_Cprb>\r
+                  <!--Optional:-->\r
+                  <tas:Nro_Cuo>?</tas:Nro_Cuo>\r
+                  <!--Optional:-->\r
+                  <tas:Tipo_Cprb>?</tas:Tipo_Cprb>\r
+                  <!--Optional:-->\r
+                  <tas:Tipo_De_Carga>?</tas:Tipo_De_Carga>\r
+               </tas:PagoAProveedoresComprobantes>\r
+            </tas:ListaComprobantesDePago>\r
+            <!--Optional:-->\r
+            <tas:ListaInstrumentosDePago>\r
+               <!--Zero or more repetitions:-->\r
+               <tas:PagoAProveedoresInsPago>\r
+                  <!--Optional:-->\r
+                  <tas:Cod_mone>?</tas:Cod_mone>\r
+                  <!--Optional:-->\r
+                  <tas:Fec_Vto_Instr>?</tas:Fec_Vto_Instr>\r
+                  <!--Optional:-->\r
+                  <tas:Form_pago>?</tas:Form_pago>\r
+                  <!--Optional:-->\r
+                  <tas:Ide_Instr>?</tas:Ide_Instr>\r
+                  <!--Optional:-->\r
+                  <tas:Importe>?</tas:Importe>\r
+                  <!--Optional:-->\r
+                  <tas:Mar_Libre_Disp>?</tas:Mar_Libre_Disp>\r
+               </tas:PagoAProveedoresInsPago>\r
+            </tas:ListaInstrumentosDePago>\r
+            <!--Optional:-->\r
+            <tas:NUO>?</tas:NUO>\r
+            <!--Optional:-->\r
+            <tas:Nro_Dig_Empr>?</tas:Nro_Dig_Empr>\r
+            <!--Optional:-->\r
+            <tas:Nro_Empr>?</tas:Nro_Empr>\r
+            <!--Optional:-->\r
+            <tas:Nro_Instan>?</tas:Nro_Instan>\r
+            <!--Optional:-->\r
+            <tas:Nro_Prod>?</tas:Nro_Prod>\r
+            <!--Optional:-->\r
+            <tas:RegistroEstadisticasAutomatico>?</tas:RegistroEstadisticasAutomatico>\r
+            <!--Optional:-->\r
+            <tas:Terminal>?</tas:Terminal>\r
+            <!--Optional:-->\r
+            <tas:Tipo_IIBB>?</tas:Tipo_IIBB>\r
+            <!--Optional:-->\r
+            <tas:Trn>?</tas:Trn>\r
+         </tem:request>\r
+      </tem:DepositoPagoAProveedores>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedores"/></con:call></con:operation><con:operation id="b9b7a856-3013-427d-9dab-faee5b32157b" isOneWay="false" action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresAnonimo" name="DepositoPagoAProveedoresAnonimo" bindingOperationName="DepositoPagoAProveedoresAnonimo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="738acfed-d2fa-4525-8a5b-b673c1e0fa2c" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:DepositoPagoAProveedoresAnonimo>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:BancoCorresponsal>?</tas:BancoCorresponsal>\r
+            <!--Optional:-->\r
+            <tas:CantidadCheques>?</tas:CantidadCheques>\r
+            <!--Optional:-->\r
+            <tas:CantidadComprobantesInformados>?</tas:CantidadComprobantesInformados>\r
+            <!--Optional:-->\r
+            <tas:CantidadInstrumentosPago>?</tas:CantidadInstrumentosPago>\r
+            <!--Optional:-->\r
+            <tas:ClaveRioself>?</tas:ClaveRioself>\r
+            <!--Optional:-->\r
+            <tas:ClientePropio>?</tas:ClientePropio>\r
+            <!--Optional:-->\r
+            <tas:CodCliente>?</tas:CodCliente>\r
+            <!--Optional:-->\r
+            <tas:CodigoCondicionIva>?</tas:CodigoCondicionIva>\r
+            <!--Optional:-->\r
+            <tas:ComprobantesInformados>?</tas:ComprobantesInformados>\r
+            <!--Optional:-->\r
+            <tas:CotizacionDolar>?</tas:CotizacionDolar>\r
+            <!--Optional:-->\r
+            <tas:CuitCliente>?</tas:CuitCliente>\r
+            <!--Optional:-->\r
+            <tas:CuitEmpresa>?</tas:CuitEmpresa>\r
+            <!--Optional:-->\r
+            <tas:DigitoVerificador>?</tas:DigitoVerificador>\r
+            <!--Optional:-->\r
+            <tas:Excep3Ra>?</tas:Excep3Ra>\r
+            <!--Optional:-->\r
+            <tas:FormaPagoComision>?</tas:FormaPagoComision>\r
+            <!--Optional:-->\r
+            <tas:IdPago>?</tas:IdPago>\r
+            <!--Optional:-->\r
+            <tas:ImporteComisionTerceros>?</tas:ImporteComisionTerceros>\r
+            <!--Optional:-->\r
+            <tas:ImporteIngresoBrutos>?</tas:ImporteIngresoBrutos>\r
+            <!--Optional:-->\r
+            <tas:ImporteIvaAdicionalComisionTerceros>?</tas:ImporteIvaAdicionalComisionTerceros>\r
+            <!--Optional:-->\r
+            <tas:ImporteIvaComisionTerceros>?</tas:ImporteIvaComisionTerceros>\r
+            <!--Optional:-->\r
+            <tas:ImportePagoComision>?</tas:ImportePagoComision>\r
+            <!--Optional:-->\r
+            <tas:ImporteTotalEfectivo>?</tas:ImporteTotalEfectivo>\r
+            <!--Optional:-->\r
+            <tas:ImporteTotalPago>?</tas:ImporteTotalPago>\r
+            <!--Optional:-->\r
+            <tas:IndicadorOperReversa>?</tas:IndicadorOperReversa>\r
+            <!--Optional:-->\r
+            <tas:InstrumentosDePago>?</tas:InstrumentosDePago>\r
+            <!--Optional:-->\r
+            <tas:ListInstrumentosdePago>\r
+               <!--Zero or more repetitions:-->\r
+               <tas:InstrumentoPagoRequest>\r
+                  <!--Optional:-->\r
+                  <tas:CodigoDeBancoRadicacionCuenta>?</tas:CodigoDeBancoRadicacionCuenta>\r
+                  <!--Optional:-->\r
+                  <tas:CodigoPostal>?</tas:CodigoPostal>\r
+                  <!--Optional:-->\r
+                  <tas:FechaDeVencimiento>?</tas:FechaDeVencimiento>\r
+                  <!--Optional:-->\r
+                  <tas:FormaDePago>?</tas:FormaDePago>\r
+                  <!--Optional:-->\r
+                  <tas:ImporteDelPago>?</tas:ImporteDelPago>\r
+                  <!--Optional:-->\r
+                  <tas:MarcaDeLibreDisponibilidad>?</tas:MarcaDeLibreDisponibilidad>\r
+                  <!--Optional:-->\r
+                  <tas:NroCuenta>?</tas:NroCuenta>\r
+                  <!--Optional:-->\r
+                  <tas:NumeroDeCheque>?</tas:NumeroDeCheque>\r
+                  <!--Optional:-->\r
+                  <tas:Sucursal>?</tas:Sucursal>\r
+                  <!--Optional:-->\r
+                  <tas:TipoDeCuenta>?</tas:TipoDeCuenta>\r
+               </tas:InstrumentoPagoRequest>\r
+            </tas:ListInstrumentosdePago>\r
+            <!--Optional:-->\r
+            <tas:ListaComprobantesDePago>\r
+               <!--Zero or more repetitions:-->\r
+               <tas:ComprobantePagoRequest>\r
+                  <!--Optional:-->\r
+                  <tas:DatoLibre1>?</tas:DatoLibre1>\r
+                  <!--Optional:-->\r
+                  <tas:DatoLibre2>?</tas:DatoLibre2>\r
+                  <!--Optional:-->\r
+                  <tas:DatoLibre3>?</tas:DatoLibre3>\r
+                  <!--Optional:-->\r
+                  <tas:DatoLibre4>?</tas:DatoLibre4>\r
+                  <!--Optional:-->\r
+                  <tas:DatoLibre5>?</tas:DatoLibre5>\r
+                  <!--Optional:-->\r
+                  <tas:FechaVencimiento>?</tas:FechaVencimiento>\r
+                  <!--Optional:-->\r
+                  <tas:ImporteDelPago>?</tas:ImporteDelPago>\r
+                  <!--Optional:-->\r
+                  <tas:ImporteIVA>?</tas:ImporteIVA>\r
+                  <!--Optional:-->\r
+                  <tas:ImporteIVAAdicional>?</tas:ImporteIVAAdicional>\r
+                  <!--Optional:-->\r
+                  <tas:ImportePunitorio>?</tas:ImportePunitorio>\r
+                  <!--Optional:-->\r
+                  <tas:NroDeComprobante>?</tas:NroDeComprobante>\r
+                  <!--Optional:-->\r
+                  <tas:NroDeCuota>?</tas:NroDeCuota>\r
+                  <!--Optional:-->\r
+                  <tas:TipoDeCarga>?</tas:TipoDeCarga>\r
+                  <!--Optional:-->\r
+                  <tas:TipoDeComprobante>?</tas:TipoDeComprobante>\r
+               </tas:ComprobantePagoRequest>\r
+            </tas:ListaComprobantesDePago>\r
+            <!--Optional:-->\r
+            <tas:ModoRegistroEstadisticasAutomatico>?</tas:ModoRegistroEstadisticasAutomatico>\r
+            <!--Optional:-->\r
+            <tas:NroBoleta>?</tas:NroBoleta>\r
+            <!--Optional:-->\r
+            <tas:NroCuentaDebito>?</tas:NroCuentaDebito>\r
+            <!--Optional:-->\r
+            <tas:NroInstancia>?</tas:NroInstancia>\r
+            <!--Optional:-->\r
+            <tas:NroProducto>?</tas:NroProducto>\r
+            <!--Optional:-->\r
+            <tas:Nuo>?</tas:Nuo>\r
+            <!--Optional:-->\r
+            <tas:Opcion>?</tas:Opcion>\r
+            <!--Optional:-->\r
+            <tas:SucursalRadicacionCuentaDebito>?</tas:SucursalRadicacionCuentaDebito>\r
+            <!--Optional:-->\r
+            <tas:Terminal>?</tas:Terminal>\r
+            <!--Optional:-->\r
+            <tas:TipoCuentaDebito>?</tas:TipoCuentaDebito>\r
+            <!--Optional:-->\r
+            <tas:TipoIngresoBrutos>?</tas:TipoIngresoBrutos>\r
+            <!--Optional:-->\r
+            <tas:Transaccion>?</tas:Transaccion>\r
+         </tem:request>\r
+      </tem:DepositoPagoAProveedoresAnonimo>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresAnonimo"/></con:call></con:operation><con:operation id="978e064e-fa0d-4de5-ad4c-b7c4b80de8d9" isOneWay="false" action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresAnonimoPrisma" name="DepositoPagoAProveedoresAnonimoPrisma" bindingOperationName="DepositoPagoAProveedoresAnonimoPrisma" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="84f60d32-f04c-4fcd-83ee-7ff9a94f009b" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:DepositoPagoAProveedoresAnonimoPrisma>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:BancoCorresponsal>?</tas:BancoCorresponsal>\r
+            <!--Optional:-->\r
+            <tas:CantidadCheques>?</tas:CantidadCheques>\r
+            <!--Optional:-->\r
+            <tas:CantidadComprobantesInformados>?</tas:CantidadComprobantesInformados>\r
+            <!--Optional:-->\r
+            <tas:CantidadInstrumentosPago>?</tas:CantidadInstrumentosPago>\r
+            <!--Optional:-->\r
+            <tas:ClaveRioself>?</tas:ClaveRioself>\r
+            <!--Optional:-->\r
+            <tas:ClientePropio>?</tas:ClientePropio>\r
+            <!--Optional:-->\r
+            <tas:CodCliente>?</tas:CodCliente>\r
+            <!--Optional:-->\r
+            <tas:CodigoCondicionIva>?</tas:CodigoCondicionIva>\r
+            <!--Optional:-->\r
+            <tas:ComprobantesInformados>?</tas:ComprobantesInformados>\r
+            <!--Optional:-->\r
+            <tas:CotizacionDolar>?</tas:CotizacionDolar>\r
+            <!--Optional:-->\r
+            <tas:CuitCliente>?</tas:CuitCliente>\r
+            <!--Optional:-->\r
+            <tas:CuitEmpresa>?</tas:CuitEmpresa>\r
+            <!--Optional:-->\r
+            <tas:DigitoVerificador>?</tas:DigitoVerificador>\r
+            <!--Optional:-->\r
+            <tas:Excep3Ra>?</tas:Excep3Ra>\r
+            <!--Optional:-->\r
+            <tas:FechaNegocio>?</tas:FechaNegocio>\r
+            <!--Optional:-->\r
+            <tas:FormaPagoComision>?</tas:FormaPagoComision>\r
+            <!--Optional:-->\r
+            <tas:IdPago>?</tas:IdPago>\r
+            <!--Optional:-->\r
+            <tas:Imp_Tot_Efec>?</tas:Imp_Tot_Efec>\r
+            <!--Optional:-->\r
+            <tas:ImporteComisionTerceros>?</tas:ImporteComisionTerceros>\r
+            <!--Optional:-->\r
+            <tas:ImporteIngresoBrutos>?</tas:ImporteIngresoBrutos>\r
+            <!--Optional:-->\r
+            <tas:ImporteIvaAdicionalComisionTerceros>?</tas:ImporteIvaAdicionalComisionTerceros>\r
+            <!--Optional:-->\r
+            <tas:ImporteIvaComisionTerceros>?</tas:ImporteIvaComisionTerceros>\r
+            <!--Optional:-->\r
+            <tas:ImportePagoComision>?</tas:ImportePagoComision>\r
+            <!--Optional:-->\r
+            <tas:ImporteTotalEfectivo>?</tas:ImporteTotalEfectivo>\r
+            <!--Optional:-->\r
+            <tas:ImporteTotalPago>?</tas:ImporteTotalPago>\r
+            <!--Optional:-->\r
+            <tas:IndicadorOperReversa>?</tas:IndicadorOperReversa>\r
+            <!--Optional:-->\r
+            <tas:InstrumentosDePago>?</tas:InstrumentosDePago>\r
+            <!--Optional:-->\r
+            <tas:ListInstrumentosdePago>\r
+               <!--Zero or more repetitions:-->\r
+               <tas:InstrumentoPagoRequest>\r
+                  <!--Optional:-->\r
+                  <tas:CodigoDeBancoRadicacionCuenta>?</tas:CodigoDeBancoRadicacionCuenta>\r
+                  <!--Optional:-->\r
+                  <tas:CodigoPostal>?</tas:CodigoPostal>\r
+                  <!--Optional:-->\r
+                  <tas:FechaDeVencimiento>?</tas:FechaDeVencimiento>\r
+                  <!--Optional:-->\r
+                  <tas:FormaDePago>?</tas:FormaDePago>\r
+                  <!--Optional:-->\r
+                  <tas:ImporteDelPago>?</tas:ImporteDelPago>\r
+                  <!--Optional:-->\r
+                  <tas:MarcaDeLibreDisponibilidad>?</tas:MarcaDeLibreDisponibilidad>\r
+                  <!--Optional:-->\r
+                  <tas:NroCuenta>?</tas:NroCuenta>\r
+                  <!--Optional:-->\r
+                  <tas:NumeroDeCheque>?</tas:NumeroDeCheque>\r
+                  <!--Optional:-->\r
+                  <tas:Sucursal>?</tas:Sucursal>\r
+                  <!--Optional:-->\r
+                  <tas:TipoDeCuenta>?</tas:TipoDeCuenta>\r
+               </tas:InstrumentoPagoRequest>\r
+            </tas:ListInstrumentosdePago>\r
+            <!--Optional:-->\r
+            <tas:ListaComprobantesDePago>\r
+               <!--Zero or more repetitions:-->\r
+               <tas:ComprobantePagoRequest>\r
+                  <!--Optional:-->\r
+                  <tas:DatoLibre1>?</tas:DatoLibre1>\r
+                  <!--Optional:-->\r
+                  <tas:DatoLibre2>?</tas:DatoLibre2>\r
+                  <!--Optional:-->\r
+                  <tas:DatoLibre3>?</tas:DatoLibre3>\r
+                  <!--Optional:-->\r
+                  <tas:DatoLibre4>?</tas:DatoLibre4>\r
+                  <!--Optional:-->\r
+                  <tas:DatoLibre5>?</tas:DatoLibre5>\r
+                  <!--Optional:-->\r
+                  <tas:FechaVencimiento>?</tas:FechaVencimiento>\r
+                  <!--Optional:-->\r
+                  <tas:ImporteDelPago>?</tas:ImporteDelPago>\r
+                  <!--Optional:-->\r
+                  <tas:ImporteIVA>?</tas:ImporteIVA>\r
+                  <!--Optional:-->\r
+                  <tas:ImporteIVAAdicional>?</tas:ImporteIVAAdicional>\r
+                  <!--Optional:-->\r
+                  <tas:ImportePunitorio>?</tas:ImportePunitorio>\r
+                  <!--Optional:-->\r
+                  <tas:NroDeComprobante>?</tas:NroDeComprobante>\r
+                  <!--Optional:-->\r
+                  <tas:NroDeCuota>?</tas:NroDeCuota>\r
+                  <!--Optional:-->\r
+                  <tas:TipoDeCarga>?</tas:TipoDeCarga>\r
+                  <!--Optional:-->\r
+                  <tas:TipoDeComprobante>?</tas:TipoDeComprobante>\r
+               </tas:ComprobantePagoRequest>\r
+            </tas:ListaComprobantesDePago>\r
+            <!--Optional:-->\r
+            <tas:ModoRegistroEstadisticasAutomatico>?</tas:ModoRegistroEstadisticasAutomatico>\r
+            <!--Optional:-->\r
+            <tas:Nombre_Terminal_Fis>?</tas:Nombre_Terminal_Fis>\r
+            <!--Optional:-->\r
+            <tas:NroBoleta>?</tas:NroBoleta>\r
+            <!--Optional:-->\r
+            <tas:NroCuentaDebito>?</tas:NroCuentaDebito>\r
+            <!--Optional:-->\r
+            <tas:NroInstancia>?</tas:NroInstancia>\r
+            <!--Optional:-->\r
+            <tas:NroProducto>?</tas:NroProducto>\r
+            <!--Optional:-->\r
+            <tas:Nro_Ticket_Banelco>?</tas:Nro_Ticket_Banelco>\r
+            <!--Optional:-->\r
+            <tas:Nuo>?</tas:Nuo>\r
+            <!--Optional:-->\r
+            <tas:Opcion>?</tas:Opcion>\r
+            <!--Optional:-->\r
+            <tas:SucursalRadicacionCuentaDebito>?</tas:SucursalRadicacionCuentaDebito>\r
+            <!--Optional:-->\r
+            <tas:Terminal>?</tas:Terminal>\r
+            <!--Optional:-->\r
+            <tas:TipoCuentaDebito>?</tas:TipoCuentaDebito>\r
+            <!--Optional:-->\r
+            <tas:TipoIngresoBrutos>?</tas:TipoIngresoBrutos>\r
+            <!--Optional:-->\r
+            <tas:Transaccion>?</tas:Transaccion>\r
+         </tem:request>\r
+      </tem:DepositoPagoAProveedoresAnonimoPrisma>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresAnonimoPrisma"/></con:call></con:operation><con:operation id="66b70353-0521-4f28-8ad0-322d3c64e664" isOneWay="false" action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresPrisma" name="DepositoPagoAProveedoresPrisma" bindingOperationName="DepositoPagoAProveedoresPrisma" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b51a70db-f790-481f-81cb-9c739b3ae4ef" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:DepositoPagoAProveedoresPrisma>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:Bco_Corresp>?</tas:Bco_Corresp>\r
+            <!--Optional:-->\r
+            <tas:CantidadCheques>?</tas:CantidadCheques>\r
+            <!--Optional:-->\r
+            <tas:Clave_Rioself>?</tas:Clave_Rioself>\r
+            <!--Optional:-->\r
+            <tas:Clte_Propio>?</tas:Clte_Propio>\r
+            <!--Optional:-->\r
+            <tas:Cod_Cond_IVA_Clte>?</tas:Cod_Cond_IVA_Clte>\r
+            <!--Optional:-->\r
+            <tas:Cod_Mone_Com>?</tas:Cod_Mone_Com>\r
+            <!--Optional:-->\r
+            <tas:Commit_RollBack>?</tas:Commit_RollBack>\r
+            <!--Optional:-->\r
+            <tas:Cotiz_Dolar>?</tas:Cotiz_Dolar>\r
+            <!--Optional:-->\r
+            <tas:Cuit_Clte>?</tas:Cuit_Clte>\r
+            <!--Optional:-->\r
+            <tas:Excep_3ra>?</tas:Excep_3ra>\r
+            <!--Optional:-->\r
+            <tas:FechaNegocio>?</tas:FechaNegocio>\r
+            <!--Optional:-->\r
+            <tas:Form_Pago_Com>?</tas:Form_Pago_Com>\r
+            <!--Optional:-->\r
+            <tas:Funcion>?</tas:Funcion>\r
+            <!--Optional:-->\r
+            <tas:Ide_Clte>?</tas:Ide_Clte>\r
+            <!--Optional:-->\r
+            <tas:Ide_Cta_Com>?</tas:Ide_Cta_Com>\r
+            <!--Optional:-->\r
+            <tas:Imp_Com>?</tas:Imp_Com>\r
+            <!--Optional:-->\r
+            <tas:Imp_Com_3ra>?</tas:Imp_Com_3ra>\r
+            <!--Optional:-->\r
+            <tas:Imp_IIBB>?</tas:Imp_IIBB>\r
+            <!--Optional:-->\r
+            <tas:Imp_IVA_Ad_Com_3ra>?</tas:Imp_IVA_Ad_Com_3ra>\r
+            <!--Optional:-->\r
+            <tas:Imp_IVA_Com_3ra>?</tas:Imp_IVA_Com_3ra>\r
+            <!--Optional:-->\r
+            <tas:Imp_Total_Pago>?</tas:Imp_Total_Pago>\r
+            <!--Optional:-->\r
+            <tas:ImporteEfectivo>?</tas:ImporteEfectivo>\r
+            <!--Optional:-->\r
+            <tas:IndicadorOperReversa>?</tas:IndicadorOperReversa>\r
+            <!--Optional:-->\r
+            <tas:LNegocio>?</tas:LNegocio>\r
+            <!--Optional:-->\r
+            <tas:ListaComprobantesDePago>\r
+               <!--Zero or more repetitions:-->\r
+               <tas:PagoAProveedoresComprobantes>\r
+                  <!--Optional:-->\r
+                  <tas:Cod_Mone_Cprb>?</tas:Cod_Mone_Cprb>\r
+                  <!--Optional:-->\r
+                  <tas:Dato_1>?</tas:Dato_1>\r
+                  <!--Optional:-->\r
+                  <tas:Dato_2>?</tas:Dato_2>\r
+                  <!--Optional:-->\r
+                  <tas:Dato_3>?</tas:Dato_3>\r
+                  <!--Optional:-->\r
+                  <tas:Dato_4>?</tas:Dato_4>\r
+                  <!--Optional:-->\r
+                  <tas:Dato_5>?</tas:Dato_5>\r
+                  <!--Optional:-->\r
+                  <tas:Fec_vto>?</tas:Fec_vto>\r
+                  <!--Optional:-->\r
+                  <tas:Imp_Iva>?</tas:Imp_Iva>\r
+                  <!--Optional:-->\r
+                  <tas:Imp_Iva_Adic>?</tas:Imp_Iva_Adic>\r
+                  <!--Optional:-->\r
+                  <tas:Imp_Pago>?</tas:Imp_Pago>\r
+                  <!--Optional:-->\r
+                  <tas:Imp_puni>?</tas:Imp_puni>\r
+                  <!--Optional:-->\r
+                  <tas:Nro_Cprb>?</tas:Nro_Cprb>\r
+                  <!--Optional:-->\r
+                  <tas:Nro_Cuo>?</tas:Nro_Cuo>\r
+                  <!--Optional:-->\r
+                  <tas:Tipo_Cprb>?</tas:Tipo_Cprb>\r
+                  <!--Optional:-->\r
+                  <tas:Tipo_De_Carga>?</tas:Tipo_De_Carga>\r
+               </tas:PagoAProveedoresComprobantes>\r
+            </tas:ListaComprobantesDePago>\r
+            <!--Optional:-->\r
+            <tas:ListaInstrumentosDePago>\r
+               <!--Zero or more repetitions:-->\r
+               <tas:PagoAProveedoresInsPago>\r
+                  <!--Optional:-->\r
+                  <tas:Cod_mone>?</tas:Cod_mone>\r
+                  <!--Optional:-->\r
+                  <tas:Fec_Vto_Instr>?</tas:Fec_Vto_Instr>\r
+                  <!--Optional:-->\r
+                  <tas:Form_pago>?</tas:Form_pago>\r
+                  <!--Optional:-->\r
+                  <tas:Ide_Instr>?</tas:Ide_Instr>\r
+                  <!--Optional:-->\r
+                  <tas:Importe>?</tas:Importe>\r
+                  <!--Optional:-->\r
+                  <tas:Mar_Libre_Disp>?</tas:Mar_Libre_Disp>\r
+               </tas:PagoAProveedoresInsPago>\r
+            </tas:ListaInstrumentosDePago>\r
+            <!--Optional:-->\r
+            <tas:NUO>?</tas:NUO>\r
+            <!--Optional:-->\r
+            <tas:Nombre_Terminal_Fis>?</tas:Nombre_Terminal_Fis>\r
+            <!--Optional:-->\r
+            <tas:Nro_Dig_Empr>?</tas:Nro_Dig_Empr>\r
+            <!--Optional:-->\r
+            <tas:Nro_Empr>?</tas:Nro_Empr>\r
+            <!--Optional:-->\r
+            <tas:Nro_Instan>?</tas:Nro_Instan>\r
+            <!--Optional:-->\r
+            <tas:Nro_Prod>?</tas:Nro_Prod>\r
+            <!--Optional:-->\r
+            <tas:Nro_Ticket_Banelco>?</tas:Nro_Ticket_Banelco>\r
+            <!--Optional:-->\r
+            <tas:RegistroEstadisticasAutomatico>?</tas:RegistroEstadisticasAutomatico>\r
+            <!--Optional:-->\r
+            <tas:Terminal>?</tas:Terminal>\r
+            <!--Optional:-->\r
+            <tas:Tipo_IIBB>?</tas:Tipo_IIBB>\r
+            <!--Optional:-->\r
+            <tas:Trn>?</tas:Trn>\r
+         </tem:request>\r
+      </tem:DepositoPagoAProveedoresPrisma>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresPrisma"/></con:call></con:operation><con:operation id="eebf22ee-beef-411a-aa55-2daa88c83915" isOneWay="false" action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresV2" name="DepositoPagoAProveedoresV2" bindingOperationName="DepositoPagoAProveedoresV2" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3915d383-9b6c-4724-8ce3-971ab4e88b43" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:DepositoPagoAProveedoresV2>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:Bco_Corresp>?</tas:Bco_Corresp>\r
+            <!--Optional:-->\r
+            <tas:CantidadCheques>?</tas:CantidadCheques>\r
+            <!--Optional:-->\r
+            <tas:Clave_Rioself>?</tas:Clave_Rioself>\r
+            <!--Optional:-->\r
+            <tas:Clte_Propio>?</tas:Clte_Propio>\r
+            <!--Optional:-->\r
+            <tas:Cod_Cond_IVA_Clte>?</tas:Cod_Cond_IVA_Clte>\r
+            <!--Optional:-->\r
+            <tas:Cod_Mone_Com>?</tas:Cod_Mone_Com>\r
+            <!--Optional:-->\r
+            <tas:Commit_RollBack>?</tas:Commit_RollBack>\r
+            <!--Optional:-->\r
+            <tas:Cotiz_Dolar>?</tas:Cotiz_Dolar>\r
+            <!--Optional:-->\r
+            <tas:Cuit_Clte>?</tas:Cuit_Clte>\r
+            <!--Optional:-->\r
+            <tas:Excep_3ra>?</tas:Excep_3ra>\r
+            <!--Optional:-->\r
+            <tas:Form_Pago_Com>?</tas:Form_Pago_Com>\r
+            <!--Optional:-->\r
+            <tas:Funcion>?</tas:Funcion>\r
+            <!--Optional:-->\r
+            <tas:Ide_Clte>?</tas:Ide_Clte>\r
+            <!--Optional:-->\r
+            <tas:Ide_Cta_Com>?</tas:Ide_Cta_Com>\r
+            <!--Optional:-->\r
+            <tas:Imp_Com>?</tas:Imp_Com>\r
+            <!--Optional:-->\r
+            <tas:Imp_Com_3ra>?</tas:Imp_Com_3ra>\r
+            <!--Optional:-->\r
+            <tas:Imp_IIBB>?</tas:Imp_IIBB>\r
+            <!--Optional:-->\r
+            <tas:Imp_IVA_Ad_Com_3ra>?</tas:Imp_IVA_Ad_Com_3ra>\r
+            <!--Optional:-->\r
+            <tas:Imp_IVA_Com_3ra>?</tas:Imp_IVA_Com_3ra>\r
+            <!--Optional:-->\r
+            <tas:Imp_Total_Pago>?</tas:Imp_Total_Pago>\r
+            <!--Optional:-->\r
+            <tas:ImporteEfectivo>?</tas:ImporteEfectivo>\r
+            <!--Optional:-->\r
+            <tas:IndicadorOperReversa>?</tas:IndicadorOperReversa>\r
+            <!--Optional:-->\r
+            <tas:LNegocio>?</tas:LNegocio>\r
+            <!--Optional:-->\r
+            <tas:ListaComprobantesDePago>\r
+               <!--Zero or more repetitions:-->\r
+               <tas:PagoAProveedoresComprobantes>\r
+                  <!--Optional:-->\r
+                  <tas:Cod_Mone_Cprb>?</tas:Cod_Mone_Cprb>\r
+                  <!--Optional:-->\r
+                  <tas:Dato_1>?</tas:Dato_1>\r
+                  <!--Optional:-->\r
+                  <tas:Dato_2>?</tas:Dato_2>\r
+                  <!--Optional:-->\r
+                  <tas:Dato_3>?</tas:Dato_3>\r
+                  <!--Optional:-->\r
+                  <tas:Dato_4>?</tas:Dato_4>\r
+                  <!--Optional:-->\r
+                  <tas:Dato_5>?</tas:Dato_5>\r
+                  <!--Optional:-->\r
+                  <tas:Fec_vto>?</tas:Fec_vto>\r
+                  <!--Optional:-->\r
+                  <tas:Imp_Iva>?</tas:Imp_Iva>\r
+                  <!--Optional:-->\r
+                  <tas:Imp_Iva_Adic>?</tas:Imp_Iva_Adic>\r
+                  <!--Optional:-->\r
+                  <tas:Imp_Pago>?</tas:Imp_Pago>\r
+                  <!--Optional:-->\r
+                  <tas:Imp_puni>?</tas:Imp_puni>\r
+                  <!--Optional:-->\r
+                  <tas:Nro_Cprb>?</tas:Nro_Cprb>\r
+                  <!--Optional:-->\r
+                  <tas:Nro_Cuo>?</tas:Nro_Cuo>\r
+                  <!--Optional:-->\r
+                  <tas:Tipo_Cprb>?</tas:Tipo_Cprb>\r
+                  <!--Optional:-->\r
+                  <tas:Tipo_De_Carga>?</tas:Tipo_De_Carga>\r
+               </tas:PagoAProveedoresComprobantes>\r
+            </tas:ListaComprobantesDePago>\r
+            <!--Optional:-->\r
+            <tas:ListaInstrumentosDePago>\r
+               <!--Zero or more repetitions:-->\r
+               <tas:PagoAProveedoresInsPago>\r
+                  <!--Optional:-->\r
+                  <tas:Cod_mone>?</tas:Cod_mone>\r
+                  <!--Optional:-->\r
+                  <tas:Fec_Vto_Instr>?</tas:Fec_Vto_Instr>\r
+                  <!--Optional:-->\r
+                  <tas:Form_pago>?</tas:Form_pago>\r
+                  <!--Optional:-->\r
+                  <tas:Ide_Instr>?</tas:Ide_Instr>\r
+                  <!--Optional:-->\r
+                  <tas:Importe>?</tas:Importe>\r
+                  <!--Optional:-->\r
+                  <tas:Mar_Libre_Disp>?</tas:Mar_Libre_Disp>\r
+               </tas:PagoAProveedoresInsPago>\r
+            </tas:ListaInstrumentosDePago>\r
+            <!--Optional:-->\r
+            <tas:NUO>?</tas:NUO>\r
+            <!--Optional:-->\r
+            <tas:Nro_Dig_Empr>?</tas:Nro_Dig_Empr>\r
+            <!--Optional:-->\r
+            <tas:Nro_Empr>?</tas:Nro_Empr>\r
+            <!--Optional:-->\r
+            <tas:Nro_Instan>?</tas:Nro_Instan>\r
+            <!--Optional:-->\r
+            <tas:Nro_Prod>?</tas:Nro_Prod>\r
+            <!--Optional:-->\r
+            <tas:RegistroEstadisticasAutomatico>?</tas:RegistroEstadisticasAutomatico>\r
+            <!--Optional:-->\r
+            <tas:Terminal>?</tas:Terminal>\r
+            <!--Optional:-->\r
+            <tas:Tipo_IIBB>?</tas:Tipo_IIBB>\r
+            <!--Optional:-->\r
+            <tas:Trn>?</tas:Trn>\r
+         </tem:request>\r
+      </tem:DepositoPagoAProveedoresV2>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresV2"/></con:call></con:operation><con:operation id="46a2c156-cbdf-4902-8bf2-f5201525a126" isOneWay="false" action="http://tempuri.org/IDepositoSvc/ObtenerEmpresasCupon" name="ObtenerEmpresasCupon" bindingOperationName="ObtenerEmpresasCupon" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7b3ad696-f15d-469a-b64b-5b37d9d8cb72" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:ObtenerEmpresasCupon>\r
+         <!--Optional:-->\r
+         <tem:request/>\r
+      </tem:ObtenerEmpresasCupon>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/ObtenerEmpresasCupon"/></con:call></con:operation><con:operation id="b0f1c2f2-912a-443e-bd7b-ddbc536d96fb" isOneWay="false" action="http://tempuri.org/IDepositoSvc/ObtenerSaldoYDatosAdicionales" name="ObtenerSaldoYDatosAdicionales" bindingOperationName="ObtenerSaldoYDatosAdicionales" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="fb331d13-cb01-49b5-b66e-7391fcdd877f" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:ObtenerSaldoYDatosAdicionales>\r
+         <!--Optional:-->\r
+         <tem:request>\r
+            <!--Optional:-->\r
+            <tas:ClienteFechaNacimiento>?</tas:ClienteFechaNacimiento>\r
+            <!--Optional:-->\r
+            <tas:ClienteNumeroDoc>?</tas:ClienteNumeroDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoDoc>?</tas:ClienteTipoDoc>\r
+            <!--Optional:-->\r
+            <tas:ClienteTipoPersona>?</tas:ClienteTipoPersona>\r
+            <!--Optional:-->\r
+            <tas:IdTerminal>?</tas:IdTerminal>\r
+            <!--Optional:-->\r
+            <tas:NUP>?</tas:NUP>\r
+            <!--Optional:-->\r
+            <tas:NroSucursal>?</tas:NroSucursal>\r
+            <!--Optional:-->\r
+            <tas:PasswordRACF>?</tas:PasswordRACF>\r
+            <!--Optional:-->\r
+            <tas:UserID>?</tas:UserID>\r
+            <!--Optional:-->\r
+            <tas:UsuarioRACF>?</tas:UsuarioRACF>\r
+            <!--Optional:-->\r
+            <tas:NumeroCuenta>?</tas:NumeroCuenta>\r
+            <!--Optional:-->\r
+            <tas:SucursalCuenta>?</tas:SucursalCuenta>\r
+            <!--Optional:-->\r
+            <tas:TipoCuenta>?</tas:TipoCuenta>\r
+         </tem:request>\r
+      </tem:ObtenerSaldoYDatosAdicionales>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/ObtenerSaldoYDatosAdicionales"/></con:call></con:operation><con:operation id="594288c4-6e6e-448d-b63f-f7f4482fb3c7" isOneWay="false" action="http://tempuri.org/IDepositoSvc/ObtenerTiposCupon" name="ObtenerTiposCupon" bindingOperationName="ObtenerTiposCupon" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b9fac8c5-13e8-4ed9-b4cb-b1d2782f070b" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://webfronthomo01.rio.ar.bsch:8501/prisma_depositosvc.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:ObtenerTiposCupon>\r
+         <!--Optional:-->\r
+         <tem:request/>\r
+      </tem:ObtenerTiposCupon>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/ObtenerTiposCupon"/></con:call></con:operation></con:interface><con:mockService id="6815e840-0b3d-4c9c-bcac-e63851509d14" port="8060" path="/mockPRISMA_DepositoSvc" host="localhost" name="PRISMA_PagoTarjetaSvcMockService" bindToHostOnly="false" docroot=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="ConfirmarOperacionesPorBuzon" id="185faa0b-2105-4894-a193-e46098feaa20" interface="PRISMA_DepositoSvcEndpoint" operation="ConfirmarOperacionesPorBuzon"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="e5fec2c2-ba20-429d-8d2d-19f7e22cc8d8" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+   <soap:Header/>
+   <soap:Body>
+      <tem:ConfirmarOperacionesPorBuzonResponse>
+         <!--Optional:-->
+         <tem:ConfirmarOperacionesPorBuzonResult/>
+      </tem:ConfirmarOperacionesPorBuzonResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/ConfirmarOperacionesPorBuzonResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="ConsultaDudosa" id="b67abb60-a50b-4896-b0dc-e1e1f97e69af" interface="PRISMA_DepositoSvcEndpoint" operation="ConsultaDudosa"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="1a067d5a-8d87-4126-a347-dd9b03e2e5ea" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+   <soap:Header/>
+   <soap:Body>
+      <tem:ConsultaDudosaResponse>
+         <!--Optional:-->
+         <tem:ConsultaDudosaResult/>
+      </tem:ConsultaDudosaResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/ConsultaDudosaResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="DepositarChequesDigitalizados" id="8303eb79-3555-45d2-a72e-205e69c07217" interface="PRISMA_DepositoSvcEndpoint" operation="DepositarChequesDigitalizados"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="adb1e860-77d7-4d10-a90a-287c46130d55" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
+   <soap:Header/>
+   <soap:Body>
+      <tem:DepositarChequesDigitalizadosResponse>
+         <!--Optional:-->
+         <tem:DepositarChequesDigitalizadosResult>
+            <!--Optional:-->
+            <tas:ClaveRioself>?</tas:ClaveRioself>
+            <!--Optional:-->
+            <tas:ComisionesPendientes>?</tas:ComisionesPendientes>
+            <!--Optional:-->
+            <tas:IdRegistroOperacion>?</tas:IdRegistroOperacion>
+            <!--Optional:-->
+            <tas:NombreSesion>?</tas:NombreSesion>
+            <!--Optional:-->
+            <tas:NombreTitular>?</tas:NombreTitular>
+         </tem:DepositarChequesDigitalizadosResult>
+      </tem:DepositarChequesDigitalizadosResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/DepositarChequesDigitalizadosResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="DepositarChequesDigitalizadosConfirmacion" id="03c7df96-b328-44eb-88df-61567754cf0a" interface="PRISMA_DepositoSvcEndpoint" operation="DepositarChequesDigitalizadosConfirmacion"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="f250a819-8919-46ad-9c0f-d8aee3cac57d" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
+   <soap:Header/>
+   <soap:Body>
+      <tem:DepositarChequesDigitalizadosConfirmacionResponse>
+         <!--Optional:-->
+         <tem:DepositarChequesDigitalizadosConfirmacionResult>
+            <!--Optional:-->
+            <tas:IdRegistroOperacion>?</tas:IdRegistroOperacion>
+         </tem:DepositarChequesDigitalizadosConfirmacionResult>
+      </tem:DepositarChequesDigitalizadosConfirmacionResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/DepositarChequesDigitalizadosConfirmacionResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="DepositarCupones" id="bb6ba65a-ca5d-4c7d-9983-38051e1630b6" interface="PRISMA_DepositoSvcEndpoint" operation="DepositarCupones"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="b7cb1bf3-2dbb-4df9-8e57-ef531b2dca62" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
+   <soap:Header/>
+   <soap:Body>
+      <tem:DepositarCuponesResponse>
+         <!--Optional:-->
+         <tem:DepositarCuponesResult>
+            <!--Optional:-->
+            <tas:Canal>?</tas:Canal>
+            <!--Optional:-->
+            <tas:ClaveRioself>?</tas:ClaveRioself>
+            <!--Optional:-->
+            <tas:IdRegistroOperacion>?</tas:IdRegistroOperacion>
+            <!--Optional:-->
+            <tas:NombreSesion>?</tas:NombreSesion>
+            <!--Optional:-->
+            <tas:NombreTitular>?</tas:NombreTitular>
+            <!--Optional:-->
+            <tas:Timestamp>?</tas:Timestamp>
+         </tem:DepositarCuponesResult>
+      </tem:DepositarCuponesResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/DepositarCuponesResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="DepositarEfectivoOCheques" id="82e1093a-a742-4f42-8272-c734401fbf09" interface="PRISMA_DepositoSvcEndpoint" operation="DepositarEfectivoOCheques"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="88d6f52d-e526-49b2-ac7e-752121f40af5" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
+   <soap:Header/>
+   <soap:Body>
+      <tem:DepositarEfectivoOChequesResponse>
+         <!--Optional:-->
+         <tem:DepositarEfectivoOChequesResult>
+            <!--Optional:-->
+            <tas:Canal>?</tas:Canal>
+            <!--Optional:-->
+            <tas:ClaveRioself>?</tas:ClaveRioself>
+            <!--Optional:-->
+            <tas:ComisionesPendientes>?</tas:ComisionesPendientes>
+            <!--Optional:-->
+            <tas:IdRegistroOperacion>?</tas:IdRegistroOperacion>
+            <!--Optional:-->
+            <tas:NombreSesion>?</tas:NombreSesion>
+            <!--Optional:-->
+            <tas:NombreTitular>?</tas:NombreTitular>
+            <!--Optional:-->
+            <tas:Timestamp>?</tas:Timestamp>
+         </tem:DepositarEfectivoOChequesResult>
+      </tem:DepositarEfectivoOChequesResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/DepositarEfectivoOChequesResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="DepositarEfectivoOnline" id="a1304902-916d-4879-9dc4-718b190f265e" interface="PRISMA_DepositoSvcEndpoint" operation="DepositarEfectivoOnline"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="9a07bd91-c807-482f-8527-7b1b0dab4bf8" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
+   <soap:Header/>
+   <soap:Body>
+      <tem:DepositarEfectivoOnlineResponse>
+         <!--Optional:-->
+         <tem:DepositarEfectivoOnlineResult>
+            <!--Optional:-->
+            <tas:ApellidoyNombreDepositante>?</tas:ApellidoyNombreDepositante>
+            <!--Optional:-->
+            <tas:ApellidoyNombreMandante>?</tas:ApellidoyNombreMandante>
+            <!--Optional:-->
+            <tas:ApellidoyNombreTitular>?</tas:ApellidoyNombreTitular>
+            <!--Optional:-->
+            <tas:ClaveRioself>?</tas:ClaveRioself>
+            <!--Optional:-->
+            <tas:ComisionesPendientes>?</tas:ComisionesPendientes>
+            <!--Optional:-->
+            <tas:HoraaConfirmar>?</tas:HoraaConfirmar>
+            <!--Optional:-->
+            <tas:NIO>?</tas:NIO>
+            <!--Optional:-->
+            <tas:NumDocumentoDepositante>?</tas:NumDocumentoDepositante>
+            <!--Optional:-->
+            <tas:NumDocumentoMandante>?</tas:NumDocumentoMandante>
+            <!--Optional:-->
+            <tas:NumeroUnicoOperacion>?</tas:NumeroUnicoOperacion>
+            <!--Optional:-->
+            <tas:SaldoDolares>?</tas:SaldoDolares>
+            <!--Optional:-->
+            <tas:SaldoPesos>?</tas:SaldoPesos>
+            <!--Optional:-->
+            <tas:TipoDocumentoDepositante>?</tas:TipoDocumentoDepositante>
+            <!--Optional:-->
+            <tas:TipoDocumentoMandante>?</tas:TipoDocumentoMandante>
+         </tem:DepositarEfectivoOnlineResult>
+      </tem:DepositarEfectivoOnlineResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/DepositarEfectivoOnlineResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="DepositoPagoAProveedores" id="677ff149-b056-4a43-a94e-4ed2e73bc745" interface="PRISMA_DepositoSvcEndpoint" operation="DepositoPagoAProveedores"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="2e139258-d0af-4fd3-865c-37567dffe6de" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
+   <soap:Header/>
+   <soap:Body>
+      <tem:DepositoPagoAProveedoresResponse>
+         <!--Optional:-->
+         <tem:DepositoPagoAProveedoresResult>
+            <!--Optional:-->
+            <tas:CUIT_Cliente>?</tas:CUIT_Cliente>
+            <!--Optional:-->
+            <tas:Clave_Rioself>?</tas:Clave_Rioself>
+            <!--Optional:-->
+            <tas:Id_Cliente>?</tas:Id_Cliente>
+            <!--Optional:-->
+            <tas:Id_Pago>?</tas:Id_Pago>
+            <!--Optional:-->
+            <tas:NUO>?</tas:NUO>
+         </tem:DepositoPagoAProveedoresResult>
+      </tem:DepositoPagoAProveedoresResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="DepositoPagoAProveedoresAnonimo" id="9534234a-b3a9-4eec-80bb-870afdf391e8" interface="PRISMA_DepositoSvcEndpoint" operation="DepositoPagoAProveedoresAnonimo"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="5e461323-568a-4238-8721-50a2c3b643b5" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
+   <soap:Header/>
+   <soap:Body>
+      <tem:DepositoPagoAProveedoresAnonimoResponse>
+         <!--Optional:-->
+         <tem:DepositoPagoAProveedoresAnonimoResult>
+            <!--Optional:-->
+            <tas:Clave_Rioself>?</tas:Clave_Rioself>
+            <!--Optional:-->
+            <tas:NUO>?</tas:NUO>
+         </tem:DepositoPagoAProveedoresAnonimoResult>
+      </tem:DepositoPagoAProveedoresAnonimoResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresAnonimoResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="DepositoPagoAProveedoresAnonimoPrisma" id="37842750-fa06-458f-b240-189fe69e047b" interface="PRISMA_DepositoSvcEndpoint" operation="DepositoPagoAProveedoresAnonimoPrisma"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="415352c9-2d51-4b68-9237-87602f665ca3" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
+   <soap:Header/>
+   <soap:Body>
+      <tem:DepositoPagoAProveedoresAnonimoPrismaResponse>
+         <!--Optional:-->
+         <tem:DepositoPagoAProveedoresAnonimoPrismaResult>
+            <!--Optional:-->
+            <tas:Clave_Rioself>?</tas:Clave_Rioself>
+            <!--Optional:-->
+            <tas:NUO>?</tas:NUO>
+         </tem:DepositoPagoAProveedoresAnonimoPrismaResult>
+      </tem:DepositoPagoAProveedoresAnonimoPrismaResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresAnonimoPrismaResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="DepositoPagoAProveedoresPrisma" id="4c5e8ed9-0973-4d09-bbb7-983e224b3587" interface="PRISMA_DepositoSvcEndpoint" operation="DepositoPagoAProveedoresPrisma"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="aad1ff4d-58c4-4b68-88e0-e45786dac64b" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
+   <soap:Header/>
+   <soap:Body>
+      <tem:DepositoPagoAProveedoresPrismaResponse>
+         <!--Optional:-->
+         <tem:DepositoPagoAProveedoresPrismaResult>
+            <!--Optional:-->
+            <tas:CUIT_Cliente>?</tas:CUIT_Cliente>
+            <!--Optional:-->
+            <tas:Clave_Rioself>?</tas:Clave_Rioself>
+            <!--Optional:-->
+            <tas:Id_Cliente>?</tas:Id_Cliente>
+            <!--Optional:-->
+            <tas:Id_Pago>?</tas:Id_Pago>
+            <!--Optional:-->
+            <tas:NUO>?</tas:NUO>
+         </tem:DepositoPagoAProveedoresPrismaResult>
+      </tem:DepositoPagoAProveedoresPrismaResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresPrismaResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="DepositoPagoAProveedoresV2" id="43023330-4267-455c-92f4-8d7babb6687e" interface="PRISMA_DepositoSvcEndpoint" operation="DepositoPagoAProveedoresV2"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="6309e7f9-973f-4458-b85f-58b8ebb12332" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
+   <soap:Header/>
+   <soap:Body>
+      <tem:DepositoPagoAProveedoresV2Response>
+         <!--Optional:-->
+         <tem:DepositoPagoAProveedoresV2Result>
+            <!--Optional:-->
+            <tas:CUIT_Cliente>?</tas:CUIT_Cliente>
+            <!--Optional:-->
+            <tas:Clave_Rioself>?</tas:Clave_Rioself>
+            <!--Optional:-->
+            <tas:Id_Cliente>?</tas:Id_Cliente>
+            <!--Optional:-->
+            <tas:Id_Pago>?</tas:Id_Pago>
+            <!--Optional:-->
+            <tas:NUO>?</tas:NUO>
+         </tem:DepositoPagoAProveedoresV2Result>
+      </tem:DepositoPagoAProveedoresV2Response>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/DepositoPagoAProveedoresV2Response"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="ObtenerEmpresasCupon" id="005ce080-d346-4a3b-9205-05257f18db15" interface="PRISMA_DepositoSvcEndpoint" operation="ObtenerEmpresasCupon"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="ebac5aff-aca2-41e0-b8df-7ca9461fcb4f" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
+   <soap:Header/>
+   <soap:Body>
+      <tem:ObtenerEmpresasCuponResponse>
+         <!--Optional:-->
+         <tem:ObtenerEmpresasCuponResult>
+            <!--Optional:-->
+            <tas:EmpresasCupon>
+               <!--Zero or more repetitions:-->
+               <tas:DepositoSvcObtenerEmpresasCuponResponseItem>
+                  <!--Optional:-->
+                  <tas:Descripcion>?</tas:Descripcion>
+                  <!--Optional:-->
+                  <tas:ID>?</tas:ID>
+               </tas:DepositoSvcObtenerEmpresasCuponResponseItem>
+            </tas:EmpresasCupon>
+         </tem:ObtenerEmpresasCuponResult>
+      </tem:ObtenerEmpresasCuponResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/ObtenerEmpresasCuponResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="ObtenerSaldoYDatosAdicionales" id="e6d8dc49-7e7b-4609-9d55-46bfa252211d" interface="PRISMA_DepositoSvcEndpoint" operation="ObtenerSaldoYDatosAdicionales"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="93407d41-beec-4baf-8cf0-f2d708a432b3" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.ServiceContracts">
+   <soap:Header/>
+   <soap:Body>
+      <tem:ObtenerSaldoYDatosAdicionalesResponse>
+         <!--Optional:-->
+         <tem:ObtenerSaldoYDatosAdicionalesResult>
+            <!--Optional:-->
+            <tas:AcumuladoARSCuenta>?</tas:AcumuladoARSCuenta>
+            <!--Optional:-->
+            <tas:AcumuladoUSDCuenta>?</tas:AcumuladoUSDCuenta>
+            <!--Optional:-->
+            <tas:ChequesRechazadosDolares>?</tas:ChequesRechazadosDolares>
+            <!--Optional:-->
+            <tas:ChequesRechazadosPesos>?</tas:ChequesRechazadosPesos>
+            <!--Optional:-->
+            <tas:ClasePaquete>?</tas:ClasePaquete>
+            <!--Optional:-->
+            <tas:Depositos24hsCCDolares>?</tas:Depositos24hsCCDolares>
+            <!--Optional:-->
+            <tas:Depositos24hsCCPesos>?</tas:Depositos24hsCCPesos>
+            <!--Optional:-->
+            <tas:Depositos48hsCCDolares>?</tas:Depositos48hsCCDolares>
+            <!--Optional:-->
+            <tas:Depositos48hsCCPesos>?</tas:Depositos48hsCCPesos>
+            <!--Optional:-->
+            <tas:Depositos72hsCCDolares>?</tas:Depositos72hsCCDolares>
+            <!--Optional:-->
+            <tas:Depositos72hsCCPesos>?</tas:Depositos72hsCCPesos>
+            <!--Optional:-->
+            <tas:DepositosEfectivoDolares>?</tas:DepositosEfectivoDolares>
+            <!--Optional:-->
+            <tas:DepositosEfectivoPesos>?</tas:DepositosEfectivoPesos>
+            <!--Optional:-->
+            <tas:DisponibleARSCuenta>?</tas:DisponibleARSCuenta>
+            <!--Optional:-->
+            <tas:DisponibleARSMenorCuentaDelConjunto>?</tas:DisponibleARSMenorCuentaDelConjunto>
+            <!--Optional:-->
+            <tas:DisponibleUSDCuenta>?</tas:DisponibleUSDCuenta>
+            <!--Optional:-->
+            <tas:DisponibleUSDMenorCuentaDelConjunto>?</tas:DisponibleUSDMenorCuentaDelConjunto>
+            <!--Optional:-->
+            <tas:DispuestoARSCuenta>?</tas:DispuestoARSCuenta>
+            <!--Optional:-->
+            <tas:DispuestoUSDCuenta>?</tas:DispuestoUSDCuenta>
+            <!--Optional:-->
+            <tas:FechaAperturaDolares>?</tas:FechaAperturaDolares>
+            <!--Optional:-->
+            <tas:FechaAperturaPesos>?</tas:FechaAperturaPesos>
+            <!--Optional:-->
+            <tas:InteresesGanadosCADolares>?</tas:InteresesGanadosCADolares>
+            <!--Optional:-->
+            <tas:InteresesGanadosCAPesos>?</tas:InteresesGanadosCAPesos>
+            <!--Optional:-->
+            <tas:LimiteAcuerdoCCDolares>?</tas:LimiteAcuerdoCCDolares>
+            <!--Optional:-->
+            <tas:LimiteAcuerdoCCPesos>?</tas:LimiteAcuerdoCCPesos>
+            <!--Optional:-->
+            <tas:NombreTitularCuenta>?</tas:NombreTitularCuenta>
+            <!--Optional:-->
+            <tas:NumeroCuenta>?</tas:NumeroCuenta>
+            <!--Optional:-->
+            <tas:SaldoCuentaDolares>?</tas:SaldoCuentaDolares>
+            <!--Optional:-->
+            <tas:SaldoCuentaPesos>?</tas:SaldoCuentaPesos>
+            <!--Optional:-->
+            <tas:SaldoPorConformarDolares>?</tas:SaldoPorConformarDolares>
+            <!--Optional:-->
+            <tas:SaldoPorConformarPesos>?</tas:SaldoPorConformarPesos>
+            <!--Optional:-->
+            <tas:SucursalCuenta>?</tas:SucursalCuenta>
+            <!--Optional:-->
+            <tas:TipoCoberturaCuenta>?</tas:TipoCoberturaCuenta>
+            <!--Optional:-->
+            <tas:TipoCuenta>?</tas:TipoCuenta>
+            <!--Optional:-->
+            <tas:TipoPosicionamientoCuenta>?</tas:TipoPosicionamientoCuenta>
+            <!--Optional:-->
+            <tas:TopeARSCuenta>?</tas:TopeARSCuenta>
+            <!--Optional:-->
+            <tas:TopeUSDCuenta>?</tas:TopeUSDCuenta>
+         </tem:ObtenerSaldoYDatosAdicionalesResult>
+      </tem:ObtenerSaldoYDatosAdicionalesResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/ObtenerSaldoYDatosAdicionalesResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="ObtenerTiposCupon" id="f571b09d-5f29-44e5-bde4-b080e139ff1e" interface="PRISMA_DepositoSvcEndpoint" operation="ObtenerTiposCupon"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="c0f62915-f079-4a28-bc6d-1c3ec1d054bb" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
+   <soap:Header/>
+   <soap:Body>
+      <tem:ObtenerTiposCuponResponse>
+         <!--Optional:-->
+         <tem:ObtenerTiposCuponResult>
+            <!--Optional:-->
+            <tas:TiposCupon>
+               <!--Zero or more repetitions:-->
+               <tas:DepositoSvcObtenerTiposCuponResponseItem>
+                  <!--Optional:-->
+                  <tas:Descripcion>?</tas:Descripcion>
+                  <!--Optional:-->
+                  <tas:ID>?</tas:ID>
+               </tas:DepositoSvcObtenerTiposCuponResponseItem>
+            </tas:TiposCupon>
+         </tem:ObtenerTiposCuponResult>
+      </tem:ObtenerTiposCuponResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IDepositoSvc/ObtenerTiposCuponResponse"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
