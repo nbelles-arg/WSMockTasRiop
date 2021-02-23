@@ -2015,8 +2015,6 @@ Payload:
   </s:Body>
 </s:Envelope>
 --------------------------------------
-
---------------------------------------
 Pago de tarjeta Rechazado
 
 --------------------------------------
@@ -2099,6 +2097,79 @@ Payload:
   </s:Body>
 </s:Envelope>
 --------------------------------------
+PagoTarjetaPrisma Aprobado
+
+---------------------------
+ID: 961
+Address: https://webfronthomo01.ar.bsch:8501/prisma_pagotarjetasvc.svc
+Encoding: UTF-8
+Content-Type: application/soap+xml
+Headers: {Accept=[*/*]}
+Payload: 
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+  <soap:Header>
+    <Action xmlns="http://www.w3.org/2005/08/addressing">http://tempuri.org/IPagoTarjeta/PagoTarjetaPrisma</Action>
+    <MessageIDxmlns="http://www.w3.org/2005/08/addressing">urn:uuid:93efe5fa-5b89-4fa7-ab64-eafad4c20d0a</MessageID>
+    <To xmlns="http://www.w3.org/2005/08/addressing">https://webfronthomo01.ar.bsch:8501/prisma_pagotarjetasvc.svc</To>
+    <ReplyTo xmlns="http://www.w3.org/2005/08/addressing">
+      <Address>http://www.w3.org/2005/08/addressing/anonymous</Address>
+    </ReplyTo>
+  </soap:Header>
+  <soap:Body>
+    <ns2:PagoTarjetaPrisma xmlns="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:ns2="http://tempuri.org/" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:ns4="http://schemas.datacontract.org/2004/07/System" xmlns:ns5="http://schemas.datacontract.org/2004/07/Isban.Common">
+      <s2:request>
+        <ClienteTipoPersona></ClienteTipoPersona>
+        <IdTerminal>8</IdTerminal>
+        <NroSucursal>99087</NroSucursal>
+        <PasswordRACF>FREEUSER</PasswordRACF>
+        <UsuarioRACF>FREEUSER</UsuarioRACF>
+        <FechaNegocio>2020-10-21T11:44:20</FechaNegocio>
+        <Importe>500.00</Importe>
+        <Indicador_Oper_Reversa>0</Indicador_Oper_Reversa>
+        <Moneda>ARS</Moneda>
+        <NombreTerminalFis>1JRI000</NombreTerminalFis>
+        <NroTarjeta>4509950039733708</NroTarjeta>
+        <NroTicketBanelco>2419</NroTicketBanelco>
+        <TipoTarjeta>7</TipoTarjeta>
+      </ns2:request>
+    </ns2:PagoTarjetaPrisma>
+  </soap:Body>
+</soap:Envelope>
+
+--------------------------------------
+2020-10-21 11:44:20,987|INFO  [tasRIOPTxnMgr:4 prepare com.banelco.tas.riop.WsPagoTarjetaNoPESService] Inbound Message
+----------------------------
+ID: 961
+Response-Code: 200
+Encoding: UTF-8
+Content-Type: application/soap+xml; charset=utf-8
+Headers: {Content-Length=[1011], content-type=[application/soap+xml; charset=utf-8], Date=[Wed, 21 Oct 2020 14:44:20 GMT], Server=[Micros
+oft-IIS/8.5], X-Powered-By=[ASP.NET]}
+Payload: 
+<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+  <s:Header>
+    <a:Action s:mustUnderstand="1">http://tempuri.org/IPagoTarjeta/PagoTarjetaPrismaResponse</a:Action>
+    <a:RelatesTo>urn:uuid:93efe5fa-5b89-4fa7-ab64-eafad4c20d0a</a:RelatesTo>
+  </s:Header>
+  <s:Body>
+    <PagoTarjetaPrismaResponse xmlns="http://tempuri.org/">
+      <PagoTarjetaPrismaResult xmlns:b="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+        <b:ApellidoNombre>LUEDDECKENS LUVINA IN         </b:ApellidoNombre>
+        <b:FechaVencimLiq>2019-07-22T00:00:00</b:FechaVencimLiq>
+        <b:FormaPago>3</b:FormaPago>
+        <b:ImpTotalLiqDolar>0.00</b:ImpTotalLiqDolar>
+        <b:ImpTotalLiqPesos>12515.41</b:ImpTotalLiqPesos>
+        <b:Importe>500.00</b:Importe>
+        <b:Moneda>ARS</b:Moneda>
+        <b:NroCuentaTarjeta>000000016338203</b:NroCuentaTarjeta>
+        <b:PagoMinimo>0.00</b:PagoMinimo>
+        <b:TipoTarjeta>7</b:TipoTarjeta>
+      </PagoTarjetaPrismaResult>
+    </PagoTarjetaPrismaResponse>
+  </s:Body>
+</s:Envelope>
+---------------------------
+
 
 ObtenerAcuerdosDeRecaudaciones, ObtenerFormaDePagoRecaudaciones y ObtenerPagoRecaudacionesPorID
 
