@@ -1214,7 +1214,7 @@
          </tem:request>\r
       </tem:ConsultarPagoTarjeta>\r
    </soap:Body>\r
-</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjeta"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="9147d7e7-2cc3-48c1-be08-0b3cc06d9a69" isOneWay="false" action="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaPrisma" name="ConsultarPagoTarjetaPrisma" bindingOperationName="ConsultarPagoTarjetaPrisma" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7b7b5680-f858-48c2-8b48-50a0b3df1773" name="Request 1" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8070/mockPRISMA_PagoTarjetaSvc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjeta"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="9147d7e7-2cc3-48c1-be08-0b3cc06d9a69" isOneWay="false" action="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaPrisma" name="ConsultarPagoTarjetaPrisma" bindingOperationName="ConsultarPagoTarjetaPrisma" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7b7b5680-f858-48c2-8b48-50a0b3df1773" name="Request 1" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/mockPRISMA_PagoTarjetaSvc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
    <soap:Header/>\r
    <soap:Body>\r
       <tem:ConsultarPagoTarjetaPrisma>\r
@@ -1575,7 +1575,7 @@
          </tem:request>\r
       </tem:PagoTarjetaPrisma>\r
    </soap:Body>\r
-</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IPagoTarjeta/PagoTarjetaPrisma"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="55313ff6-0b63-4f1c-9ea8-b02893bc4536" port="8070" path="/mockPRISMA_PagoTarjetaSvc" host="localhost" name="PRISMA_PagoTarjetaSvcMockService" bindToHostOnly="false" docroot=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:startScript>/*
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IPagoTarjeta/PagoTarjetaPrisma"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="55313ff6-0b63-4f1c-9ea8-b02893bc4536" port="8080" path="/mockPRISMA_PagoTarjetaSvc" host="10.10.11.231" name="PRISMA_PagoTarjetaSvcMockService" bindToHostOnly="false" docroot=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:startScript>/*
 * Here we inicialice the context
 */
 def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
@@ -1731,32 +1731,22 @@ if (context.NumeroTarjetaCredito == context.TC1){
     <a:Action s:mustUnderstand="1">http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaPrismaResponse</a:Action>
     <a:RelatesTo>urn:uuid:f308ac2d-2a2c-4064-b652-4bbdd600fcdb</a:RelatesTo>
   </s:Header>
-   <soap:Body>
-      <tem:ConsultarPagoTarjetaResponse>
-         <!--Optional:-->
-         <tem:ConsultarPagoTarjetaResult>
-            <!--Optional:-->
-            <tas:FechaLiquidacionTC>${FechaLiquidacionTC}</tas:FechaLiquidacionTC>
-            <!--Optional:-->
-            <tas:FechaVencimientoLiquidacionTC>${FechaVencimientoLiquidacionTC}</tas:FechaVencimientoLiquidacionTC>
-            <!--Optional:-->
-            <tas:FormaPagoTC>${FormaPagoTC}</tas:FormaPagoTC>
-            <!--Optional:-->
-            <tas:IdRegistroOperacion>${IdRegistroOperacion}</tas:IdRegistroOperacion>
-            <!--Optional:-->
-            <tas:NombreApellido>${ApellidoNombre}</tas:NombreApellido>
-            <!--Optional:-->
-            <tas:NumeroCuentaTarjeta></tas:NumeroCuentaTarjeta>
-            <!--Optional:-->
-            <tas:PagoMinimoTC>${PagoMinimoPesosTC}</tas:PagoMinimoTC>
-            <!--Optional:-->
-            <tas:SaldoDolaresTC>${SaldoDolaresTC}</tas:SaldoDolaresTC>
-            <!--Optional:-->
-            <tas:SaldoPesosTC>${SaldoPesosTC}</tas:SaldoPesosTC>
-         </tem:ConsultarPagoTarjetaResult>
-      </tem:ConsultarPagoTarjetaResponse>
-   </soap:Body>
-</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaResponse"/></con:response><con:response name="Invalid TC" id="e5649885-c36c-40e8-9e45-b0d1e5fbb73e" httpResponseStatus="500" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+   <s:Body>
+      <ConsultarPagoTarjetaResponse>         
+         <ConsultarPagoTarjetaResult>            
+            <b:FechaLiquidacionTC>${FechaLiquidacionTC}</b:FechaLiquidacionTC>            
+            <b:FechaVencimientoLiquidacionTC>${FechaVencimientoLiquidacionTC}</b:FechaVencimientoLiquidacionTC>
+            <b:FormaPagoTC>${FormaPagoTC}</b:FormaPagoTC>            
+            <b:IdRegistroOperacion>${IdRegistroOperacion}</b:IdRegistroOperacion>            
+            <b:NombreApellido>${ApellidoNombre}</b:NombreApellido>            
+            <b:NumeroCuentaTarjeta></b:NumeroCuentaTarjeta>            
+            <b:PagoMinimoTC>${PagoMinimoPesosTC}</b:PagoMinimoTC>            
+            <b:SaldoDolaresTC>${SaldoDolaresTC}</b:SaldoDolaresTC>            
+            <b:SaldoPesosTC>${SaldoPesosTC}</b:SaldoPesosTC>
+         </ConsultarPagoTarjetaResult>
+      </ConsultarPagoTarjetaResponse>
+   </s:Body>
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaResponse"/></con:response><con:response name="Invalid TC" id="e5649885-c36c-40e8-9e45-b0d1e5fbb73e" httpResponseStatus="500" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
 	<s:Header>
 		<a:Action s:mustUnderstand="1">http://www.w3.org/2005/08/addressing/soap/fault</a:Action>
 		<a:RelatesTo>urn:uuid:aefff236-c1b9-494d-85da-9dd5a7dedc75</a:RelatesTo>
@@ -1847,32 +1837,22 @@ if (context.NumeroTarjetaCredito == context.TC1){
     <a:Action s:mustUnderstand="1">http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaPrismaResponse</a:Action>
     <a:RelatesTo>urn:uuid:f308ac2d-2a2c-4064-b652-4bbdd600fcdb</a:RelatesTo>
   </s:Header>
-   <soap:Body>
-      <tem:ConsultarPagoTarjetaResponse>
-         <!--Optional:-->
-         <tem:ConsultarPagoTarjetaResult>
-            <!--Optional:-->
-            <tas:FechaLiquidacionTC>${FechaLiquidacionTC}</tas:FechaLiquidacionTC>
-            <!--Optional:-->
-            <tas:FechaVencimientoLiquidacionTC>${FechaVencimientoLiquidacionTC}</tas:FechaVencimientoLiquidacionTC>
-            <!--Optional:-->
-            <tas:FormaPagoTC>${FormaPagoTC}</tas:FormaPagoTC>
-            <!--Optional:-->
-            <tas:IdRegistroOperacion>${IdRegistroOperacion}</tas:IdRegistroOperacion>
-            <!--Optional:-->
-            <tas:ApellidoNombre>${ApellidoNombre}</tas:NombreApellido>
-            <!--Optional:-->
-            <tas:NumeroCuentaTarjeta></tas:NumeroCuentaTarjeta>
-            <!--Optional:-->
-            <tas:PagoMinimoPesosTC>${PagoMinimoPesosTC}</tas:PagoMinimoTC>
-            <!--Optional:-->
-            <tas:SaldoDolaresTC>${SaldoDolaresTC}</tas:SaldoDolaresTC>
-            <!--Optional:-->
-            <tas:SaldoPesosTC>${SaldoPesosTC}</tas:SaldoPesosTC>
-         </tem:ConsultarPagoTarjetaResult>
-      </tem:ConsultarPagoTarjetaResponse>
-   </soap:Body>
-</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaPrismaResponse"/></con:response><con:response name="Invalid TC" id="46494b88-fd47-4815-8817-0354b70c236d" httpResponseStatus="500" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+   <s:Body>
+      <ConsultarPagoTarjetaResponse>         
+         <ConsultarPagoTarjetaResult>            
+            <b:FechaLiquidacionTC>${FechaLiquidacionTC}</b:FechaLiquidacionTC>            
+            <b:FechaVencimientoLiquidacionTC>${FechaVencimientoLiquidacionTC}</b:FechaVencimientoLiquidacionTC>
+            <b:FormaPagoTC>${FormaPagoTC}</b:FormaPagoTC>            
+            <b:IdRegistroOperacion>${IdRegistroOperacion}</b:IdRegistroOperacion>            
+            <b:ApellidoNombre>${ApellidoNombre}</b:NombreApellido>            
+            <b:NumeroCuentaTarjeta></b:NumeroCuentaTarjeta>            
+            <b:PagoMinimoPesosTC>${PagoMinimoPesosTC}</b:PagoMinimoTC>            
+            <b:SaldoDolaresTC>${SaldoDolaresTC}</b:SaldoDolaresTC>            
+            <b:SaldoPesosTC>${SaldoPesosTC}</b:SaldoPesosTC>
+         </ConsultarPagoTarjetaResult>
+      </ConsultarPagoTarjetaResponse>
+   </s:Body>
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IPagoTarjeta/ConsultarPagoTarjetaPrismaResponse"/></con:response><con:response name="Invalid TC" id="46494b88-fd47-4815-8817-0354b70c236d" httpResponseStatus="500" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
 	<s:Header>
 		<a:Action s:mustUnderstand="1">http://www.w3.org/2005/08/addressing/soap/fault</a:Action>
 		<a:RelatesTo>urn:uuid:aefff236-c1b9-494d-85da-9dd5a7dedc75</a:RelatesTo>
@@ -2461,36 +2441,25 @@ else
 
 
 
-</con:dispatchPath><con:response name="Valid TC" id="b1ee7154-2063-4bdb-8362-b9bd72986702" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
-   <soap:Header/>
-   <soap:Body>
-      <tem:PagoTarjetaPrismaResponse>
-         <!--Optional:-->
-         <tem:PagoTarjetaPrismaResult>
-            <!--Optional:-->
-            <tas:ApellidoNombre>${ApellidoNombre}</tas:ApellidoNombre>
-            <!--Optional:-->
-            <tas:FechaVencimLiq>${FechaVencimientoLiquidacionTC}</tas:FechaVencimLiq>
-            <!--Optional:-->
-            <tas:FormaPago>3</tas:FormaPago>
-            <!--Optional:-->
-            <tas:ImpTotalLiqDolar>${SaldoDolaresTC}</tas:ImpTotalLiqDolar>
-            <!--Optional:-->
-            <tas:ImpTotalLiqPesos>${SaldoPesosTC}</tas:ImpTotalLiqPesos>
-            <!--Optional:-->
-            <tas:Importe>${Importe}</tas:Importe>
-            <!--Optional:-->
-            <tas:Moneda>${Moneda}</tas:Moneda>
-            <!--Optional:-->
-            <tas:NroCuentaTarjeta>${NroCuentaTarjeta}</tas:NroCuentaTarjeta>
-            <!--Optional:-->
-            <tas:PagoMinimo>${PagoMinimoPesosTC}</tas:PagoMinimo>
-            <!--Optional:-->
-            <tas:TipoTarjeta>${FormaPagoTC}</tas:TipoTarjeta>
-         </tem:PagoTarjetaPrismaResult>
-      </tem:PagoTarjetaPrismaResponse>
-   </soap:Body>
-</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IPagoTarjeta/PagoTarjetaPrismaResponse"/></con:response><con:response name="Invalid TC" id="ab924d06-9ab9-455b-b063-0d5b0fc78f9b" httpResponseStatus="500" encoding="UTF-8"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockResponse@enable_inline_files">false</con:setting></con:settings><con:responseContent><![CDATA[<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+</con:dispatchPath><con:response name="Valid TC" id="b1ee7154-2063-4bdb-8362-b9bd72986702" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
+   <s:Header/>
+   <s:Body>
+      <PagoTarjetaPrismaResponse>         
+         <PagoTarjetaPrismaResult>            
+            <b:ApellidoNombre>${ApellidoNombre}</b:ApellidoNombre>            
+            <b:FechaVencimLiq>${FechaVencimientoLiquidacionTC}</b:FechaVencimLiq>            
+            <b:FormaPago>3</b:FormaPago>            
+            <b:ImpTotalLiqDolar>${SaldoDolaresTC}</b:ImpTotalLiqDolar>            
+            <b:ImpTotalLiqPesos>${SaldoPesosTC}</b:ImpTotalLiqPesos>            
+            <b:Importe>${Importe}</b:Importe>            
+            <b:Moneda>${Moneda}</b:Moneda>            
+            <b:NroCuentaTarjeta>${NroCuentaTarjeta}</b:NroCuentaTarjeta>            
+            <b:PagoMinimo>${PagoMinimoPesosTC}</b:PagoMinimo>            
+            <b:TipoTarjeta>${FormaPagoTC}</b:TipoTarjeta>
+         </PagoTarjetaPrismaResult>
+      </PagoTarjetaPrismaResponse>
+   </s:Body>
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IPagoTarjeta/PagoTarjetaPrismaResponse"/></con:response><con:response name="Invalid TC" id="ab924d06-9ab9-455b-b063-0d5b0fc78f9b" httpResponseStatus="500" encoding="UTF-8"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockResponse@enable_inline_files">false</con:setting></con:settings><con:responseContent><![CDATA[<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
   <s:Header>
     <a:Action s:mustUnderstand="1">http://www.w3.org/2005/08/addressing/soap/fault</a:Action>
     <a:RelatesTo>urn:uuid:16ac5168-9bca-4715-b903-1637d4d2c156</a:RelatesTo>

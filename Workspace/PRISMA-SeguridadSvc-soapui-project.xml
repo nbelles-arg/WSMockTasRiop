@@ -1158,7 +1158,7 @@
          </tem:request>\r
       </tem:CambiarClaveCanalIndividuo>\r
    </soap:Body>\r
-</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalIndividuo"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="fa690c4c-07ff-4dad-9bb2-2423c8a668ee" isOneWay="false" action="http://tempuri.org/ISeguridadSvc/IdentificarCliente" name="IdentificarCliente" bindingOperationName="IdentificarCliente" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ffc321fd-d3fd-4021-bb44-e05d0a7d925e" name="Request 1" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/PRISMA_SeguridadSvcMockService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/CambiarClaveCanalIndividuo"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="fa690c4c-07ff-4dad-9bb2-2423c8a668ee" isOneWay="false" action="http://tempuri.org/ISeguridadSvc/IdentificarCliente" name="IdentificarCliente" bindingOperationName="IdentificarCliente" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ffc321fd-d3fd-4021-bb44-e05d0a7d925e" name="Request 1" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.10.11.231:8080/PRISMA_SeguridadSvc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
    <soap:Header/>\r
    <soap:Body>\r
       <tem:IdentificarCliente>\r
@@ -1191,7 +1191,7 @@
             <!--Optional:-->\r
             <tas:FechaNacimiento>1959-10-05T00:00:00</tas:FechaNacimiento>\r
             <!--Optional:-->\r
-            <tas:NroDocumento>13297205</tas:NroDocumento>\r
+            <tas:NroDocumento>132917205</tas:NroDocumento>\r
          </tem:request>\r
       </tem:IdentificarCliente>\r
    </soap:Body>\r
@@ -1260,7 +1260,7 @@
          </tem:request>\r
       </tem:LogoutSession>\r
    </soap:Body>\r
-</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/LogoutSession"/></con:call></con:operation><con:operation id="b5a9d66f-39c8-439b-8e35-d1fe39e996cf" isOneWay="false" action="http://tempuri.org/ISeguridadSvc/ObtenerDocumentoPorNumeroTarjeta" name="ObtenerDocumentoPorNumeroTarjeta" bindingOperationName="ObtenerDocumentoPorNumeroTarjeta" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5293d8d0-0547-4068-8ab2-1b5ba9251b39" name="Request 1" useWsAddressing="true" sslKeystore=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/PRISMA_SeguridadSvcMockService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/LogoutSession"/></con:call></con:operation><con:operation id="b5a9d66f-39c8-439b-8e35-d1fe39e996cf" isOneWay="false" action="http://tempuri.org/ISeguridadSvc/ObtenerDocumentoPorNumeroTarjeta" name="ObtenerDocumentoPorNumeroTarjeta" bindingOperationName="ObtenerDocumentoPorNumeroTarjeta" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5293d8d0-0547-4068-8ab2-1b5ba9251b39" name="Request 1" useWsAddressing="true" sslKeystore=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080//PRISMA_SeguridadSvc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">\r
    <soap:Header/>\r
    <soap:Body>\r
       <tem:ObtenerDocumentoPorNumeroTarjeta>\r
@@ -1287,7 +1287,7 @@
             <!--Optional:-->\r
             <tas:UsuarioRACF>FREEUSER</tas:UsuarioRACF>\r
             <!--Optional:-->\r
-            <tas:NumeroDeTarjeta>4517660025192567</tas:NumeroDeTarjeta>\r
+            <tas:NumeroDeTarjeta>4517660045897724</tas:NumeroDeTarjeta>\r
          </tem:request>\r
       </tem:ObtenerDocumentoPorNumeroTarjeta>\r
    </soap:Body>\r
@@ -1427,7 +1427,7 @@
          </tem:request>\r
       </tem:ValidarClaveFirmante>\r
    </soap:Body>\r
-</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/ValidarClaveFirmante"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="57fd69ec-b310-483e-8808-fbeaffa55230" port="8090" path="/PRISMA_SeguridadSvcMockService" host="localhost" name="PRISMA_SeguridadSvcMockService" bindToHostOnly="false" docroot=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:startScript>/*
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/ValidarClaveFirmante"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="57fd69ec-b310-483e-8808-fbeaffa55230" port="8080" path="/PRISMA_SeguridadSvc" host="localhost" name="PRISMA_SeguridadSvcMockService" bindToHostOnly="false" docroot=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:startScript>/*
 * Here we inicialice the context
 */
 def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
@@ -1633,64 +1633,7 @@ if (((context.NroDocumento == context.DNI1) && (context.UserPassword == context.
 }
 
 
-]]></con:dispatchPath><con:response name="Valid Password" id="094403a1-5ba0-4415-9258-4cdeb30652c9" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
-  <s:Header>
-    <a:Action s:mustUnderstand="1">http://tempuri.org/ISeguridadSvc/IdentificarClienteResponse</a:Action>
-    <a:RelatesTo>urn:uuid:e8452da1-9bb4-4872-9a8c-4209df8dcf38</a:RelatesTo>
-  </s:Header>
-   <soap:Body>
-      <tem:IdentificarClienteResponse xmlns="http://tempuri.org/">
-      	<tem:IdentificarClienteResult xmlns:b="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
-            <tas:ClaveInvalida>false</tas:ClaveInvalida>
-            <tas:ClaveTrivialHistorica>false</tas:ClaveTrivialHistorica>
-            <tas:ClaveVencida>false</tas:ClaveVencida>
-            <tas:ClaveVencidaEmpresa>false</tas:ClaveVencidaEmpresa>
-            <tas:ClienteEmpresaSinonimo>false</tas:ClienteEmpresaSinonimo>
-            <tas:ClienteSinonimo>false</tas:ClienteSinonimo>
-            <tas:ExtensionCantidadDesc>0</tas:ExtensionCantidadDesc>
-            <tas:ExtensionDescripcion i:nil="true"></tas:ExtensionDescripcion>
-            <tas:ExtensionSistemaId i:nil="true"></tas:ExtensionSistemaId>
-            <tas:FechaNacimiento>${BirthDate}</tas:FechaNacimiento>
-            <tas:IdRegistroOperacion>${IdRegistroOperacion}</tas:IdRegistroOperacion>
-            <tas:NUP>70002915</tas:NUP>
-            <tas:PasswordRACF>@HXU4AX0</tas:PasswordRACF>
-            <tas:TipoPersona>I</tas:TipoPersona>
-            <tas:UsuarioRACF>70AKMJ15</tas:UsuarioRACF>
-         </tem:IdentificarClienteResult>
-      </tem:IdentificarClienteResponse>
-   </soap:Body>
-</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/IdentificarClienteResponse"/></con:response><con:response name="Invalid Password" id="82431311-4840-416a-bd37-f26bef486e47" httpResponseStatus="500" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing">
-  <s:Header>
-    <a:Action s:mustUnderstand="1">http://www.w3.org/2005/08/addressing/soap/fault</a:Action>
-    <a:RelatesTo>urn:uuid:6fed738a-3ce5-4f5e-8d4c-30a0ab115dd0</a:RelatesTo>
-  </s:Header>
-   <soap:Body>
-      <s:Fault>
-		<s:Code>
-			<s:Value>s:Sender</s:Value>
-		</s:Code>
-		<s:Reason>
-			<s:Text xml:lang="es-AR">10001016|SEG|Por favor, verifique los datos ingresados.</s:Text>
-		</s:Reason>
-		<s:Detail>
-			<BusinessException xmlns="http://schemas.datacontract.org/2004/07/Isban.Common" "http://www.w3.org/2001/XMLSchema-instance" xmlns:x="http://www.w3.org/2001/XMLSchema">
-				<ClassName i:type="x:string" xmlns="">Isban.Common.BusinessException</ClassName>
-				<Message i:type="x:string" xmlns="">10001016|SEG|Por favor, verifique los datos ingresados.</Message>
-				<Data i:nil="true" xmlns=""/>
-				<InnerException i:nil="true" xmlns=""/>
-				<HelpURL i:nil="true" xmlns=""/>
-				<StackTraceString i:nil="true" xmlns=""/>
-				<RemoteStackTraceString i:nil="true" xmlns=""/>
-				<RemoteStackIndex i:type="x:int" xmlns="">0</RemoteStackIndex>
-				<ExceptionMethod i:nil="true" xmlns=""/>
-				<HResult i:type="x:int" xmlns="">-2146233088</HResult>
-				<Source i:nil="true" xmlns=""/>
-				<WatsonBuckets i:nil="true" xmlns=""/>
-			</BusinessException>
-		</s:Detail>
-	</s:Fault>
-   </soap:Body>
-</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/IdentificarClienteResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="IdentificarClienteConVencimiento" id="fbf72558-a744-49d9-b2ae-e2702a98f677" interface="PRISMA_SeguridadSvcEndpoint" operation="IdentificarClienteConVencimiento"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="a7f792c4-d9c0-44e9-91f8-eaacfd034f56" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
+]]></con:dispatchPath><con:response name="Valid Password" id="094403a1-5ba0-4415-9258-4cdeb30652c9" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope"><s:Header><a:Action s:mustUnderstand="1">http://tempuri.org/ISeguridadSvc/IdentificarClienteResponse</a:Action><a:RelatesTo>urn:uuid:e8452da1-9bb4-4872-9a8c-4209df8dcf38</a:RelatesTo></s:Header><s:Body><IdentificarClienteResponse xmlns="http://tempuri.org/"><IdentificarClienteResult xmlns:b="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><b:ClaveInvalida>false</b:ClaveInvalida><b:ClaveTrivialHistorica>false</b:ClaveTrivialHistorica><b:ClaveVencida>false</b:ClaveVencida><b:ClaveVencidaEmpresa>false</b:ClaveVencidaEmpresa><b:ClienteEmpresaSinonimo>false</b:ClienteEmpresaSinonimo><b:ClienteSinonimo>false</b:ClienteSinonimo><b:ExtensionCantidadDesc>0</b:ExtensionCantidadDesc><b:ExtensionDescripcion i:nil="true"></b:ExtensionDescripcion><b:ExtensionSistemaId i:nil="true"></b:ExtensionSistemaId><b:FechaNacimiento>${BirthDate}</b:FechaNacimiento><b:IdRegistroOperacion>${IdRegistroOperacion}</b:IdRegistroOperacion><b:NUP>70002915</b:NUP><b:PasswordRACF>@HXU4AX0</b:PasswordRACF><b:TipoPersona>I</b:TipoPersona><b:UsuarioRACF>70AKMJ15</b:UsuarioRACF></IdentificarClienteResult></IdentificarClienteResponse></s:Body></s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/IdentificarClienteResponse"/></con:response><con:response name="Invalid Password" id="82431311-4840-416a-bd37-f26bef486e47" httpResponseStatus="500" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing"><s:Header><a:Action s:mustUnderstand="1">http://www.w3.org/2005/08/addressing/soap/fault</a:Action><a:RelatesTo>urn:uuid:6fed738a-3ce5-4f5e-8d4c-30a0ab115dd0</a:RelatesTo></s:Header><s:Body><s:Fault><s:Code><s:Value>s:Sender</s:Value></s:Code><s:Reason><s:Text xml:lang="es-AR">10001016|SEG|Por favor, verifique los datos ingresados.</s:Text></s:Reason><s:Detail><BusinessException xmlns="http://schemas.datacontract.org/2004/07/Isban.Common" "http://www.w3.org/2001/XMLSchema-instance" xmlns:x="http://www.w3.org/2001/XMLSchema"><ClassName i:type="x:string" xmlns="">Isban.Common.BusinessException</ClassName><Message i:type="x:string" xmlns="">10001016|SEG|Por favor, verifique los datos ingresados.</Message><Data i:nil="true" xmlns=""/><InnerException i:nil="true" xmlns=""/><HelpURL i:nil="true" xmlns=""/><StackTraceString i:nil="true" xmlns=""/><RemoteStackTraceString i:nil="true" xmlns=""/><RemoteStackIndex i:type="x:int" xmlns="">0</RemoteStackIndex><ExceptionMethod i:nil="true" xmlns=""/><HResult i:type="x:int" xmlns="">-2146233088</HResult><Source i:nil="true" xmlns=""/><WatsonBuckets i:nil="true" xmlns=""/></BusinessException></s:Detail></s:Fault></s:Body></s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/IdentificarClienteResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="IdentificarClienteConVencimiento" id="fbf72558-a744-49d9-b2ae-e2702a98f677" interface="PRISMA_SeguridadSvcEndpoint" operation="IdentificarClienteConVencimiento"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="a7f792c4-d9c0-44e9-91f8-eaacfd034f56" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts">
    <soap:Header/>
    <soap:Body>
       <tem:IdentificarClienteConVencimientoResponse>
@@ -1772,54 +1715,7 @@ if (context.NroDoc != null)
 else
 	return "Invalid Card"
 
-</con:dispatchPath><con:response name="Valid Card" id="e4c47b21-0122-4575-90b0-77c8a784ac99" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
-  <s:Header>
-    <a:Action s:mustUnderstand="1">http://tempuri.org/ISeguridadSvc/ObtenerDocumentoPorNumeroTarjetaResponse</a:Action>
-    <a:RelatesTo>urn:uuid:cf92c4eb-1374-4d2f-9199-df2a32dd7e39</a:RelatesTo>
-  </s:Header>
-   <soap:Body>
-      <tem:ObtenerDocumentoPorNumeroTarjetaResponse xmlns="http://tempuri.org/" >
-         <!--Optional:-->
-         <tem:ObtenerDocumentoPorNumeroTarjetaResult xmlns:b="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
-            <!--Optional:-->
-            <tas:FechaDeNacimiento>${BirthDate}</tas:FechaDeNacimiento>
-            <!--Optional:-->
-            <tas:NumeroDeDocumento>${NroDoc}</tas:NumeroDeDocumento>
-         </tem:ObtenerDocumentoPorNumeroTarjetaResult>
-      </tem:ObtenerDocumentoPorNumeroTarjetaResponse>
-   </soap:Body>
-</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/ObtenerDocumentoPorNumeroTarjetaResponse"/></con:response><con:response name="Invalid Card" id="63dc0648-a5c8-4338-bb64-1b0a50830d6d" httpResponseStatus="500" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
-  <s:Header>
-    <a:Action s:mustUnderstand="1">http://www.w3.org/2005/08/addressing/soap/fault</a:Action>
-    <a:RelatesTo>urn:uuid:c1c3c582-3496-41a6-8890-9b02fb23291c</a:RelatesTo>
-  </s:Header>
-   <soap:Body>
-      <s:Fault>
-      <s:Code>
-        <s:Value>s:Sender</s:Value>
-      </s:Code>
-      <s:Reason>
-        <s:Text xml:lang="es-AR">10000069|KUN|La operacion solicitada no puede ser realizada. Por favor, reintente mas tarde.Tarjeta no dada de alta.</s:Text>
-      </s:Reason>
-      <s:Detail>
-        <BusinessException xmlns="http://schemas.datacontract.org/2004/07/Isban.Common" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:x="http://www.w3.org/2001/XMLSchema">
-          <ClassName i:type="x:string" xmlns="">Isban.Common.BusinessException</ClassName>
-          <Message i:type="x:string" xmlns="">10000069|KUN|La operacion solicitada no puede ser realizada. Por favor, reintente mas tarde.Tarjeta no dada de alta.</Message>
-          <Data i:nil="true" xmlns=""/>
-          <InnerException i:nil="true" xmlns=""/>
-          <HelpURL i:nil="true" xmlns=""/>
-          <StackTraceString i:nil="true" xmlns=""/>
-          <RemoteStackTraceString i:nil="true" xmlns=""/>
-          <RemoteStackIndex i:type="x:int" xmlns="">0</RemoteStackIndex>
-          <ExceptionMethod i:nil="true" xmlns=""/>
-          <HResult i:type="x:int" xmlns="">-2146233088</HResult>
-          <Source i:nil="true" xmlns=""/>
-          <WatsonBuckets i:nil="true" xmlns=""/>
-        </BusinessException>
-      </s:Detail>
-    </s:Fault>
-   </soap:Body>
-</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/ObtenerDocumentoPorNumeroTarjetaResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="ObtenerServiciosDebitoAutomatico" id="d2a7701f-82ec-4261-a7e2-28d1ad75766e" interface="PRISMA_SeguridadSvcEndpoint" operation="ObtenerServiciosDebitoAutomatico"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="606e8324-528d-4eed-888e-2ef18888d99c" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.ServiceContracts">
+</con:dispatchPath><con:response name="Valid Card" id="e4c47b21-0122-4575-90b0-77c8a784ac99" httpResponseStatus="200" encoding="UTF-8"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockResponse@remove_empty_content">false</con:setting><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockResponse@strip-whitespaces">false</con:setting></con:settings><con:responseContent><![CDATA[<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope"><s:Header><a:Action s:mustUnderstand="1">http://tempuri.org/ISeguridadSvc/ObtenerDocumentoPorNumeroTarjetaResponse</a:Action><a:RelatesTo>urn:uuid:cf92c4eb-1374-4d2f-9199-df2a32dd7e39</a:RelatesTo></s:Header><s:Body><ObtenerDocumentoPorNumeroTarjetaResponse xmlns="http://tempuri.org/" ><ObtenerDocumentoPorNumeroTarjetaResult xmlns:b="http://schemas.datacontract.org/2004/07/TAS.Common.DataContracts" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><b:FechaDeNacimiento>${BirthDate}</b:FechaDeNacimiento><b:NumeroDeDocumento>${NroDoc}</b:NumeroDeDocumento></ObtenerDocumentoPorNumeroTarjetaResult></ObtenerDocumentoPorNumeroTarjetaResponse></s:Body></s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/ObtenerDocumentoPorNumeroTarjetaResponse"/></con:response><con:response name="Invalid Card" id="63dc0648-a5c8-4338-bb64-1b0a50830d6d" httpResponseStatus="500" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:s="http://www.w3.org/2003/05/soap-envelope"><s:Header><a:Action s:mustUnderstand="1">http://www.w3.org/2005/08/addressing/soap/fault</a:Action><a:RelatesTo>urn:uuid:c1c3c582-3496-41a6-8890-9b02fb23291c</a:RelatesTo></s:Header><s:Body><s:Fault><s:Code><s:Value>s:Sender</s:Value></s:Code><s:Reason><s:Text xml:lang="es-AR">10000069|KUN|La operacion solicitada no puede ser realizada. Por favor, reintente mas tarde.Tarjeta no dada de alta.</s:Text></s:Reason><s:Detail><BusinessException xmlns="http://schemas.datacontract.org/2004/07/Isban.Common" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:x="http://www.w3.org/2001/XMLSchema"><ClassName i:type="x:string" xmlns="">Isban.Common.BusinessException</ClassName><Message i:type="x:string" xmlns="">10000069|KUN|La operacion solicitada no puede ser realizada. Por favor, reintente mas tarde.Tarjeta no dada de alta.</Message><Data i:nil="true" xmlns=""/><InnerException i:nil="true" xmlns=""/><HelpURL i:nil="true" xmlns=""/><StackTraceString i:nil="true" xmlns=""/><RemoteStackTraceString i:nil="true" xmlns=""/><RemoteStackIndex i:type="x:int" xmlns="">0</RemoteStackIndex><ExceptionMethod i:nil="true" xmlns=""/><HResult i:type="x:int" xmlns="">-2146233088</HResult><Source i:nil="true" xmlns=""/><WatsonBuckets i:nil="true" xmlns=""/></BusinessException></s:Detail></s:Fault></s:Body></s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISeguridadSvc/ObtenerDocumentoPorNumeroTarjetaResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="ObtenerServiciosDebitoAutomatico" id="d2a7701f-82ec-4261-a7e2-28d1ad75766e" interface="PRISMA_SeguridadSvcEndpoint" operation="ObtenerServiciosDebitoAutomatico"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="606e8324-528d-4eed-888e-2ef18888d99c" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:tas="http://schemas.datacontract.org/2004/07/TAS.Common.ServiceContracts">
    <soap:Header/>
    <soap:Body>
       <tem:ObtenerServiciosDebitoAutomaticoResponse>
